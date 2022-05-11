@@ -7,8 +7,7 @@ import GuestGuard from '@/guards/GuestGuard';
 import DashboardLayout from '@/layouts/dashboard';
 import LogoOnlyLayout from '@/layouts/LogoOnlyLayout';
 import MainLayout from '@/layouts/main';
-// IMPORT COMPONENTS
-// eslint-disable-next-line react/display-name
+
 const Loadable = (Component: any) => (props: any) => {
   const { pathname } = useLocation();
   const isDashboard = pathname.includes('/dashboard');
@@ -78,7 +77,6 @@ const Pricing = Loadable(lazy(() => import('../pages/Pricing')));
 const Payment = Loadable(lazy(() => import('../pages/Payment')));
 const Page500 = Loadable(lazy(() => import('../pages/Page500')));
 const NotFound = Loadable(lazy(() => import('../pages/Page404')));
-// ----------------------------------------------------------------------
 
 // Components
 const ComponentsOverview = Loadable(lazy(() => import('../pages/ComponentsOverview')));
@@ -223,7 +221,7 @@ export default function Router() {
             { path: 'cards', element: <UserCards /> },
             { path: 'list', element: <UserList /> },
             { path: 'new', element: <UserCreate /> },
-            { path: '/:name/edit', element: <UserCreate /> },
+            { path: ':name/edit', element: <UserCreate /> },
             { path: 'account', element: <UserAccount /> }
           ]
         },
@@ -249,7 +247,7 @@ export default function Router() {
         {
           path: 'chat',
           children: [
-            { path: '/', element: <Chat /> },
+            { path: '', element: <Chat /> },
             { path: 'new', element: <Chat /> },
             { path: ':conversationKey', element: <Chat /> }
           ]
@@ -262,21 +260,19 @@ export default function Router() {
       path: '/',
       element: <MainLayout />,
       children: [
-        { path: '/', element: <LandingPage /> },
+        { path: '', element: <LandingPage /> },
         { path: 'about-us', element: <About /> },
         { path: 'contact-us', element: <Contact /> },
         { path: 'faqs', element: <Faqs /> },
         {
           path: 'components',
           children: [
-            { path: '/', element: <ComponentsOverview /> },
-            // FOUNDATIONS
+            { path: '', element: <ComponentsOverview /> },
             { path: 'color', element: <Color /> },
             { path: 'typography', element: <Typography /> },
             { path: 'shadows', element: <Shadows /> },
             { path: 'grid', element: <Grid /> },
             { path: 'icons', element: <Icons /> },
-            // MATERIAL UI
             { path: 'accordion', element: <Accordion /> },
             { path: 'alert', element: <Alert /> },
             { path: 'autocomplete', element: <Autocomplete /> },
