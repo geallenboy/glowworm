@@ -6,7 +6,7 @@ import { Icon } from '@iconify/react';
 import { Box } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { createStyles, makeStyles } from '@mui/styles';
-import { SnackbarProvider } from 'notistack5';
+import { SnackbarProvider } from 'notistack';
 
 const useStyles = makeStyles((theme: any) => {
   const isLight = theme.palette.mode === 'light';

@@ -2,7 +2,6 @@ import legacy from '@vitejs/plugin-legacy';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import { type ConfigEnv, type UserConfig, loadEnv } from 'vite';
-// import vitePluginImp from 'vite-plugin-imp';
 import { viteMockServe } from 'vite-plugin-mock';
 import PurgeIcons from 'vite-plugin-purge-icons';
 import svgrPlugin from 'vite-plugin-svgr';
@@ -23,10 +22,6 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
           find: '@',
           replacement: path.resolve(__dirname, 'src')
         }
-        // {
-        //   find:'notistack5',
-        //   replacement: path.resolve(__dirname, 'node_modules/notistack5/dist/notistack5.esm.js')
-        // }
       ]
     },
     server: {
@@ -40,7 +35,6 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       PurgeIcons(),
       legacy({
         targets: ['ie >= 11']
-        // additionalLegacyPolyfills: ['regenerator-runtime/runtime']
       }),
       react(),
       viteMockServe({
@@ -54,14 +48,6 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
           setupProdMockServer();
           `
       }),
-      // vitePluginImp({
-      //   libList: [
-      //     {
-      //       libName: 'antd',
-      //       style: name => `antd/es/${name}/style`
-      //     }
-      //   ]
-      // }),
       svgrPlugin({
         svgrOptions: {
           icon: true

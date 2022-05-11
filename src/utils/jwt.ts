@@ -1,4 +1,3 @@
-import { sign, verify } from 'jsonwebtoken';
 import jwtDecode from 'jwt-decode';
 
 import axios from './axios';
@@ -24,4 +23,4 @@ const setSession = (accessToken: string | null) => {
   }
 };
 
-export { isValidToken, setSession, sign, verify };
+export { isValidToken, setSession };

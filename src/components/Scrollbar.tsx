@@ -1,6 +1,5 @@
 import { Box } from '@mui/material';
 import { alpha, styled } from '@mui/material/styles';
-import PropTypes from 'prop-types';
 import SimpleBarReact from 'simplebar-react';
 
 const RootStyle = styled('div')({
@@ -29,13 +28,6 @@ const SimpleBarStyle = styled(SimpleBarReact)(({ theme }) => ({
     zIndex: 'inherit'
   }
 }));
-
-// ----------------------------------------------------------------------
-
-Scrollbar.propTypes = {
-  children: PropTypes.node.isRequired,
-  sx: PropTypes.object
-};
 
 export default function Scrollbar({ children, sx, ...other }: any) {
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(

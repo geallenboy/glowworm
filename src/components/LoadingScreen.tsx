@@ -1,5 +1,4 @@
-import { Box } from '@mui/material';
-import { alpha } from '@mui/material/styles';
+import { alpha, Box } from '@mui/material';
 import { createStyles, makeStyles, styled } from '@mui/styles';
 import { motion } from 'framer-motion';
 import NProgress from 'nprogress';
@@ -42,7 +41,7 @@ const RootStyle = styled('div')(({ theme }: any) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  backgroundColor: theme.palette.background?.default
+  backgroundColor: theme.palette?.background?.default
 }));
 
 function ProgressBar() {

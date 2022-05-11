@@ -4,9 +4,9 @@ import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 interface MotionInViewType extends BoxProps {
-  variants: any;
-  transition: any;
-  threshold: any;
+  variants?: any;
+  transition?: any;
+  threshold?: any;
 }
 
 export default function MotionInView({

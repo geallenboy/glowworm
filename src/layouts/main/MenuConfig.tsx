@@ -4,10 +4,7 @@ import homeFill from '@iconify/icons-eva/home-fill';
 import roundGrain from '@iconify/icons-ic/round-grain';
 import { Icon } from '@iconify/react';
 
-// routes
 import { PATH_AUTH, PATH_DASHBOARD, PATH_DOCS, PATH_PAGE } from '@/routes/paths';
-
-// ----------------------------------------------------------------------
 
 const ICON_SIZE = {
   width: 22,

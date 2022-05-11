@@ -4,9 +4,9 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { varFadeInUp } from './variants';
 
 interface DialogAnimateType extends DialogProps {
-  animate: any;
-  open: boolean;
-  onClose: any;
+  animate?: any;
+  open?: boolean;
+  onClose?: any;
 }
 
 export default function DialogAnimate({

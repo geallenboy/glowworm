@@ -1,20 +1,15 @@
-// material
 import { CssBaseline } from '@mui/material';
 import { createTheme, StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
 import { useMemo } from 'react';
 
-// hooks
 import useSettings from '@/hooks/useSettings';
 
 import breakpoints from './breakpoints';
 import componentsOverride from './overrides';
 import palette from './palette';
 import shadows, { customShadows } from './shadows';
-//
 import shape from './shape';
 import typography from './typography';
-
-// ----------------------------------------------------------------------
 
 export default function ThemeConfig({ children }: any) {
   const { themeMode, themeDirection } = useSettings();
@@ -40,7 +35,6 @@ export default function ThemeConfig({ children }: any) {
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-
         {children}
       </ThemeProvider>
     </StyledEngineProvider>

@@ -1,4 +1,5 @@
 import 'simplebar/src/simplebar.css';
+import '@/locales/i18n';
 
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';

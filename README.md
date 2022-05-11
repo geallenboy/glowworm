@@ -1,6 +1,6 @@
-## vite2-react17-redux-antd
+## react-redux-materialUI
 
-基于 vite2 react17 redux antd 开发前端基础项目框架
+基于 vite2 react17 redux materialUI 开发前端基础项目框架
 
 ## 技术栈
 
@@ -9,7 +9,7 @@
 - 前端框架：[react](https://react.docschina.org/)
 - 路由工具：[react-router 6.x](https://reactrouter.com/)
 - 状态管理：[redux](https://redux.js.org/)
-- UI 框架：[antd 4.x](https://ant.design/index-cn)
+- UI 框架：[materialUI 5.x](https://mui.com/)
 - CSS 预编译：[Less](http://lesscss.cn/)
 - HTTP 工具：[Axios](https://axios-http.com/)
 - Git Hook 工具：[husky](https://typicode.github.io/husky/#/) + [lint-staged](https://github.com/okonet/lint-staged)
@@ -25,7 +25,7 @@
 
 ```sh
 
-git clone git@github.com:geallenboy/vite2-react-recoil-antd.git
+git clone git@github.com:geallenboy/react-redux-materialUI.git
 
 ```
 

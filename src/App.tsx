@@ -1,23 +1,28 @@
-// import useAuth from '@/hooks/useAuth';
+import LoadingScreen from '@/components/LoadingScreen';
 import RtlLayout from '@/components/RtlLayout';
 import ScrollToTop from '@/components/ScrollToTop';
 import Settings from '@/components/settings';
 import ThemeLocalization from '@/components/ThemeLocalization';
 import ThemePrimaryColor from '@/components/ThemePrimaryColor';
+import useAuth from '@/hooks/useAuth';
 import Router from '@/routes';
 import ThemeConfig from '@/theme';
-// import LoadingScreen from '@/components/LoadingScreen';
 
-// const { isInitialized } = useAuth();
+import NotistackProvider from './components/NotistackProvider';
+
 export default function App() {
+  const { isInitialized } = useAuth();
+  console.log(isInitialized, 44);
   return (
     <ThemeConfig>
       <ThemePrimaryColor>
         <ThemeLocalization>
           <RtlLayout>
-            <Settings />
-            <ScrollToTop />
-            <Router />
+            <NotistackProvider>
+              <Settings />
+              <ScrollToTop />
+              {isInitialized ? <Router /> : <LoadingScreen />}
+            </NotistackProvider>
           </RtlLayout>
         </ThemeLocalization>
       </ThemePrimaryColor>

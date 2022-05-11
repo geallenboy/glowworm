@@ -1,7 +1,7 @@
 import { createContext, useEffect, useReducer } from 'react';
 
 import axios from '@/utils/axios';
-// import { isValidToken, setSession } from '@/utils/jwt';
+import { isValidToken, setSession } from '@/utils/jwt';
 
 const initialState: any = {
   isAuthenticated: false,
@@ -62,9 +62,9 @@ function AuthProvider({ children }: any) {
     const initialize = async () => {
       try {
         const accessToken = window.localStorage.getItem('accessToken');
-        // console.log(accessToken, 44);
-        if (accessToken) {
-          // setSession(accessToken);
+
+        if (accessToken && isValidToken(accessToken)) {
+          setSession(accessToken);
 
           const response = await axios.get('/api/account/my-account');
           const { user } = response.data;
@@ -105,9 +105,9 @@ function AuthProvider({ children }: any) {
       email,
       password
     });
-    const { user } = response.data;
+    const { accessToken, user } = response.data;
 
-    // setSession(accessToken);
+    setSession(accessToken);
     dispatch({
       type: 'LOGIN',
       payload: {

@@ -1,13 +1,8 @@
-// material
 import { alpha, createTheme, ThemeProvider, useTheme } from '@mui/material/styles';
 import { useMemo } from 'react';
 
-// hooks
 import useSettings from '@/hooks/useSettings';
-//
 import componentsOverride from '@/theme/overrides';
-
-// ----------------------------------------------------------------------
 
 export default function ThemePrimaryColor({ children }: any) {
   const defaultTheme = useTheme();

@@ -1,4 +1,4 @@
-import { deDE, enUS, frFR } from '@mui/material/locale';
+import { enUS, zhCN } from '@mui/material/locale';
 import { useTranslation } from 'react-i18next';
 
 const LANGS = [
@@ -6,20 +6,13 @@ const LANGS = [
     label: 'English',
     value: 'en',
     systemValue: enUS,
-    icon: '/static/icons/ic_flag_en.svg'
+    icon: '/static/icons/ic_flag_us.svg'
   },
   {
-    label: 'German',
-    value: 'de',
-    systemValue: deDE,
-
-    icon: '/static/icons/ic_flag_de.svg'
-  },
-  {
-    label: 'French',
-    value: 'fr',
-    systemValue: frFR,
-    icon: '/static/icons/ic_flag_fr.svg'
+    label: 'CHINA',
+    value: 'zh',
+    systemValue: zhCN,
+    icon: '/static/icons/ic_flag_cn.svg'
   }
 ];
 

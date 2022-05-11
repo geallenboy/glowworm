@@ -12,7 +12,7 @@ const Separator: React.ReactNode = (
 type LinkItemType = {
   href: string;
   name: string;
-  icon: string;
+  icon: any;
 };
 
 function LinkItem({ link }: { link: LinkItemType }) {

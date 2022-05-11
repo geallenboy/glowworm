@@ -6,12 +6,9 @@ import blogReducer from './slices/blog';
 import calendarReducer from './slices/calendar';
 import chatReducer from './slices/chat';
 import kanbanReducer from './slices/kanban';
-// slices
 import mailReducer from './slices/mail';
 import productReducer from './slices/product';
 import userReducer from './slices/user';
-
-// ----------------------------------------------------------------------
 
 const rootPersistConfig = {
   key: 'root',
