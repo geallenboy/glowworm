@@ -58,18 +58,18 @@ export default function Login() {
   };
 
   return (
-    <RootStyle title="Login | Minimal-UI">
+    <RootStyle title="登录 | 后台管理UI">
       <AuthLayout>
-        Don’t have an account? &nbsp;
+        没有账号? &nbsp;
         <Link underline="none" variant="subtitle2" component={RouterLink} to={PATH_AUTH.register}>
-          Get started
+          开始
         </Link>
       </AuthLayout>
 
       <MHidden width="mdDown">
         <SectionStyle>
           <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
-            Hi, Welcome Back
+            嗨, 欢迎回来
           </Typography>
           <img src="/static/illustrations/illustration_login.png" alt="login" />
         </SectionStyle>
@@ -80,9 +80,9 @@ export default function Login() {
           <Stack direction="row" alignItems="center" sx={{ mb: 5 }}>
             <Box sx={{ flexGrow: 1 }}>
               <Typography variant="h4" gutterBottom>
-                Sign in to Minimal
+                登录到后台管理
               </Typography>
-              <Typography sx={{ color: 'text.secondary' }}>Enter your details below.</Typography>
+              <Typography sx={{ color: 'text.secondary' }}>在下面输入您的详细信息.</Typography>
             </Box>
 
             <Tooltip title={capitalCase(method)}>
@@ -97,8 +97,7 @@ export default function Login() {
           {method === 'firebase' && <AuthFirebaseSocials />}
 
           <Alert severity="info" sx={{ mb: 3 }}>
-            Use email : <strong>demo@minimals.cc</strong> / password :
-            <strong>&nbsp;demo1234</strong>
+            邮箱 : <strong>demo@minimals.cc</strong> / 密码 :<strong>&nbsp;demo1234</strong>
           </Alert>
 
           {method !== 'auth0' ? (
@@ -111,15 +110,15 @@ export default function Login() {
               variant="contained"
               onClick={handleLoginAuth0}
             >
-              Login
+              登录
             </Button>
           )}
 
           <MHidden width="smUp">
             <Typography variant="body2" align="center" sx={{ mt: 3 }}>
-              Don’t have an account?&nbsp;
+              没有账号?&nbsp;
               <Link variant="subtitle2" component={RouterLink} to={PATH_AUTH.register}>
-                Get started
+                开始
               </Link>
             </Typography>
           </MHidden>

@@ -24,8 +24,6 @@ import useAuth from '@/hooks/useAuth';
 import useIsMountedRef from '@/hooks/useIsMountedRef';
 import { PATH_AUTH } from '@/routes/paths';
 
-// ----------------------------------------------------------------------
-
 export default function LoginForm() {
   const { login } = useAuth();
   const isMountedRef = useIsMountedRef();
@@ -33,8 +31,8 @@ export default function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
 
   const LoginSchema = Yup.object().shape({
-    email: Yup.string().email('Email must be a valid email address').required('Email is required'),
-    password: Yup.string().required('Password is required')
+    email: Yup.string().email('请输入有效的电子邮件').required('必须输入邮箱'),
+    password: Yup.string().required('必须输入密码')
   });
 
   const formik = useFormik({
@@ -47,7 +45,7 @@ export default function LoginForm() {
     onSubmit: async (values, { setErrors, setSubmitting, resetForm }) => {
       try {
         await login(values.email, values.password);
-        enqueueSnackbar('Login success', {
+        enqueueSnackbar('登录成功', {
           variant: 'success',
           action: (key) => (
             <MIconButton size="small" onClick={() => closeSnackbar(key)}>
@@ -58,7 +56,7 @@ export default function LoginForm() {
         if (isMountedRef.current) {
           setSubmitting(false);
         }
-      } catch (error) {
+      } catch (error: any) {
         console.error(error);
         resetForm();
         if (isMountedRef.current) {
@@ -85,7 +83,7 @@ export default function LoginForm() {
             fullWidth
             autoComplete="username"
             type="email"
-            label="Email address"
+            label="邮箱地址"
             {...getFieldProps('email')}
             error={Boolean(touched.email && errors.email)}
             helperText={touched.email && errors.email}
@@ -95,7 +93,7 @@ export default function LoginForm() {
             fullWidth
             autoComplete="current-password"
             type={showPassword ? 'text' : 'password'}
-            label="Password"
+            label="密码"
             {...getFieldProps('password')}
             InputProps={{
               endAdornment: (
@@ -114,11 +112,11 @@ export default function LoginForm() {
         <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ my: 2 }}>
           <FormControlLabel
             control={<Checkbox {...getFieldProps('remember')} checked={values.remember} />}
-            label="Remember me"
+            label="读我"
           />
 
           <Link component={RouterLink} variant="subtitle2" to={PATH_AUTH.resetPassword}>
-            Forgot password?
+            忘记密码
           </Link>
         </Stack>
 
@@ -129,7 +127,7 @@ export default function LoginForm() {
           variant="contained"
           loading={isSubmitting}
         >
-          Login
+          登录
         </LoadingButton>
       </Form>
     </FormikProvider>
