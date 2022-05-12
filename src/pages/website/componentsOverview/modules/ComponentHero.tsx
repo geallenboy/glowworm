@@ -4,9 +4,8 @@ import { Box, Container, Link, Stack, Typography } from '@mui/material';
 import { styled, useTheme } from '@mui/styles';
 import { motion } from 'framer-motion';
 
+import { MHidden } from '@/components/@material-extend';
 import { varFadeInDown, varFadeInUp, varWrapEnter } from '@/components/animate';
-
-import { MHidden } from '../../@material-extend';
 
 const RootStyle = styled('div')(({ theme }: any) => ({
   padding: theme.spacing(10, 0),
@@ -30,7 +29,7 @@ export default function ComponentHero() {
           <div>
             <motion.div variants={varFadeInUp}>
               <Typography variant="h3" component="h1">
-                Components
+                组件
               </Typography>
             </motion.div>
 
@@ -42,23 +41,19 @@ export default function ComponentHero() {
                   color: isLight ? 'text.secondary' : 'common.white'
                 }}
               >
-                With huge resource pack making deployment
-                <br /> easy and expanding more effectively
+                利用巨大的资源包进行部署简单且更有效地扩展
               </Typography>
             </motion.div>
 
             <motion.div variants={varFadeInUp}>
-              <Link
-                href="https://www.sketch.com/s/0fa4699d-a3ff-4cd5-a3a7-d851eb7e17f0"
-                target="_blank"
-              >
+              <Link href="https://www.sketch.com" target="_blank">
                 <Stack
                   direction="row"
                   spacing={1}
                   alignItems="center"
                   sx={{ display: 'inline-flex' }}
                 >
-                  <Typography variant="button"> Fast preview</Typography>
+                  <Typography variant="button">快速预览</Typography>
                   <Icon icon={roundArrowRightAlt} width={20} height={20} />
                 </Stack>
               </Link>

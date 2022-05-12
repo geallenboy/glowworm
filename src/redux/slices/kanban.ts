@@ -3,8 +3,6 @@ import { omit } from 'lodash';
 
 import axios from '@/utils/axios';
 
-// ----------------------------------------------------------------------
-
 function objFromArray(array: any[], key = 'id') {
   return array.reduce((accumulator, current) => {
     accumulator[current[key]] = current;
@@ -26,18 +24,13 @@ const slice = createSlice({
   name: 'kanban',
   initialState,
   reducers: {
-    // START LOADING
     startLoading(state) {
       state.isLoading = true;
     },
-
-    // HAS ERROR
     hasError(state, action) {
       state.isLoading = false;
       state.error = action.payload;
     },
-
-    // GET BOARD
     getBoardSuccess(state, action) {
       state.isLoading = false;
       const board = action.payload;
@@ -50,8 +43,6 @@ const slice = createSlice({
         columnOrder
       };
     },
-
-    // CREATE NEW COLUMN
     createColumnSuccess(state: any, action) {
       const newColumn = action.payload;
       state.isLoading = false;
@@ -86,16 +77,12 @@ const slice = createSlice({
       );
       state.board.cards = omit(state.board.cards, [cardId]);
     },
-
-    // UPDATE COLUMN
     updateColumnSuccess(state: any, action) {
       const column = action.payload;
 
       state.isLoading = false;
       state.board.columns[column.id] = column;
     },
-
-    // DELETE COLUMN
     deleteColumnSuccess(state: any, action) {
       const { columnId } = action.payload;
       const deletedColumn = state.board.columns[columnId];
@@ -108,12 +95,9 @@ const slice = createSlice({
   }
 });
 
-// Reducer
 export default slice.reducer;
 
 export const { actions } = slice;
-
-// ----------------------------------------------------------------------
 
 export function getBoard() {
   return async (dispatch: any) => {
@@ -127,8 +111,6 @@ export function getBoard() {
   };
 }
 
-// ----------------------------------------------------------------------
-
 export function createColumn(newColumn: any) {
   return async (dispatch: any) => {
     dispatch(slice.actions.startLoading());
@@ -140,8 +122,6 @@ export function createColumn(newColumn: any) {
     }
   };
 }
-
-// ----------------------------------------------------------------------
 
 export function updateColumn(columnId: any, updateColumn: any) {
   return async (dispatch: any) => {
@@ -158,8 +138,6 @@ export function updateColumn(columnId: any, updateColumn: any) {
   };
 }
 
-// ----------------------------------------------------------------------
-
 export function deleteColumn(columnId: any) {
   return async (dispatch: any) => {
     dispatch(slice.actions.startLoading());
@@ -172,15 +150,11 @@ export function deleteColumn(columnId: any) {
   };
 }
 
-// ----------------------------------------------------------------------
-
 export function persistColumn(newColumnOrder: any) {
   return (dispatch: any) => {
     dispatch(slice.actions.persistColumn(newColumnOrder));
   };
 }
-
-// ----------------------------------------------------------------------
 
 export function persistCard(columns: any) {
   return (dispatch: any) => {
@@ -188,15 +162,11 @@ export function persistCard(columns: any) {
   };
 }
 
-// ----------------------------------------------------------------------
-
 export function addTask(task: any) {
   return (dispatch: any) => {
     dispatch(slice.actions.addTask(task));
   };
 }
-
-// ----------------------------------------------------------------------
 
 export function deleteTask(taskId: any) {
   return (dispatch: any) => {

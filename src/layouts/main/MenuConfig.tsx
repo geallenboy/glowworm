@@ -39,7 +39,7 @@ const menuConfig = [
         subheader: '认证',
         items: [
           { title: '登陆', path: PATH_AUTH.loginUnprotected },
-          { title: '组成', path: PATH_AUTH.registerUnprotected },
+          { title: '注册', path: PATH_AUTH.registerUnprotected },
           { title: '重置密码', path: PATH_AUTH.resetPassword },
           { title: '验证码', path: PATH_AUTH.verify }
         ]

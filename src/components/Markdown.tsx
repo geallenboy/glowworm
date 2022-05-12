@@ -1,5 +1,5 @@
 import { Divider, Link, Typography } from '@mui/material';
-import { styled } from '@mui/styles';
+import { styled } from '@mui/material/styles';
 import ReactMarkdown from 'react-markdown';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeRaw from 'rehype-raw';
@@ -8,7 +8,6 @@ const MarkdownWrapperStyle = styled('div')(({ theme }: any) => {
   const isLight = theme.palette.mode === 'light';
 
   return {
-    // List
     '& ul, & ol': {
       ...theme.typography.body1,
       paddingLeft: theme.spacing(5),
@@ -16,8 +15,6 @@ const MarkdownWrapperStyle = styled('div')(({ theme }: any) => {
         lineHeight: 2
       }
     },
-
-    // Blockquote
     '& blockquote': {
       lineHeight: 1.5,
       fontSize: '1.5em',
@@ -48,7 +45,6 @@ const MarkdownWrapperStyle = styled('div')(({ theme }: any) => {
       }
     },
 
-    // Code Block
     '& pre, & pre > code': {
       fontSize: 16,
       overflowX: 'auto',
@@ -79,7 +75,6 @@ const components = {
   h6: ({ ...props }) => <Typography variant="h6" {...props} />,
   hr: ({ ...props }) => <Divider sx={{ my: 3 }} {...props} />,
   a: ({ ...props }) => {
-    /* eslint-disable react/prop-types */
     const { href } = props;
     return !href.includes('http') ? (
       <Link {...props} />
@@ -88,8 +83,6 @@ const components = {
     );
   }
 };
-
-// ----------------------------------------------------------------------
 
 export default function Markdown({ ...other }: any) {
   return (

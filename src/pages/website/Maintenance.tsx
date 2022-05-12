@@ -15,19 +15,17 @@ const RootStyle = styled(Page)(({ theme }: any) => ({
 
 export default function Maintenance() {
   return (
-    <RootStyle title="Maintenance | Minimal-UI">
+    <RootStyle title="维护">
       <Container sx={{ textAlign: 'center' }}>
         <Typography variant="h3" paragraph>
-          Website currently under maintenance
+          网站目前正在维护中
         </Typography>
-        <Typography sx={{ color: 'text.secondary' }}>
-          We are currently working hard on this page!
-        </Typography>
+        <Typography sx={{ color: 'text.secondary' }}>我们正在努力修复!</Typography>
 
         <MaintenanceIllustration sx={{ my: 10, height: 240 }} />
 
         <Button variant="contained" size="large" component={RouterLink} to="/">
-          Go to Home
+          首页
         </Button>
       </Container>
     </RootStyle>

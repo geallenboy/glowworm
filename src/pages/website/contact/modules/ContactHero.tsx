@@ -6,24 +6,9 @@ import { TextAnimate, varFadeIn, varFadeInRight, varWrapEnter } from '@/componen
 
 const CONTACTS = [
   {
-    country: 'Bali',
-    address: '508 Bridle Avenue Newnan, GA 30263',
-    phoneNumber: '(239) 555-0108'
-  },
-  {
-    country: 'London',
-    address: '508 Bridle Avenue Newnan, GA 30263',
-    phoneNumber: '(319) 555-0115'
-  },
-  {
-    country: 'Prague',
-    address: '508 Bridle Avenue Newnan, GA 30263',
-    phoneNumber: '(252) 555-0126'
-  },
-  {
-    country: 'Moscow',
-    address: '508 Bridle Avenue Newnan, GA 30263',
-    phoneNumber: '(307) 555-0133'
+    country: 'garron',
+    address: '地球村188号',
+    phoneNumber: '88888888'
   }
 ];
 
@@ -52,17 +37,17 @@ export default function ContactHero() {
     <RootStyle initial="initial" animate="animate" variants={varWrapEnter}>
       <Container maxWidth="lg" sx={{ position: 'relative', height: '100%' }}>
         <ContentStyle>
-          <TextAnimate text="Where" sx={{ color: 'primary.main' }} variants={varFadeInRight} />
+          <TextAnimate text="去" sx={{ color: 'primary.main' }} variants={varFadeInRight} />
           <br />
           <Box sx={{ display: 'inline-flex', color: 'common.white' }}>
-            <TextAnimate text="to" sx={{ mr: 2 }} />
-            <TextAnimate text="find" sx={{ mr: 2 }} />
-            <TextAnimate text="us?" />
+            <TextAnimate text="哪里" sx={{ mr: 2 }} />
+            <TextAnimate text="找" sx={{ mr: 2 }} />
+            <TextAnimate text="我们?" />
           </Box>
 
-          <Grid container spacing={5} sx={{ mt: 5, color: 'common.white' }}>
+          <Grid container sx={{ mt: 5, color: 'common.white' }}>
             {CONTACTS.map((contact) => (
-              <Grid key={contact.country} item xs={12} sm={6} md={3} lg={2} sx={{ pr: { md: 5 } }}>
+              <Grid key={contact.country} item xs={12} sm={6} md={3} lg={2} sx={{ pr: { md: 1 } }}>
                 <motion.div variants={varFadeIn}>
                   <Typography variant="h6" paragraph>
                     {contact.country}

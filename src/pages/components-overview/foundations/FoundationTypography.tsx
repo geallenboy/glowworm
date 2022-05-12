@@ -50,8 +50,6 @@ const RowContentStyle = styled('div')({
   maxWidth: 720
 });
 
-// ----------------------------------------------------------------------
-
 function remToPx(value: any) {
   return Math.round(parseFloat(value) * 16);
 }

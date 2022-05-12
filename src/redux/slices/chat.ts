@@ -23,34 +23,25 @@ const slice = createSlice({
   name: 'chat',
   initialState,
   reducers: {
-    // START LOADING
     startLoading(state) {
       state.isLoading = true;
     },
-
-    // HAS ERROR
     hasError(state, action) {
       state.isLoading = false;
       state.error = action.payload;
     },
-
-    // GET CONTACT SSUCCESS
     getContactsSuccess(state: any, action) {
       const contacts = action.payload;
 
       state.contacts.byId = objFromArray(contacts);
       state.contacts.allIds = Object.keys(state.contacts.byId);
     },
-
-    // GET CONVERSATIONS
     getConversationsSuccess(state: any, action) {
       const conversations = action.payload;
 
       state.conversations.byId = objFromArray(conversations);
       state.conversations.allIds = Object.keys(state.conversations.byId);
     },
-
-    // GET CONVERSATION
     getConversationSuccess(state: any, action) {
       const conversation = action.payload;
 
@@ -64,8 +55,6 @@ const slice = createSlice({
         state.activeConversationId = null;
       }
     },
-
-    // ON SEND MESSAGE
     onSendMessage(state: any, action) {
       const conversation = action.payload;
       const { conversationId, messageId, message, contentType, attachments, createdAt, senderId } =
@@ -90,14 +79,10 @@ const slice = createSlice({
         conversation.unreadCount = 0;
       }
     },
-
-    // GET PARTICIPANTS
     getParticipantsSuccess(state, action) {
       const participants = action.payload;
       state.participants = participants;
     },
-
-    // RESET ACTIVE CONVERSATION
     resetActiveConversation(state) {
       state.activeConversationId = null;
     },
@@ -108,14 +93,8 @@ const slice = createSlice({
     }
   }
 });
-
-// Reducer
 export default slice.reducer;
-
-// Actions
 export const { addRecipients, onSendMessage, resetActiveConversation } = slice.actions;
-
-// ----------------------------------------------------------------------
 
 export function getContacts() {
   return async (dispatch: any) => {
@@ -129,8 +108,6 @@ export function getContacts() {
   };
 }
 
-// ----------------------------------------------------------------------
-
 export function getConversations() {
   return async (dispatch: any) => {
     dispatch(slice.actions.startLoading());
@@ -142,8 +119,6 @@ export function getConversations() {
     }
   };
 }
-
-// ----------------------------------------------------------------------
 
 export function getConversation(conversationKey: any) {
   return async (dispatch: any) => {
@@ -159,8 +134,6 @@ export function getConversation(conversationKey: any) {
   };
 }
 
-// ----------------------------------------------------------------------
-
 export function markConversationAsRead(conversationId: any) {
   return async (dispatch: any) => {
     dispatch(slice.actions.startLoading());
@@ -174,8 +147,6 @@ export function markConversationAsRead(conversationId: any) {
     }
   };
 }
-
-// ----------------------------------------------------------------------
 
 export function getParticipants(conversationKey: any) {
   return async (dispatch: any) => {

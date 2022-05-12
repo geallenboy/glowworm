@@ -1,5 +1,3 @@
-// ----------------------------------------------------------------------
-
 export const title = [
   'Apply These 7 Secret Techniques To Improve Event',
   'Believing These 7 Myths About Event Keeps You From Growing',

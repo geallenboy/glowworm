@@ -1,5 +1,3 @@
-// ----------------------------------------------------------------------
-
 export const email = [
   'nannie_abernathy70@yahoo.com',
   'ashlynn_ohara62@gmail.com',

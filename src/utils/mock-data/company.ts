@@ -1,5 +1,3 @@
-// ----------------------------------------------------------------------
-
 export const company = [
   'Lueilwitz and Sons',
   'Gleichner, Mueller and Tromp',

@@ -30,8 +30,6 @@ const RootStyle = styled(Page)(({ theme }: any) => ({
   paddingBottom: theme.spacing(15)
 }));
 
-// ----------------------------------------------------------------------
-
 export default function ButtonsComponent() {
   const [value, setValue] = useState('1');
 

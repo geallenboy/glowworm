@@ -81,8 +81,6 @@ const RootStyle = styled(Page)(({ theme }: any) => ({
   paddingBottom: theme.spacing(15)
 }));
 
-// ----------------------------------------------------------------------
-
 export default function TimelineComponent() {
   const lastItem: any = last(TIMELINES).key;
   const reduceTimeLine = slice(TIMELINES, TIMELINES.length - 3);

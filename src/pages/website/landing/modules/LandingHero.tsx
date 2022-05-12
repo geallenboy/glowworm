@@ -99,8 +99,6 @@ export default function LandingHero() {
               spacing={1.5}
               justifyContent={{ xs: 'center', md: 'flex-start' }}
             >
-              <motion.img variants={varFadeInRight} src="/static/home/ic_sketch.svg" />
-              <motion.img variants={varFadeInRight} src="/static/home/ic_figma.svg" />
               <motion.img variants={varFadeInRight} src="/static/home/ic_material.svg" />
               <motion.img variants={varFadeInRight} src="/static/home/ic_react.svg" />
               <motion.img variants={varFadeInRight} src="/static/home/ic_js.svg" />

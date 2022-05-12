@@ -31,8 +31,6 @@ const RootStyle = styled(Page)(({ theme }: any) => ({
   paddingBottom: theme.spacing(15)
 }));
 
-// ----------------------------------------------------------------------
-
 export default function AccordionComponent() {
   const [controlled, setControlled] = useState(false);
 

@@ -8,7 +8,7 @@ import { MotionInView, varFadeInRight, varFadeInUp } from '@/components/animate'
 import { fPercent } from '@/utils/formatNumber';
 import mockData from '@/utils/mock-data';
 
-const LABEL = ['Development', 'Design', 'Marketing'];
+const LABEL = ['开发', '设计', '营销'];
 
 const MOCK_SKILLS = [...Array(3)].map((_, index) => ({
   label: LABEL[index],
@@ -85,7 +85,7 @@ export default function AboutWhat() {
           <Grid item xs={12} md={6} lg={5}>
             <MotionInView variants={varFadeInRight}>
               <Typography variant="h2" sx={{ mb: 3 }}>
-                What is minimal?
+                能做什么?
               </Typography>
             </MotionInView>
 
@@ -96,10 +96,7 @@ export default function AboutWhat() {
                     theme.palette.mode === 'light' ? 'text.secondary' : 'common.white'
                 }}
               >
-                Our theme is the most advanced and user-friendly theme you will find on the market,
-                we have documentation and video to help set your site really easily, pre-installed
-                demos you can import in one click and everything from the theme options to page
-                content can be edited from the front-end. This is the theme you are looking for.
+                简单快速搭建应用程序
               </Typography>
             </MotionInView>
 
@@ -118,7 +115,7 @@ export default function AboutWhat() {
                 size="large"
                 endIcon={<Icon icon={roundArrowRightAlt} width={24} height={24} />}
               >
-                Check out our work
+                开始工作
               </Button>
             </MotionInView>
           </Grid>

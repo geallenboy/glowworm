@@ -19,12 +19,12 @@ export default function VerifyCodeForm() {
   const { enqueueSnackbar } = useSnackbar();
 
   const VerifyCodeSchema = Yup.object().shape({
-    code1: Yup.number().required('Code is required'),
-    code2: Yup.number().required('Code is required'),
-    code3: Yup.number().required('Code is required'),
-    code4: Yup.number().required('Code is required'),
-    code5: Yup.number().required('Code is required'),
-    code6: Yup.number().required('Code is required')
+    code1: Yup.number().required('验证码是必须的'),
+    code2: Yup.number().required('验证码是必须的'),
+    code3: Yup.number().required('验证码是必须的'),
+    code4: Yup.number().required('验证码是必须的'),
+    code5: Yup.number().required('验证码是必须的'),
+    code6: Yup.number().required('验证码是必须的')
   });
 
   const formik = useFormik({
@@ -39,7 +39,7 @@ export default function VerifyCodeForm() {
     validationSchema: VerifyCodeSchema,
     onSubmit: async () => {
       await fakeRequest(500);
-      enqueueSnackbar('Verify success', { variant: 'success' });
+      enqueueSnackbar('验证码成功', { variant: 'success' });
       navigate(PATH_DASHBOARD.root);
     }
   });
@@ -72,7 +72,7 @@ export default function VerifyCodeForm() {
         </Stack>
 
         <FormHelperText error={!isValid} style={{ textAlign: 'right' }}>
-          {!isValid && 'Code is required'}
+          {!isValid && '验证码是必须的'}
         </FormHelperText>
 
         <LoadingButton
@@ -83,7 +83,7 @@ export default function VerifyCodeForm() {
           loading={isSubmitting}
           sx={{ mt: 3 }}
         >
-          Verify
+          验证
         </LoadingButton>
       </Form>
     </FormikProvider>

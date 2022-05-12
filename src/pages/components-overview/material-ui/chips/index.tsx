@@ -8,8 +8,6 @@ import { PATH_PAGE } from '@/routes/paths';
 import ChipFilled from './ChipFilled';
 import ChipOutlined from './ChipOutlined';
 
-// ----------------------------------------------------------------------
-
 const RootStyle = styled(Page)(({ theme }: any) => ({
   paddingTop: theme.spacing(11),
   paddingBottom: theme.spacing(15)

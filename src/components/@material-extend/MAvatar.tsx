@@ -1,7 +1,6 @@
 import { Avatar, AvatarProps } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { forwardRef } from 'react';
-// eslint-disable-next-line react/display-name
 const MAvatar = forwardRef(
   ({ color = 'default', sx, children, ...other }: AvatarProps, ref: any) => {
     const theme: any = useTheme();

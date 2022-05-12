@@ -3,7 +3,7 @@ import { styled } from '@mui/styles';
 
 import Page from '@/components/Page';
 
-import { AboutHero, AboutTeam, AboutTestimonials, AboutVision, AboutWhat } from './modules';
+import { AboutHero, AboutVision, AboutWhat } from './modules';
 
 const RootStyle = styled(Page)(({ theme }: any) => ({
   paddingTop: theme.spacing(8),
@@ -14,13 +14,11 @@ const RootStyle = styled(Page)(({ theme }: any) => ({
 
 export default function About() {
   return (
-    <RootStyle title="About us | Minimal-UI">
+    <RootStyle title="关于我们">
       <AboutHero />
       <AboutWhat />
       <AboutVision />
       <Divider orientation="vertical" sx={{ my: 10, mx: 'auto', width: 2, height: 40 }} />
-      <AboutTeam />
-      <AboutTestimonials />
     </RootStyle>
   );
 }

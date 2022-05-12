@@ -39,8 +39,6 @@ const RootStyle = styled(Page)(({ theme }: any) => ({
   paddingBottom: theme.spacing(15)
 }));
 
-// ----------------------------------------------------------------------
-
 export default function TabsComponent() {
   const [value, setValue] = useState('1');
   const [valueScrollable, setValueScrollable] = useState('1');

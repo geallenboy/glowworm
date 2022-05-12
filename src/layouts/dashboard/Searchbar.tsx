@@ -1,14 +1,10 @@
 import searchFill from '@iconify/icons-eva/search-fill';
 import { Icon } from '@iconify/react';
 import { Box, Button, ClickAwayListener, Input, InputAdornment, Slide } from '@mui/material';
-// material
 import { alpha, styled } from '@mui/material/styles';
 import { useState } from 'react';
 
-// components
 import { MIconButton } from '@/components/@material-extend';
-
-// ----------------------------------------------------------------------
 
 const APPBAR_MOBILE = 64;
 const APPBAR_DESKTOP = 92;
@@ -32,8 +28,6 @@ const SearchbarStyle = styled('div')(({ theme }: any) => ({
     padding: theme.spacing(0, 5)
   }
 }));
-
-// ----------------------------------------------------------------------
 
 export default function Searchbar() {
   const [isOpen, setOpen] = useState(false);

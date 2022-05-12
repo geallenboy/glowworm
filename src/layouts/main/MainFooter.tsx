@@ -19,25 +19,25 @@ const SOCIALS = [
 ];
 const LINKS = [
   {
-    headline: 'Minimal',
+    headline: 'minimalistapp',
     children: [
-      { name: 'About us', href: PATH_PAGE.about },
-      { name: 'Contact us', href: PATH_PAGE.contact },
-      { name: 'FAQs', href: PATH_PAGE.faqs }
+      { name: '关于我们', href: PATH_PAGE.about },
+      { name: '联系我们', href: PATH_PAGE.contact },
+      { name: '常见问题', href: PATH_PAGE.faqs }
     ]
   },
   {
-    headline: 'Legal',
+    headline: '合法的',
     children: [
-      { name: 'Terms and Condition', href: '#' },
-      { name: 'Privacy Policy', href: '#' }
+      { name: '条款和条件', href: '#' },
+      { name: '隐私政策', href: '#' }
     ]
   },
   {
-    headline: 'Contact',
+    headline: '联系',
     children: [
-      { name: 'support@minimals.cc', href: '#' },
-      { name: 'Los Angeles, 359  Hidden Valley Road', href: '#' }
+      { name: '151****8817@163.com', href: '#' },
+      { name: '地球村188号', href: '#' }
     ]
   }
 ];
@@ -64,8 +64,7 @@ export default function MainFooter() {
           </Grid>
           <Grid item xs={8} md={3}>
             <Typography variant="body2" sx={{ pr: { md: 5 } }}>
-              The starting point for your next project with Minimal UI Kit, built on the newest
-              version of Material-UI ©, ready to be customized to your style.
+              基于最新的Material-UI版本, 简单快速搭建应用程序.
             </Typography>
             <Stack
               spacing={1.5}
@@ -123,7 +122,7 @@ export default function MainFooter() {
             textAlign: { xs: 'center', md: 'left' }
           }}
         >
-          © 2021. All rights reserved
+          © 2022. All rights garron
         </Typography>
       </Container>
     </RootStyle>

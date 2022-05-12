@@ -1,7 +1,5 @@
 import { paramCase } from 'change-case';
 
-// ----------------------------------------------------------------------
-
 export const FOUNDATION_LIST = ['Color', 'Typography', 'Shadows', 'Grid', 'Icons'].map((item) => ({
   name: item,
   href: `/components/${paramCase(item)}`,

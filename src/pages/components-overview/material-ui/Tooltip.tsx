@@ -27,7 +27,6 @@ const style = {
   flexWrap: 'wrap',
   '& > *': { m: '8px !important' }
 };
-// ----------------------------------------------------------------------
 
 export default function TooltipsComponent() {
   return (

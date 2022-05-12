@@ -37,8 +37,6 @@ const RootStyle = styled(Page)(({ theme }: any) => ({
   paddingBottom: theme.spacing(15)
 }));
 
-// ----------------------------------------------------------------------
-
 function valuePrice(value: any) {
   return value > 0 ? `$${value}0` : value;
 }

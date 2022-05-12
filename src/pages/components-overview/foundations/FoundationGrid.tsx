@@ -46,7 +46,7 @@ export default function FoundationGrid() {
   };
 
   return (
-    <RootStyle title="Foundations: Grid | Minimal-UI">
+    <RootStyle title="Grid">
       <Box
         sx={{
           pt: 6,

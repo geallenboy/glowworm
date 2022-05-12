@@ -4,12 +4,11 @@ import { Box, Button, Container, Link, Typography } from '@mui/material';
 import { styled } from '@mui/styles';
 import { Link as RouterLink } from 'react-router-dom';
 
-import { VerifyCodeForm } from '@/components/authentication/verify-code';
 import Page from '@/components/Page';
 import LogoOnlyLayout from '@/layouts/LogoOnlyLayout';
 import { PATH_AUTH } from '@/routes/paths';
 
-// ----------------------------------------------------------------------
+import { VerifyCodeForm } from './modules';
 
 const RootStyle = styled(Page)(({ theme }: any) => ({
   display: 'flex',
@@ -18,11 +17,9 @@ const RootStyle = styled(Page)(({ theme }: any) => ({
   padding: theme.spacing(12, 0)
 }));
 
-// ----------------------------------------------------------------------
-
 export default function VerifyCode() {
   return (
-    <RootStyle title="Verify | Minimal UI">
+    <RootStyle title="验证码">
       <LogoOnlyLayout />
 
       <Container>
@@ -34,15 +31,14 @@ export default function VerifyCode() {
             startIcon={<Icon icon={arrowIosBackFill} width={20} height={20} />}
             sx={{ mb: 3 }}
           >
-            Back
+            返回
           </Button>
 
           <Typography variant="h3" paragraph>
-            Please check your email!
+            请查看您的电子邮件!
           </Typography>
           <Typography sx={{ color: 'text.secondary' }}>
-            We have emailed a 6-digit confirmation code to acb@domain, please enter the code in
-            below box to verify your email.
+            我们已通过电子邮件向acb@domain，输入下面代码框。来验证您的电子邮件。
           </Typography>
 
           <Box sx={{ mt: 5, mb: 3 }}>
@@ -50,9 +46,9 @@ export default function VerifyCode() {
           </Box>
 
           <Typography variant="body2" align="center">
-            Don’t have a code? &nbsp;
+            没有收到验证码? &nbsp;
             <Link variant="subtitle2" underline="none" onClick={() => {}}>
-              Resend code
+              重发验证码
             </Link>
           </Typography>
         </Box>

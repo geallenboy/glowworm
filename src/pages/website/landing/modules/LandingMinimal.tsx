@@ -99,12 +99,12 @@ export default function LandingMinimalHelps() {
               variant="overline"
               sx={{ mb: 2, color: 'text.secondary', textAlign: 'center' }}
             >
-              Minima
+              minimalistapp
             </Typography>
           </MotionInView>
           <MotionInView variants={varFadeInDown}>
             <Typography variant="h2" sx={{ textAlign: 'center' }}>
-              Minima如何帮助你？
+              如何帮助你？
             </Typography>
           </MotionInView>
         </Box>

@@ -8,15 +8,10 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { MIconButton } from '@/components/@material-extend';
 import BadgeStatus from '@/components/BadgeStatus';
 import MenuPopover from '@/components/MenuPopover';
-// components
 import Scrollbar from '@/components/Scrollbar';
-// hooks
 import useIsMountedRef from '@/hooks/useIsMountedRef';
-// utils
 import axios from '@/utils/axios';
 import { fToNow } from '@/utils/formatTime';
-
-// ----------------------------------------------------------------------
 
 const ITEM_HEIGHT = 64;
 const PADDING_ITEM = 2.5;

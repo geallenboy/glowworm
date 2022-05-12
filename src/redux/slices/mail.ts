@@ -20,24 +20,17 @@ const slice = createSlice({
   name: 'mail',
   initialState,
   reducers: {
-    // START LOADING
     startLoading(state) {
       state.isLoading = true;
     },
-
-    // HAS ERROR
     hasError(state, action) {
       state.isLoading = false;
       state.error = action.payload;
     },
-
-    // GET LABELS
     getLabelsSuccess(state, action) {
       state.isLoading = false;
       state.labels = action.payload;
     },
-
-    // GET MAILS
     getMailsSuccess(state: any, action) {
       const mails = action.payload;
 
@@ -45,8 +38,6 @@ const slice = createSlice({
       state.mails.byId = objFromArray(mails);
       state.mails.allIds = Object.keys(state.mails.byId);
     },
-
-    // GET MAIL
     getMailSuccess(state: any, action) {
       const mail = action.payload;
 
@@ -57,11 +48,7 @@ const slice = createSlice({
     }
   }
 });
-
-// Reducer
 export default slice.reducer;
-
-// ----------------------------------------------------------------------
 
 export function getLabels() {
   return async (dispatch: any) => {
@@ -75,8 +62,6 @@ export function getLabels() {
   };
 }
 
-// ----------------------------------------------------------------------
-
 export function getMails(params: any) {
   return async (dispatch: any) => {
     dispatch(slice.actions.startLoading());
@@ -88,8 +73,6 @@ export function getMails(params: any) {
     }
   };
 }
-
-// ----------------------------------------------------------------------
 
 export function getMail(mailId: any) {
   return async (dispatch: any) => {

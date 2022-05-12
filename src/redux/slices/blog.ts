@@ -17,45 +17,32 @@ const slice = createSlice({
   name: 'blog',
   initialState,
   reducers: {
-    // START LOADING
     startLoading(state) {
       state.isLoading = true;
     },
-
-    // HAS ERROR
     hasError(state, action) {
       state.isLoading = false;
       state.error = action.payload;
     },
-
-    // GET POSTS
     getPostsSuccess(state, action) {
       state.isLoading = false;
       state.posts = action.payload;
     },
-
-    // GET POST INFINITE
     getPostsInitial(state, action) {
       state.isLoading = false;
       state.posts = action.payload;
     },
-
     getMorePosts(state) {
       const setIndex = state.index + state.step;
       state.index = setIndex;
     },
-
     noHasMore(state) {
       state.hasMore = false;
     },
-
-    // GET POST
     getPostSuccess(state, action) {
       state.isLoading = false;
       state.post = action.payload;
     },
-
-    // GET RECENT POST
     getRecentPostsSuccess(state, action) {
       state.isLoading = false;
       state.recentPosts = action.payload;
@@ -63,13 +50,9 @@ const slice = createSlice({
   }
 });
 
-// Reducer
 export default slice.reducer;
 
-// Actions
 export const { getMorePosts } = slice.actions;
-
-// ----------------------------------------------------------------------
 
 export function getAllPosts() {
   return async (dispatch: (arg0: { payload: any; type: string }) => void) => {
@@ -82,8 +65,6 @@ export function getAllPosts() {
     }
   };
 }
-
-// ----------------------------------------------------------------------
 
 export function getPostsInitial(index: any, step: any) {
   return async (dispatch: (arg0: { payload: any; type: string }) => void) => {
@@ -106,8 +87,6 @@ export function getPostsInitial(index: any, step: any) {
   };
 }
 
-// ----------------------------------------------------------------------
-
 export function getPost(title: any) {
   return async (dispatch: (arg0: { payload: any; type: string }) => void) => {
     dispatch(slice.actions.startLoading());
@@ -122,8 +101,6 @@ export function getPost(title: any) {
     }
   };
 }
-
-// ----------------------------------------------------------------------
 
 export function getRecentPosts(title: any) {
   return async (dispatch: (arg0: { payload: any; type: string }) => void) => {

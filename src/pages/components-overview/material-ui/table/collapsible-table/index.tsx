@@ -4,8 +4,6 @@ import Scrollbar from '@/components/Scrollbar';
 
 import CollapsibleTableRow from './CollapsibleTableRow';
 
-// ----------------------------------------------------------------------
-
 function createData(name: any, calories: any, fat: any, carbs: any, protein: any, price: any) {
   return {
     name,

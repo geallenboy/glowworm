@@ -1,12 +1,13 @@
 import { alpha, Box } from '@mui/material';
-import { createStyles, makeStyles, styled } from '@mui/styles';
+import { styled } from '@mui/material/styles';
+import { createStyles, makeStyles } from '@mui/styles';
 import { motion } from 'framer-motion';
 import NProgress from 'nprogress';
 import { useEffect, useMemo } from 'react';
 
 import Logo from './Logo';
 
-const nprogressStyle: any = makeStyles((theme: any) =>
+const nprogressStyle = makeStyles((theme: any) =>
   createStyles({
     '@global': {
       '#nprogress': {

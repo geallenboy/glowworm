@@ -1,8 +1,6 @@
 import { Box } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
-// ----------------------------------------------------------------------
-
 export default function PlanPremiumIcon({ ...other }: any) {
   const theme: any = useTheme();
   const PRIMARY_MAIN = theme.palette.primary.main;

@@ -29,11 +29,11 @@ export default function AboutHero() {
     <RootStyle initial="initial" animate="animate" variants={varWrapEnter}>
       <Container maxWidth="lg" sx={{ position: 'relative', height: '100%' }}>
         <ContentStyle>
-          <TextAnimate text="Who" sx={{ color: 'primary.main' }} variants={varFadeInRight} />
+          <TextAnimate text="我们" sx={{ color: 'primary.main' }} variants={varFadeInRight} />
           <br />
           <Box sx={{ display: 'inline-flex', color: 'common.white' }}>
-            <TextAnimate text="we" sx={{ mr: 2 }} />
-            <TextAnimate text="are?" />
+            <TextAnimate text="是" sx={{ mr: 2 }} />
+            <TextAnimate text="谁?" />
           </Box>
 
           <motion.div variants={varFadeInRight}>
@@ -45,8 +45,8 @@ export default function AboutHero() {
                 fontWeight: 'fontWeightMedium'
               }}
             >
-              Let's work together and
-              <br /> make awesome site easily
+              我们携手合作 <br />
+              轻松打造一个很棒的网站
             </Typography>
           </motion.div>
         </ContentStyle>

@@ -94,7 +94,7 @@ export default function FoundationColors() {
   };
 
   return (
-    <RootStyle title="Foundations: Color | Minimal-UI">
+    <RootStyle title="颜色">
       <Box
         sx={{
           pt: 6,
@@ -108,7 +108,7 @@ export default function FoundationColors() {
             heading="Color"
             links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Color' }]}
             moreLink={[
-              'https://next.material-ui.com/customization/color',
+              'https://mui.com/zh/material-ui/customization/color/',
               'https://colors.eva.design'
             ]}
           />

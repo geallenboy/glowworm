@@ -4,10 +4,11 @@ import { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
 import { SentIcon } from '@/assets/svg';
-import { ResetPasswordForm } from '@/components/authentication/reset-password';
 import Page from '@/components/Page';
 import LogoOnlyLayout from '@/layouts/LogoOnlyLayout';
 import { PATH_AUTH } from '@/routes/paths';
+
+import { ResetPasswordForm } from './modules';
 
 const RootStyle = styled(Page)(({ theme }: any) => ({
   display: 'flex',
@@ -22,7 +23,7 @@ export default function ResetPassword() {
   const [sent, setSent] = useState(false);
 
   return (
-    <RootStyle title="Reset Password | Minimal UI">
+    <RootStyle title="重置密码">
       <LogoOnlyLayout />
 
       <Container>
@@ -30,11 +31,10 @@ export default function ResetPassword() {
           {!sent ? (
             <>
               <Typography variant="h3" paragraph>
-                Forgot your password?
+                忘记密码?
               </Typography>
               <Typography sx={{ color: 'text.secondary', mb: 5 }}>
-                Please enter the email address associated with your account and We will email you a
-                link to reset your password.
+                请输入您的帐户关联的电子邮件地址，我们将向您发送电子邮件链接以重置密码
               </Typography>
 
               <ResetPasswordForm
@@ -49,7 +49,7 @@ export default function ResetPassword() {
                 to={PATH_AUTH.login}
                 sx={{ mt: 1 }}
               >
-                Back
+                返回
               </Button>
             </>
           ) : (
@@ -57,13 +57,13 @@ export default function ResetPassword() {
               <SentIcon sx={{ mb: 5, mx: 'auto', height: 160 }} />
 
               <Typography variant="h3" gutterBottom>
-                Request sent successfully
+                发送成功
               </Typography>
               <Typography>
-                We have sent a confirmation email to &nbsp;
+                我们已向发送了确认电子邮件&nbsp;
                 <strong>{email}</strong>
                 <br />
-                Please check your email.
+                请查看您的电子邮件。
               </Typography>
 
               <Button

@@ -5,8 +5,6 @@ import ControlPanel from '../ControlPanel';
 import ContainerView from './ContainerView';
 import variantTypes from './types';
 
-// ----------------------------------------------------------------------
-
 export default function Dialog() {
   const [open, setOpen] = useState(false);
   const [selectVariant, setSelectVariant] = useState('slideInUp');

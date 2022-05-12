@@ -1,23 +1,18 @@
 export const material = `
 ~~~ js
 
-import AdbIcon from '@material-ui/icons/Adb';
-import AddIcon from '@material-ui/icons/Add';
-import AppleIcon from '@material-ui/icons/Apple';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import AirplanemodeActiveIcon from '@material-ui/icons/AirplanemodeActive';
+import {Adb,Add,Apple,AccountCircle,AirplanemodeActive} from '@mui/icons-material'
 
-// ----------------------------------------------------------------------
 
 function IconMaterial() {
   return (
     <>
-      <AdbIcon color="action" />
-      <AddIcon color="disabled" />
-      <AccountCircleIcon color="error" />
-      <AirplanemodeActiveIcon color="inherit" />
-      <AppleIcon color="primary" />
-      <AppleIcon color="secondary" />
+      <Adb color="action" />
+      <Add color="disabled" />
+      <AccountCircle color="error" />
+      <AirplanemodeActive color="inherit" />
+      <Apple color="primary" />
+      <Apple color="secondary" />
     </>
   );
 }
@@ -36,7 +31,6 @@ import alertCircleFill from '@iconify/icons-eva/alert-circle-fill';
 import colorPaletteFill from '@iconify/icons-eva/color-palette-fill';
 import arrowCircleDownFill from '@iconify/icons-eva/arrow-circle-down-fill';
 
-// ----------------------------------------------------------------------
 
 function IconIconify() {
   return (
@@ -71,7 +65,6 @@ export const local = `
 
 import  SvgIconStyle  from 'src/components/SvgIconStyle';
 
-// ----------------------------------------------------------------------
 
 function IconLocal() {
   return (

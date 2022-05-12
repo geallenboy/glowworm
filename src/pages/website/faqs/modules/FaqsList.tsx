@@ -8,8 +8,8 @@ import mockData from '@/utils/mock-data';
 const MOCK_FAQS = [...Array(8)].map((_, index) => ({
   id: mockData.id(index),
   value: `panel${index + 1}`,
-  heading: `Questions ${index + 1}`,
-  detail: mockData.text.description(index)
+  heading: `问题 ${index + 1}`,
+  detail: `问题${index + 1} 详细说明 `
 }));
 
 export default function FaqsList() {

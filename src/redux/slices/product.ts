@@ -31,35 +31,24 @@ const slice = createSlice({
   name: 'product',
   initialState,
   reducers: {
-    // START LOADING
     startLoading(state) {
       state.isLoading = true;
     },
-
-    // HAS ERROR
     hasError(state, action) {
       state.isLoading = false;
       state.error = action.payload;
     },
-
-    // GET PRODUCTS
     getProductsSuccess(state, action) {
       state.isLoading = false;
       state.products = action.payload;
     },
-
-    // GET PRODUCT
     getProductSuccess(state, action) {
       state.isLoading = false;
       state.product = action.payload;
     },
-
-    // DELETE PRODUCT
     deleteProduct(state: any, action) {
       state.products = reject(state.products, { id: action.payload });
     },
-
-    //  SORT & FILTER PRODUCTS
     sortByProducts(state, action) {
       state.sortBy = action.payload;
     },
@@ -71,8 +60,6 @@ const slice = createSlice({
       state.filters.priceRange = action.payload.priceRange;
       state.filters.rating = action.payload.rating;
     },
-
-    // CHECKOUT
     getCart(state, action) {
       const cart = action.payload;
 
@@ -187,10 +174,8 @@ const slice = createSlice({
   }
 });
 
-// Reducer
 export default slice.reducer;
 
-// Actions
 export const {
   getCart,
   addCart,
@@ -209,8 +194,6 @@ export const {
   decreaseQuantity
 } = slice.actions;
 
-// ----------------------------------------------------------------------
-
 export function getProducts() {
   return async (dispatch: any) => {
     dispatch(slice.actions.startLoading());
@@ -222,8 +205,6 @@ export function getProducts() {
     }
   };
 }
-
-// ----------------------------------------------------------------------
 
 export function getProduct(name: any) {
   return async (dispatch: any) => {

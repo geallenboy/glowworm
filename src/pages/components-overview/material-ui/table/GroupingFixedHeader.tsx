@@ -11,8 +11,6 @@ import { useState } from 'react';
 
 import Scrollbar from '@/components/Scrollbar';
 
-// ----------------------------------------------------------------------
-
 function createData(name: any, code: any, population: any, size: any) {
   const density = population / size;
   return { name, code, population, size, density };
@@ -61,8 +59,6 @@ const COLUMNS = [
     format: (value: any) => value.toFixed(2)
   }
 ];
-
-// ----------------------------------------------------------------------
 
 export default function GroupingFixedHeader() {
   const [page, setPage] = useState(0);

@@ -1,15 +1,15 @@
-import { Box, Card, Container, Link, Tooltip, Typography } from '@mui/material';
+import { Box, Card, Container, Link, Typography } from '@mui/material';
 import { styled } from '@mui/styles';
-import { capitalCase } from 'change-case';
 import { Link as RouterLink } from 'react-router-dom';
 
 import { MHidden } from '@/components/@material-extend';
-import AuthFirebaseSocials from '@/components/authentication/AuthFirebaseSocial';
-import { RegisterForm } from '@/components/authentication/register';
 import Page from '@/components/Page';
 import useAuth from '@/hooks/useAuth';
 import AuthLayout from '@/layouts/AuthLayout';
 import { PATH_AUTH } from '@/routes/paths';
+
+import AuthFirebaseSocials from '../AuthFirebaseSocial';
+import { RegisterForm } from './modules';
 
 const RootStyle = styled(Page)(({ theme }: any) => ({
   [theme.breakpoints.up('md')]: {
@@ -51,7 +51,7 @@ export default function Register() {
       <MHidden width="mdDown">
         <SectionStyle>
           <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
-            以最少的成本更有效地管理工作
+            最少的成本更有效地管理工作
           </Typography>
           <img alt="register" src="/static/illustrations/illustration_register.png" />
         </SectionStyle>
@@ -62,19 +62,9 @@ export default function Register() {
           <Box sx={{ mb: 5, display: 'flex', alignItems: 'center' }}>
             <Box sx={{ flexGrow: 1 }}>
               <Typography variant="h4" gutterBottom>
-                完全免费开始.
-              </Typography>
-              <Typography sx={{ color: 'text.secondary' }}>
-                Free forever. No credit card needed.
+                现在开始.
               </Typography>
             </Box>
-            <Tooltip title={capitalCase(method)}>
-              <Box
-                component="img"
-                src={`/static/auth/ic_${method}.png`}
-                sx={{ width: 32, height: 32 }}
-              />
-            </Tooltip>
           </Box>
 
           {method === 'firebase' && <AuthFirebaseSocials />}
@@ -82,11 +72,11 @@ export default function Register() {
           <RegisterForm />
 
           <Typography variant="body2" align="center" sx={{ color: 'text.secondary', mt: 3 }}>
-            通过注册, 我同意到 Minimal&nbsp;
+            我同意&nbsp;
             <Link underline="always" color="text.primary" href="#">
               服务条款
             </Link>
-            &nbsp;and&nbsp;
+            &nbsp;和&nbsp;
             <Link underline="always" color="text.primary" href="#">
               隐私政策
             </Link>

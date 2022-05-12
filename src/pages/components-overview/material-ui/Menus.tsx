@@ -55,8 +55,6 @@ const RootStyle = styled(Page)(({ theme }: any) => ({
   paddingBottom: theme.spacing(15)
 }));
 
-// ----------------------------------------------------------------------
-
 export default function MenusComponent() {
   const [isOpen, setOpen] = useState(null);
   const [isOpenList, setOpenList] = useState(null);

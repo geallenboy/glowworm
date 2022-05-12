@@ -7,11 +7,8 @@ import { email } from './email';
 import { firstName, fullName, lastName } from './name';
 import { age, percent, price, rating } from './number';
 import { phoneNumber } from './phoneNumber';
-//
 import { role } from './role';
 import { description, sentence, title } from './text';
-
-// ----------------------------------------------------------------------
 
 const mockData = {
   id: (index) => `e99f09a7-dd88-49d5-b1c8-1daf80c2d7b${index + 1}`,

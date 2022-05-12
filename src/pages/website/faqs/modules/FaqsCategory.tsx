@@ -4,32 +4,32 @@ import { MotionInView, varFadeIn } from '@/components/animate';
 
 const CATEGORIES = [
   {
-    label: 'Managing your account',
+    label: '管理你的账户',
     icon: '/static/faqs/ic_account.svg',
     href: '#'
   },
   {
-    label: 'Payment',
+    label: '付款',
     icon: '/static/faqs/ic_payment.svg',
     href: '#'
   },
   {
-    label: 'Delivery',
+    label: '交付',
     icon: '/static/faqs/ic_delivery.svg',
     href: '#'
   },
   {
-    label: 'Problem with the Product',
+    label: '产品的问题',
     icon: '/static/faqs/ic_package.svg',
     href: '#'
   },
   {
-    label: 'Return & Refund',
+    label: '退货和退款',
     icon: '/static/faqs/ic_refund.svg',
     href: '#'
   },
   {
-    label: 'Guarantees and assurances',
+    label: '保证和担保',
     icon: '/static/faqs/ic_assurances.svg',
     href: '#'
   }

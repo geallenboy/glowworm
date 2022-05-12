@@ -20,13 +20,10 @@ export default function RegisterForm() {
   const [showPassword, setShowPassword] = useState(false);
 
   const RegisterSchema = Yup.object().shape({
-    firstName: Yup.string()
-      .min(2, 'Too Short!')
-      .max(50, 'Too Long!')
-      .required('First name required'),
-    lastName: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Last name required'),
-    email: Yup.string().email('Email must be a valid email address').required('Email is required'),
-    password: Yup.string().required('Password is required')
+    firstName: Yup.string().min(2, '太短!').max(50, '太长!').required('需要名字'),
+    lastName: Yup.string().min(2, '太短!').max(50, '太长!').required('需要名字'),
+    email: Yup.string().email('邮件必须是有效的邮件地址').required('邮件是必需的'),
+    password: Yup.string().required('密码是必须的')
   });
 
   const formik = useFormik({
@@ -40,7 +37,7 @@ export default function RegisterForm() {
     onSubmit: async (values, { setErrors, setSubmitting }) => {
       try {
         await register(values.email, values.password, values.firstName, values.lastName);
-        enqueueSnackbar('Register success', {
+        enqueueSnackbar('注册成功', {
           variant: 'success',
           action: (key) => (
             <MIconButton size="small" onClick={() => closeSnackbar(key)}>
@@ -69,29 +66,19 @@ export default function RegisterForm() {
         <Stack spacing={3}>
           {errors.afterSubmit && <Alert severity="error">{errors.afterSubmit}</Alert>}
 
-          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-            <TextField
-              fullWidth
-              label="First name"
-              {...getFieldProps('firstName')}
-              error={Boolean(touched.firstName && errors.firstName)}
-              helperText={touched.firstName && errors.firstName}
-            />
-
-            <TextField
-              fullWidth
-              label="Last name"
-              {...getFieldProps('lastName')}
-              error={Boolean(touched.lastName && errors.lastName)}
-              helperText={touched.lastName && errors.lastName}
-            />
-          </Stack>
+          <TextField
+            fullWidth
+            label="用户名"
+            {...getFieldProps('name')}
+            error={Boolean(touched.username && errors.username)}
+            helperText={touched.username && errors.username}
+          />
 
           <TextField
             fullWidth
             autoComplete="username"
             type="email"
-            label="Email address"
+            label="邮箱 地址"
             {...getFieldProps('email')}
             error={Boolean(touched.email && errors.email)}
             helperText={touched.email && errors.email}
@@ -101,7 +88,7 @@ export default function RegisterForm() {
             fullWidth
             autoComplete="current-password"
             type={showPassword ? 'text' : 'password'}
-            label="Password"
+            label="密码"
             {...getFieldProps('password')}
             InputProps={{
               endAdornment: (
@@ -123,7 +110,7 @@ export default function RegisterForm() {
             variant="contained"
             loading={isSubmitting}
           >
-            Register
+            注册
           </LoadingButton>
         </Stack>
       </Form>

@@ -23,7 +23,7 @@ export default function Page404() {
           <Box sx={{ maxWidth: 480, margin: 'auto', textAlign: 'center' }}>
             <motion.div variants={varBounceIn}>
               <Typography variant="h3" paragraph>
-                Sorry, page not found!
+                对不起, 页面没有发现!
               </Typography>
             </motion.div>
             <Typography sx={{ color: 'text.secondary' }}>

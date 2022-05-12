@@ -18,8 +18,6 @@ import { useState } from 'react';
 
 import { Block } from '../../Block';
 
-// ----------------------------------------------------------------------
-
 const style = {
   display: 'flex',
   alignItems: 'center',

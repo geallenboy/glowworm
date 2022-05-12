@@ -23,48 +23,33 @@ const slice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    // START LOADING
     startLoading(state) {
       state.isLoading = true;
     },
-
-    // HAS ERROR
     hasError(state, action) {
       state.isLoading = false;
       state.error = action.payload;
     },
-
-    // GET PROFILE
     getProfileSuccess(state, action) {
       state.isLoading = false;
       state.myProfile = action.payload;
     },
-
-    // GET POSTS
     getPostsSuccess(state, action) {
       state.isLoading = false;
       state.posts = action.payload;
     },
-
-    // GET USERS
     getUsersSuccess(state, action) {
       state.isLoading = false;
       state.users = action.payload;
     },
-
-    // DELETE USERS
     deleteUser(state: any, action) {
       const deleteUser = filter(state.userList, (user: any) => user.id !== action.payload);
       state.userList = deleteUser;
     },
-
-    // GET FOLLOWERS
     getFollowersSuccess(state, action) {
       state.isLoading = false;
       state.followers = action.payload;
     },
-
-    // ON TOGGLE FOLLOW
     onToggleFollow(state: any, action) {
       const followerId = action.payload;
 
@@ -80,58 +65,38 @@ const slice = createSlice({
 
       state.followers = handleToggle;
     },
-
-    // GET FRIENDS
     getFriendsSuccess(state, action) {
       state.isLoading = false;
       state.friends = action.payload;
     },
-
-    // GET GALLERY
     getGallerySuccess(state, action) {
       state.isLoading = false;
       state.gallery = action.payload;
     },
-
-    // GET MANAGE USERS
     getUserListSuccess(state, action) {
       state.isLoading = false;
       state.userList = action.payload;
     },
-
-    // GET CARDS
     getCardsSuccess(state, action) {
       state.isLoading = false;
       state.cards = action.payload;
     },
-
-    // GET ADDRESS BOOK
     getAddressBookSuccess(state, action) {
       state.isLoading = false;
       state.addressBook = action.payload;
     },
-
-    // GET INVOICES
     getInvoicesSuccess(state, action) {
       state.isLoading = false;
       state.invoices = action.payload;
     },
-
-    // GET NOTIFICATIONS
     getNotificationsSuccess(state, action) {
       state.isLoading = false;
       state.notifications = action.payload;
     }
   }
 });
-
-// Reducer
 export default slice.reducer;
-
-// Actions
 export const { onToggleFollow, deleteUser } = slice.actions;
-
-// ----------------------------------------------------------------------
 
 export function getProfile() {
   return async (dispatch: any) => {
@@ -145,8 +110,6 @@ export function getProfile() {
   };
 }
 
-// ----------------------------------------------------------------------
-
 export function getPosts() {
   return async (dispatch: any) => {
     dispatch(slice.actions.startLoading());
@@ -158,8 +121,6 @@ export function getPosts() {
     }
   };
 }
-
-// ----------------------------------------------------------------------
 
 export function getFollowers() {
   return async (dispatch: any) => {
@@ -173,8 +134,6 @@ export function getFollowers() {
   };
 }
 
-// ----------------------------------------------------------------------
-
 export function getFriends() {
   return async (dispatch: any) => {
     dispatch(slice.actions.startLoading());
@@ -186,8 +145,6 @@ export function getFriends() {
     }
   };
 }
-
-// ----------------------------------------------------------------------
 
 export function getGallery() {
   return async (dispatch: any) => {
@@ -201,8 +158,6 @@ export function getGallery() {
   };
 }
 
-// ----------------------------------------------------------------------
-
 export function getUserList() {
   return async (dispatch: any) => {
     dispatch(slice.actions.startLoading());
@@ -214,8 +169,6 @@ export function getUserList() {
     }
   };
 }
-
-// ----------------------------------------------------------------------
 
 export function getCards() {
   return async (dispatch: any) => {
@@ -229,8 +182,6 @@ export function getCards() {
   };
 }
 
-// ----------------------------------------------------------------------
-
 export function getAddressBook() {
   return async (dispatch: any) => {
     dispatch(slice.actions.startLoading());
@@ -242,8 +193,6 @@ export function getAddressBook() {
     }
   };
 }
-
-// ----------------------------------------------------------------------
 
 export function getInvoices() {
   return async (dispatch: any) => {
@@ -257,8 +206,6 @@ export function getInvoices() {
   };
 }
 
-// ----------------------------------------------------------------------
-
 export function getNotifications() {
   return async (dispatch: any) => {
     dispatch(slice.actions.startLoading());
@@ -270,8 +217,6 @@ export function getNotifications() {
     }
   };
 }
-
-// ----------------------------------------------------------------------
 
 export function getUsers() {
   return async (dispatch: any) => {

@@ -3,7 +3,6 @@ import { useTheme } from '@mui/material/styles';
 import { forwardRef } from 'react';
 
 import { ButtonAnimate } from '@/components/animate';
-// eslint-disable-next-line react/display-name
 const MFab = forwardRef(({ color = 'primary', children, sx, ...other }: FabProps, ref: any) => {
   const theme: any = useTheme();
 

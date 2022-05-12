@@ -11,12 +11,12 @@ export default function ResetPasswordForm({ onSent, onGetEmail }: any) {
   const isMountedRef = useIsMountedRef();
 
   const ResetPasswordSchema = Yup.object().shape({
-    email: Yup.string().email('Email must be a valid email address').required('Email is required')
+    email: Yup.string().email('必须是有效的电子邮件').required('电子邮件是必须的')
   });
 
   const formik = useFormik({
     initialValues: {
-      email: 'demo@minimals.cc'
+      email: 'demo@163.com'
     },
     validationSchema: ResetPasswordSchema,
     onSubmit: async (values: any, { setErrors, setSubmitting }: any) => {
@@ -49,7 +49,7 @@ export default function ResetPasswordForm({ onSent, onGetEmail }: any) {
             fullWidth
             {...getFieldProps('email')}
             type="email"
-            label="Email address"
+            label="邮箱地址"
             error={Boolean(touched.email && errors.email)}
             helperText={touched.email && errors.email}
           />
@@ -61,7 +61,7 @@ export default function ResetPasswordForm({ onSent, onGetEmail }: any) {
             variant="contained"
             loading={isSubmitting}
           >
-            Reset Password
+            重置密码
           </LoadingButton>
         </Stack>
       </Form>

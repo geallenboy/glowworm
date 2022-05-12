@@ -6,7 +6,7 @@ import colorPaletteFill from '@iconify/icons-eva/color-palette-fill';
 import { Icon } from '@iconify/react';
 import { AccountCircle, Adb, Add, AirplanemodeActive, Apple } from '@mui/icons-material';
 import { Box, Container, Stack, SvgIcon } from '@mui/material';
-import { styled } from '@mui/styles';
+import { styled } from '@mui/material/styles';
 
 import CodeSnippets from '@/components/CodeSnippets';
 import HeaderBreadcrumbs from '@/components/HeaderBreadcrumbs';
@@ -16,8 +16,6 @@ import { PATH_PAGE } from '@/routes/paths';
 
 import { Block } from '../Block';
 import { iconify, local, material } from './data';
-
-// ----------------------------------------------------------------------
 
 const RootStyle = styled(Page)(({ theme }: any) => ({
   paddingTop: theme.spacing(11),
@@ -31,8 +29,6 @@ const style = {
   flexWrap: 'wrap',
   '& > *': { m: '8px !important' }
 };
-
-// ----------------------------------------------------------------------
 
 export default function FoundationIcons() {
   return (

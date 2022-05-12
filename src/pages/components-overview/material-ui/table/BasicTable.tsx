@@ -2,8 +2,6 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from
 
 import Scrollbar from '@/components/Scrollbar';
 
-// ----------------------------------------------------------------------
-
 function createData(name: String, calories: any, fat: any, carbs: any, protein: any) {
   return { name, calories, fat, carbs, protein };
 }
@@ -15,8 +13,6 @@ const BASIC_TABLE = [
   createData('Cupcake', 305, 3.7, 67, 4.3),
   createData('Gingerbread', 356, 16.0, 49, 3.9)
 ];
-
-// ----------------------------------------------------------------------
 
 export default function BasicTable() {
   return (

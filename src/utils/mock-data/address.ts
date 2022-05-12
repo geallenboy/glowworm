@@ -1,5 +1,3 @@
-// ----------------------------------------------------------------------
-
 export const fullAddress = [
   '19034 Verna Unions Apt. 164 - Honolulu, RI / 87535',
   '1147 Rohan Drive Suite 819 - Burlington, VT / 82021',

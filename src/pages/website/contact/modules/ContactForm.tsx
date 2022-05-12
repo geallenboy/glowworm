@@ -7,32 +7,33 @@ export default function ContactForm() {
     <Stack spacing={5}>
       <MotionInView variants={varFadeInUp}>
         <Typography variant="h3">
-          Feel free to contact us. <br />
-          We'll be glad to hear from you, buddy.
+          请随时与我们联系
+          <br />
+          我们很高兴听到你的消息 朋友.
         </Typography>
       </MotionInView>
 
       <Stack spacing={3}>
         <MotionInView variants={varFadeInUp}>
-          <TextField fullWidth label="Name" />
+          <TextField fullWidth label="姓名" />
         </MotionInView>
 
         <MotionInView variants={varFadeInUp}>
-          <TextField fullWidth label="Email" />
+          <TextField fullWidth label="邮箱" />
         </MotionInView>
 
         <MotionInView variants={varFadeInUp}>
-          <TextField fullWidth label="Subject" />
+          <TextField fullWidth label="工作" />
         </MotionInView>
 
         <MotionInView variants={varFadeInUp}>
-          <TextField fullWidth label="Enter your message here." multiline rows={4} />
+          <TextField fullWidth label="请在这里输入您的信息." multiline rows={4} />
         </MotionInView>
       </Stack>
 
       <MotionInView variants={varFadeInUp}>
         <Button size="large" variant="contained">
-          Submit Now
+          提交
         </Button>
       </MotionInView>
     </Stack>

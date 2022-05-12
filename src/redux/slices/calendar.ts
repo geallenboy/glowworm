@@ -16,31 +16,22 @@ const slice = createSlice({
   name: 'calendar',
   initialState,
   reducers: {
-    // START LOADING
     startLoading(state) {
       state.isLoading = true;
     },
-
-    // HAS ERROR
     hasError(state, action) {
       state.isLoading = false;
       state.error = action.payload;
     },
-
-    // GET EVENTS
     getEventsSuccess(state, action) {
       state.isLoading = false;
       state.events = action.payload;
     },
-
-    // CREATE EVENT
     createEventSuccess(state: any, action) {
       const newEvent = action.payload;
       state.isLoading = false;
       state.events = [...state.events, newEvent];
     },
-
-    // UPDATE EVENT
     updateEventSuccess(state: any, action) {
       const event = action.payload;
       const updateEvent = map(state.events, (_event) => {
@@ -53,35 +44,26 @@ const slice = createSlice({
       state.isLoading = false;
       state.events = updateEvent;
     },
-
-    // DELETE EVENT
     deleteEventSuccess(state: any, action) {
       const { eventId } = action.payload;
       const deleteEvent = filter(state.events, (user: any) => user.id !== eventId);
       state.isLoading = false;
       state.events = deleteEvent;
     },
-
-    // SELECT EVENT
     selectEvent(state, action) {
       const eventId = action.payload;
       state.isOpenModal = true;
       state.selectedEventId = eventId;
     },
-
-    // SELECT RANGE
     selectRange(state: any, action) {
       const { start, end } = action.payload;
       state.isOpenModal = true;
       state.selectedRange = { start, end };
     },
-
-    // OPEN MODAL
     openModal(state) {
       state.isOpenModal = true;
     },
 
-    // CLOSE MODAL
     closeModal(state) {
       state.isOpenModal = false;
       state.selectedEventId = null;
@@ -90,10 +72,8 @@ const slice = createSlice({
   }
 });
 
-// Reducer
 export default slice.reducer;
 
-// Actions
 export const { openModal, closeModal, selectEvent } = slice.actions;
 export function getEvents() {
   return async (dispatch: any) => {
@@ -107,8 +87,6 @@ export function getEvents() {
   };
 }
 
-// ----------------------------------------------------------------------
-
 export function createEvent(newEvent: any) {
   return async (dispatch: any) => {
     dispatch(slice.actions.startLoading());
@@ -120,8 +98,6 @@ export function createEvent(newEvent: any) {
     }
   };
 }
-
-// ----------------------------------------------------------------------
 
 export function updateEvent(eventId: any, updateEvent: any) {
   return async (dispatch: any) => {
@@ -138,8 +114,6 @@ export function updateEvent(eventId: any, updateEvent: any) {
   };
 }
 
-// ----------------------------------------------------------------------
-
 export function deleteEvent(eventId: any) {
   return async (dispatch: any) => {
     dispatch(slice.actions.startLoading());
@@ -151,8 +125,6 @@ export function deleteEvent(eventId: any) {
     }
   };
 }
-
-// ----------------------------------------------------------------------
 
 export function selectRange(start: { getTime: () => any }, end: { getTime: () => any }) {
   return async (dispatch: any) => {

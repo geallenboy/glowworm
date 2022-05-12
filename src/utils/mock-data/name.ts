@@ -1,5 +1,3 @@
-// ----------------------------------------------------------------------
-
 export const fullName = [
   'Jayvion Simon',
   'Lucian Obrien',

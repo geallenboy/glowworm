@@ -1,5 +1,3 @@
-// ----------------------------------------------------------------------
-
 export const role = [
   'UX Designer',
   'Full Stack Designer',

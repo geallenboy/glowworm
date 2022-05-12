@@ -24,7 +24,7 @@ const ContentStyle = styled('div')(({ theme }) => ({
 
 export default function LandingPage() {
   return (
-    <RootStyle title="Minimalist | home" id="move_top">
+    <RootStyle title="minimalistapp | home" id="move_top">
       <LandingHero />
       <ContentStyle>
         <LandingMinimal />

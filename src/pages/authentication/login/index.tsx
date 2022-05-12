@@ -1,25 +1,15 @@
-import {
-  Alert,
-  Box,
-  Button,
-  Card,
-  Container,
-  Link,
-  Stack,
-  Tooltip,
-  Typography
-} from '@mui/material';
+import { Alert, Box, Button, Card, Container, Link, Stack, Typography } from '@mui/material';
 import { styled } from '@mui/styles';
-import { capitalCase } from 'change-case';
 import { Link as RouterLink } from 'react-router-dom';
 
 import { MHidden } from '@/components/@material-extend';
-import AuthFirebaseSocials from '@/components/authentication/AuthFirebaseSocial';
-import { LoginForm } from '@/components/authentication/login';
 import Page from '@/components/Page';
 import useAuth from '@/hooks/useAuth';
 import AuthLayout from '@/layouts/AuthLayout';
 import { PATH_AUTH } from '@/routes/paths';
+
+import AuthFirebaseSocials from '../AuthFirebaseSocial';
+import { LoginForm } from './modules';
 
 const RootStyle = styled(Page)(({ theme }: any) => ({
   [theme.breakpoints.up('md')]: {
@@ -82,22 +72,13 @@ export default function Login() {
               <Typography variant="h4" gutterBottom>
                 登录到后台管理
               </Typography>
-              <Typography sx={{ color: 'text.secondary' }}>在下面输入您的详细信息.</Typography>
             </Box>
-
-            <Tooltip title={capitalCase(method)}>
-              <Box
-                component="img"
-                src={`/static/auth/ic_${method}.png`}
-                sx={{ width: 32, height: 32 }}
-              />
-            </Tooltip>
           </Stack>
 
           {method === 'firebase' && <AuthFirebaseSocials />}
 
           <Alert severity="info" sx={{ mb: 3 }}>
-            邮箱 : <strong>demo@minimals.cc</strong> / 密码 :<strong>&nbsp;demo1234</strong>
+            邮箱 : <strong>demo@163.com</strong> / 密码 :<strong>&nbsp;123456</strong>
           </Alert>
 
           {method !== 'auth0' ? (

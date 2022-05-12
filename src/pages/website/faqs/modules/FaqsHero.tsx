@@ -1,7 +1,7 @@
 import searchFill from '@iconify/icons-eva/search-fill';
 import { Icon } from '@iconify/react';
 import { alpha, Box, Container, InputAdornment, OutlinedInput } from '@mui/material';
-import { styled } from '@mui/styles';
+import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
 
 import {
@@ -55,18 +55,17 @@ export default function FaqsHero() {
     <RootStyle initial="initial" animate="animate" variants={varWrapEnter}>
       <Container maxWidth="lg" sx={{ position: 'relative', height: '100%' }}>
         <ContentStyle>
-          <TextAnimate text="How" sx={{ color: 'primary.main' }} variants={varFadeInRight} />
+          <TextAnimate text="我们" sx={{ color: 'primary.main' }} variants={varFadeInRight} />
           <br />
           <Box sx={{ display: 'inline-flex', color: 'common.white' }}>
-            <TextAnimate text="can" sx={{ mr: 2 }} />
-            <TextAnimate text="we" sx={{ mr: 2 }} />
-            <TextAnimate text="help" sx={{ mr: 2 }} />
-            <TextAnimate text="you?" />
+            <TextAnimate text="能" sx={{ mr: 2 }} />
+            <TextAnimate text="帮您" sx={{ mr: 2 }} />
+            <TextAnimate text="什么?" />
           </Box>
 
           <MotionInView variants={varFadeInUp} sx={{ mt: 5 }}>
             <SearchStyle
-              placeholder="Search support"
+              placeholder="搜索支持"
               startAdornment={
                 <InputAdornment position="start">
                   <Box component={Icon} icon={searchFill} sx={{ color: 'text.disabled' }} />

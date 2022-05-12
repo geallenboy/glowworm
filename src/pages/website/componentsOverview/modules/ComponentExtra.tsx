@@ -1,23 +1,23 @@
 import { Grid, Typography } from '@mui/material';
 
 import ComponentCard from './ComponentCard';
-import { FOUNDATION_LIST } from './PathConfig';
+import { EXTRA_LIST } from './PathConfig';
 
-export default function ComponentFoundation() {
+export default function ComponentExtra() {
   return (
-    <Grid container spacing={3} sx={{ my: 10 }}>
+    <Grid container spacing={3}>
       <Grid item xs={12} sm={4}>
         <Typography variant="h5" paragraph>
-          Foundation
+          额外组件
         </Typography>
         <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-          Colors, Typography, Shadows…
+          图表, 地图, 编辑…
         </Typography>
       </Grid>
 
       <Grid item xs={12} sm={8}>
         <Grid container spacing={3}>
-          {FOUNDATION_LIST.map((item: any) => (
+          {EXTRA_LIST.map((item: any) => (
             <ComponentCard key={item.name} item={item} />
           ))}
         </Grid>
