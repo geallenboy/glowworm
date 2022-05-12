@@ -25,7 +25,7 @@
 
 ```sh
 
-git clone git@github.com:geallenboy/react-redux-materialUI.git
+git clone git@github.com:geallenboy/minimalistapp.git
 
 ```
 
