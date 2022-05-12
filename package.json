@@ -7,7 +7,7 @@
     "build": "cross-env NODE_ENV=production vite build",
     "preview": "npm run build && vite preview",
     "preview:dist": "vite preview",
-    "lint:eslint": "eslint --cache --max-warnings 0 \"{src,mock}/**/*.{ts,tsx}\" --fix",
+    "lint:eslint": "eslint \"{src,mock}/**/*.{ts,tsx}\" --fix",
     "lint:lint-staged": "lint-staged",
     "lint:prettier": "prettier --write  \"src/**/*.{ts,tsx}\"",
     "prepare": "husky install",
@@ -134,8 +134,9 @@
     "node": "^12 || >=14"
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      
+    "{src,mock}/**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
     ]
   },
   "browserslist": {
