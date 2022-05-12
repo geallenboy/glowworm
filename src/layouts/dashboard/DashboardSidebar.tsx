@@ -20,7 +20,7 @@ import NavSection from '@/components/NavSection';
 import Scrollbar from '@/components/Scrollbar';
 // import useAuth from '@/hooks/useAuth';
 import useCollapseDrawer from '@/hooks/useCollapseDrawer';
-import { PATH_DASHBOARD, PATH_DOCS } from '@/routes/paths';
+import { PATH_DASHBOARD, PATH_GITHUB } from '@/routes/paths';
 
 import sidebarConfig from './SidebarConfig';
 
@@ -169,8 +169,8 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }: any)
               <br /> Please check our docs
             </Typography>
           </div>
-          <Button href={PATH_DOCS} target="_blank" variant="contained">
-            Documentation
+          <Button href={PATH_GITHUB} target="_blank" variant="contained">
+            github
           </Button>
         </Stack>
       )}

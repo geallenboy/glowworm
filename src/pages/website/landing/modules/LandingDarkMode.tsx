@@ -1,5 +1,5 @@
 import { Box, Container, Grid, Typography } from '@mui/material';
-import { styled } from '@mui/styles';
+import { styled } from '@mui/material/styles';
 
 import { MotionInView, varFadeInDown, varFadeInUp } from '@/components/animate';
 
@@ -51,19 +51,19 @@ export default function LandingDarkMode() {
                   variant="overline"
                   sx={{ mb: 2, color: 'text.disabled', display: 'block' }}
                 >
-                  Easy switch between styles.
+                  轻松切换样式.
                 </Typography>
               </MotionInView>
 
               <MotionInView variants={varFadeInUp}>
                 <Typography variant="h2" sx={{ mb: 3, color: 'common.white' }}>
-                  Dark mode
+                  暗模式
                 </Typography>
               </MotionInView>
 
               <MotionInView variants={varFadeInUp}>
                 <Typography sx={{ color: 'common.white', mb: 5 }}>
-                  A dark theme that feels easier on the eyes.
+                  黑暗的主题，让人感觉更容易看。
                 </Typography>
               </MotionInView>
             </ContentStyle>

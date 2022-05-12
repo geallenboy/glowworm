@@ -15,20 +15,18 @@ const RootStyle = styled(Page)(({ theme }: any) => ({
 
 export default function Page500() {
   return (
-    <RootStyle title="500 Internal Server Error | Minimal-UI">
+    <RootStyle title="内部服务器错误">
       <Container>
         <Box sx={{ maxWidth: 480, margin: 'auto', textAlign: 'center' }}>
           <Typography variant="h3" paragraph>
-            500 Internal Server Error
+            内部服务器错误
           </Typography>
-          <Typography sx={{ color: 'text.secondary' }}>
-            There was an error, please try again later.
-          </Typography>
+          <Typography sx={{ color: 'text.secondary' }}>出现错误，请稍后再试。</Typography>
 
           <SeverErrorIllustration sx={{ height: 260, my: { xs: 5, sm: 10 } }} />
 
           <Button to="/" size="large" variant="contained" component={RouterLink}>
-            Go to Home
+            首页
           </Button>
         </Box>
       </Container>

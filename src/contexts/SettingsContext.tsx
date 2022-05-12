@@ -61,11 +61,7 @@ const PRIMARY_COLOR = [
   }
 ];
 
-type themeColorType = {
-  color: 'default' | 'purple' | 'cyan' | 'blue' | 'orange' | 'red';
-};
-
-function SetColor(themeColor: themeColorType) {
+function SetColor(themeColor: string) {
   let color;
   const DEFAULT = PRIMARY_COLOR[0];
   const PURPLE = PRIMARY_COLOR[1];
@@ -73,8 +69,7 @@ function SetColor(themeColor: themeColorType) {
   const BLUE = PRIMARY_COLOR[3];
   const ORANGE = PRIMARY_COLOR[4];
   const RED = PRIMARY_COLOR[5];
-
-  switch (themeColor.color) {
+  switch (themeColor) {
     case 'purple':
       color = PURPLE;
       break;
@@ -119,21 +114,21 @@ function SettingsProvider({ children }: any) {
     themeStretch: initialState.themeStretch
   });
 
-  const onChangeMode = (event: { target: { value: any } }) => {
+  const onChangeMode = (event) => {
     setSettings({
       ...settings,
       themeMode: event.target.value
     });
   };
 
-  const onChangeDirection = (event: { target: { value: any } }) => {
+  const onChangeDirection = (event) => {
     setSettings({
       ...settings,
       themeDirection: event.target.value
     });
   };
 
-  const onChangeColor = (event: { target: { value: any } }) => {
+  const onChangeColor = (event) => {
     setSettings({
       ...settings,
       themeColor: event.target.value

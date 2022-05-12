@@ -1,14 +1,9 @@
 import { Divider } from '@mui/material';
 import { styled } from '@mui/styles';
 
-import {
-  AboutHero,
-  AboutTeam,
-  AboutTestimonials,
-  AboutVision,
-  AboutWhat
-} from '@/components/_external-pages/about';
 import Page from '@/components/Page';
+
+import { AboutHero, AboutTeam, AboutTestimonials, AboutVision, AboutWhat } from './modules';
 
 const RootStyle = styled(Page)(({ theme }: any) => ({
   paddingTop: theme.spacing(8),

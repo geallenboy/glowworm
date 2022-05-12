@@ -13,25 +13,12 @@ import { MotionInView, varFadeIn, varFadeInDown, varFadeInUp } from '@/component
 import { CarouselControlsArrowsBasic2 } from '@/components/carousel';
 import mockData from '@/utils/mock-data';
 
-// ----------------------------------------------------------------------
-
 const MOCK_MEMBERS = [...Array(5)].map((_, index) => ({
   id: mockData.id(index),
   name: mockData.name.fullName(index),
   role: mockData.role(index),
   avatar: mockData.image.avatar(index)
 }));
-
-// ----------------------------------------------------------------------
-
-MemberCard.propTypes = {
-  member: PropTypes.shape({
-    id: PropTypes.string,
-    avatar: PropTypes.string,
-    name: PropTypes.string,
-    role: PropTypes.string
-  })
-};
 
 function MemberCard({ member }) {
   const { name, role, avatar } = member;

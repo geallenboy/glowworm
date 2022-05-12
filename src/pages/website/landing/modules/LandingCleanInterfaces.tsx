@@ -30,12 +30,6 @@ export default function LandingCleanInterfaces() {
       <Container maxWidth="lg">
         <ContentStyle>
           <MotionInView variants={varFadeInUp}>
-            <Typography component="p" variant="overline" sx={{ mb: 2, color: 'text.secondary' }}>
-              clean & clear
-            </Typography>
-          </MotionInView>
-
-          <MotionInView variants={varFadeInUp}>
             <Typography
               variant="h2"
               paragraph
@@ -45,7 +39,7 @@ export default function LandingCleanInterfaces() {
                 })
               }}
             >
-              Beautiful, modern and clean user interfaces
+              漂亮、现代、干净的用户界面
             </Typography>
           </MotionInView>
         </ContentStyle>

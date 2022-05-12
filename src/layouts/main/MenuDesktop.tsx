@@ -12,15 +12,16 @@ import {
   Popover,
   Stack
 } from '@mui/material';
-import { styled } from '@mui/styles';
+import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { NavLink as RouterLink, useLocation } from 'react-router-dom';
 
-const LinkStyle = styled(Link)(({ theme }: any) => ({
+const LinkStyle = styled(Link)(({ theme }) => ({
   ...theme.typography.subtitle2,
   color: theme.palette.text.primary,
   marginRight: theme.spacing(5),
+  textDecoration: 'none',
   transition: theme.transitions.create('opacity', {
     duration: theme.transitions.duration.shortest
   }),
@@ -30,7 +31,7 @@ const LinkStyle = styled(Link)(({ theme }: any) => ({
   }
 }));
 
-function IconBullet({ type = 'item' }: any) {
+function IconBullet({ type = 'item' }) {
   return (
     <Box sx={{ width: 24, height: 16, display: 'flex', alignItems: 'center' }}>
       <Box
@@ -48,10 +49,9 @@ function IconBullet({ type = 'item' }: any) {
   );
 }
 
-function MenuDesktopItem({ item, pathname, isHome, isOpen, isOffset, onOpen, onClose }: any) {
+function MenuDesktopItem({ item, pathname, isHome, isOpen, isOffset, onOpen, onClose }) {
   const { title, path, children } = item;
   const isActive = pathname === path;
-
   if (children) {
     return (
       <div key={title}>
@@ -90,16 +90,16 @@ function MenuDesktopItem({ item, pathname, isHome, isOpen, isOffset, onOpen, onC
               margin: 'auto',
               maxWidth: 1280,
               borderRadius: 2,
-              boxShadow: (theme: any) => theme.customShadows.z24
+              boxShadow: (theme) => theme.customShadows.z24
             }
           }}
         >
           <Grid container spacing={3}>
-            {children.map((list: any) => {
+            {children.map((list) => {
               const { subheader, items } = list;
 
               return (
-                <Grid key={subheader} item xs={12} md={subheader === 'Dashboard' ? 6 : 2}>
+                <Grid key={subheader} item xs={12} md={subheader === '仪表盘' ? 6 : 2}>
                   <List disablePadding>
                     <ListSubheader
                       disableSticky
@@ -115,11 +115,11 @@ function MenuDesktopItem({ item, pathname, isHome, isOpen, isOffset, onOpen, onC
                       <IconBullet type="subheader" /> {subheader}
                     </ListSubheader>
 
-                    {items.map((item: any) => (
+                    {items.map((item) => (
                       <ListItem
                         key={item.title}
                         to={item.path}
-                        component={RouterLink as any}
+                        component={RouterLink}
                         underline="none"
                         sx={{
                           p: 0,
@@ -134,7 +134,7 @@ function MenuDesktopItem({ item, pathname, isHome, isOpen, isOffset, onOpen, onC
                           })
                         }}
                       >
-                        {item.title === 'Dashboard' ? (
+                        {item.title === '仪表盘' ? (
                           <CardActionArea
                             sx={{
                               py: 5,
@@ -173,7 +173,7 @@ function MenuDesktopItem({ item, pathname, isHome, isOpen, isOffset, onOpen, onC
     );
   }
 
-  if (title === 'Documentation') {
+  if (title === 'github') {
     return (
       <LinkStyle
         href={path}
@@ -221,7 +221,6 @@ export default function MenuDesktop({ isOffset, isHome, navConfig }: any) {
   const handleClose = () => {
     setOpen(false);
   };
-
   return (
     <Stack direction="row">
       {navConfig.map((link: any) => (

@@ -1,10 +1,9 @@
 import { Container, Grid } from '@mui/material';
 import { styled } from '@mui/styles';
 
-import { ContactForm, ContactHero } from '@/components/_external-pages/contact';
 import Page from '@/components/Page';
 
-// ----------------------------------------------------------------------
+import { ContactForm, ContactHero } from './modules';
 
 const RootStyle = styled(Page)(({ theme }: any) => ({
   paddingTop: theme.spacing(8),

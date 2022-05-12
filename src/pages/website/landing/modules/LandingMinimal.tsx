@@ -6,33 +6,33 @@ import { MotionInView, varFadeInDown, varFadeInUp } from '@/components/animate';
 const CARDS = [
   {
     icon: '/static/icons/ic_design.svg',
-    title: 'UI & UX Design',
+    title: '设计',
     description:
-      'The set is built on the principles of the atomic design system. It helps you to create projects fastest and easily customized packages for your projects.'
+      '它是建立在原子设计系统原则之上的. 帮助您以最快的速度创建项目，并为您的项目轻松定制.'
   },
   {
     icon: '/static/icons/ic_code.svg',
-    title: 'Development',
-    description: 'Easy to customize and extend each component, saving you time and money.'
+    title: '开发',
+    description: '易于定制和扩展每个组件, 节省你的时间和金钱.'
   },
   {
     icon: '/static/brand/logo_single.svg',
-    title: 'Branding',
-    description: 'Consistent design in colors, fonts ... makes brand recognition easy.'
+    title: '品牌',
+    description: '颜色、字体的一致性设计. 使品牌识别变得容易.'
   }
 ];
 
-const shadowIcon = (color: any) => `drop-shadow(2px 2px 2px ${alpha(color, 0.48)})`;
+const shadowIcon = (color) => `drop-shadow(2px 2px 2px ${alpha(color, 0.48)})`;
 
-const RootStyle = styled('div')(({ theme }: any) => ({
+const RootStyle = styled('div')(({ theme }) => ({
   paddingTop: theme.spacing(15),
   [theme.breakpoints.up('md')]: {
     paddingBottom: theme.spacing(15)
   }
 }));
 
-const CardStyle = styled(Card)(({ theme }: any) => {
-  const shadowCard = (opacity: any) =>
+const CardStyle = styled(Card)(({ theme }) => {
+  const shadowCard = (opacity) =>
     theme.palette.mode === 'light'
       ? alpha(theme.palette.grey[500], opacity)
       : alpha(theme.palette.common.black, opacity);
@@ -76,7 +76,7 @@ const CardStyle = styled(Card)(({ theme }: any) => {
   };
 });
 
-const CardIconStyle = styled('img')(({ theme }: any) => ({
+const CardIconStyle = styled('img')(({ theme }) => ({
   width: 40,
   height: 40,
   margin: 'auto',
@@ -85,7 +85,7 @@ const CardIconStyle = styled('img')(({ theme }: any) => ({
 }));
 
 export default function LandingMinimalHelps() {
-  const theme: any = useTheme();
+  const theme = useTheme();
   const isLight = theme.palette.mode === 'light';
   const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
 
@@ -99,30 +99,30 @@ export default function LandingMinimalHelps() {
               variant="overline"
               sx={{ mb: 2, color: 'text.secondary', textAlign: 'center' }}
             >
-              Minimal
+              Minima
             </Typography>
           </MotionInView>
           <MotionInView variants={varFadeInDown}>
             <Typography variant="h2" sx={{ textAlign: 'center' }}>
-              What minimal helps you?
+              Minima如何帮助你？
             </Typography>
           </MotionInView>
         </Box>
 
         <Grid container spacing={isDesktop ? 10 : 5}>
-          {CARDS.map((card: any, index: any) => (
+          {CARDS.map((card, index: number) => (
             <Grid key={card.title} item xs={12} md={4}>
               <MotionInView variants={varFadeInUp}>
-                <CardStyle className={(index === 0 && 'cardLeft') || (index === 1 && 'cardCenter')}>
+                <CardStyle className={index === 0 ? 'cardLeft' : 'cardCenter'}>
                   <CardIconStyle
                     src={card.icon}
                     alt={card.title}
                     sx={{
                       ...(index === 0 && {
-                        filter: (theme: any) => shadowIcon(theme.palette.info.main)
+                        filter: (theme) => shadowIcon(theme.palette.info.main)
                       }),
                       ...(index === 1 && {
-                        filter: (theme: any) => shadowIcon(theme.palette.error.main)
+                        filter: (theme) => shadowIcon(theme.palette.error.main)
                       })
                     }}
                   />

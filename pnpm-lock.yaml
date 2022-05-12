@@ -20,6 +20,7 @@ specifiers:
   '@mui/styles': ^5.6.2
   '@mui/system': ^5.6.4
   '@mui/utils': ^5.7.0
+  '@mui/x-data-grid': ^5.10.0
   '@reduxjs/toolkit': ^1.8.1
   '@rollup/plugin-babel': ^5.3.0
   '@types/jsonwebtoken': ^8.5.8
@@ -107,6 +108,7 @@ dependencies:
   '@mui/styles': 5.7.0_3df41e700a554c2356b362be396a0af4
   '@mui/system': 5.7.0_b5991da3249a8a03ba2924225b5f4cea
   '@mui/utils': 5.7.0_react@17.0.2
+  '@mui/x-data-grid': 5.10.0_ad8d1d429e6bbd80ea75804e6d3bef4e
   '@reduxjs/toolkit': 1.8.1_react-redux@8.0.1+react@17.0.2
   '@types/react-copy-to-clipboard': 5.0.2
   axios: 0.21.4
@@ -1183,6 +1185,23 @@ packages:
       prop-types: 15.8.1
       react: 17.0.2
       react-is: 17.0.2
+    dev: false
+
+  /@mui/x-data-grid/5.10.0_ad8d1d429e6bbd80ea75804e6d3bef4e:
+    resolution: {integrity: sha512-+NELUtA+6RAVFHR8sGrSxtJC8+3NQMLflYBm816DXjQvPA8vvCPI50SPKCUYUpBuepQtTBQWcty0Tdm9tjzInA==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      '@mui/material': ^5.2.8
+      '@mui/system': ^5.2.8
+      react: ^17.0.2 || ^18.0.0
+    dependencies:
+      '@mui/material': 5.7.0_c8c10a639b2b9753cb2d3f27112f331c
+      '@mui/system': 5.7.0_b5991da3249a8a03ba2924225b5f4cea
+      '@mui/utils': 5.7.0_react@17.0.2
+      clsx: 1.1.1
+      prop-types: 15.8.1
+      react: 17.0.2
+      reselect: 4.1.5
     dev: false
 
   /@mui/x-date-pickers/5.0.0-alpha.0_dd56cb254621a2e031d448f46fca7d2e:

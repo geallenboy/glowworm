@@ -4,7 +4,7 @@ import homeFill from '@iconify/icons-eva/home-fill';
 import roundGrain from '@iconify/icons-ic/round-grain';
 import { Icon } from '@iconify/react';
 
-import { PATH_AUTH, PATH_DASHBOARD, PATH_DOCS, PATH_PAGE } from '@/routes/paths';
+import { PATH_AUTH, PATH_DASHBOARD, PATH_GITHUB, PATH_PAGE } from '@/routes/paths';
 
 const ICON_SIZE = {
   width: 22,
@@ -13,58 +13,54 @@ const ICON_SIZE = {
 
 const menuConfig = [
   {
-    title: 'Home',
+    title: '首页',
     icon: <Icon icon={homeFill} {...ICON_SIZE} />,
     path: '/'
   },
   {
-    title: 'Components',
+    title: '组件',
     icon: <Icon icon={roundGrain} {...ICON_SIZE} />,
     path: PATH_PAGE.components
   },
   {
-    title: 'Pages',
+    title: '页面',
     path: '/pages',
     icon: <Icon icon={fileFill} {...ICON_SIZE} />,
     children: [
       {
-        subheader: 'Other',
+        subheader: '其它',
         items: [
-          { title: 'About us', path: PATH_PAGE.about },
-          { title: 'Contact us', path: PATH_PAGE.contact },
-          { title: 'FAQs', path: PATH_PAGE.faqs },
-          { title: 'Pricing', path: PATH_PAGE.pricing },
-          { title: 'Payment', path: PATH_PAGE.payment },
-          { title: 'Maintenance', path: PATH_PAGE.maintenance },
-          { title: 'Coming Soon', path: PATH_PAGE.comingSoon }
+          { title: '关于我们', path: PATH_PAGE.about },
+          { title: '联系我们', path: PATH_PAGE.contact },
+          { title: '常见问题', path: PATH_PAGE.faqs }
         ]
       },
       {
-        subheader: 'Authentication',
+        subheader: '认证',
         items: [
-          { title: 'Login', path: PATH_AUTH.loginUnprotected },
-          { title: 'Register', path: PATH_AUTH.registerUnprotected },
-          { title: 'Reset password', path: PATH_AUTH.resetPassword },
-          { title: 'Verify code', path: PATH_AUTH.verify }
+          { title: '登陆', path: PATH_AUTH.loginUnprotected },
+          { title: '组成', path: PATH_AUTH.registerUnprotected },
+          { title: '重置密码', path: PATH_AUTH.resetPassword },
+          { title: '验证码', path: PATH_AUTH.verify }
         ]
       },
       {
-        subheader: 'Error',
+        subheader: '错误',
         items: [
-          { title: 'Page 404', path: PATH_PAGE.page404 },
-          { title: 'Page 500', path: PATH_PAGE.page500 }
+          { title: '页面404', path: PATH_PAGE.page404 },
+          { title: '页面500', path: PATH_PAGE.page500 }
         ]
       },
       {
-        subheader: 'Dashboard',
-        items: [{ title: 'Dashboard', path: PATH_DASHBOARD.root }]
+        subheader: '仪表盘',
+        items: [{ title: '仪表盘', path: PATH_DASHBOARD.root }]
       }
     ]
   },
   {
-    title: 'Documentation',
+    title: 'github',
     icon: <Icon icon={bookOpenFill} {...ICON_SIZE} />,
-    path: PATH_DOCS
+    path: PATH_GITHUB
   }
 ];
 

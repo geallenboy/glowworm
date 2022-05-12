@@ -1,6 +1,6 @@
 import flashFill from '@iconify/icons-eva/flash-fill';
 import { Icon } from '@iconify/react';
-import { Box, Button, Container, Link, Stack, Typography } from '@mui/material';
+import { Box, Button, Container, Stack, Typography } from '@mui/material';
 import { styled } from '@mui/styles';
 import { motion } from 'framer-motion';
 import { Link as RouterLink } from 'react-router-dom';
@@ -71,45 +71,16 @@ export default function LandingHero() {
           <ContentStyle>
             <motion.div variants={varFadeInRight}>
               <Typography variant="h1" sx={{ color: 'common.white' }}>
-                Start a <br />
-                new project <br /> with
-                <Typography component="span" variant="h1" sx={{ color: 'primary.main' }}>
-                  &nbsp;Minimal
-                </Typography>
+                <br />
+                开始一个新项目
               </Typography>
             </motion.div>
 
             <motion.div variants={varFadeInRight}>
               <Typography sx={{ color: 'common.white' }}>
-                The starting point for your next project based on easy-to-customize Material-UI ©
-                helps you build apps faster and better.
+                基于 Material-UI 帮助你更快更好的构建应用
               </Typography>
             </motion.div>
-
-            <Stack
-              component={motion.div}
-              variants={varFadeInRight}
-              direction="row"
-              spacing={1}
-              justifyContent={{ xs: 'center', md: 'flex-start' }}
-            >
-              <img
-                alt="sketch icon"
-                src="/static/home/ic_sketch_small.svg"
-                width={20}
-                height={20}
-              />
-
-              <Link
-                underline="always"
-                href="https://www.sketch.com/s/0fa4699d-a3ff-4cd5-a3a7-d851eb7e17f0"
-                target="_blank"
-                color="common.white"
-                sx={{ typography: 'body2' }}
-              >
-                Preview in Sketch Cloud
-              </Link>
-            </Stack>
 
             <motion.div variants={varFadeInRight}>
               <Button
@@ -119,7 +90,7 @@ export default function LandingHero() {
                 to={PATH_DASHBOARD.root}
                 startIcon={<Icon icon={flashFill} width={20} height={20} />}
               >
-                Live Preview
+                预览
               </Button>
             </motion.div>
 

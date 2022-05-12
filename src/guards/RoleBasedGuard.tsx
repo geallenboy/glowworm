@@ -1,7 +1,6 @@
 import { Alert, AlertTitle, Container } from '@mui/material';
 
 const useCurrentRole = () => {
-  // Logic here to get current user role
   const role = 'admin';
   return role;
 };
@@ -13,8 +12,8 @@ export default function RoleBasedGuard({ accessibleRoles, children }: any) {
     return (
       <Container>
         <Alert severity="error">
-          <AlertTitle>Permission Denied</AlertTitle>
-          You do not have permission to access this page
+          <AlertTitle>拒绝访问</AlertTitle>
+          您没有访问此页面的权限
         </Alert>
       </Container>
     );

@@ -10,7 +10,7 @@ import {
   Tooltip,
   Typography
 } from '@mui/material';
-import { styled } from '@mui/styles';
+import { styled } from '@mui/material/styles';
 import { capitalCase } from 'change-case';
 import { motion } from 'framer-motion';
 
@@ -40,13 +40,13 @@ export default function LandingThemeColor() {
             variant="overline"
             sx={{ mb: 2, color: 'text.disabled', display: 'block' }}
           >
-            choose your style
+            选择你的风格
           </Typography>
         </MotionInView>
 
         <MotionInView variants={varFadeInUp}>
           <Typography variant="h2" sx={{ mb: 3 }}>
-            Theme color
+            主题色
           </Typography>
         </MotionInView>
 
@@ -57,7 +57,7 @@ export default function LandingThemeColor() {
                 theme.palette.mode === 'light' ? 'text.secondary' : 'text.primary'
             }}
           >
-            Express your own style with just one click.
+            只需点击一下，就可以表达你自己的风格
           </Typography>
         </MotionInView>
 

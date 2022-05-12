@@ -33,7 +33,7 @@ export default function SettingFullscreen() {
         })
       }}
     >
-      {fullscreen ? 'Exit Fullscreen' : 'Fullscreen'}
+      {fullscreen ? '退出全屏' : '全屏'}
     </Button>
   );
 }

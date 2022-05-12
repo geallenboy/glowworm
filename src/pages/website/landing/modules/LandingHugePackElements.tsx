@@ -1,5 +1,5 @@
 import { alpha, Box, Button, Container, Grid, Typography } from '@mui/material';
-import { styled, useTheme } from '@mui/styles';
+import { styled, useTheme } from '@mui/material/styles';
 import { Link as RouterLink } from 'react-router-dom';
 
 import { MotionInView, varFadeInUp } from '@/components/animate';
@@ -67,8 +67,6 @@ const variantScreenRight = {
   animate: { ...COMMON, translateX: '50%', translateY: -40, opacity: 1 }
 };
 
-// ----------------------------------------------------------------------
-
 export default function LandingHugePackElements() {
   const theme: any = useTheme();
   const isLight = theme.palette.mode === 'light';
@@ -90,14 +88,13 @@ export default function LandingHugePackElements() {
                   variant="overline"
                   sx={{ mb: 2, color: 'text.secondary' }}
                 >
-                  Interface Starter Kit
+                  界面简易配置
                 </Typography>
               </MotionInView>
 
               <MotionInView variants={varFadeInUp}>
                 <Typography variant="h2" sx={{ mb: 3 }}>
-                  Huge pack <br />
-                  of elements
+                  丰富的元素组合
                 </Typography>
               </MotionInView>
 
@@ -108,8 +105,7 @@ export default function LandingHugePackElements() {
                     color: isLight ? 'text.secondary' : 'common.white'
                   }}
                 >
-                  We collected most popular elements. Menu, sliders, buttons, inputs etc. are all
-                  here. Just dive in!
+                  我们收集了最受欢迎的元素. 菜单、滑块、按钮、输入等
                 </Typography>
               </MotionInView>
 
@@ -121,7 +117,7 @@ export default function LandingHugePackElements() {
                   component={RouterLink}
                   to={PATH_PAGE.components}
                 >
-                  View All Components
+                  显示所有组件
                 </Button>
               </MotionInView>
             </ContentStyle>

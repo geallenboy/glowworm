@@ -1,10 +1,9 @@
 import { Container, Grid, Typography } from '@mui/material';
 import { styled } from '@mui/styles';
 
-import { FaqsCategory, FaqsForm, FaqsHero, FaqsList } from '@/components/_external-pages/faqs';
 import Page from '@/components/Page';
 
-// ----------------------------------------------------------------------
+import { FaqsCategory, FaqsForm, FaqsHero, FaqsList } from './modules';
 
 const RootStyle = styled(Page)(({ theme }: any) => ({
   paddingTop: theme.spacing(8),
@@ -13,18 +12,16 @@ const RootStyle = styled(Page)(({ theme }: any) => ({
   }
 }));
 
-// ----------------------------------------------------------------------
-
 export default function Faqs() {
   return (
-    <RootStyle title="Faqs | Minimal-UI">
+    <RootStyle title="常见问题">
       <FaqsHero />
 
       <Container sx={{ mt: 15, mb: 10 }}>
         <FaqsCategory />
 
         <Typography variant="h3" sx={{ mb: 5 }}>
-          Frequently asked questions
+          常见问题
         </Typography>
 
         <Grid container spacing={10}>

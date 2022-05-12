@@ -1,4 +1,6 @@
-import { styled } from '@mui/styles';
+import { styled } from '@mui/material/styles';
+
+import Page from '@/components/Page';
 
 import {
   LandingAdvertisement,
@@ -7,16 +9,14 @@ import {
   LandingHero,
   LandingHugePackElements,
   LandingMinimal,
-  LandingPricingPlans,
   LandingThemeColor
-} from '@/components/_external-pages/landing';
-import Page from '@/components/Page';
+} from './modules';
 
 const RootStyle = styled(Page)({
   height: '100%'
 });
 
-const ContentStyle = styled('div')(({ theme }: any) => ({
+const ContentStyle = styled('div')(({ theme }) => ({
   overflow: 'hidden',
   position: 'relative',
   backgroundColor: theme.palette.background.default
@@ -24,7 +24,7 @@ const ContentStyle = styled('div')(({ theme }: any) => ({
 
 export default function LandingPage() {
   return (
-    <RootStyle title="The starting point for your next project | Minimal-UI" id="move_top">
+    <RootStyle title="Minimalist | home" id="move_top">
       <LandingHero />
       <ContentStyle>
         <LandingMinimal />
@@ -32,7 +32,6 @@ export default function LandingPage() {
         <LandingDarkMode />
         <LandingThemeColor />
         <LandingCleanInterfaces />
-        <LandingPricingPlans />
         <LandingAdvertisement />
       </ContentStyle>
     </RootStyle>

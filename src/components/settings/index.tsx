@@ -99,7 +99,7 @@ export default function Settings() {
             justifyContent="space-between"
             sx={{ py: 2, pr: 1, pl: 2.5 }}
           >
-            <Typography variant="subtitle1">Settings</Typography>
+            <Typography variant="subtitle1">设置</Typography>
             <MIconButton onClick={handleClose}>
               <Icon icon={closeFill} width={20} height={20} />
             </MIconButton>
@@ -109,22 +109,22 @@ export default function Settings() {
           <Scrollbar sx={{ height: 1 }}>
             <Stack spacing={4} sx={{ pt: 3, px: 3, pb: 15 }}>
               <Stack spacing={1.5}>
-                <Typography variant="subtitle2">Mode</Typography>
+                <Typography variant="subtitle2">模式</Typography>
                 <SettingMode />
               </Stack>
 
               <Stack spacing={1.5}>
-                <Typography variant="subtitle2">Direction</Typography>
+                <Typography variant="subtitle2">方式</Typography>
                 <SettingDirection />
               </Stack>
 
               <Stack spacing={1.5}>
-                <Typography variant="subtitle2">Color</Typography>
+                <Typography variant="subtitle2">颜色</Typography>
                 <SettingColor />
               </Stack>
 
               <Stack spacing={1.5}>
-                <Typography variant="subtitle2">Stretch</Typography>
+                <Typography variant="subtitle2">伸缩</Typography>
                 <SettingStretch />
               </Stack>
 

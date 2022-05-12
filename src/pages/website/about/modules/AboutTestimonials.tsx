@@ -13,9 +13,8 @@ import {
 } from '@mui/material';
 import { styled, useTheme } from '@mui/styles';
 
+import { MHidden } from '@/components/@material-extend';
 import { MotionInView, varFadeInLeft, varFadeInUp } from '@/components/animate';
-
-import { MHidden } from '../../@material-extend';
 
 const TESTIMONIALS = [
   {

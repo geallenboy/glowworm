@@ -13,7 +13,7 @@ import {
   ListItemIcon,
   ListItemText
 } from '@mui/material';
-import { styled } from '@mui/styles';
+import { styled } from '@mui/material/styles';
 import { useEffect, useState } from 'react';
 import { NavLink as RouterLink, useLocation } from 'react-router-dom';
 
@@ -28,7 +28,7 @@ const ICON_SIZE = 22;
 const ITEM_SIZE = 48;
 const PADDING = 2.5;
 
-const ListItemStyle = styled(ListItemButton)(({ theme }: any) => ({
+const ListItemStyle = styled(ListItemButton)(({ theme }) => ({
   ...theme.typography.body2,
   height: ITEM_SIZE,
   textTransform: 'capitalize',
@@ -37,7 +37,7 @@ const ListItemStyle = styled(ListItemButton)(({ theme }: any) => ({
   color: theme.palette.text.secondary
 }));
 
-function MenuMobileItem({ item, isOpen, isActive, onOpen }: any) {
+function MenuMobileItem({ item, isOpen, isActive, onOpen }) {
   const { title, path, icon, children } = item;
 
   if (children) {
@@ -105,7 +105,7 @@ function MenuMobileItem({ item, isOpen, isActive, onOpen }: any) {
     );
   }
 
-  if (title === 'Documentation') {
+  if (title === 'github') {
     return (
       <ListItemStyle
         href={path}
@@ -115,7 +115,7 @@ function MenuMobileItem({ item, isOpen, isActive, onOpen }: any) {
           ...(isActive && {
             color: 'primary.main',
             fontWeight: 'fontWeightMedium',
-            bgcolor: (theme: any) =>
+            bgcolor: (theme) =>
               alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity)
           })
         }}
@@ -134,7 +134,7 @@ function MenuMobileItem({ item, isOpen, isActive, onOpen }: any) {
         ...(isActive && {
           color: 'primary.main',
           fontWeight: 'fontWeightMedium',
-          bgcolor: (theme: any) =>
+          bgcolor: (theme) =>
             alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity)
         })
       }}
@@ -145,7 +145,7 @@ function MenuMobileItem({ item, isOpen, isActive, onOpen }: any) {
   );
 }
 
-export default function MenuMobile({ isOffset, isHome }: any) {
+export default function MenuMobile({ isOffset, isHome }) {
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);

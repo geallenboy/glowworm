@@ -1,10 +1,10 @@
-import { Box, Button, Container, Typography } from '@mui/material';
-import { styled } from '@mui/styles';
+import { Box, Container, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
 
-import { MotionInView, varFadeInDown, varFadeInUp } from '../../animate';
+import { MotionInView, varFadeInDown, varFadeInUp } from '@/components/animate';
 
-const ContentStyle = styled('div')(({ theme }: any) => ({
+const ContentStyle = styled('div')(({ theme }) => ({
   maxWidth: 456,
   margin: 'auto',
   overflow: 'hidden',
@@ -48,27 +48,7 @@ export default function LandingAdvertisement() {
           }}
         >
           <MotionInView variants={varFadeInDown} sx={{ color: 'common.white', mb: 5 }}>
-            <Typography variant="h2">
-              Get started with
-              <br /> minimal kit today
-            </Typography>
-          </MotionInView>
-          <MotionInView variants={varFadeInDown}>
-            <Button
-              size="large"
-              variant="contained"
-              target="_blank"
-              href="https://material-ui.com/store/items/minimal-dashboard/"
-              sx={{
-                whiteSpace: 'nowrap',
-                boxShadow: (theme: any) => theme.customShadows.z8,
-                color: (theme: any) => theme.palette.getContrastText(theme.palette.common.white),
-                bgcolor: 'common.white',
-                '&:hover': { bgcolor: 'grey.300' }
-              }}
-            >
-              Purchase Now
-            </Button>
+            <Typography variant="h2">开始使用</Typography>
           </MotionInView>
         </Box>
       </ContentStyle>
