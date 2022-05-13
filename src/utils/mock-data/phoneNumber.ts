@@ -1,4 +1,4 @@
-export const phoneNumber = [
+export const phoneNumber: string[] = [
   '365-374-4961',
   '904-966-2836',
   '399-757-9909',

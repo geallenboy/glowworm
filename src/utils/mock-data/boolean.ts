@@ -1,4 +1,4 @@
-export const boolean = [
+export const boolean: boolean[] = [
   true,
   true,
   true,

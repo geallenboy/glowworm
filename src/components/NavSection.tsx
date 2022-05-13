@@ -72,7 +72,10 @@ function NavItem({ item, active, isShow }: any) {
     bgcolor: alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity),
     '&:before': { display: 'block' }
   };
-
+  const activeIconStyle = {
+    color: 'primary.main',
+    fontWeight: 'fontWeightMedium'
+  };
   const activeSubStyle = {
     color: 'text.primary',
     fontWeight: 'fontWeightMedium'
@@ -87,7 +90,13 @@ function NavItem({ item, active, isShow }: any) {
             ...(isActiveRoot && activeRootStyle)
           }}
         >
-          <ListItemIconStyle>{icon && icon}</ListItemIconStyle>
+          <ListItemIconStyle
+            sx={{
+              ...(isActiveRoot && activeIconStyle)
+            }}
+          >
+            {icon && icon}
+          </ListItemIconStyle>
 
           {isShow && (
             <>
@@ -156,7 +165,13 @@ function NavItem({ item, active, isShow }: any) {
         ...(isActiveRoot && activeRootStyle)
       }}
     >
-      <ListItemIconStyle>{icon && icon}</ListItemIconStyle>
+      <ListItemIconStyle
+        sx={{
+          ...(isActiveRoot && activeIconStyle)
+        }}
+      >
+        {icon && icon}
+      </ListItemIconStyle>
       {isShow && (
         <>
           <ListItemText disableTypography primary={title} />
@@ -170,7 +185,6 @@ function NavItem({ item, active, isShow }: any) {
 export default function NavSection({ navConfig, isShow = true, ...other }: any) {
   const { pathname } = useLocation();
   const match = (path: any) => (path ? !!matchPath({ path, end: false }, pathname) : false);
-
   return (
     <Box {...other}>
       {navConfig.map((list: any) => {

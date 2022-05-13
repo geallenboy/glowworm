@@ -1,4 +1,4 @@
-export const email = [
+export const email: string[] = [
   'nannie_abernathy70@yahoo.com',
   'ashlynn_ohara62@gmail.com',
   'milo.farrell@hotmail.com',

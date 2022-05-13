@@ -3,16 +3,16 @@ import { useTranslation } from 'react-i18next';
 
 const LANGS = [
   {
-    label: 'English',
-    value: 'en',
-    systemValue: enUS,
-    icon: '/static/icons/ic_flag_us.svg'
-  },
-  {
     label: 'CHINA',
     value: 'zh',
     systemValue: zhCN,
     icon: '/static/icons/ic_flag_cn.svg'
+  },
+  {
+    label: 'English',
+    value: 'en',
+    systemValue: enUS,
+    icon: '/static/icons/ic_flag_us.svg'
   }
 ];
 

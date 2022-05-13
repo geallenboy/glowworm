@@ -4,29 +4,30 @@ import settings2Fill from '@iconify/icons-eva/settings-2-fill';
 import { Icon } from '@iconify/react';
 import { Box, Button, Divider, MenuItem, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
+import { useSnackbar } from 'notistack';
 import { useRef, useState } from 'react';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 
 import { MIconButton } from '@/components/@material-extend';
 import MenuPopover from '@/components/MenuPopover';
-// import MyAvatar from '@/components/MyAvatar';
-// import useAuth from '@/hooks/useAuth';
+import MyAvatar from '@/components/MyAvatar';
+import useAuth from '@/hooks/useAuth';
 import useIsMountedRef from '@/hooks/useIsMountedRef';
 import { PATH_DASHBOARD } from '@/routes/paths';
 
 const MENU_OPTIONS = [
   {
-    label: 'Home',
+    label: '首页',
     icon: homeFill,
     linkTo: '/'
   },
   {
-    label: 'Profile',
+    label: '介绍',
     icon: personFill,
     linkTo: PATH_DASHBOARD.user.profile
   },
   {
-    label: 'Settings',
+    label: '设置',
     icon: settings2Fill,
     linkTo: PATH_DASHBOARD.user.account
   }
@@ -35,11 +36,11 @@ const MENU_OPTIONS = [
 export default function AccountPopover() {
   const anchorRef = useRef(null);
   const navigate = useNavigate();
-
+  const { enqueueSnackbar } = useSnackbar();
   const isMountedRef = useIsMountedRef();
-  // const { user, logout } = useAuth();
+  const { user, logout } = useAuth();
   const [open, setOpen] = useState(false);
-
+  console.log(user, 789);
   const handleOpen = () => {
     setOpen(true);
   };
@@ -49,13 +50,14 @@ export default function AccountPopover() {
 
   const handleLogout = async () => {
     try {
-      // await logout();
+      await logout();
       navigate('/');
       if (isMountedRef.current) {
         handleClose();
       }
     } catch (error) {
       console.error(error);
+      enqueueSnackbar('退出失败', { variant: 'error' });
     }
   };
 
@@ -80,7 +82,9 @@ export default function AccountPopover() {
             }
           })
         }}
-      ></MIconButton>
+      >
+        <MyAvatar />
+      </MIconButton>
 
       <MenuPopover
         open={open}
@@ -90,10 +94,10 @@ export default function AccountPopover() {
       >
         <Box sx={{ my: 1.5, px: 2.5 }}>
           <Typography variant="subtitle1" noWrap>
-            {/* {user.displayName} */}
+            {user?.displayName}
           </Typography>
           <Typography variant="body2" sx={{ color: 'text.secondary' }} noWrap>
-            {/* {user.email} */}
+            {user?.email}
           </Typography>
         </Box>
 
@@ -123,7 +127,7 @@ export default function AccountPopover() {
 
         <Box sx={{ p: 2, pt: 1.5 }}>
           <Button fullWidth color="inherit" variant="outlined" onClick={handleLogout}>
-            Logout
+            退出
           </Button>
         </Box>
       </MenuPopover>

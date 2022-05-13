@@ -1,4 +1,4 @@
-import { Box, Container, Link, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 
@@ -35,9 +35,7 @@ export default function MainLayout() {
             </ScrollLink>
 
             <Typography variant="caption" component="p">
-              © All rights reserved
-              <br /> made by &nbsp;
-              <Link href="https://minimals.cc/">minimals.cc</Link>
+              © All rights garron
             </Typography>
           </Container>
         </Box>

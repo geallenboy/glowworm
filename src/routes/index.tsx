@@ -38,7 +38,7 @@ const Register = Loadable(lazy(() => import('@/pages/authentication/register')))
 const ResetPassword = Loadable(lazy(() => import('@/pages/authentication/resetPassword')));
 const VerifyCode = Loadable(lazy(() => import('@/pages/authentication/verifyCode')));
 // Dashboard
-const GeneralApp = Loadable(lazy(() => import('@/pages/dashboard/GeneralApp')));
+const App = Loadable(lazy(() => import('@/pages/dashboard/app')));
 const GeneralEcommerce = Loadable(lazy(() => import('@/pages/dashboard/GeneralEcommerce')));
 const GeneralBanking = Loadable(lazy(() => import('@/pages/dashboard/GeneralBanking')));
 const GeneralBooking = Loadable(lazy(() => import('@/pages/dashboard/GeneralBooking')));
@@ -183,7 +183,7 @@ export default function Router() {
       ),
       children: [
         { path: '', element: <Navigate to="/dashboard/app" replace={true} /> },
-        { path: 'app', element: <GeneralApp /> },
+        { path: 'app', element: <App /> },
         { path: 'ecommerce', element: <GeneralEcommerce /> },
         { path: 'banking', element: <GeneralBanking /> },
         { path: 'booking', element: <GeneralBooking /> },

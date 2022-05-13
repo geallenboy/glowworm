@@ -1,7 +1,8 @@
 import { createContext, useEffect, useReducer } from 'react';
 
 import axios from '@/utils/axios';
-import { isValidToken, setSession } from '@/utils/jwt';
+
+import { setSession } from '../utils/jwt';
 
 const initialState: any = {
   isAuthenticated: false,
@@ -57,17 +58,16 @@ const AuthContext = createContext({
 
 function AuthProvider({ children }: any) {
   const [state, dispatch] = useReducer(reducer, initialState) as any;
-  console.log(state, 2244);
+
   useEffect(() => {
     const initialize = async () => {
       try {
         const accessToken = window.localStorage.getItem('accessToken');
-
-        if (accessToken && isValidToken(accessToken)) {
+        console.log(accessToken, 'accessToken');
+        if (accessToken) {
           setSession(accessToken);
-
           const response = await axios.get('/api/account/my-account');
-          const { user } = response.data;
+          const { user } = response.data.data;
 
           dispatch({
             type: 'INITIALIZE',
@@ -100,14 +100,16 @@ function AuthProvider({ children }: any) {
     initialize();
   }, []);
 
-  const login = async (email: any, password: any) => {
+  const login = async (email: string, password: string) => {
     const response = await axios.post('/api/account/login', {
       email,
       password
     });
-    const { accessToken, user } = response.data;
 
+    console.log(response, 333);
+    const { accessToken, user } = response.data.data;
     setSession(accessToken);
+
     dispatch({
       type: 'LOGIN',
       payload: {
@@ -135,7 +137,7 @@ function AuthProvider({ children }: any) {
   };
 
   const logout = async () => {
-    // setSession(null);
+    setSession(null);
     dispatch({ type: 'LOGOUT' });
   };
 

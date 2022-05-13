@@ -23,6 +23,7 @@ specifiers:
   '@mui/x-data-grid': ^5.10.0
   '@reduxjs/toolkit': ^1.8.1
   '@rollup/plugin-babel': ^5.3.0
+  '@types/crypto-js': ^4.1.1
   '@types/jsonwebtoken': ^8.5.8
   '@types/lodash': ^4.14.182
   '@types/mockjs': ^1.0.4
@@ -84,6 +85,7 @@ specifiers:
   rehype-raw: ^6.1.1
   simplebar: ^5.3.6
   simplebar-react: ^2.3.7
+  slick-carousel: ^1.8.1
   stylis-plugin-rtl: ^2.1.1
   typescript: ^4.5.4
   uuid: ^8.3.2
@@ -110,6 +112,7 @@ dependencies:
   '@mui/utils': 5.7.0_react@17.0.2
   '@mui/x-data-grid': 5.10.0_ad8d1d429e6bbd80ea75804e6d3bef4e
   '@reduxjs/toolkit': 1.8.1_react-redux@8.0.1+react@17.0.2
+  '@types/crypto-js': 4.1.1
   '@types/react-copy-to-clipboard': 5.0.2
   axios: 0.21.4
   crypto-js: 4.1.1
@@ -140,6 +143,7 @@ dependencies:
   rehype-raw: 6.1.1
   simplebar: 5.3.6
   simplebar-react: 2.3.7_react-dom@17.0.2+react@17.0.2
+  slick-carousel: 1.8.1
   stylis-plugin-rtl: 2.1.1
   typescript: 4.6.4
   yup: 0.32.11
@@ -1586,6 +1590,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@types/crypto-js/4.1.1:
+    resolution: {integrity: sha512-BG7fQKZ689HIoc5h+6D2Dgq1fABRa0RbBWKBd9SP/MVRVXROflpm5fhwyATX5duFmbStzyzyycPB8qUYKDH3NA==}
+    dev: false
 
   /@types/debug/4.1.7:
     resolution: {integrity: sha512-9AonUzyTjXXhEOa0DnqpzZi6VHlqKMswga9EXjpXnnqxwLtdvPPtlO8evrI5D9S6asFRCQ6v+wpiUKbw+vKqyg==}
@@ -5635,6 +5643,12 @@ packages:
       ansi-styles: 6.1.0
       is-fullwidth-code-point: 4.0.0
     dev: true
+
+  /slick-carousel/1.8.1:
+    resolution: {integrity: sha512-XB9Ftrf2EEKfzoQXt3Nitrt/IPbT+f1fgqBdoxO3W/+JYvtEOW6EgxnWfr9GH6nmULv7Y2tPmEX3koxThVmebA==}
+    peerDependencies:
+      jquery: '>=1.8.0'
+    dev: false
 
   /snake-case/3.0.4:
     resolution: {integrity: sha512-LAOh4z89bGQvl9pFfNF8V146i7o7/CqFPbqzYgP+yYzDIDeS9HaNFtXABamRW+AQzEVODcvE79ljJ+8a9YSdMg==}

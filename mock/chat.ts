@@ -1,4 +1,3 @@
-import { dotCase } from 'change-case';
 import { sub } from 'date-fns';
 import { isEmpty, sample, xor } from 'lodash';
 import { v4 as uuidv4 } from 'uuid';
@@ -10,14 +9,14 @@ import { resultSuccess } from './_util';
 const MY_CONTACT = {
   id: '8864c717-587d-472a-929a-8e5f298024da-0',
   avatar: '/static/mock-images/avatars/avatar_15.jpg',
-  name: 'Jaydon Frankie',
-  username: 'jaydon.frankie'
+  name: 'garron',
+  username: 'garron'
 };
 
 const contacts = [...Array(20)].map((_, index) => ({
   id: mockData.id(index),
   name: mockData.name.fullName(index),
-  username: mockData.name.fullName(index) && dotCase(mockData.name.fullName(index)),
+  username: mockData.name.fullName(index),
   avatar: mockData.image.avatar(index),
   address: mockData.address.fullAddress(index),
   phone: mockData.phoneNumber(index),
@@ -606,7 +605,7 @@ export default [
   {
     url: '/api/chat/contacts',
     timeout: 5000,
-    method: 'get',
+    method: 'post',
     response: () => {
       return resultSuccess({ contacts });
     }
@@ -615,8 +614,8 @@ export default [
     url: '/api/chat/search',
     timeout: 5000,
     method: 'get',
-    response: (config: any) => {
-      const { query } = config.params;
+    response: (params: any) => {
+      const { query } = params.body;
       let results = contacts;
       if (query) {
         const cleanQuery = query.toLowerCase().trim();
@@ -629,8 +628,8 @@ export default [
     url: '/api/chat/participants',
     timeout: 5000,
     method: 'get',
-    response: (config: any) => {
-      const { conversationKey } = config.params;
+    response: (params: any) => {
+      const { conversationKey } = params.body;
       const participants = [];
       const conversation = findConversationById(conversationKey);
       if (conversation) {
@@ -667,8 +666,8 @@ export default [
     url: '/api/chat/conversation',
     timeout: 5000,
     method: 'get',
-    response: (config: any) => {
-      const { conversationKey } = config.params;
+    response: (params: any) => {
+      const { conversationKey } = params.body;
       let conversation = findConversationById(conversationKey);
 
       if (conversation) {
@@ -688,8 +687,8 @@ export default [
     url: '/api/chat/conversation/mark-as-seen',
     timeout: 5000,
     method: 'get',
-    response: (config: any) => {
-      const { conversationId } = config.params;
+    response: (params: any) => {
+      const { conversationId } = params.body;
       const conversation = conversations.find(
         (_conversation) => _conversation.id === conversationId
       );
@@ -703,8 +702,8 @@ export default [
     url: '/api/chat/messages/new',
     timeout: 5000,
     method: 'get',
-    response: (request: any) => {
-      const { conversationId, recipientIds, body } = JSON.parse(request.data);
+    response: (params: any) => {
+      const { conversationId, recipientIds, body } = params.body;
 
       const user = MY_CONTACT;
       let conversation = null;

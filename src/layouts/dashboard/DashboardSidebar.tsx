@@ -12,13 +12,12 @@ import { alpha, styled } from '@mui/material/styles';
 import { useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 
-import { DocIllustration } from '@/assets/svg';
 import { MHidden } from '@/components/@material-extend';
 import Logo from '@/components/Logo';
 import MyAvatar from '@/components/MyAvatar';
 import NavSection from '@/components/NavSection';
 import Scrollbar from '@/components/Scrollbar';
-// import useAuth from '@/hooks/useAuth';
+import useAuth from '@/hooks/useAuth';
 import useCollapseDrawer from '@/hooks/useCollapseDrawer';
 import { PATH_DASHBOARD, PATH_GITHUB } from '@/routes/paths';
 
@@ -46,7 +45,7 @@ const AccountStyle = styled('div')(({ theme }: any) => ({
 
 function IconCollapse({ onToggleCollapse, collapseClick }: any) {
   return (
-    <Tooltip title="Mini Menu">
+    <Tooltip title="菜单">
       <CardActionArea
         onClick={onToggleCollapse}
         sx={{
@@ -84,7 +83,7 @@ function IconCollapse({ onToggleCollapse, collapseClick }: any) {
 
 export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }: any) {
   const { pathname } = useLocation();
-  // const { user } = useAuth();
+  const { user } = useAuth();
 
   const { isCollapse, collapseClick, collapseHover, onToggleCollapse, onHoverEnter, onHoverLeave } =
     useCollapseDrawer();
@@ -137,10 +136,10 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }: any)
               <MyAvatar />
               <Box sx={{ ml: 2 }}>
                 <Typography variant="subtitle2" sx={{ color: 'text.primary' }}>
-                  {/* {user?.displayName} */}
+                  {user?.displayName}
                 </Typography>
                 <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                  {/* {user?.role} */}
+                  {user?.role}
                 </Typography>
               </Box>
             </AccountStyle>
@@ -158,15 +157,12 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }: any)
           alignItems="center"
           sx={{ px: 5, pb: 5, mt: 10, width: 1, textAlign: 'center' }}
         >
-          <DocIllustration sx={{ width: 1 }} />
-
           <div>
             <Typography gutterBottom variant="subtitle1">
-              {/* Hi, {user?.displayName} */}
+              Hi, {user?.displayName}
             </Typography>
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-              Need help?
-              <br /> Please check our docs
+              需要帮助?
             </Typography>
           </div>
           <Button href={PATH_GITHUB} target="_blank" variant="contained">

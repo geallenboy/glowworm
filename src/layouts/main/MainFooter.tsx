@@ -1,9 +1,4 @@
-import facebookFill from '@iconify/icons-eva/facebook-fill';
-import googleFill from '@iconify/icons-eva/google-fill';
-import linkedinFill from '@iconify/icons-eva/linkedin-fill';
-import twitterFill from '@iconify/icons-eva/twitter-fill';
-import { Icon } from '@iconify/react';
-import { Container, Divider, Grid, IconButton, Link, Stack, Typography } from '@mui/material';
+import { Container, Divider, Grid, Link, Stack, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Link as RouterLink } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
@@ -11,15 +6,9 @@ import { Link as ScrollLink } from 'react-scroll';
 import Logo from '@/components/Logo';
 import { PATH_PAGE } from '@/routes/paths';
 
-const SOCIALS = [
-  { name: 'FaceBook', icon: facebookFill },
-  { name: 'Google', icon: googleFill },
-  { name: 'Linkedin', icon: linkedinFill },
-  { name: 'Twitter', icon: twitterFill }
-];
 const LINKS = [
   {
-    headline: 'minimalistapp',
+    headline: 'glowworm',
     children: [
       { name: '关于我们', href: PATH_PAGE.about },
       { name: '联系我们', href: PATH_PAGE.contact },
@@ -66,18 +55,6 @@ export default function MainFooter() {
             <Typography variant="body2" sx={{ pr: { md: 5 } }}>
               基于最新的Material-UI版本, 简单快速搭建应用程序.
             </Typography>
-            <Stack
-              spacing={1.5}
-              direction="row"
-              justifyContent={{ xs: 'center', md: 'flex-start' }}
-              sx={{ mt: 5, mb: { xs: 5, md: 0 } }}
-            >
-              {SOCIALS.map((social) => (
-                <IconButton key={social.name} color="primary" sx={{ p: 1 }}>
-                  <Icon icon={social.icon} width={16} height={16} />
-                </IconButton>
-              ))}
-            </Stack>
           </Grid>
 
           <Grid item xs={12} md={7}>

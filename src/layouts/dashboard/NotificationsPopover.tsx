@@ -27,20 +27,14 @@ import Scrollbar from '@/components/Scrollbar';
 import { fToNow } from '@/utils/formatTime';
 import mockData from '@/utils/mock-data';
 
-const TITLES = [
-  'Your order is placed',
-  'Sylvan King',
-  'You have new message',
-  'You have new mail',
-  'Delivery processing'
-];
+const TITLES = ['您的订单已经下好了', '西尔万·金', '你有新消息', '你有新邮件', '交付处理'];
 
 const DESCRIPTIONS = [
-  'waiting for shipping',
-  'answered to your comment on the Minimal',
-  '5 unread messages',
-  'sent from Guido Padberg',
-  'Your order is being shipped'
+  '等待消息',
+  '回答了你对这个问题的评论',
+  '5条未读消息',
+  '发送消息过去',
+  '您的订单正在发货'
 ];
 
 const TYPES = ['order_placed', 'friend_interactive', 'chat_message', 'mail', 'order_shipped'];
@@ -190,14 +184,14 @@ export default function NotificationsPopover() {
       >
         <Box sx={{ display: 'flex', alignItems: 'center', py: 2, px: 2.5 }}>
           <Box sx={{ flexGrow: 1 }}>
-            <Typography variant="subtitle1">Notifications</Typography>
+            <Typography variant="subtitle1">通知</Typography>
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-              You have {totalUnRead} unread messages
+              你有 {totalUnRead} 条未读消息
             </Typography>
           </Box>
 
           {totalUnRead > 0 && (
-            <Tooltip title=" Mark all as read">
+            <Tooltip title=" 将所有标记为已读">
               <MIconButton color="primary" onClick={handleMarkAllAsRead}>
                 <Icon icon={doneAllFill} width={20} height={20} />
               </MIconButton>
@@ -207,12 +201,12 @@ export default function NotificationsPopover() {
 
         <Divider />
 
-        <Scrollbar sx={{ height: { xs: 340, sm: 'auto' } }}>
+        <Scrollbar sx={{ height: { xs: 300, sm: 'auto' } }}>
           <List
             disablePadding
             subheader={
               <ListSubheader disableSticky sx={{ py: 1, px: 2.5, typography: 'overline' }}>
-                New
+                新
               </ListSubheader>
             }
           >
@@ -224,8 +218,8 @@ export default function NotificationsPopover() {
           <List
             disablePadding
             subheader={
-              <ListSubheader disableSticky sx={{ py: 1, px: 2.5, typography: 'overline' }}>
-                Before that
+              <ListSubheader disableSticky sx={{ py: 1, px: 1.5, typography: 'overline' }}>
+                在此之前
               </ListSubheader>
             }
           >
@@ -239,7 +233,7 @@ export default function NotificationsPopover() {
 
         <Box sx={{ p: 1 }}>
           <Button fullWidth disableRipple component={RouterLink} to="#">
-            View All
+            显示所有
           </Button>
         </Box>
       </MenuPopover>

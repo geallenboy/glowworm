@@ -99,7 +99,7 @@ export default function LandingMinimalHelps() {
               variant="overline"
               sx={{ mb: 2, color: 'text.secondary', textAlign: 'center' }}
             >
-              minimalistapp
+              萤火虫
             </Typography>
           </MotionInView>
           <MotionInView variants={varFadeInDown}>

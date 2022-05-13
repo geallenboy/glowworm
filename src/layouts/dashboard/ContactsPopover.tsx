@@ -24,8 +24,7 @@ export default function ContactsPopover() {
 
   const getContacts = useCallback(async () => {
     try {
-      const response = await axios.get('/api/chat/contacts');
-      console.log(response, 4444);
+      const response = await axios.post('/api/chat/contacts');
       if (isMountedRef.current) {
         setContacts(response.data.data.contacts);
       }

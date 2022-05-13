@@ -2,14 +2,14 @@ import jwtDecode from 'jwt-decode';
 
 import axios from './axios';
 
-const isValidToken = (accessToken: string) => {
+const isValidToken = (accessToken: any) => {
   if (!accessToken) {
     return false;
   }
-
+  console.log(accessToken, 3333, jwtDecode(accessToken));
   const decoded: any = jwtDecode(accessToken);
   const currentTime = Date.now() / 1000;
-
+  console.log(decoded, 666);
   return decoded.exp > currentTime;
 };
 
