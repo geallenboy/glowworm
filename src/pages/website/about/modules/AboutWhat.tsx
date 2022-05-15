@@ -1,7 +1,7 @@
 import roundArrowRightAlt from '@iconify/icons-ic/round-arrow-right-alt';
 import { Icon } from '@iconify/react';
 import { alpha, Box, Button, Container, Grid, LinearProgress, Typography } from '@mui/material';
-import { styled, useTheme } from '@mui/styles';
+import { styled, useTheme } from '@mui/material/styles';
 
 import { MHidden } from '@/components/@material-extend';
 import { MotionInView, varFadeInRight, varFadeInUp } from '@/components/animate';

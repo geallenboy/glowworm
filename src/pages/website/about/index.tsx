@@ -1,7 +1,8 @@
 import { Divider } from '@mui/material';
-import { styled } from '@mui/styles';
+import { styled } from '@mui/material/styles';
 
 import Page from '@/components/Page';
+import { title_main } from '@/config';
 
 import { AboutHero, AboutVision, AboutWhat } from './modules';
 
@@ -14,7 +15,7 @@ const RootStyle = styled(Page)(({ theme }: any) => ({
 
 export default function About() {
   return (
-    <RootStyle title="关于我们">
+    <RootStyle title={`关于我们${title_main}`}>
       <AboutHero />
       <AboutWhat />
       <AboutVision />

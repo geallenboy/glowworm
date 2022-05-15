@@ -5,11 +5,8 @@ import { type ConfigEnv, type UserConfig, loadEnv } from 'vite';
 import { viteMockServe } from 'vite-plugin-mock';
 import PurgeIcons from 'vite-plugin-purge-icons';
 import svgrPlugin from 'vite-plugin-svgr';
-
 const CWD = process.cwd();
-
 export default ({ command, mode }: ConfigEnv): UserConfig => {
-  // 环境变量
   const { VITE_BASE_URL, VITE_DROP_CONSOLE } = loadEnv(mode, CWD);
 
   const isBuild = command === 'build';

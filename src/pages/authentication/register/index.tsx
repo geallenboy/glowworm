@@ -1,9 +1,10 @@
 import { Box, Card, Container, Link, Typography } from '@mui/material';
-import { styled } from '@mui/styles';
+import { styled } from '@mui/material/styles';
 import { Link as RouterLink } from 'react-router-dom';
 
 import { MHidden } from '@/components/@material-extend';
 import Page from '@/components/Page';
+import { title_main } from '@/config';
 import useAuth from '@/hooks/useAuth';
 import AuthLayout from '@/layouts/AuthLayout';
 import { PATH_AUTH } from '@/routes/paths';
@@ -40,7 +41,7 @@ export default function Register() {
   const { method } = useAuth();
 
   return (
-    <RootStyle title="注册 | glowworm">
+    <RootStyle title={`注册${title_main}`}>
       <AuthLayout>
         已经有账户了? &nbsp;
         <Link underline="none" variant="subtitle2" component={RouterLink} to={PATH_AUTH.login}>

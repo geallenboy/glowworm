@@ -1,5 +1,5 @@
 import { Box, Card, CardContent, Typography } from '@mui/material';
-import { useTheme } from '@mui/styles';
+import { useTheme } from '@mui/material/styles';
 import { useRef, useState } from 'react';
 import Slider from 'react-slick';
 

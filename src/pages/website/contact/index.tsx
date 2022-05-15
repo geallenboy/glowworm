@@ -2,6 +2,7 @@ import { Container, Grid } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 import Page from '@/components/Page';
+import { title_main } from '@/config';
 
 import { ContactForm, ContactHero } from './modules';
 
@@ -14,7 +15,7 @@ const RootStyle = styled(Page)(({ theme }: any) => ({
 
 export default function Contact() {
   return (
-    <RootStyle title="Contact us | Minimal-UI">
+    <RootStyle title={`联系我们${title_main}`}>
       <ContactHero />
 
       <Container sx={{ my: 10 }}>

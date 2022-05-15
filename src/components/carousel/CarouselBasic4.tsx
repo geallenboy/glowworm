@@ -1,7 +1,7 @@
 import moreHorizontalFill from '@iconify/icons-eva/more-horizontal-fill';
 import { Icon } from '@iconify/react';
 import { alpha, Box, Card, Typography } from '@mui/material';
-import { styled, useTheme } from '@mui/styles';
+import { styled, useTheme } from '@mui/material/styles';
 import { useRef } from 'react';
 import Slider from 'react-slick';
 

@@ -39,27 +39,29 @@ const ResetPassword = Loadable(lazy(() => import('@/pages/authentication/resetPa
 const VerifyCode = Loadable(lazy(() => import('@/pages/authentication/verifyCode')));
 // Dashboard
 const App = Loadable(lazy(() => import('@/pages/dashboard/app')));
-const GeneralEcommerce = Loadable(lazy(() => import('@/pages/dashboard/GeneralEcommerce')));
-const GeneralBanking = Loadable(lazy(() => import('@/pages/dashboard/GeneralBanking')));
-const GeneralBooking = Loadable(lazy(() => import('@/pages/dashboard/GeneralBooking')));
-const EcommerceShop = Loadable(lazy(() => import('@/pages/dashboard/EcommerceShop')));
+const GeneralEcommerce = Loadable(lazy(() => import('@/pages/dashboard/greneral/ecommerce')));
+const GeneralBanking = Loadable(lazy(() => import('@/pages/dashboard/greneral/banking')));
+const GeneralBooking = Loadable(lazy(() => import('@/pages/dashboard/greneral/booking')));
+const EcommerceShop = Loadable(lazy(() => import('@/pages/dashboard/ecommerce/shop')));
 const EcommerceProductDetails = Loadable(
-  lazy(() => import('@/pages/dashboard/EcommerceProductDetails'))
+  lazy(() => import('@/pages/dashboard/ecommerce/productDetails'))
 );
-const EcommerceProductList = Loadable(lazy(() => import('@/pages/dashboard/EcommerceProductList')));
+const EcommerceProductList = Loadable(
+  lazy(() => import('@/pages/dashboard/ecommerce/productList'))
+);
 const EcommerceProductCreate = Loadable(
-  lazy(() => import('@/pages/dashboard/EcommerceProductCreate'))
+  lazy(() => import('@/pages/dashboard/ecommerce/productCreate'))
 );
-const EcommerceCheckout = Loadable(lazy(() => import('@/pages/dashboard/EcommerceCheckout')));
-const EcommerceInvoice = Loadable(lazy(() => import('@/pages/dashboard/EcommerceInvoice')));
-const BlogPosts = Loadable(lazy(() => import('@/pages/dashboard/BlogPosts')));
-const BlogPost = Loadable(lazy(() => import('@/pages/dashboard/BlogPost')));
-const BlogNewPost = Loadable(lazy(() => import('@/pages/dashboard/BlogNewPost')));
-const UserProfile = Loadable(lazy(() => import('@/pages/dashboard/UserProfile')));
-const UserCards = Loadable(lazy(() => import('@/pages/dashboard/UserCards')));
-const UserList = Loadable(lazy(() => import('@/pages/dashboard/UserList')));
-const UserAccount = Loadable(lazy(() => import('@/pages/dashboard/UserAccount')));
-const UserCreate = Loadable(lazy(() => import('@/pages/dashboard/UserCreate')));
+const EcommerceCheckout = Loadable(lazy(() => import('@/pages/dashboard/ecommerce/checkout')));
+const EcommerceInvoice = Loadable(lazy(() => import('@/pages/dashboard/ecommerce/invoice')));
+const BlogPosts = Loadable(lazy(() => import('@/pages/dashboard/blog/posts')));
+const BlogPost = Loadable(lazy(() => import('@/pages/dashboard/blog/post')));
+const BlogNewPost = Loadable(lazy(() => import('@/pages/dashboard/blog/newPost')));
+const UserProfile = Loadable(lazy(() => import('@/pages/dashboard/user/profile')));
+const UserCards = Loadable(lazy(() => import('@/pages/dashboard/user/cards')));
+const UserList = Loadable(lazy(() => import('@/pages/dashboard/user/list')));
+const UserAccount = Loadable(lazy(() => import('@/pages/dashboard/user/account')));
+const UserCreate = Loadable(lazy(() => import('@/pages/dashboard/user/create')));
 const Chat = Loadable(lazy(() => import('@/pages/dashboard/Chat')));
 const Mail = Loadable(lazy(() => import('@/pages/dashboard/Mail')));
 const Calendar = Loadable(lazy(() => import('@/pages/dashboard/Calendar')));
@@ -70,82 +72,60 @@ const About = Loadable(lazy(() => import('@/pages/website/about')));
 const Contact = Loadable(lazy(() => import('@/pages/website/contact')));
 const Faqs = Loadable(lazy(() => import('@/pages/website/faqs')));
 const Maintenance = Loadable(lazy(() => import('@/pages/website/Maintenance')));
-const Page500 = Loadable(lazy(() => import('@/pages/Page500')));
-const NotFound = Loadable(lazy(() => import('@/pages/Page404')));
+const Page500 = Loadable(lazy(() => import('@/pages/website/Page500')));
+const NotFound = Loadable(lazy(() => import('@/pages/website/Page404')));
 
 // Components
 const ComponentsOverview = Loadable(lazy(() => import('@/pages/website/componentsOverview')));
-const Color = Loadable(
-  lazy(() => import('@/pages/components-overview/foundations/FoundationColors'))
-);
+const Color = Loadable(lazy(() => import('@/pages/components/foundations/FoundationColors')));
 const Typography = Loadable(
-  lazy(() => import('@/pages/components-overview/foundations/FoundationTypography'))
+  lazy(() => import('@/pages/components/foundations/FoundationTypography'))
 );
-const Shadows = Loadable(
-  lazy(() => import('@/pages/components-overview/foundations/FoundationShadows'))
-);
-const Grid = Loadable(lazy(() => import('@/pages/components-overview/foundations/FoundationGrid')));
-const Icons = Loadable(
-  lazy(() => import('@/pages/components-overview/foundations/FoundationIcons'))
-);
-const Accordion = Loadable(lazy(() => import('@/pages/components-overview/material-ui/Accordion')));
-const Alert = Loadable(lazy(() => import('@/pages/components-overview/material-ui/Alert')));
-const Autocomplete = Loadable(
-  lazy(() => import('@/pages/components-overview/material-ui/Autocomplete'))
-);
-const Avatar = Loadable(lazy(() => import('@/pages/components-overview/material-ui/Avatar')));
-const Badge = Loadable(lazy(() => import('@/pages/components-overview/material-ui/Badge')));
-const Breadcrumb = Loadable(
-  lazy(() => import('@/pages/components-overview/material-ui/Breadcrumb'))
-);
-const Buttons = Loadable(lazy(() => import('@/pages/components-overview/material-ui/buttons')));
-const Checkbox = Loadable(lazy(() => import('@/pages/components-overview/material-ui/Checkboxes')));
-const Chip = Loadable(lazy(() => import('@/pages/components-overview/material-ui/chips')));
-const Dialog = Loadable(lazy(() => import('@/pages/components-overview/material-ui/dialog')));
-const Label = Loadable(lazy(() => import('@/pages/components-overview/material-ui/Label')));
-const List = Loadable(lazy(() => import('@/pages/components-overview/material-ui/Lists')));
-const Menu = Loadable(lazy(() => import('@/pages/components-overview/material-ui/Menus')));
-const Pagination = Loadable(
-  lazy(() => import('@/pages/components-overview/material-ui/Pagination'))
-);
-const Pickers = Loadable(lazy(() => import('@/pages/components-overview/material-ui/pickers')));
-const Popover = Loadable(lazy(() => import('@/pages/components-overview/material-ui/Popover')));
-const Progress = Loadable(lazy(() => import('@/pages/components-overview/material-ui/progress')));
-const RadioButtons = Loadable(
-  lazy(() => import('@/pages/components-overview/material-ui/RadioButtons'))
-);
-const Rating = Loadable(lazy(() => import('@/pages/components-overview/material-ui/Rating')));
-const Slider = Loadable(lazy(() => import('@/pages/components-overview/material-ui/Slider')));
-const Snackbar = Loadable(lazy(() => import('@/pages/components-overview/material-ui/Snackbar')));
-const Stepper = Loadable(lazy(() => import('@/pages/components-overview/material-ui/stepper')));
-const Switches = Loadable(lazy(() => import('@/pages/components-overview/material-ui/Switches')));
-const Table = Loadable(lazy(() => import('@/pages/components-overview/material-ui/table')));
-const Tabs = Loadable(lazy(() => import('@/pages/components-overview/material-ui/Tabs')));
-const Textfield = Loadable(lazy(() => import('@/pages/components-overview/material-ui/textfield')));
-const Timeline = Loadable(lazy(() => import('@/pages/components-overview/material-ui/Timeline')));
-const Tooltip = Loadable(lazy(() => import('@/pages/components-overview/material-ui/Tooltip')));
-const TransferList = Loadable(
-  lazy(() => import('@/pages/components-overview/material-ui/transfer-list'))
-);
-const TreeView = Loadable(lazy(() => import('@/pages/components-overview/material-ui/TreeView')));
+const Shadows = Loadable(lazy(() => import('@/pages/components/foundations/FoundationShadows')));
+const Grid = Loadable(lazy(() => import('@/pages/components/foundations/FoundationGrid')));
+const Icons = Loadable(lazy(() => import('@/pages/components/foundations/FoundationIcons')));
+const Accordion = Loadable(lazy(() => import('@/pages/components/material-ui/Accordion')));
+const Alert = Loadable(lazy(() => import('@/pages/components/material-ui/Alert')));
+const Autocomplete = Loadable(lazy(() => import('@/pages/components/material-ui/Autocomplete')));
+const Avatar = Loadable(lazy(() => import('@/pages/components/material-ui/Avatar')));
+const Badge = Loadable(lazy(() => import('@/pages/components/material-ui/Badge')));
+const Breadcrumb = Loadable(lazy(() => import('@/pages/components/material-ui/Breadcrumb')));
+const Buttons = Loadable(lazy(() => import('@/pages/components/material-ui/buttons')));
+const Checkbox = Loadable(lazy(() => import('@/pages/components/material-ui/Checkboxes')));
+const Chip = Loadable(lazy(() => import('@/pages/components/material-ui/chips')));
+const Dialog = Loadable(lazy(() => import('@/pages/components/material-ui/dialog')));
+const Label = Loadable(lazy(() => import('@/pages/components/material-ui/Label')));
+const List = Loadable(lazy(() => import('@/pages/components/material-ui/Lists')));
+const Menu = Loadable(lazy(() => import('@/pages/components/material-ui/Menus')));
+const Pagination = Loadable(lazy(() => import('@/pages/components/material-ui/Pagination')));
+const Pickers = Loadable(lazy(() => import('@/pages/components/material-ui/pickers')));
+const Popover = Loadable(lazy(() => import('@/pages/components/material-ui/Popover')));
+const Progress = Loadable(lazy(() => import('@/pages/components/material-ui/progress')));
+const RadioButtons = Loadable(lazy(() => import('@/pages/components/material-ui/RadioButtons')));
+const Rating = Loadable(lazy(() => import('@/pages/components/material-ui/Rating')));
+const Slider = Loadable(lazy(() => import('@/pages/components/material-ui/Slider')));
+const Snackbar = Loadable(lazy(() => import('@/pages/components/material-ui/Snackbar')));
+const Stepper = Loadable(lazy(() => import('@/pages/components/material-ui/stepper')));
+const Switches = Loadable(lazy(() => import('@/pages/components/material-ui/Switches')));
+const Table = Loadable(lazy(() => import('@/pages/components/material-ui/table')));
+const Tabs = Loadable(lazy(() => import('@/pages/components/material-ui/Tabs')));
+const Textfield = Loadable(lazy(() => import('@/pages/components/material-ui/textfield')));
+const Timeline = Loadable(lazy(() => import('@/pages/components/material-ui/Timeline')));
+const Tooltip = Loadable(lazy(() => import('@/pages/components/material-ui/Tooltip')));
+const TransferList = Loadable(lazy(() => import('@/pages/components/material-ui/transfer-list')));
+const TreeView = Loadable(lazy(() => import('@/pages/components/material-ui/TreeView')));
 
-//
-const Charts = Loadable(lazy(() => import('@/pages/components-overview/extra/Charts')));
+//图表
+const Charts = Loadable(lazy(() => import('@/pages/components/extra/Charts')));
 
-const Editor = Loadable(lazy(() => import('@/pages/components-overview/extra/Editor')));
-const CopyToClipboard = Loadable(
-  lazy(() => import('@/pages/components-overview/extra/CopyToClipboard'))
-);
-const Upload = Loadable(lazy(() => import('@/pages/components-overview/extra/Upload')));
-const Carousel = Loadable(lazy(() => import('@/pages/components-overview/extra/Carousel')));
-const MultiLanguage = Loadable(
-  lazy(() => import('@/pages/components-overview/extra/MultiLanguage'))
-);
-const Animate = Loadable(lazy(() => import('@/pages/components-overview/extra/animate')));
-const MegaMenu = Loadable(lazy(() => import('@/pages/components-overview/extra/MegaMenu')));
-const FormValidation = Loadable(
-  lazy(() => import('@/pages/components-overview/extra/form-validation'))
-);
+const Editor = Loadable(lazy(() => import('@/pages/components/extra/Editor')));
+const CopyToClipboard = Loadable(lazy(() => import('@/pages/components/extra/CopyToClipboard')));
+const Upload = Loadable(lazy(() => import('@/pages/components/extra/Upload')));
+const Carousel = Loadable(lazy(() => import('@/pages/components/extra/Carousel')));
+const MultiLanguage = Loadable(lazy(() => import('@/pages/components/extra/MultiLanguage')));
+const Animate = Loadable(lazy(() => import('@/pages/components/extra/animate')));
+const MegaMenu = Loadable(lazy(() => import('@/pages/components/extra/MegaMenu')));
+const FormValidation = Loadable(lazy(() => import('@/pages/components/extra/form-validation')));
 
 export default function Router() {
   return useRoutes([

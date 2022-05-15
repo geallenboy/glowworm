@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import { styled, useTheme } from '@mui/styles';
+import { styled, useTheme } from '@mui/material/styles';
 import { useRef } from 'react';
 import Slider from 'react-slick';
 

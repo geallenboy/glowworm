@@ -25,7 +25,7 @@ export default function AppWelcome({ displayName }: { displayName: string }) {
         }}
       >
         <Typography>
-          Welcome back,
+          欢迎回来,
           <br /> {!displayName ? '...' : displayName}!
         </Typography>
       </CardContent>

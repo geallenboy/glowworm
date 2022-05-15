@@ -1,5 +1,5 @@
 import { Box, Container, Typography } from '@mui/material';
-import { styled } from '@mui/styles';
+import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
 
 import { TextAnimate, varFadeInRight, varWrapEnter } from '@/components/animate';

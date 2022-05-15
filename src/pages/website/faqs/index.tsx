@@ -2,6 +2,7 @@ import { Container, Grid, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 import Page from '@/components/Page';
+import { title_main } from '@/config';
 
 import { FaqsCategory, FaqsForm, FaqsHero, FaqsList } from './modules';
 
@@ -14,7 +15,7 @@ const RootStyle = styled(Page)(({ theme }: any) => ({
 
 export default function Faqs() {
   return (
-    <RootStyle title="常见问题">
+    <RootStyle title={`常见问题${title_main}`}>
       <FaqsHero />
 
       <Container sx={{ mt: 15, mb: 10 }}>

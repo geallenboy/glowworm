@@ -1,10 +1,11 @@
 import { Box, Button, Container, Typography } from '@mui/material';
-import { styled } from '@mui/styles';
+import { styled } from '@mui/material/styles';
 import { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
 import { SentIcon } from '@/assets/svg';
 import Page from '@/components/Page';
+import { title_main } from '@/config';
 import LogoOnlyLayout from '@/layouts/LogoOnlyLayout';
 import { PATH_AUTH } from '@/routes/paths';
 
@@ -23,7 +24,7 @@ export default function ResetPassword() {
   const [sent, setSent] = useState(false);
 
   return (
-    <RootStyle title="重置密码">
+    <RootStyle title={`重置密码${title_main}`}>
       <LogoOnlyLayout />
 
       <Container>

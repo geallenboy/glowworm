@@ -1,6 +1,7 @@
 import { styled } from '@mui/material/styles';
 
 import Page from '@/components/Page';
+import { title_main } from '@/config';
 
 import {
   LandingAdvertisement,
@@ -24,7 +25,7 @@ const ContentStyle = styled('div')(({ theme }) => ({
 
 export default function LandingPage() {
   return (
-    <RootStyle title="首页 | 萤火虫">
+    <RootStyle title={`首页${title_main}`}>
       <LandingHero />
       <ContentStyle>
         <LandingMinimal />

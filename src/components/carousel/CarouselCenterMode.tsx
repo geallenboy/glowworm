@@ -1,7 +1,7 @@
 import arrowForwardFill from '@iconify/icons-eva/arrow-forward-fill';
 import { Icon } from '@iconify/react';
 import { alpha, Box, CardContent, Link, Paper, Typography } from '@mui/material';
-import { styled, useTheme } from '@mui/styles';
+import { styled, useTheme } from '@mui/material/styles';
 import { useRef } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import Slider from 'react-slick';

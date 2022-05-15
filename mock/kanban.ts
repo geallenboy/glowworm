@@ -49,9 +49,9 @@ const COMMENTS = [...Array(8)].map((_, index) => ({
 const cardList = [
   {
     id: cardIds.card1,
-    name: 'Call with sales of HubSpot',
+    name: '与HubSpot的销售人员通话',
     description:
-      'Duis condimentum lacus finibus felis pellentesque, ac auctor nibh fermentum. Duis sed dui ante. Phasellus id eros tincidunt, dictum lorem vitae, pellentesque sem. Aenean eu enim sit amet mauris rhoncus mollis. Sed enim turpis, porta a felis et, luctus faucibus nisi. Phasellus et metus fermentum, ultrices arcu aliquam, facilisis justo. Cras nunc nunc, elementum sed euismod ut, maximus eget nibh. Phasellus condimentum lorem neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce sagittis pharetra eleifend. Suspendisse potenti.',
+      '湖水的两条支流上到处都是猫和种子，农夫也没有果实。两个，但是两个。他们会把它取下来，对自己的生命说，然后把它带走。因为你的蛋就像熔化的黄铜。至于愚昧人，就是猫的门，愚昧人的瘸子。Phasellus和fear iron，某种额外的弧度，你可以轻松地纠正它。今天，你需要的元素最多，但你需要的元素最多。Phasellus不是他们的调味品。果园泉水中的第一阵风把库拉的卧室摆在他面前。鱼是大象。停权.',
     assignee: [
       { id: memberIds.member1, avatar: mockData.image.avatar(1), name: mockData.name.fullName(1) }
     ],
@@ -62,8 +62,8 @@ const cardList = [
   },
   {
     id: cardIds.card2,
-    name: 'Interview for the Asis. Sales Manager',
-    description: 'We are looking for vue experience and of course node js strong knowledge',
+    name: 'Asis的采访。销售经理',
+    description: '我们正在寻找vue的经验，当然还有丰富的知识',
     assignee: [
       { id: memberIds.member1, avatar: mockData.image.avatar(1), name: mockData.name.fullName(2) },
       { id: memberIds.member2, avatar: mockData.image.avatar(2), name: mockData.name.fullName(3) },
@@ -78,9 +78,8 @@ const cardList = [
   },
   {
     id: cardIds.card3,
-    name: 'Change the height of the top bar because it looks too chunky',
-    description:
-      'We nede to make it aggressive with pricing because it’s in their interest to acquire us',
+    name: '更改顶部栏的高度，因为它看起来太粗了',
+    description: '我们必须在定价上采取积极措施，因为收购我们符合他们的利益',
     assignee: [],
     due: [null, null],
     attachments: [],
@@ -89,9 +88,8 @@ const cardList = [
   },
   {
     id: cardIds.card4,
-    name: 'Integrate Stripe API',
-    description:
-      'We nede to make it aggresive with pricing because it’s in their interest to acquire us',
+    name: '集成API',
+    description: '我们必须在定价上采取强硬措施，因为收购我们符合他们的利益',
     assignee: [
       { id: memberIds.member2, avatar: mockData.image.avatar(2), name: mockData.name.fullName(7) },
       { id: memberIds.member5, avatar: mockData.image.avatar(5), name: mockData.name.fullName(8) }
@@ -103,9 +101,8 @@ const cardList = [
   },
   {
     id: cardIds.card5,
-    name: 'Update the customer API for payments',
-    description:
-      'We need to make it aggresive with pricing because it’s in their interest to acquire us',
+    name: '更新客户支付API',
+    description: '我们需要在定价方面采取积极措施，因为收购我们符合他们的利益',
     assignee: [
       { id: memberIds.member1, avatar: mockData.image.avatar(1), name: mockData.name.fullName(9) }
     ],
@@ -116,8 +113,8 @@ const cardList = [
   },
   {
     id: cardIds.card6,
-    name: 'Release minimals DS',
-    description: 'Production',
+    name: '最低释放量',
+    description: '生产',
     assignee: [
       { id: memberIds.member1, avatar: mockData.image.avatar(1), name: mockData.name.fullName(10) }
     ],
@@ -131,12 +128,12 @@ const cardList = [
 const columnList = [
   {
     id: columnIds.column1,
-    name: 'Backlog',
+    name: '积压',
     cardIds: [cardIds.card1, cardIds.card2, cardIds.card3]
   },
   {
     id: columnIds.column2,
-    name: 'Progress',
+    name: '进度',
     cardIds: [cardIds.card4, cardIds.card5]
   },
   {
@@ -146,7 +143,7 @@ const columnList = [
   },
   {
     id: columnIds.column4,
-    name: 'Production',
+    name: '生产',
     cardIds: [cardIds.card6]
   }
 ];

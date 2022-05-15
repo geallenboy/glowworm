@@ -1,5 +1,5 @@
 import { Button, Container, Typography } from '@mui/material';
-import { styled } from '@mui/styles';
+import { styled } from '@mui/material/styles';
 import { Link as RouterLink } from 'react-router-dom';
 
 import { MaintenanceIllustration } from '@/assets/svg';

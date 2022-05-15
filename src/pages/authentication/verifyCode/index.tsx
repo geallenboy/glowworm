@@ -1,10 +1,11 @@
 import arrowIosBackFill from '@iconify/icons-eva/arrow-ios-back-fill';
 import { Icon } from '@iconify/react';
 import { Box, Button, Container, Link, Typography } from '@mui/material';
-import { styled } from '@mui/styles';
+import { styled } from '@mui/material/styles';
 import { Link as RouterLink } from 'react-router-dom';
 
 import Page from '@/components/Page';
+import { title_main } from '@/config';
 import LogoOnlyLayout from '@/layouts/LogoOnlyLayout';
 import { PATH_AUTH } from '@/routes/paths';
 
@@ -19,7 +20,7 @@ const RootStyle = styled(Page)(({ theme }: any) => ({
 
 export default function VerifyCode() {
   return (
-    <RootStyle title="验证码">
+    <RootStyle title={`验证码${title_main}`}>
       <LogoOnlyLayout />
 
       <Container>

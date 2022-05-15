@@ -77,4 +77,4 @@ export const PATH_DASHBOARD = {
   }
 };
 
-export const PATH_GITHUB = 'https://github.com/geallenboy/react-redux-materialUI.git';
+export const PATH_GITHUB = 'https://github.com/geallenboy/glowworm.git';

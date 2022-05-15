@@ -1,5 +1,5 @@
 import { alpha, Box, Container, Typography, useTheme } from '@mui/material';
-import { styled } from '@mui/styles';
+import { styled } from '@mui/material/styles';
 
 import { MotionInView, varFadeInUp } from '@/components/animate';
 

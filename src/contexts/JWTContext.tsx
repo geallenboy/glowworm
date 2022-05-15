@@ -63,7 +63,6 @@ function AuthProvider({ children }: any) {
     const initialize = async () => {
       try {
         const accessToken = window.localStorage.getItem('accessToken');
-        console.log(accessToken, 'accessToken');
         if (accessToken) {
           setSession(accessToken);
           const response = await axios.get('/api/account/my-account');

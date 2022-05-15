@@ -12,7 +12,6 @@ import NotistackProvider from './components/NotistackProvider';
 
 export default function App() {
   const { isInitialized } = useAuth();
-  console.log(isInitialized, 44);
   return (
     <ThemeConfig>
       <ThemePrimaryColor>

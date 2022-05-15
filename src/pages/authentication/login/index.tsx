@@ -1,9 +1,10 @@
 import { Alert, Box, Button, Card, Container, Link, Stack, Typography } from '@mui/material';
-import { styled } from '@mui/styles';
+import { styled } from '@mui/material/styles';
 import { Link as RouterLink } from 'react-router-dom';
 
 import { MHidden } from '@/components/@material-extend';
 import Page from '@/components/Page';
+import { title_main } from '@/config';
 import useAuth from '@/hooks/useAuth';
 import AuthLayout from '@/layouts/AuthLayout';
 import { PATH_AUTH } from '@/routes/paths';
@@ -48,7 +49,7 @@ export default function Login() {
   };
 
   return (
-    <RootStyle title="登录 | 后台管理UI">
+    <RootStyle title={`登录${title_main}`}>
       <AuthLayout>
         没有账号? &nbsp;
         <Link underline="none" variant="subtitle2" component={RouterLink} to={PATH_AUTH.register}>

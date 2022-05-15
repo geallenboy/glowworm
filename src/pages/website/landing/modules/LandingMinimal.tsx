@@ -1,5 +1,5 @@
 import { alpha, Box, Card, Container, Grid, Typography, useMediaQuery } from '@mui/material';
-import { styled, useTheme } from '@mui/styles';
+import { styled, useTheme } from '@mui/material/styles';
 
 import { MotionInView, varFadeInDown, varFadeInUp } from '@/components/animate';
 

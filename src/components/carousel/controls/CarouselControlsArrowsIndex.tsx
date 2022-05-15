@@ -4,7 +4,7 @@ import roundKeyboardArrowLeft from '@iconify/icons-ic/round-keyboard-arrow-left'
 import roundKeyboardArrowRight from '@iconify/icons-ic/round-keyboard-arrow-right';
 import { Icon } from '@iconify/react';
 import { alpha, Box, Typography } from '@mui/material';
-import { styled, useTheme } from '@mui/styles';
+import { styled, useTheme } from '@mui/material/styles';
 
 import { MIconButton } from '@/components/@material-extend';
 

@@ -1,5 +1,5 @@
 import { alpha, Box, Button, Card, CardContent, Paper, Typography } from '@mui/material';
-import { styled, useTheme } from '@mui/styles';
+import { styled, useTheme } from '@mui/material/styles';
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
 import Slider from 'react-slick';
