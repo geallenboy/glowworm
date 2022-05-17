@@ -1,0 +1,11 @@
+export { default as BestSalesman } from './BestSalesman';
+export { default as CurrentBalance } from './CurrentBalance';
+export { default as LatestProducts } from './LatestProducts';
+export { default as NewProducts } from './NewProducts';
+export { default as ProductSold } from './ProductSold';
+export { default as SaleByGender } from './SaleByGender';
+export { default as SalesOverview } from './SalesOverview';
+export { default as SalesProfit } from './SalesProfit';
+export { default as TotalBalance } from './TotalBalance';
+export { default as Welcome } from './Welcome';
+export { default as YearlySales } from './YearlySales';

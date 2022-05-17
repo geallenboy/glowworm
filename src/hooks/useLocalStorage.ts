@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 export default function useLocalStorage(key, defaultValue) {
   const [value, setValue] = useState(() => {
     const storedValue = localStorage.getItem(key);
-    console.log(storedValue, key, 333, localStorage.getItem(key));
     return storedValue === null ? defaultValue : JSON.parse(storedValue);
   });
 

@@ -9,7 +9,6 @@ import {
 } from '@mui/material';
 
 import useSettings from '@/hooks/useSettings';
-
 export default function SettingDirection() {
   const { themeDirection, onChangeDirection } = useSettings();
 

@@ -2,7 +2,6 @@ import { Box, BoxProps } from '@mui/material';
 import { motion } from 'framer-motion';
 
 import { varMediumClick, varSmallClick } from './variants';
-
 interface ButtonAnimateType extends BoxProps {
   mediumClick?: boolean;
 }

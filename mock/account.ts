@@ -42,8 +42,7 @@ export default [
       }
       const accessToken = encrypt(user.id);
       user.accessToken = accessToken;
-      console.log(user);
-      return resultSuccess({ users, accessToken });
+      return resultSuccess({ user, accessToken });
     }
   },
   {

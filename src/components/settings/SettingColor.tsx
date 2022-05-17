@@ -10,7 +10,6 @@ import {
 } from '@mui/material';
 
 import useSettings from '@/hooks/useSettings';
-
 export default function SettingColor() {
   const { themeColor, onChangeColor, colorOption } = useSettings();
 

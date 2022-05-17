@@ -1,8 +1,7 @@
 import { Button, Card, CardContent, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { Link as RouterLink } from 'react-router-dom';
 
-import { SeoIllustration } from '@/assets/svg';
+import { MotivationIllustration } from '@/assets/svg';
 
 const RootStyle = styled(Card)(({ theme }) => ({
   boxShadow: 'none',
@@ -16,29 +15,30 @@ const RootStyle = styled(Card)(({ theme }) => ({
     justifyContent: 'space-between'
   }
 }));
-export default function AppWelcome({ displayName }: { displayName: string }) {
+
+export default function Welcome({ displayName }: { displayName: string }) {
   return (
     <RootStyle>
       <CardContent
         sx={{
+          color: 'grey.800',
           p: { md: 0 },
-          pl: { md: 5 },
-          color: 'grey.800'
+          pl: { md: 5 }
         }}
       >
-        <Typography>
-          欢迎回来,
+        <Typography gutterBottom variant="h4">
+          祝贺,
           <br /> {!displayName ? '...' : displayName}!
         </Typography>
+
         <Typography variant="body2" sx={{ pb: { xs: 3, xl: 5 }, maxWidth: 480, mx: 'auto' }}>
-          论潜力，不算天才，可玄功武技，皆可无师自通。 论实力，任凭你有万千至宝，但定不敌
+          本月最畅销书你今天的销售量增加了57.6%
         </Typography>
 
-        <Button variant="contained" to="#" component={RouterLink}>
-          点击
-        </Button>
+        <Button variant="contained">点击</Button>
       </CardContent>
-      <SeoIllustration
+
+      <MotivationIllustration
         sx={{
           p: 3,
           width: 360,
