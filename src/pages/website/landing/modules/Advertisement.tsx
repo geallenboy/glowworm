@@ -9,7 +9,7 @@ const ContentStyle = styled('div')(({ theme }) => ({
   margin: 'auto',
   overflow: 'hidden',
   paddingBottom: theme.spacing(10),
-  borderRadius: theme.shape.borderRadiusMd,
+  borderRadius: theme.shape.borderRadius,
   backgroundImage: `linear-gradient(135deg,
     ${theme.palette.primary.main} 0%,
     ${theme.palette.primary.dark} 100%)`,
@@ -21,7 +21,7 @@ const ContentStyle = styled('div')(({ theme }) => ({
   }
 }));
 
-export default function LandingAdvertisement() {
+export default function Advertisement() {
   return (
     <Container maxWidth="lg">
       <ContentStyle>

@@ -5,7 +5,7 @@ import Page from '@/components/Page';
 
 import { ComponentFoundation, ComponentHero, ComponentMaterialUI, ComponentOther } from './modules';
 
-const RootStyle = styled(Page)(({ theme }: any) => ({
+const RootStyle = styled(Page)(({ theme }) => ({
   paddingTop: theme.spacing(8),
   paddingBottom: theme.spacing(15),
   [theme.breakpoints.up('md')]: {

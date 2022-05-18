@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 import getVariant from '../getVariant';
 
-export default function ContainerView({ selectVariant, ...other }: any) {
+export default function ContainerView({ selectVariant, ...other }) {
   const isKenburns = selectVariant.includes('kenburns');
 
   return (
@@ -12,7 +12,7 @@ export default function ContainerView({ selectVariant, ...other }: any) {
         height: 480,
         width: '100%',
         overflow: 'hidden',
-        boxShadow: (theme: any) => theme.customShadows.z8
+        boxShadow: (theme) => theme.customShadows.z8
       }}
       {...other}
     >

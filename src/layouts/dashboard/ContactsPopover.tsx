@@ -1,7 +1,6 @@
 import peopleFill from '@iconify/icons-eva/people-fill';
 import { Icon } from '@iconify/react';
 import { Avatar, ListItemAvatar, ListItemButton, ListItemText, Typography } from '@mui/material';
-// material
 import { alpha } from '@mui/material/styles';
 import { useCallback, useEffect, useRef, useState } from 'react';
 

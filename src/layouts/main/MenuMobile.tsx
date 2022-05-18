@@ -37,7 +37,7 @@ const ListItemStyle = styled(ListItemButton)(({ theme }) => ({
   color: theme.palette.text.secondary
 }));
 
-function MenuMobileItem({ item, isOpen, isActive, onOpen }) {
+function MenuMobileItem({ item, isOpen, isActive, onOpen }: any) {
   const { title, path, icon, children } = item;
 
   if (children) {
@@ -145,7 +145,7 @@ function MenuMobileItem({ item, isOpen, isActive, onOpen }) {
   );
 }
 
-export default function MenuMobile({ isOffset, isHome }) {
+export default function MenuMobile({ isOffset, isHome }: any) {
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);

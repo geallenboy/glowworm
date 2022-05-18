@@ -22,7 +22,7 @@ const CARDS = [
   }
 ];
 
-const shadowIcon = (color) => `drop-shadow(2px 2px 2px ${alpha(color, 0.48)})`;
+const shadowIcon = (color: string) => `drop-shadow(2px 2px 2px ${alpha(color, 0.48)})`;
 
 const RootStyle = styled('div')(({ theme }) => ({
   paddingTop: theme.spacing(15),
@@ -32,7 +32,7 @@ const RootStyle = styled('div')(({ theme }) => ({
 }));
 
 const CardStyle = styled(Card)(({ theme }) => {
-  const shadowCard = (opacity) =>
+  const shadowCard = (opacity: number) =>
     theme.palette.mode === 'light'
       ? alpha(theme.palette.grey[500], opacity)
       : alpha(theme.palette.common.black, opacity);
@@ -67,7 +67,7 @@ const CardStyle = styled(Card)(({ theme }) => {
           position: 'absolute',
           width: 'calc(100% - 40px)',
           height: 'calc(100% - 40px)',
-          borderRadius: theme.shape.borderRadiusMd,
+          borderRadius: theme.shape.borderRadius,
           backgroundColor: theme.palette.background.paper,
           boxShadow: `-20px 20px 40px 0 ${shadowCard(0.12)}`
         }
@@ -84,7 +84,7 @@ const CardIconStyle = styled('img')(({ theme }) => ({
   filter: shadowIcon(theme.palette.primary.main)
 }));
 
-export default function LandingMinimalHelps() {
+export default function MinimalHelps() {
   const theme = useTheme();
   const isLight = theme.palette.mode === 'light';
   const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));

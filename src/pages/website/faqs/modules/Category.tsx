@@ -1,8 +1,13 @@
 import { Box, Grid, Paper, Typography } from '@mui/material';
 
 import { MotionInView, varFadeIn } from '@/components/animate';
+interface categories_type {
+  label: string;
+  icon: string;
+  href?: string;
+}
 
-const CATEGORIES = [
+const CATEGORIES: categories_type[] = [
   {
     label: '管理你的账户',
     icon: '/static/faqs/ic_account.svg',
@@ -35,9 +40,7 @@ const CATEGORIES = [
   }
 ];
 
-function CategoryCard({ category }: any) {
-  const { label, icon } = category;
-
+function CategoryCard({ label, icon }: categories_type) {
   return (
     <Paper
       sx={{
@@ -60,10 +63,10 @@ function CategoryCard({ category }: any) {
 export default function FaqsCategory() {
   return (
     <Grid container spacing={3} sx={{ mb: 15 }}>
-      {CATEGORIES.map((category: any) => (
+      {CATEGORIES.map((category: categories_type) => (
         <Grid item xs={12} sm={4} md={2} key={category.label}>
           <MotionInView variants={varFadeIn}>
-            <CategoryCard category={category} />
+            <CategoryCard label={category.label} icon={category.icon} />
           </MotionInView>
         </Grid>
       ))}

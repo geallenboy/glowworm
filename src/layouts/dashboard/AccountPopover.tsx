@@ -40,7 +40,6 @@ export default function AccountPopover() {
   const isMountedRef = useIsMountedRef();
   const { user, logout } = useAuth();
   const [open, setOpen] = useState(false);
-  console.log(user, 789);
   const handleOpen = () => {
     setOpen(true);
   };

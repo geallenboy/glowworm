@@ -5,7 +5,7 @@ import Scrollbar from '@/components/Scrollbar';
 
 import getVariant from '../getVariant';
 
-export default function ContainerView({ selectVariant, sx, ...other }: any) {
+export default function ContainerView({ selectVariant, sx, ...other }) {
   return (
     <Paper
       sx={{
@@ -30,7 +30,7 @@ export default function ContainerView({ selectVariant, sx, ...other }: any) {
                 alignItems: 'center',
                 justifyContent: 'center',
                 bgcolor: 'background.paper',
-                boxShadow: (theme: any) => theme.customShadows.z8
+                boxShadow: (theme) => theme.customShadows.z8
               }}
             >
               <Typography variant="body2">Item {index + 1}</Typography>

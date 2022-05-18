@@ -3,7 +3,17 @@ import React, { createContext } from 'react';
 import useLocalStorage from '@/hooks/useLocalStorage';
 import palette from '@/theme/palette';
 
-const PRIMARY_COLOR = [
+interface primary_color_type {
+  name: string;
+  lighter: string;
+  light: string;
+  main: string;
+  dark: string;
+  darker: string;
+  contrastText: string;
+}
+
+const PRIMARY_COLOR: primary_color_type[] = [
   {
     name: 'default',
     ...palette.light.primary
@@ -85,7 +95,23 @@ function SetColor(themeColor: string) {
   return color;
 }
 
-const initialState = {
+interface initialState_type {
+  themeMode: string;
+  themeDirection: string;
+  themeColor: string;
+  themeStretch: boolean;
+  onChangeMode: () => void;
+  onChangeDirection: () => void;
+  onChangeColor: () => void;
+  onToggleStretch: () => void;
+  setColor: primary_color_type;
+  colorOption: {
+    name: string;
+    value: string;
+  }[];
+}
+
+const initialState: initialState_type = {
   themeMode: 'light',
   themeDirection: 'ltr',
   themeColor: 'default',
@@ -115,14 +141,14 @@ function SettingsProvider({ children }: any) {
     });
   };
 
-  const onChangeDirection = (event) => {
+  const onChangeDirection = (event: { target: { value: any } }) => {
     setSettings({
       ...settings,
       themeDirection: event.target.value
     });
   };
 
-  const onChangeColor = (event) => {
+  const onChangeColor = (event: { target: { value: any } }) => {
     setSettings({
       ...settings,
       themeColor: event.target.value

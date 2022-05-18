@@ -18,7 +18,7 @@ import { PATH_PAGE } from '@/routes/paths';
 import { Block } from '../Block';
 import { iconify, local, material } from './data';
 
-const RootStyle = styled(Page)(({ theme }: any) => ({
+const RootStyle = styled(Page)(({ theme }) => ({
   paddingTop: theme.spacing(11),
   paddingBottom: theme.spacing(15)
 }));
@@ -39,7 +39,7 @@ export default function FoundationIcons() {
           pt: 6,
           pb: 1,
           mb: 10,
-          bgcolor: (theme: any) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800')
+          bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800')
         }}
       >
         <Container maxWidth="lg">

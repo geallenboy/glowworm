@@ -11,7 +11,7 @@ import { PATH_AUTH } from '@/routes/paths';
 
 import { VerifyCodeForm } from './modules';
 
-const RootStyle = styled(Page)(({ theme }: any) => ({
+const RootStyle = styled(Page)(({ theme }) => ({
   display: 'flex',
   minHeight: '100%',
   alignItems: 'center',

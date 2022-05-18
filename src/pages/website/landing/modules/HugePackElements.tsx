@@ -5,7 +5,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { MotionInView, varFadeInUp } from '@/components/animate';
 import { PATH_PAGE } from '@/routes/paths';
 
-const RootStyle = styled('div')(({ theme }: any) => ({
+const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(24, 0),
   backgroundImage:
     theme.palette.mode === 'light'
@@ -15,7 +15,7 @@ const RootStyle = styled('div')(({ theme }: any) => ({
       : 'none'
 }));
 
-const ContentStyle = styled('div')(({ theme }: any) => ({
+const ContentStyle = styled('div')(({ theme }) => ({
   width: '100%',
   textAlign: 'center',
   marginBottom: theme.spacing(10),
@@ -25,7 +25,7 @@ const ContentStyle = styled('div')(({ theme }: any) => ({
   }
 }));
 
-const ScreenStyle = styled(MotionInView)(({ theme }: any) => ({
+const ScreenStyle = styled(MotionInView)(({ theme }) => ({
   paddingRight: 2,
   paddingBottom: 1,
   maxWidth: 160,
@@ -67,8 +67,8 @@ const variantScreenRight = {
   animate: { ...COMMON, translateX: '50%', translateY: -40, opacity: 1 }
 };
 
-export default function LandingHugePackElements() {
-  const theme: any = useTheme();
+export default function HugePackElements() {
+  const theme = useTheme();
   const isLight = theme.palette.mode === 'light';
   const isRTL = theme.direction === 'rtl';
 

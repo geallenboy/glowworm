@@ -12,7 +12,7 @@ const MOCK_FAQS = [...Array(8)].map((_, index) => ({
   detail: `问题${index + 1} 详细说明 `
 }));
 
-export default function FaqsList() {
+export default function List() {
   return (
     <MotionInView variants={varFadeIn}>
       {MOCK_FAQS.map((accordion: any) => (

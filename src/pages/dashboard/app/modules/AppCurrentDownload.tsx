@@ -21,7 +21,7 @@ export default function AppCurrentDownload() {
 
   const config = {
     color: [
-      theme.palette.primary.lighter,
+      theme.palette.primary.light,
       theme.palette.primary.light,
       theme.palette.primary.main,
       theme.palette.primary.dark

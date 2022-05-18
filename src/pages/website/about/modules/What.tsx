@@ -9,13 +9,17 @@ import { fPercent } from '@/utils/formatNumber';
 import mockData from '@/utils/mock-data';
 
 const LABEL = ['开发', '设计', '营销'];
+interface skills_type {
+  label: string;
+  value: number;
+}
 
 const MOCK_SKILLS = [...Array(3)].map((_, index) => ({
   label: LABEL[index],
   value: mockData.number.percent(index)
 }));
 
-const RootStyle = styled('div')(({ theme }: any) => ({
+const RootStyle = styled('div')(({ theme }) => ({
   textAlign: 'center',
   paddingTop: theme.spacing(20),
   paddingBottom: theme.spacing(10),
@@ -24,8 +28,7 @@ const RootStyle = styled('div')(({ theme }: any) => ({
   }
 }));
 
-function ProgressItem({ progress }: any) {
-  const { label, value } = progress;
+function ProgressItem({ label, value }: Partial<skills_type>) {
   return (
     <Box sx={{ mt: 3 }}>
       <Box sx={{ mb: 1.5, display: 'flex', alignItems: 'center' }}>
@@ -46,8 +49,8 @@ function ProgressItem({ progress }: any) {
   );
 }
 
-export default function AboutWhat() {
-  const theme: any = useTheme();
+export default function What() {
+  const theme = useTheme();
   const isLight = theme.palette.mode === 'light';
   const shadow = `-40px 40px 80px ${alpha(
     isLight ? theme.palette.grey[500] : theme.palette.common.black,
@@ -92,7 +95,7 @@ export default function AboutWhat() {
             <MotionInView variants={varFadeInRight}>
               <Typography
                 sx={{
-                  color: (theme: any) =>
+                  color: (theme) =>
                     theme.palette.mode === 'light' ? 'text.secondary' : 'common.white'
                 }}
               >
@@ -101,9 +104,9 @@ export default function AboutWhat() {
             </MotionInView>
 
             <Box sx={{ my: 5 }}>
-              {MOCK_SKILLS.map((progress: any) => (
+              {MOCK_SKILLS.map((progress: skills_type) => (
                 <MotionInView key={progress.label} variants={varFadeInRight}>
-                  <ProgressItem progress={progress} />
+                  <ProgressItem label={progress.label} value={progress.value} />
                 </MotionInView>
               ))}
             </Box>

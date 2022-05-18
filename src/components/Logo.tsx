@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
-export default function Logo({ sx }) {
+export default function Logo({ sx }: any) {
   const theme = useTheme();
   const PRIMARY_MAIN = theme.palette.primary.main;
   return (

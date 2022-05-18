@@ -50,7 +50,7 @@ const SearchStyle = styled(OutlinedInput)(({ theme }: any) => ({
   }
 }));
 
-export default function FaqsHero() {
+export default function Hero() {
   return (
     <RootStyle initial="initial" animate="animate" variants={varWrapEnter}>
       <Container maxWidth="lg" sx={{ position: 'relative', height: '100%' }}>

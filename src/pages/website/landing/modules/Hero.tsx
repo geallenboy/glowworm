@@ -8,7 +8,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { varFadeIn, varFadeInRight, varFadeInUp, varWrapEnter } from '@/components/animate';
 import { PATH_DASHBOARD } from '@/routes/paths';
 
-const RootStyle = styled(motion.div)(({ theme }: any) => ({
+const RootStyle = styled(motion.div)(({ theme }) => ({
   position: 'relative',
   backgroundColor: theme.palette.grey[400],
   [theme.breakpoints.up('md')]: {
@@ -22,7 +22,7 @@ const RootStyle = styled(motion.div)(({ theme }: any) => ({
   }
 }));
 
-const ContentStyle = styled((props) => <Stack spacing={5} {...props} />)(({ theme }: any) => ({
+const ContentStyle = styled((props) => <Stack spacing={5} {...props} />)(({ theme }) => ({
   zIndex: 10,
   maxWidth: 520,
   margin: 'auto',
@@ -44,7 +44,7 @@ const HeroOverlayStyle = styled(motion.img)({
   position: 'absolute'
 });
 
-const HeroImgStyle = styled(motion.img)(({ theme }: any) => ({
+const HeroImgStyle = styled(motion.img)(({ theme }) => ({
   top: 0,
   right: 0,
   bottom: 0,
@@ -59,7 +59,7 @@ const HeroImgStyle = styled(motion.img)(({ theme }: any) => ({
   }
 }));
 
-export default function LandingHero() {
+export default function Hero() {
   return (
     <>
       <RootStyle initial="initial" animate="animate" variants={varWrapEnter}>

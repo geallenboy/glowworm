@@ -1,4 +1,14 @@
-const breakpoints = {
+export interface breakpoints_type {
+  values: {
+    xs: number;
+    sm: number;
+    md: number;
+    lg: number;
+    xl: number;
+  };
+}
+
+const breakpoints: breakpoints_type = {
   values: {
     xs: 0,
     sm: 600,

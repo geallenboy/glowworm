@@ -11,7 +11,7 @@ import { DialogAnimate } from '@/components/animate';
 
 import getVariant from '../getVariant';
 
-export default function ContainerView({ isOpen, onOpen, onClose, selectVariant, ...other }: any) {
+export default function ContainerView({ isOpen, onOpen, onClose, selectVariant, ...other }) {
   return (
     <Paper
       sx={{
@@ -24,22 +24,21 @@ export default function ContainerView({ isOpen, onOpen, onClose, selectVariant, 
       {...other}
     >
       <Button variant="contained" onClick={onOpen}>
-        Click Me!
+        点我!
       </Button>
       <DialogAnimate open={isOpen} onClose={onClose} animate={getVariant(selectVariant)}>
-        <DialogTitle>Use Googlelocation service</DialogTitle>
+        <DialogTitle>使用Googlelocation服务</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Let Google help apps determine location. This means sending anonymous location data to
-            Google, even when no apps are running.
+            让谷歌帮助应用程序确定位置。这意味着将匿名位置数据发送到 谷歌，即使没有应用程序在运行。
           </DialogContentText>
         </DialogContent>
         <DialogActions>
           <Button variant="contained" onClick={onClose}>
-            Disagree
+            不同意
           </Button>
           <Button onClick={onClose} autoFocus>
-            Agree
+            同意
           </Button>
         </DialogActions>
       </DialogAnimate>

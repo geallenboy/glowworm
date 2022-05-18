@@ -8,7 +8,7 @@ import * as Yup from 'yup';
 import { PATH_DASHBOARD } from '@/routes/paths';
 import fakeRequest from '@/utils/fakeRequest';
 
-function maxLength(object: any) {
+function maxLength(object) {
   if (object.target.value.length > object.target.maxLength) {
     return (object.target.value = object.target.value.slice(0, object.target.maxLength));
   }

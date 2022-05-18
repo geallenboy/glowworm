@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { varPath } from '@/components/animate';
 
 export default function Logo() {
-  const theme: any = useTheme();
+  const theme = useTheme();
   const PRIMARY_LIGHT = theme.palette.primary.light;
   const PRIMARY_MAIN = theme.palette.primary.main;
   const PRIMARY_DARK = theme.palette.primary.dark;

@@ -19,12 +19,12 @@ import { PATH_PAGE } from '@/routes/paths';
 
 import { Block } from '../Block';
 
-const RootStyle = styled(Page)(({ theme }: any) => ({
+const RootStyle = styled(Page)(({ theme }) => ({
   paddingTop: theme.spacing(11),
   paddingBottom: theme.spacing(15)
 }));
 
-const ContainerStyle = styled(Paper)(({ theme }: any) => ({
+const ContainerStyle = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(5),
   borderRadius: theme.shape.borderRadiusSm,
   border: `solid 1px ${theme.palette.divider}`,
@@ -34,15 +34,15 @@ const ContainerStyle = styled(Paper)(({ theme }: any) => ({
 const LABELS = ['1col', '2col', '3col', '4col', '6col', '12col'];
 
 export default function FoundationGrid() {
-  const theme: any = useTheme();
+  const theme = useTheme();
   const [spacing, setSpacing] = useState(2);
   const [column, setColumn] = useState(3);
 
-  const handleChangeSpacing = (event: any) => {
+  const handleChangeSpacing = (event) => {
     setSpacing(Number(event.target.value));
   };
 
-  const handleChangeColumn = (event: any) => {
+  const handleChangeColumn = (event) => {
     setColumn(Number(event.target.value));
   };
 
@@ -53,7 +53,7 @@ export default function FoundationGrid() {
           pt: 6,
           pb: 1,
           mb: 10,
-          bgcolor: (theme: any) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800')
+          bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800')
         }}
       >
         <Container maxWidth="lg">
@@ -78,7 +78,7 @@ export default function FoundationGrid() {
                     <Paper
                       sx={{
                         height: 80,
-                        boxShadow: (theme: any) => theme.customShadows.z8
+                        boxShadow: (theme) => theme.customShadows.z8
                       }}
                     />
                   </Grid>
@@ -117,7 +117,7 @@ export default function FoundationGrid() {
                       sx={{
                         py: 3,
                         textAlign: 'center',
-                        boxShadow: (theme: any) => theme.customShadows.z8
+                        boxShadow: (theme) => theme.customShadows.z8
                       }}
                     >
                       xs = {column}

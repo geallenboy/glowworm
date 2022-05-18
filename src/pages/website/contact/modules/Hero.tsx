@@ -12,7 +12,7 @@ const CONTACTS = [
   }
 ];
 
-const RootStyle = styled(motion.div)(({ theme }: any) => ({
+const RootStyle = styled(motion.div)(({ theme }) => ({
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundImage: 'url(/static/overlay.svg), url(/static/contact/hero.jpg)',
@@ -23,7 +23,7 @@ const RootStyle = styled(motion.div)(({ theme }: any) => ({
   }
 }));
 
-const ContentStyle = styled('div')(({ theme }: any) => ({
+const ContentStyle = styled('div')(({ theme }) => ({
   textAlign: 'center',
   [theme.breakpoints.up('md')]: {
     textAlign: 'left',

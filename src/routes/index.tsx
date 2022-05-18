@@ -39,9 +39,10 @@ const ResetPassword = Loadable(lazy(() => import('@/pages/authentication/resetPa
 const VerifyCode = Loadable(lazy(() => import('@/pages/authentication/verifyCode')));
 // Dashboard
 const App = Loadable(lazy(() => import('@/pages/dashboard/app')));
-const GeneralEcommerce = Loadable(lazy(() => import('@/pages/dashboard/greneral/ecommerce')));
-const GeneralBanking = Loadable(lazy(() => import('@/pages/dashboard/greneral/banking')));
-const GeneralBooking = Loadable(lazy(() => import('@/pages/dashboard/greneral/booking')));
+const Analytics = Loadable(lazy(() => import('@/pages/dashboard/greneral/analytics')));
+const Ecommerce = Loadable(lazy(() => import('@/pages/dashboard/greneral/ecommerce')));
+const Banking = Loadable(lazy(() => import('@/pages/dashboard/greneral/banking')));
+const Booking = Loadable(lazy(() => import('@/pages/dashboard/greneral/booking')));
 const EcommerceShop = Loadable(lazy(() => import('@/pages/dashboard/ecommerce/shop')));
 const EcommerceProductDetails = Loadable(
   lazy(() => import('@/pages/dashboard/ecommerce/productDetails'))
@@ -164,9 +165,10 @@ export default function Router() {
       children: [
         { path: '', element: <Navigate to="/dashboard/app" replace={true} /> },
         { path: 'app', element: <App /> },
-        { path: 'ecommerce', element: <GeneralEcommerce /> },
-        { path: 'banking', element: <GeneralBanking /> },
-        { path: 'booking', element: <GeneralBooking /> },
+        { path: 'ecommerce', element: <Ecommerce /> },
+        { path: 'banking', element: <Banking /> },
+        { path: 'booking', element: <Booking /> },
+        { path: 'analytics', element: <Analytics /> },
         {
           path: 'e-commerce',
           children: [

@@ -19,7 +19,7 @@ const SearchbarStyle = styled('div')(({ theme }: any) => ({
   alignItems: 'center',
   height: APPBAR_MOBILE,
   backdropFilter: 'blur(6px)',
-  WebkitBackdropFilter: 'blur(6px)', // Fix on Mobile
+  WebkitBackdropFilter: 'blur(6px)',
   padding: theme.spacing(0, 3),
   boxShadow: theme.customShadows.z8,
   backgroundColor: `${alpha(theme.palette.background.default, 0.72)}`,

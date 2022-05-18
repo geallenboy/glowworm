@@ -14,19 +14,19 @@ const COLORS = ['primary', 'secondary', 'info', 'success', 'warning', 'error'];
 const COLORS_VARIATIONS = ['lighter', 'light', 'main', 'dark', 'darker'];
 const GREY_VARIATIONS = ['100', '200', '300', '400', '500', '600', '700', '800', '900'];
 
-const RootStyle = styled(Page)(({ theme }: any) => ({
+const RootStyle = styled(Page)(({ theme }) => ({
   paddingTop: theme.spacing(11),
   paddingBottom: theme.spacing(15)
 }));
 
-const RowStyle = styled('div')(({ theme }: any) => ({
+const RowStyle = styled('div')(({ theme }) => ({
   display: 'flex',
   flexWrap: 'wrap',
   margin: theme.spacing(1.5, -1.5, 0)
 }));
 
-function ColorCard({ hexColor, variation, onCopy }: any) {
-  const theme: any = useTheme();
+function ColorCard({ hexColor, variation, onCopy }) {
+  const theme = useTheme();
 
   return (
     <Card
@@ -82,11 +82,11 @@ function ColorCard({ hexColor, variation, onCopy }: any) {
 }
 
 export default function FoundationColors() {
-  const theme: any = useTheme();
+  const theme = useTheme();
   const { enqueueSnackbar } = useSnackbar();
   const [, setState] = useState(null);
 
-  const onCopy = (color: any) => {
+  const onCopy = (color) => {
     setState(color);
     if (color) {
       enqueueSnackbar(`Copied ${color}`, { variant: 'success' });
@@ -136,10 +136,10 @@ export default function FoundationColors() {
         ))}
 
         <Typography variant="h5" sx={{ textTransform: 'capitalize' }}>
-          Grey
+          灰色
         </Typography>
         <RowStyle>
-          {GREY_VARIATIONS.map((variation: any) => (
+          {GREY_VARIATIONS.map((variation) => (
             <ColorCard
               key={variation}
               variation={variation}

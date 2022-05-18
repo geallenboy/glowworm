@@ -1,3 +1,3 @@
-export { default as AboutHero } from './AboutHero';
-export { default as AboutVision } from './AboutVision';
-export { default as AboutWhat } from './AboutWhat';
+export { default as Hero } from './Hero';
+export { default as Vision } from './Vision';
+export { default as What } from './What';

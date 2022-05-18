@@ -2,7 +2,21 @@ function pxToRem(value: number) {
   return `${value / 16}rem`;
 }
 
-function responsiveFontSizes({ sm, md, lg }: { sm: number; md: number; lg: number }) {
+interface responsiveFontSizes_type {
+  [key: string]: {
+    fontSize: string;
+  };
+}
+
+function responsiveFontSizes({
+  sm,
+  md,
+  lg
+}: {
+  sm: number;
+  md: number;
+  lg: number;
+}): responsiveFontSizes_type {
   return {
     '@media (min-width:600px)': {
       fontSize: pxToRem(sm)
@@ -17,7 +31,18 @@ function responsiveFontSizes({ sm, md, lg }: { sm: number; md: number; lg: numbe
 }
 
 const FONT_PRIMARY = 'Public Sans, sans-serif'; // Google Font
-// const FONT_SECONDARY = 'CircularStd, sans-serif'; // Local Font
+
+export interface typography_type {
+  fontFamily: string;
+  fontWeightRegular: number;
+  fontWeightMedium: number;
+  fontWeightBold: number;
+  h1: {
+    fontWeight: number;
+    lineHeight: number;
+    fontSize: string;
+  };
+}
 
 const typography = {
   fontFamily: FONT_PRIMARY,

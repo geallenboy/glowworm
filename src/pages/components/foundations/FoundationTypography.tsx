@@ -41,7 +41,7 @@ const style = {
   marginBottom: 3
 };
 
-const RootStyle = styled(Page)(({ theme }: any) => ({
+const RootStyle = styled(Page)(({ theme }) => ({
   paddingTop: theme.spacing(11),
   paddingBottom: theme.spacing(15)
 }));
@@ -51,12 +51,12 @@ const RowContentStyle = styled('div')({
   maxWidth: 720
 });
 
-function remToPx(value: any) {
+function remToPx(value) {
   return Math.round(parseFloat(value) * 16);
 }
 
 function useWidth() {
-  const theme: any = useTheme();
+  const theme = useTheme();
   const keys = [...theme.breakpoints.keys].reverse();
   return (
     keys.reduce((output, key) => {
@@ -66,8 +66,8 @@ function useWidth() {
   );
 }
 
-function GetFontInfo({ name }: any) {
-  const theme: any = useTheme();
+function GetFontInfo({ name }) {
+  const theme = useTheme();
   const breakpoints = useWidth();
   const key = theme.breakpoints.up(breakpoints === 'xl' ? 'lg' : breakpoints);
 
@@ -93,7 +93,7 @@ export default function FoundationTypography() {
           pt: 6,
           pb: 1,
           mb: 10,
-          bgcolor: (theme: any) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800')
+          bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800')
         }}
       >
         <Container maxWidth="lg">
@@ -113,7 +113,7 @@ export default function FoundationTypography() {
             </Typography>
           </Grid>
           <Grid item xs={12} md={9}>
-            {TYPOGRAPHYS.map((font: any) => (
+            {TYPOGRAPHYS.map((font) => (
               <Block key={font.variant} sx={style}>
                 <RowContentStyle>
                   <Typography variant={font.variant} gutterBottom>

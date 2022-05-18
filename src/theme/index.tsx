@@ -4,19 +4,29 @@ import { useMemo } from 'react';
 
 import useSettings from '@/hooks/useSettings';
 
-import breakpoints from './breakpoints';
+import breakpoints, { breakpoints_type } from './breakpoints';
 import GlobalStyles from './globalStyles';
 import componentsOverride from './overrides';
-import palette from './palette';
+import palette, { palette_item_type } from './palette';
 import shadows, { customShadows } from './shadows';
-import shape from './shape';
-import typography from './typography';
+import shape, { shape_type } from './shape';
+import typography, { typography_type } from './typography';
 
-export default function ThemeConfig({ children }) {
+interface themeOptions_type {
+  palette: Partial<palette_item_type>;
+  shape: shape_type;
+  breakpoints: breakpoints_type;
+  typography: typography_type;
+  direction: any;
+  shadows: any;
+  customShadows: any;
+}
+
+export default function ThemeConfig({ children }: { children: HTMLElement }) {
   const { themeMode, themeDirection } = useSettings();
   const isLight = themeMode === 'light';
 
-  const themeOptions = useMemo(
+  const themeOptions: Partial<themeOptions_type> = useMemo(
     () => ({
       palette: isLight ? { ...palette.light, mode: 'light' } : { ...palette.dark, mode: 'dark' },
       shape,

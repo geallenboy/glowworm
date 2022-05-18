@@ -17,7 +17,7 @@ import { motion } from 'framer-motion';
 import { MotionInView, varFadeInDown, varFadeInUp } from '@/components/animate';
 import useSettings from '@/hooks/useSettings';
 
-const RootStyle = styled('div')(({ theme }: any) => ({
+const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(15, 0),
   backgroundImage:
     theme.palette.mode === 'light'
@@ -53,8 +53,7 @@ export default function LandingThemeColor() {
         <MotionInView variants={varFadeInUp}>
           <Typography
             sx={{
-              color: (theme: any) =>
-                theme.palette.mode === 'light' ? 'text.secondary' : 'text.primary'
+              color: (theme) => (theme.palette.mode === 'light' ? 'text.secondary' : 'text.primary')
             }}
           >
             只需点击一下，就可以表达你自己的风格
@@ -71,9 +70,9 @@ export default function LandingThemeColor() {
               right: { lg: 0 }
             }}
           >
-            {colorOption.map((color: any) => {
-              const colorName = color.name;
-              const colorValue = color.value;
+            {colorOption.map((colorOp: { name: string; value: string }) => {
+              const colorName = colorOp.name;
+              const colorValue = colorOp.value;
               const isSelected = themeColor === colorName;
 
               return (
@@ -105,7 +104,7 @@ export default function LandingThemeColor() {
                           ...(isSelected && {
                             width: 14,
                             height: 14,
-                            transition: (theme: any) =>
+                            transition: (theme) =>
                               theme.transitions.create('all', {
                                 easing: theme.transitions.easing.easeInOut,
                                 duration: theme.transitions.duration.shorter

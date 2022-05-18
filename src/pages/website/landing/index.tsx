@@ -4,13 +4,13 @@ import Page from '@/components/Page';
 import { title_main } from '@/config';
 
 import {
-  LandingAdvertisement,
-  LandingCleanInterfaces,
-  LandingDarkMode,
-  LandingHero,
-  LandingHugePackElements,
-  LandingMinimal,
-  LandingThemeColor
+  Advertisement,
+  CleanInterfaces,
+  DarkMode,
+  Hero,
+  HugePackElements,
+  Minimal,
+  ThemeColor
 } from './modules';
 
 const RootStyle = styled(Page)({
@@ -26,14 +26,14 @@ const ContentStyle = styled('div')(({ theme }) => ({
 export default function LandingPage() {
   return (
     <RootStyle title={`首页${title_main}`}>
-      <LandingHero />
+      <Hero />
       <ContentStyle>
-        <LandingMinimal />
-        <LandingHugePackElements />
-        <LandingDarkMode />
-        <LandingThemeColor />
-        <LandingCleanInterfaces />
-        <LandingAdvertisement />
+        <Minimal />
+        <HugePackElements />
+        <DarkMode />
+        <ThemeColor />
+        <CleanInterfaces />
+        <Advertisement />
       </ContentStyle>
     </RootStyle>
   );

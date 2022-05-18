@@ -3,12 +3,12 @@ import { styled } from '@mui/material/styles';
 
 import { MotionInView, varFadeInDown, varFadeInUp } from '@/components/animate';
 
-const RootStyle = styled('div')(({ theme }: any) => ({
+const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(28, 0),
   backgroundColor: theme.palette.grey[900]
 }));
 
-const ContentStyle = styled('div')(({ theme }: any) => ({
+const ContentStyle = styled('div')(({ theme }) => ({
   textAlign: 'center',
   position: 'relative',
   marginBottom: theme.spacing(10),
@@ -23,7 +23,7 @@ const ContentStyle = styled('div')(({ theme }: any) => ({
   }
 }));
 
-export default function LandingDarkMode() {
+export default function DarkMode() {
   return (
     <RootStyle>
       <Container maxWidth="lg" sx={{ position: 'relative' }}>

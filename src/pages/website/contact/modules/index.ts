@@ -1,2 +1,2 @@
-export { default as ContactForm } from './ContactForm';
-export { default as ContactHero } from './ContactHero';
+export { default as Form } from './Form';
+export { default as Hero } from './Hero';

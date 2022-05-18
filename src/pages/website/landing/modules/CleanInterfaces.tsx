@@ -2,7 +2,6 @@ import { alpha, Box, Container, Typography, useTheme } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 import { MotionInView, varFadeInUp } from '@/components/animate';
-
 const IMG = [...Array(10)].map((_, index) => `/static/home/clean-${index + 1}.png`);
 
 const RootStyle = styled('div')(({ theme }: any) => ({
@@ -21,8 +20,8 @@ const ContentStyle = styled('div')(({ theme }: any) => ({
   }
 }));
 
-export default function LandingCleanInterfaces() {
-  const theme: any = useTheme();
+export default function CleanInterfaces() {
+  const theme = useTheme();
   const isLight = theme.palette.mode === 'light';
 
   return (

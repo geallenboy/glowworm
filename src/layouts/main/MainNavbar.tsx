@@ -75,7 +75,7 @@ export default function MainNavbar() {
           </MHidden>
 
           <MHidden width="mdUp">
-            <MenuMobile isOffset={isOffset} isHome={isHome} navConfig={navConfig} />
+            <MenuMobile isOffset={isOffset} isHome={isHome} />
           </MHidden>
         </Container>
       </ToolbarStyle>

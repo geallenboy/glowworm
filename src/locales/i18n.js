@@ -1,7 +1,6 @@
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
-
 import enLocales from './en.json';
 import zhLocales from './zh.json';
 
@@ -13,8 +12,8 @@ i18n
       en: { translations: enLocales },
       zh: { translations: zhLocales }
     },
-    lng: localStorage.getItem('i18nextLng') || 'en',
-    fallbackLng: 'en',
+    lng: localStorage.getItem('i18nextLng') || 'zh',
+    fallbackLng: 'zh',
     debug: false,
     ns: ['translations'],
     defaultNS: 'translations',

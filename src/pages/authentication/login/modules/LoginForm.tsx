@@ -29,7 +29,6 @@ export default function LoginForm() {
   const isMountedRef = useIsMountedRef();
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const [showPassword, setShowPassword] = useState(false);
-
   const LoginSchema = Yup.object().shape({
     email: Yup.string().email('请输入有效的电子邮件').required('必须输入邮箱'),
     password: Yup.string().required('必须输入密码')
@@ -56,7 +55,7 @@ export default function LoginForm() {
         if (isMountedRef.current) {
           setSubmitting(false);
         }
-      } catch (error: any) {
+      } catch (error) {
         console.error(error);
         resetForm();
         if (isMountedRef.current) {

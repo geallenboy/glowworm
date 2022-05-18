@@ -35,7 +35,7 @@ const CHART_DATA = [
 
 export default function AppAreaInstalled() {
   const [seriesData, setSeriesData] = useState(2019);
-  const handleChangeSeriesData = (event) => {
+  const handleChangeSeriesData = (event: { target: { value: any } }) => {
     setSeriesData(Number(event.target.value));
   };
 

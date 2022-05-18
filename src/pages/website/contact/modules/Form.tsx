@@ -2,7 +2,7 @@ import { Button, Stack, TextField, Typography } from '@mui/material';
 
 import { MotionInView, varFadeInUp } from '@/components/animate';
 
-export default function ContactForm() {
+export default function Form() {
   return (
     <Stack spacing={5}>
       <MotionInView variants={varFadeInUp}>

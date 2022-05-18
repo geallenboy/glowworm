@@ -5,7 +5,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { MHidden } from '@/components/@material-extend';
 import Logo from '@/components/Logo';
 
-const HeaderStyle = styled('header')(({ theme }: any) => ({
+const HeaderStyle = styled('header')(({ theme }) => ({
   top: 0,
   zIndex: 9,
   lineHeight: 0,
@@ -21,7 +21,7 @@ const HeaderStyle = styled('header')(({ theme }: any) => ({
   }
 }));
 
-export default function AuthLayout({ children }: any) {
+export default function AuthLayout({ children }: HTMLElement) {
   return (
     <HeaderStyle>
       <RouterLink to="/">

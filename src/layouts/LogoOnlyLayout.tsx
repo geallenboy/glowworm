@@ -3,7 +3,7 @@ import { Link as RouterLink, Outlet } from 'react-router-dom';
 
 import Logo from '@/components/Logo';
 
-const HeaderStyle = styled('header')(({ theme }: any) => ({
+const HeaderStyle = styled('header')(({ theme }) => ({
   top: 0,
   left: 0,
   lineHeight: 0,

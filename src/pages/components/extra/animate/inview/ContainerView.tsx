@@ -13,7 +13,7 @@ const IMG = [
   '/static/mock-images/feeds/feed_8.jpg'
 ];
 
-export default function ContainerView({ isText, isMulti, selectVariant, ...other }: any) {
+export default function ContainerView({ isText, isMulti, selectVariant, ...other }) {
   const items = isMulti ? IMG : IMG.slice(0, 1);
 
   return (
@@ -47,7 +47,7 @@ export default function ContainerView({ isText, isMulti, selectVariant, ...other
                 borderRadius: 1,
                 objectFit: 'cover',
                 height: isMulti ? 72 : 320,
-                boxShadow: (theme: any) => theme.customShadows.z8
+                boxShadow: (theme) => theme.customShadows.z8
               }}
             />
           ))}

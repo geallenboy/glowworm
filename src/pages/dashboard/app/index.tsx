@@ -23,7 +23,7 @@ import {
 export default function App() {
   const { themeStretch } = useSettings();
   const { user } = useAuth();
-  console.log(user, 44);
+
   return (
     <Page title="App">
       <Container maxWidth={themeStretch ? false : 'xl'}>

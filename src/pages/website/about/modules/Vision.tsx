@@ -2,7 +2,7 @@ import { Box, Container, Grid, Typography } from '@mui/material';
 
 import { MotionInView, varFadeInUp } from '@/components/animate';
 
-export default function AboutVision() {
+export default function Vision() {
   return (
     <Container maxWidth="lg" sx={{ mt: 10 }}>
       <Box

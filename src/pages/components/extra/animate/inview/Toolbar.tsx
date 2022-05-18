@@ -11,7 +11,7 @@ export default function Toolbar({
   onChangeMulti,
   onRefresh,
   ...other
-}: any) {
+}) {
   return (
     <Stack direction="row" alignItems="center" justifyContent="space-between" {...other}>
       <FormControlLabel
