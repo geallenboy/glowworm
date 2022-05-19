@@ -2,6 +2,7 @@ import 'simplebar/src/simplebar.css';
 import '@/locales/i18n';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import 'react-image-lightbox/style.css';
 
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
@@ -17,7 +18,9 @@ import { CollapseDrawerProvider } from '@/contexts/CollapseDrawerContext';
 import { AuthProvider } from '@/contexts/JWTContext';
 import { SettingsProvider } from '@/contexts/SettingsContext';
 import { persistor, store } from '@/redux/store';
-
+if (typeof (window as any).global === 'undefined') {
+  (window as any).global = window;
+}
 ReactDOM.render(
   <HelmetProvider>
     <ReduxProvider store={store}>

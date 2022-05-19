@@ -7,7 +7,7 @@ import { styled } from '@mui/material/styles';
 
 import { fCurrency, fPercent } from '@/utils/formatNumber';
 
-const RootStyle = styled(Card)(({ theme }) => ({
+const RootStyle = styled(Card)(({ theme }: any) => ({
   width: '100%',
   boxShadow: 'none',
   position: 'relative',
@@ -15,7 +15,7 @@ const RootStyle = styled(Card)(({ theme }) => ({
   backgroundColor: theme.palette.warning.lighter
 }));
 
-const IconWrapperStyle = styled('div')(({ theme }) => ({
+const IconWrapperStyle = styled('div')(({ theme }: any) => ({
   width: 48,
   height: 48,
   display: 'flex',

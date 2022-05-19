@@ -5,7 +5,7 @@ import { alpha, styled } from '@mui/material/styles';
 
 import { fShortenNumber } from '@/utils/formatNumber';
 
-const RootStyle = styled(Card)(({ theme }) => ({
+const RootStyle = styled(Card)(({ theme }: any) => ({
   boxShadow: 'none',
   textAlign: 'center',
   padding: theme.spacing(5, 0),

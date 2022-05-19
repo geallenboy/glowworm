@@ -103,7 +103,7 @@ export function getProfile() {
     dispatch(slice.actions.startLoading());
     try {
       const response = await axios.get('/api/user/profile');
-      dispatch(slice.actions.getProfileSuccess(response.data.profile));
+      dispatch(slice.actions.getProfileSuccess(response.data.data.profile));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
@@ -115,7 +115,7 @@ export function getPosts() {
     dispatch(slice.actions.startLoading());
     try {
       const response = await axios.get('/api/user/posts');
-      dispatch(slice.actions.getPostsSuccess(response.data.posts));
+      dispatch(slice.actions.getPostsSuccess(response.data.data.posts));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
@@ -127,7 +127,7 @@ export function getFollowers() {
     dispatch(slice.actions.startLoading());
     try {
       const response = await axios.get('/api/user/social/followers');
-      dispatch(slice.actions.getFollowersSuccess(response.data.followers));
+      dispatch(slice.actions.getFollowersSuccess(response.data.data.followers));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
@@ -139,7 +139,7 @@ export function getFriends() {
     dispatch(slice.actions.startLoading());
     try {
       const response = await axios.get('/api/user/social/friends');
-      dispatch(slice.actions.getFriendsSuccess(response.data.friends));
+      dispatch(slice.actions.getFriendsSuccess(response.data.data.friends));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
@@ -151,7 +151,7 @@ export function getGallery() {
     dispatch(slice.actions.startLoading());
     try {
       const response = await axios.get('/api/user/social/gallery');
-      dispatch(slice.actions.getGallerySuccess(response.data.gallery));
+      dispatch(slice.actions.getGallerySuccess(response.data.data.gallery));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
@@ -163,7 +163,7 @@ export function getUserList() {
     dispatch(slice.actions.startLoading());
     try {
       const response = await axios.get('/api/user/manage-users');
-      dispatch(slice.actions.getUserListSuccess(response.data.users));
+      dispatch(slice.actions.getUserListSuccess(response.data.data.users));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
@@ -175,7 +175,7 @@ export function getCards() {
     dispatch(slice.actions.startLoading());
     try {
       const response = await axios.get('/api/user/account/cards');
-      dispatch(slice.actions.getCardsSuccess(response.data.cards));
+      dispatch(slice.actions.getCardsSuccess(response.data.data.cards));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
@@ -187,7 +187,7 @@ export function getAddressBook() {
     dispatch(slice.actions.startLoading());
     try {
       const response = await axios.get('/api/user/account/address-book');
-      dispatch(slice.actions.getAddressBookSuccess(response.data.addressBook));
+      dispatch(slice.actions.getAddressBookSuccess(response.data.data.addressBook));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
@@ -199,7 +199,7 @@ export function getInvoices() {
     dispatch(slice.actions.startLoading());
     try {
       const response = await axios.get('/api/user/account/invoices');
-      dispatch(slice.actions.getInvoicesSuccess(response.data.invoices));
+      dispatch(slice.actions.getInvoicesSuccess(response.data.data.invoices));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
@@ -211,7 +211,7 @@ export function getNotifications() {
     dispatch(slice.actions.startLoading());
     try {
       const response = await axios.get('/api/user/account/notifications-settings');
-      dispatch(slice.actions.getNotificationsSuccess(response.data.notifications));
+      dispatch(slice.actions.getNotificationsSuccess(response.data.data.notifications));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
@@ -223,7 +223,7 @@ export function getUsers() {
     dispatch(slice.actions.startLoading());
     try {
       const response = await axios.get('/api/user/all');
-      dispatch(slice.actions.getUsersSuccess(response.data.users));
+      dispatch(slice.actions.getUsersSuccess(response.data.data.users));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }

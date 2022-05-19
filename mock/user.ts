@@ -7,33 +7,50 @@ import { resultSuccess } from './_util';
 export default [
   {
     url: '/api/user/profile',
-    timeout: 5000,
+    timeout: 2000,
     method: 'get',
     response: () => {
       const profile = {
         id: mockData.id(1),
         cover: mockData.image.cover(1),
-        position: 'UI Designer',
+        position: '用户界面设计师',
         follower: random(99999),
         following: random(99999),
-        quote:
-          'Tart I love sugar plum I love oat cake. Sweet roll caramels I love jujubes. Topping cake wafer..',
+        quote: '我喜欢甜李子，我喜欢燕麦蛋糕。甜卷焦糖我喜欢枣。顶部蛋糕圆片.',
         country: mockData.address.country(1),
         email: mockData.email(1),
         company: mockData.company(1),
         school: mockData.company(2),
-        role: 'Manager',
+        role: '管理',
         facebookLink: `https://www.facebook.com/caitlyn.kerluke`,
         instagramLink: `https://www.instagram.com/caitlyn.kerluke`,
         linkedinLink: `https://www.linkedin.com/in/caitlyn.kerluke`,
         twitterLink: `https://www.twitter.com/caitlyn.kerluke`
       };
-      return resultSuccess(profile);
+      return resultSuccess({ profile });
+    }
+  },
+  {
+    url: '/api/user/all',
+    timeout: 2000,
+    method: 'get',
+    response: () => {
+      const users = [...Array(24)].map((_, index) => ({
+        id: mockData.id(index),
+        avatarUrl: mockData.image.avatar(index),
+        cover: mockData.image.cover(index),
+        name: mockData.name.fullName(index),
+        follower: random(9999),
+        following: random(9999),
+        totalPost: random(9999),
+        position: mockData.role(index)
+      }));
+      return resultSuccess({ users });
     }
   },
   {
     url: '/api/user/manage-users',
-    timeout: 5000,
+    timeout: 2000,
     method: 'get',
     response: () => {
       const users = [...Array(24)].map((_, index) => ({
@@ -42,22 +59,22 @@ export default [
         name: mockData.name.fullName(index),
         email: mockData.email(index),
         phoneNumber: mockData.phoneNumber(index),
-        address: '908 Jack Locks',
+        address: '地址3002',
         country: mockData.address.country(index),
-        state: 'Virginia',
-        city: 'Rancho Cordova',
+        state: '中国',
+        city: '南京',
         zipCode: '85807',
         company: mockData.company(index),
         isVerified: mockData.boolean(index),
         status: sample(['active', 'banned']) || 'active',
         role: mockData.role(index)
       }));
-      return resultSuccess(users);
+      return resultSuccess({ users });
     }
   },
   {
     url: '/api/user/social/followers',
-    timeout: 5000,
+    timeout: 2000,
     method: 'get',
     response: () => {
       const followers = [...Array(18)].map((_, index) => ({
@@ -67,12 +84,12 @@ export default [
         country: mockData.address.country(index),
         isFollowed: mockData.boolean(index)
       }));
-      return resultSuccess(followers);
+      return resultSuccess({ followers });
     }
   },
   {
     url: '/api/user/social/friends',
-    timeout: 5000,
+    timeout: 2000,
     method: 'get',
     response: () => {
       const friends = [...Array(18)].map((_, index) => ({
@@ -81,12 +98,12 @@ export default [
         name: mockData.name.fullName(index),
         role: mockData.role(index)
       }));
-      return resultSuccess(friends);
+      return resultSuccess({ friends });
     }
   },
   {
     url: '/api/user/social/gallery',
-    timeout: 5000,
+    timeout: 2000,
     method: 'get',
     response: () => {
       const gallery = [...Array(18)].map((_, index) => ({
@@ -95,12 +112,12 @@ export default [
         postAt: mockData.time(index),
         imageUrl: mockData.image.cover(index)
       }));
-      return resultSuccess(gallery);
+      return resultSuccess({ gallery });
     }
   },
   {
     url: '/api/user/account/cards',
-    timeout: 5000,
+    timeout: 2000,
     method: 'get',
     response: () => {
       const cards = [...Array(2)].map((_, index) => ({
@@ -111,12 +128,12 @@ export default [
           '**** **** **** 5678',
         cardType: (index === 0 && 'master_card') || (index === 1 && 'visa') || 'master_card'
       }));
-      return resultSuccess(cards);
+      return resultSuccess({ cards });
     }
   },
   {
     url: '/api/user/account/address-book',
-    timeout: 5000,
+    timeout: 2000,
     method: 'get',
     response: () => {
       const addressBook = [...Array(4)].map((_, index) => ({
@@ -124,17 +141,17 @@ export default [
         name: mockData.name.fullName(index),
         phone: mockData.phoneNumber(index),
         country: mockData.address.country(index),
-        state: 'New Hampshire',
-        city: 'East Sambury',
-        street: '41256 Kamille Turnpike',
+        state: '中国',
+        city: '香港',
+        street: '41256 ',
         zipCode: '85807'
       }));
-      return resultSuccess(addressBook);
+      return resultSuccess({ addressBook });
     }
   },
   {
     url: '/api/user/account/invoices',
-    timeout: 5000,
+    timeout: 2000,
     method: 'get',
     response: () => {
       const invoices = [...Array(10)].map((_, index) => ({
@@ -142,12 +159,12 @@ export default [
         createdAt: mockData.time(index),
         price: mockData.number.price(index)
       }));
-      return resultSuccess(invoices);
+      return resultSuccess({ invoices });
     }
   },
   {
     url: '/api/user/account/notifications-settings',
-    timeout: 5000,
+    timeout: 2000,
     method: 'get',
     response: () => {
       const notifications = {
@@ -158,12 +175,12 @@ export default [
         applicationProduct: false,
         applicationBlog: false
       };
-      return resultSuccess(notifications);
+      return resultSuccess({ notifications });
     }
   },
   {
     url: '/api/user/posts',
-    timeout: 5000,
+    timeout: 2000,
     method: 'get',
     response: () => {
       const posts = [...Array(3)].map((_, index) => ({
@@ -171,7 +188,7 @@ export default [
         author: {
           id: mockData.id(8),
           avatarUrl: mockData.image.avatar(1),
-          name: 'Caitlyn Kerluke'
+          name: 'garçon'
         },
         isLiked: true,
         createdAt: mockData.time(index),
@@ -190,7 +207,7 @@ export default [
               name: mockData.name.fullName(index + 5)
             },
             createdAt: mockData.time(2),
-            message: 'Praesent venenatis metus at'
+            message: '当我们第一次见面时，我们很害怕'
           },
           {
             id: mockData.id(9),
@@ -201,11 +218,11 @@ export default [
             },
             createdAt: mockData.time(3),
             message:
-              'Etiam rhoncus. Nullam vel sem. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. Sed lectus.'
+              '又一次。不可能。当他们画了一个火炬，他们被画了，被画了，他们总是被要求的。但是阅读.'
           }
         ]
       }));
-      return resultSuccess(posts);
+      return resultSuccess({ posts });
     }
   }
 ] as MockMethod[];
