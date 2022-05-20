@@ -1,4 +1,3 @@
-import { paramCase } from 'change-case';
 import { random, sample } from 'lodash';
 import { MockMethod } from 'vite-plugin-mock';
 
@@ -99,26 +98,27 @@ const products = [...Array(24)].map((_, index) => ({
 }));
 export default [
   {
-    url: '/mock-api/home/cardtab',
+    url: '/api/products',
     timeout: 1000,
     method: 'get',
     response: () => {
-      return resultSuccess(products);
+      return resultSuccess({ products });
     }
   },
   {
-    url: '/mock-api/home/cardtab',
+    url: '/api/products/product',
     timeout: 1000,
     method: 'get',
     response: (params: any) => {
       const { name } = params.body;
-      const product = products.find((_product) => paramCase(_product.name) === name);
+
+      const product = products[0];
 
       if (!product) {
-        return [404, { message: 'product not found' }];
+        return [404, { message: '产品没有发现' }];
       }
 
-      return resultSuccess(products);
+      return resultSuccess({ product });
     }
   }
 ] as MockMethod[];

@@ -247,7 +247,7 @@ export default function UserNewForm({ isEdit, currentUser }: any) {
                     error={Boolean(touched.address && errors.address)}
                     helperText={touched.address && errors.address}
                   />
-                  <TextField fullWidth label="Zip/Code" {...getFieldProps('zipCode')} />
+                  <TextField fullWidth label="邮政编码" {...getFieldProps('zipCode')} />
                 </Stack>
 
                 <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 3, sm: 2 }}>
