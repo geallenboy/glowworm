@@ -104,7 +104,7 @@ export function getBoard() {
     dispatch(slice.actions.startLoading());
     try {
       const response = await axios.get('/api/kanban/board');
-      dispatch(slice.actions.getBoardSuccess(response.data.board));
+      dispatch(slice.actions.getBoardSuccess(response.data.data.board));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
@@ -116,7 +116,7 @@ export function createColumn(newColumn: any) {
     dispatch(slice.actions.startLoading());
     try {
       const response = await axios.post('/api/kanban/columns/new', newColumn);
-      dispatch(slice.actions.createColumnSuccess(response.data.column));
+      dispatch(slice.actions.createColumnSuccess(response.data.data.column));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
@@ -131,7 +131,7 @@ export function updateColumn(columnId: any, updateColumn: any) {
         columnId,
         updateColumn
       });
-      dispatch(slice.actions.updateColumnSuccess(response.data.column));
+      dispatch(slice.actions.updateColumnSuccess(response.data.data.column));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }

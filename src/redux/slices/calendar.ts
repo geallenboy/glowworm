@@ -80,7 +80,7 @@ export function getEvents() {
     dispatch(slice.actions.startLoading());
     try {
       const response = await axios.get('/api/calendar/events');
-      dispatch(slice.actions.getEventsSuccess(response.data.events));
+      dispatch(slice.actions.getEventsSuccess(response.data.data.events));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
@@ -92,7 +92,7 @@ export function createEvent(newEvent: any) {
     dispatch(slice.actions.startLoading());
     try {
       const response = await axios.post('/api/calendar/events/new', newEvent);
-      dispatch(slice.actions.createEventSuccess(response.data.event));
+      dispatch(slice.actions.createEventSuccess(response.data.data.event));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
@@ -107,7 +107,7 @@ export function updateEvent(eventId: any, updateEvent: any) {
         eventId,
         updateEvent
       });
-      dispatch(slice.actions.updateEventSuccess(response.data.event));
+      dispatch(slice.actions.updateEventSuccess(response.data.data.event));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }

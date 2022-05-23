@@ -605,7 +605,7 @@ export default [
   {
     url: '/api/chat/contacts',
     timeout: 5000,
-    method: 'post',
+    method: 'get',
     response: () => {
       return resultSuccess({ contacts });
     }
@@ -615,7 +615,7 @@ export default [
     timeout: 5000,
     method: 'get',
     response: (params: any) => {
-      const { query } = params.body;
+      const { query } = params.query;
       let results = contacts;
       if (query) {
         const cleanQuery = query.toLowerCase().trim();
@@ -629,7 +629,7 @@ export default [
     timeout: 5000,
     method: 'get',
     response: (params: any) => {
-      const { conversationKey } = params.body;
+      const { conversationKey } = params.query;
       const participants = [];
       const conversation = findConversationById(conversationKey);
       if (conversation) {
@@ -667,7 +667,7 @@ export default [
     timeout: 5000,
     method: 'get',
     response: (params: any) => {
-      const { conversationKey } = params.body;
+      const { conversationKey } = params.query;
       let conversation = findConversationById(conversationKey);
 
       if (conversation) {
@@ -688,7 +688,7 @@ export default [
     timeout: 5000,
     method: 'get',
     response: (params: any) => {
-      const { conversationId } = params.body;
+      const { conversationId } = params.query;
       const conversation = conversations.find(
         (_conversation) => _conversation.id === conversationId
       );
@@ -703,7 +703,7 @@ export default [
     timeout: 5000,
     method: 'get',
     response: (params: any) => {
-      const { conversationId, recipientIds, body } = params.body;
+      const { conversationId, recipientIds, body } = params.query;
 
       const user = MY_CONTACT;
       let conversation = null;

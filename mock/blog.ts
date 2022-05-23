@@ -233,7 +233,7 @@ export default [
     timeout: 5000,
     method: 'get',
     response: (params: any) => {
-      const { index, step } = params.body;
+      const { index, step } = params.query;
       const maxLength = posts.length;
       const loadMore = index + step;
 
@@ -250,7 +250,7 @@ export default [
     timeout: 5000,
     method: 'get',
     response: (params: any) => {
-      const { title } = params.body;
+      const { title } = params.query;
       const post = posts.find((_post) => paramCase(_post.title) === title);
 
       if (!post) {
@@ -265,7 +265,7 @@ export default [
     timeout: 5000,
     method: 'get',
     response: (params: any) => {
-      const { title } = params.body;
+      const { title } = params.query;
 
       const recentPosts = posts
         .filter((_post) => paramCase(_post.title) !== title)
@@ -283,7 +283,7 @@ export default [
     timeout: 5000,
     method: 'get',
     response: (params: any) => {
-      const { query } = params.body;
+      const { query } = params.query;
       const cleanQuery = query.toLowerCase().trim();
       const results: any[] = [];
 

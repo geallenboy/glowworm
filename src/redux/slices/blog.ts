@@ -73,10 +73,10 @@ export function getPostsInitial(index: any, step: any) {
       const response = await axios.get('/api/blog/posts', {
         params: { index, step }
       });
-      const results = response.data.results.length;
-      const { maxLength } = response.data;
+      const results = response.data.data.results.length;
+      const { maxLength } = response.data.data;
 
-      dispatch(slice.actions.getPostsInitial(response.data.results));
+      dispatch(slice.actions.getPostsInitial(response.data.data.results));
 
       if (results >= maxLength) {
         dispatch(slice.actions.noHasMore());
@@ -94,7 +94,7 @@ export function getPost(title: any) {
       const response = await axios.get('/api/blog/post', {
         params: { title }
       });
-      dispatch(slice.actions.getPostSuccess(response.data.post));
+      dispatch(slice.actions.getPostSuccess(response.data.data.post));
     } catch (error) {
       console.error(error);
       dispatch(slice.actions.hasError(error));
@@ -110,7 +110,7 @@ export function getRecentPosts(title: any) {
         params: { title }
       });
 
-      dispatch(slice.actions.getRecentPostsSuccess(response.data.recentPosts));
+      dispatch(slice.actions.getRecentPostsSuccess(response.data.data.recentPosts));
     } catch (error) {
       console.error(error);
       dispatch(slice.actions.hasError(error));

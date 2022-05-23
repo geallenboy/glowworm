@@ -81,11 +81,38 @@ let events = [...Array(9)].map((_, index) => ({
 }));
 export default [
   {
+    url: '/api/calendar/events',
+    timeout: 5000,
+    method: 'get',
+    response: (params: any) => {
+      return resultSuccess({ events });
+    }
+  },
+  {
+    url: '/api/calendar/events/new',
+    timeout: 5000,
+    method: 'post',
+    response: (params: any) => {
+      const { title, description, textColor, allDay, end, start } = JSON.parse(params.body);
+      const event = {
+        id: uuidv4(),
+        title,
+        description,
+        textColor,
+        allDay,
+        end,
+        start
+      };
+      events = [...events, event];
+      return resultSuccess({ event });
+    }
+  },
+  {
     url: '/api/calendar/events/update',
     timeout: 5000,
     method: 'get',
     response: (params: any) => {
-      const { eventId, updateEvent } = params.body;
+      const { eventId, updateEvent } = params.query;
       let event = null;
       events = map(events, (_event) => {
         if (_event.id === eventId) {
@@ -103,7 +130,7 @@ export default [
     timeout: 5000,
     method: 'get',
     response: (params: any) => {
-      const { eventId } = params.body;
+      const { eventId } = params.query;
       events = reject(events, { id: eventId });
 
       return resultSuccess({ eventId });

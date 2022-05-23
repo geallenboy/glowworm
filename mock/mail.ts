@@ -139,7 +139,7 @@ const filterMails = ({ mails, labels, systemLabel, customLabel }: any) => {
 export default [
   {
     url: '/api/mail/labels',
-    timeout: 1000,
+    timeout: 5000,
     method: 'get',
     response: () => {
       return resultSuccess({ labels });
@@ -147,10 +147,11 @@ export default [
   },
   {
     url: 'api/mail/mails',
-    timeout: 1000,
+    timeout: 5000,
     method: 'get',
     response: (params: any) => {
-      const { systemLabel, customLabel } = params.body;
+      console.log(params, 99);
+      const { systemLabel, customLabel } = params.query;
       const filteredMails = filterMails({ mails, labels, systemLabel, customLabel });
 
       return resultSuccess({ mails: filteredMails });
@@ -158,10 +159,10 @@ export default [
   },
   {
     url: '/api/mail/mail',
-    timeout: 1000,
+    timeout: 5000,
     method: 'get',
     response: (params: any) => {
-      const { mailId } = params.body;
+      const { mailId } = params.query;
       const mail = mails.find((_mail) => _mail.id === mailId);
       if (!mail) {
         return [404, { message: 'Mail not found' }];

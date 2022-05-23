@@ -166,7 +166,7 @@ export default [
   {
     url: '/api/kanban/columns/new',
     timeout: 1000,
-    method: 'get',
+    method: 'post',
     response: (params: any) => {
       const { name } = params.body;
       const column = {
@@ -182,7 +182,7 @@ export default [
   {
     url: '/api/kanban/columns/update',
     timeout: 1000,
-    method: 'get',
+    method: 'post',
     response: (params: any) => {
       const { columnId, updateColumn } = params.body;
       const columnIndex = board.columns.findIndex((column) => column.id === columnId);
@@ -197,7 +197,7 @@ export default [
   {
     url: '/api/kanban/columns/delete',
     timeout: 1000,
-    method: 'get',
+    method: 'post',
     response: (params: any) => {
       const { columnId } = params.body;
 
