@@ -6,6 +6,7 @@ import { Box, Card, Stack, Typography } from '@mui/material';
 import { alpha, styled, useTheme } from '@mui/material/styles';
 
 import { fNumber, fPercent } from '@/utils/formatNumber';
+
 const IconWrapperStyle = styled('div')(({ theme }) => ({
   width: 24,
   height: 24,
@@ -29,6 +30,7 @@ export default function ProductSold() {
     height: 80,
     width: 120,
     autoFit: false,
+    smooth: true,
     data,
     tooltip: {
       customContent: function (x: any, data: { data: { y: number } }[]) {

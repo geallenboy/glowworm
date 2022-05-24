@@ -27,7 +27,6 @@ export default function MailList({ onOpenSidebar }) {
   const isEmpty = mails.allIds.length < 1;
 
   useEffect(() => {
-    console.log(params, '3333');
     dispatch(getMails(params));
   }, [dispatch, params]);
 

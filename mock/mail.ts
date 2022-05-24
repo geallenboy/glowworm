@@ -146,11 +146,10 @@ export default [
     }
   },
   {
-    url: 'api/mail/mails',
+    url: '/api/mail/mails',
     timeout: 5000,
     method: 'get',
     response: (params: any) => {
-      console.log(params, 99);
       const { systemLabel, customLabel } = params.query;
       const filteredMails = filterMails({ mails, labels, systemLabel, customLabel });
 

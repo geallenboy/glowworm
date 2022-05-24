@@ -87,8 +87,8 @@ const sidebarConfig = [
         icon: ICONS.mail,
         info: <Label color="error">2</Label>
       },
-      { title: '图表', path: PATH_DASHBOARD.chat.root, icon: ICONS.chat },
-      { title: '日历', path: PATH_DASHBOARD.calendar, icon: ICONS.calendar },
+      { title: '聊天', path: PATH_DASHBOARD.chat.root, icon: ICONS.chat },
+      // { title: '日历', path: PATH_DASHBOARD.calendar, icon: ICONS.calendar },
       {
         title: '看板',
         path: PATH_DASHBOARD.kanban,

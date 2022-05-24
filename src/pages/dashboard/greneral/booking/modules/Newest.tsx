@@ -17,7 +17,7 @@ const MOCK_BOOKINGS = [...Array(5)].map((_, index) => ({
   avatar: mockData.image.avatar(index),
   bookdAt: mockData.time(index),
   roomNumber: 'A-21',
-  roomType: (index === 1 && 'double') || (index === 3 && 'king') || 'single',
+  roomType: (index === 1 && '标准间') || (index === 3 && '套房') || '单人间',
   person: '3-5',
   cover: `/static/mock-images/rooms/room-${index + 1}.jpg`
 }));
@@ -57,7 +57,7 @@ function Item({ item }: any) {
       <Box sx={{ p: 1, position: 'relative' }}>
         <Label
           variant="filled"
-          color={(roomType === 'king' && 'error') || (roomType === 'double' && 'info') || 'warning'}
+          color={(roomType === '套房' && 'error') || (roomType === '标准间' && 'info') || 'warning'}
           sx={{ position: 'absolute', bottom: 16, right: 16, textTransform: 'capitalize' }}
         >
           {roomType}

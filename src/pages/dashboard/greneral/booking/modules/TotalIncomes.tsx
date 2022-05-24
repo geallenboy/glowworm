@@ -1,8 +1,9 @@
+import { TinyLineChart } from '@garron/react-chart';
 import trendingDownFill from '@iconify/icons-eva/trending-down-fill';
 import trendingUpFill from '@iconify/icons-eva/trending-up-fill';
 import { Icon } from '@iconify/react';
 import { Card, Stack, Typography } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles';
 
 import { fCurrency, fPercent } from '@/utils/formatNumber';
 
@@ -15,8 +16,19 @@ const RootStyle = styled(Card)(({ theme }: any) => ({
 
 const TOTAL = 18765;
 const PERCENT = 2.6;
+const data = [111, 136, 76, 108, 74, 54, 57, 84];
 
 export default function TotalIncomes() {
+  const theme = useTheme();
+  const config = {
+    height: 135,
+    autoFit: false,
+    line: {
+      color: theme.palette.primary.main
+    },
+    data,
+    smooth: true
+  };
   return (
     <RootStyle>
       <Stack direction="row" justifyContent="space-between" sx={{ mb: 3 }}>
@@ -38,6 +50,7 @@ export default function TotalIncomes() {
           </Typography>
         </div>
       </Stack>
+      <TinyLineChart {...config} />
     </RootStyle>
   );
 }

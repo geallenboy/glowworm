@@ -5,7 +5,6 @@ import { styled, useTheme } from '@mui/material/styles';
 import { fNumber } from '@/utils/formatNumber';
 
 const CHART_HEIGHT = 425;
-
 const ChartWrapperStyle = styled('div')(() => ({
   height: CHART_HEIGHT
 }));
@@ -19,7 +18,7 @@ const data = [
 export default function AppCurrentDownload() {
   const theme = useTheme();
 
-  const config = {
+  const config: any = {
     color: [
       theme.palette.primary.light,
       theme.palette.primary.light,

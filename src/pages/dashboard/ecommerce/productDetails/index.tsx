@@ -5,7 +5,6 @@ import { Icon } from '@iconify/react';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import { Box, Card, Container, Divider, Grid, Skeleton, Tab, Typography } from '@mui/material';
 import { alpha, styled } from '@mui/material/styles';
-import { sentenceCase } from 'change-case';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -13,6 +12,7 @@ import CartWidget from '@/components/CartWidget';
 import HeaderBreadcrumbs from '@/components/HeaderBreadcrumbs';
 import Markdown from '@/components/Markdown';
 import Page from '@/components/Page';
+import { title_admin } from '@/config';
 import useSettings from '@/hooks/useSettings';
 import { getProduct } from '@/redux/slices/product';
 import { useDispatch, useSelector } from '@/redux/store';
@@ -22,18 +22,18 @@ import { DetailsCarousel, DetailsReview, DetailsSumary } from './modules';
 
 const PRODUCT_DESCRIPTION = [
   {
-    title: '100% Original',
-    description: 'Chocolate bar candy canes ice cream toffee cookie halvah.',
+    title: '100% ',
+    description: '巧克力棒糖果棒冰淇淋太妃糖曲奇halvah',
     icon: roundVerified
   },
   {
-    title: '10 Day Replacement',
-    description: 'Marshmallow biscuit donut dragée fruitcake wafer.',
+    title: '10天退货',
+    description: '棉花糖甜甜圈水果蛋糕片。',
     icon: clockFill
   },
   {
-    title: 'Year Warranty',
-    description: 'Cotton candy gingerbread cake I love sugar sweet.',
+    title: '1年保修期',
+    description: '棉花糖姜饼蛋糕我喜欢糖甜的',
     icon: roundVerifiedUser
   }
 ];
@@ -82,17 +82,17 @@ export default function ProductDetails() {
   };
 
   return (
-    <Page title="Ecommerce: Product Details | Minimal-UI">
+    <Page title={`商品详情 ${title_admin}`}>
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <HeaderBreadcrumbs
-          heading="Product Details"
+          heading="商品详情"
           links={[
-            { name: 'Dashboard', href: PATH_DASHBOARD.root },
+            { name: '管理', href: PATH_DASHBOARD.root },
             {
-              name: 'E-Commerce',
+              name: '电子商品',
               href: PATH_DASHBOARD.eCommerce.root
             },
-            { name: sentenceCase(name) }
+            { name: 'Nike' }
           ]}
         />
 

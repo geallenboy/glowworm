@@ -1,6 +1,6 @@
 import { Container } from '@mui/material';
 import { useEffect } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import HeaderBreadcrumbs from '@/components/HeaderBreadcrumbs';
 import Page from '@/components/Page';
@@ -12,14 +12,16 @@ import { PATH_DASHBOARD } from '@/routes/paths';
 
 import NewForm from './modules/NewForm';
 
+const _name = '不知火舞';
+
 export default function UserCreate() {
   const { themeStretch } = useSettings();
   const dispatch: any = useDispatch();
   const { pathname } = useLocation();
-  const { name } = useParams();
+  // const { name } = useParams();
   const { userList } = useSelector((state: any) => state.user);
   const isEdit = pathname.includes('edit');
-  const currentUser = userList.find((user: any) => user.name === name);
+  const currentUser = userList.find((user: any) => user.name === _name);
 
   useEffect(() => {
     dispatch(getUserList());
@@ -33,7 +35,7 @@ export default function UserCreate() {
           links={[
             { name: '管理', href: PATH_DASHBOARD.root },
             { name: '用户', href: PATH_DASHBOARD.user.root },
-            { name: !isEdit ? '新用户' : name }
+            { name: !isEdit ? '新用户' : _name }
           ]}
         />
 

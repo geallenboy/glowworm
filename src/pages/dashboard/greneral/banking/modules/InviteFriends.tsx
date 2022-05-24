@@ -31,7 +31,7 @@ export default function InviteFriends() {
           <Typography variant="h4">
             邀请朋友 <br /> 赚取更多收入
           </Typography>
-          <Typography variant="h2">$50</Typography>
+          <Typography variant="h2">¥50</Typography>
         </Stack>
 
         <Typography variant="body2" sx={{ mt: 2, mb: 3 }}>
@@ -41,7 +41,7 @@ export default function InviteFriends() {
         <Stack direction="row" spacing={1} alignItems="center" justifyContent="space-between">
           <OutlinedInput
             size="small"
-            placeholder="Email"
+            placeholder="邮箱"
             sx={{
               width: 1,
               color: 'common.white',

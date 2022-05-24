@@ -56,7 +56,7 @@ const CARDS = [
     id: '8baa359f-7e98-4c13-8d5b-fa210b643d82',
     balance: 23432.03,
     cardType: 'mastercard',
-    cardHolder: 'Julianne Zemlak',
+    cardHolder: '张三',
     cardNumber: '**** **** **** 3640',
     cardValid: '11/22'
   },
@@ -64,7 +64,7 @@ const CARDS = [
     id: '32a7ed73-894f-4c79-a1d7-8a968ff69cc4',
     balance: 18000.23,
     cardType: 'visa',
-    cardHolder: 'Pascale Schaefer',
+    cardHolder: '卡二',
     cardNumber: '**** **** **** 8864',
     cardValid: '11/25'
   },
@@ -72,7 +72,7 @@ const CARDS = [
     id: 'ef0bca7b-4460-44bc-a606-1354ce3c0a3c',
     balance: 2000.89,
     cardType: 'mastercard',
-    cardHolder: 'Tamara Hilll',
+    cardHolder: '卡二',
     cardNumber: '**** **** **** 7755',
     cardValid: '11/22'
   }

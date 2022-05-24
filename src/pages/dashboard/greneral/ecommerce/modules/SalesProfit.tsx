@@ -29,6 +29,7 @@ export default function SalesProfit() {
     height: 80,
     width: 120,
     autoFit: false,
+    smooth: true,
     data,
     tooltip: {
       customContent: function (x: any, data: { data: { y: number } }[]) {
