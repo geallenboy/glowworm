@@ -76,7 +76,7 @@ export default function ChatRoomGroupParticipant({
           />
         }
       >
-        In room ({participants.length})
+        室内({participants.length})
       </CollapseButtonStyle>
 
       <Box sx={{ height: isCollapse ? HEIGHT * 4 : 0 }}>

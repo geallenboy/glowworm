@@ -84,7 +84,7 @@ function ReviewItem({ review }) {
           <Stack mt={1} direction="row" alignItems="center" flexWrap="wrap">
             {!isHelpful && (
               <Typography variant="body2" sx={{ mr: 1 }}>
-                Was this review helpful to you?
+                这篇评论对你有帮助吗?
               </Typography>
             )}
 

@@ -1,11 +1,11 @@
 import { Box, Card, Container, Divider, Pagination, Skeleton, Typography } from '@mui/material';
-import { sentenceCase } from 'change-case';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import HeaderBreadcrumbs from '@/components/HeaderBreadcrumbs';
 import Markdown from '@/components/Markdown';
 import Page from '@/components/Page';
+import { title_admin } from '@/config';
 import useSettings from '@/hooks/useSettings';
 import { getPost, getRecentPosts } from '@/redux/slices/blog';
 import { useDispatch, useSelector } from '@/redux/store';
@@ -39,14 +39,14 @@ export default function BlogPost() {
   }, [dispatch, title]);
 
   return (
-    <Page title="Blog: Post Details | Minimal-UI">
+    <Page title={`博客-文章详情 ${title_admin}`}>
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <HeaderBreadcrumbs
-          heading="Post Details"
+          heading="文章详情"
           links={[
-            { name: 'Dashboard', href: PATH_DASHBOARD.root },
-            { name: 'Blog', href: PATH_DASHBOARD.blog.root },
-            { name: sentenceCase(title) }
+            { name: '管理', href: PATH_DASHBOARD.root },
+            { name: '博客', href: PATH_DASHBOARD.blog.root },
+            { name: '文章详情' }
           ]}
         />
 
@@ -68,7 +68,7 @@ export default function BlogPost() {
               </Box>
 
               <Box sx={{ display: 'flex', mb: 2 }}>
-                <Typography variant="h4">Comments</Typography>
+                <Typography variant="h4">评论</Typography>
                 <Typography variant="subtitle2" sx={{ color: 'text.disabled' }}>
                   ({post.comments.length})
                 </Typography>
@@ -87,7 +87,7 @@ export default function BlogPost() {
 
         {!post && SkeletonLoad}
 
-        {error && <Typography variant="h6">404 Post not found</Typography>}
+        {error && <Typography variant="h6">404 文章没有发现</Typography>}
 
         {recentPosts.length > 0 && <PostRecent posts={recentPosts} />}
       </Container>

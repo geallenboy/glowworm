@@ -57,7 +57,7 @@ export default function KanbanColumnToolBar({ columnName, onDelete, onUpdate }) 
         <OutlinedInput
           inputRef={renameRef}
           size="small"
-          placeholder="Section name"
+          placeholder="节点名称"
           value={value}
           onChange={handleChangeColumnName}
           onKeyUp={handleUpdateColumn}
@@ -92,7 +92,7 @@ export default function KanbanColumnToolBar({ columnName, onDelete, onUpdate }) 
             icon={editFill}
             sx={{ width: 20, height: 20, flexShrink: 0, mr: 1 }}
           />
-          <Typography variant="body2">Rename section</Typography>
+          <Typography variant="body2">重命名节点</Typography>
         </MenuItem>
         <MenuItem onClick={onDelete} sx={{ py: 0.75, px: 1.5 }}>
           <Box
@@ -100,7 +100,7 @@ export default function KanbanColumnToolBar({ columnName, onDelete, onUpdate }) 
             icon={trash2Outline}
             sx={{ width: 20, height: 20, flexShrink: 0, mr: 1 }}
           />
-          <Typography variant="body2">Delete section</Typography>
+          <Typography variant="body2">删除节点</Typography>
         </MenuItem>
       </MenuPopover>
     </>

@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 
 import HeaderBreadcrumbs from '@/components/HeaderBreadcrumbs';
 import Page from '@/components/Page';
+import { title_admin } from '@/config';
 import useSettings from '@/hooks/useSettings';
 import { getLabels } from '@/redux/slices/mail';
 import { useDispatch } from '@/redux/store';
@@ -23,16 +24,16 @@ export default function Mail() {
   }, [dispatch]);
 
   return (
-    <Page title="Mail | Minimal-UI">
+    <Page title={`邮箱 ${title_admin}`}>
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <HeaderBreadcrumbs
-          heading="Mail"
+          heading="邮箱"
           links={[
             {
-              name: 'Dashboard',
+              name: 'APP',
               href: PATH_DASHBOARD.root
             },
-            { name: 'Mail' }
+            { name: '邮箱' }
           ]}
         />
         <Card sx={{ height: { md: '72vh' }, display: { md: 'flex' } }}>

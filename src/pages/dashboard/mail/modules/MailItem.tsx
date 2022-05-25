@@ -75,7 +75,7 @@ export default function MailItem({ mail, isDense, isSelected, onSelect, onDesele
       <MHidden width="mdDown">
         <Stack direction="row" sx={{ mr: 2 }}>
           <Checkbox checked={isSelected} onChange={handleChangeCheckbox} />
-          <Tooltip title="Starred">
+          <Tooltip title="星级">
             <Checkbox
               color="warning"
               defaultChecked={mail.isStarred}
@@ -83,7 +83,7 @@ export default function MailItem({ mail, isDense, isSelected, onSelect, onDesele
               checkedIcon={<Icon icon={starFill} />}
             />
           </Tooltip>
-          <Tooltip title="Important">
+          <Tooltip title="重要">
             <Checkbox
               color="warning"
               defaultChecked={mail.isImportant}

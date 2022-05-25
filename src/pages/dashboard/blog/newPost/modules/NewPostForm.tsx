@@ -59,10 +59,10 @@ export default function NewPostForm() {
   };
 
   const NewBlogSchema = Yup.object().shape({
-    title: Yup.string().required('Title is required'),
-    description: Yup.string().required('Description is required'),
-    content: Yup.string().min(1000).required('Content is required'),
-    cover: Yup.mixed().required('Cover is required')
+    title: Yup.string().required('标题不能为空'),
+    description: Yup.string().required('描述不能为空'),
+    content: Yup.string().min(1000).required('内容不能为空'),
+    cover: Yup.mixed().required('封面不能为空')
   });
 
   const formik = useFormik({
@@ -85,7 +85,7 @@ export default function NewPostForm() {
         resetForm();
         handleClosePreview();
         setSubmitting(false);
-        enqueueSnackbar('Post success', { variant: 'success' });
+        enqueueSnackbar('创建成功', { variant: 'success' });
       } catch (error) {
         console.error(error);
         setSubmitting(false);
@@ -119,7 +119,7 @@ export default function NewPostForm() {
                 <Stack spacing={3}>
                   <TextField
                     fullWidth
-                    label="Post Title"
+                    label="文章标题"
                     {...getFieldProps('title')}
                     error={Boolean(touched.title && errors.title)}
                     helperText={touched.title && errors.title}
@@ -130,14 +130,14 @@ export default function NewPostForm() {
                     multiline
                     minRows={3}
                     maxRows={5}
-                    label="Description"
+                    label="描述"
                     {...getFieldProps('description')}
                     error={Boolean(touched.description && errors.description)}
                     helperText={touched.description && errors.description}
                   />
 
                   <div>
-                    <LabelStyle>Content</LabelStyle>
+                    <LabelStyle>内容</LabelStyle>
                     <QuillEditor
                       id="post-content"
                       value={values.content}
@@ -152,7 +152,7 @@ export default function NewPostForm() {
                   </div>
 
                   <div>
-                    <LabelStyle>Cover</LabelStyle>
+                    <LabelStyle>封面</LabelStyle>
                     <UploadSingleFile
                       maxSize={3145728}
                       accept="image/*"
@@ -176,14 +176,14 @@ export default function NewPostForm() {
                   <div>
                     <FormControlLabel
                       control={<Switch {...getFieldProps('publish')} checked={values.publish} />}
-                      label="Publish"
+                      label="发表"
                       labelPlacement="start"
                       sx={{ mb: 1, mx: 0, width: '100%', justifyContent: 'space-between' }}
                     />
 
                     <FormControlLabel
                       control={<Switch {...getFieldProps('comments')} checked={values.comments} />}
-                      label="Enable comments"
+                      label="评论"
                       labelPlacement="start"
                       sx={{ mx: 0, width: '100%', justifyContent: 'space-between' }}
                     />
@@ -207,17 +207,17 @@ export default function NewPostForm() {
                         />
                       ))
                     }
-                    renderInput={(params) => <TextField {...params} label="Tags" />}
+                    renderInput={(params) => <TextField {...params} label="标签" />}
                   />
 
-                  <TextField fullWidth label="Meta title" {...getFieldProps('metaTitle')} />
+                  <TextField fullWidth label="标题" {...getFieldProps('metaTitle')} />
 
                   <TextField
                     fullWidth
                     multiline
                     minRows={3}
                     maxRows={5}
-                    label="Meta description"
+                    label="描述"
                     {...getFieldProps('metaDescription')}
                   />
 
@@ -239,7 +239,7 @@ export default function NewPostForm() {
                         />
                       ))
                     }
-                    renderInput={(params) => <TextField {...params} label="Meta keywords" />}
+                    renderInput={(params) => <TextField {...params} label="关键字" />}
                   />
                 </Stack>
               </Card>
@@ -254,7 +254,7 @@ export default function NewPostForm() {
                   onClick={handleOpenPreview}
                   sx={{ mr: 1.5 }}
                 >
-                  Preview
+                  预览
                 </Button>
                 <LoadingButton
                   fullWidth
@@ -263,7 +263,7 @@ export default function NewPostForm() {
                   size="large"
                   loading={isSubmitting}
                 >
-                  Post
+                  发表
                 </LoadingButton>
               </Stack>
             </Grid>

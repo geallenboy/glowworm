@@ -71,7 +71,7 @@ export default function ChatRoomOneParticipant({ participants, isCollapse, onCol
           />
         }
       >
-        information
+        信息
       </CollapseButtonStyle>
 
       <Collapse in={isCollapse}>

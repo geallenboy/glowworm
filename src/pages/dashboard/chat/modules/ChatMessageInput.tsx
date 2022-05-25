@@ -63,7 +63,7 @@ export default function ChatMessageInput({ disabled, conversationId, onSend, ...
         disableUnderline
         onKeyUp={handleKeyUp}
         onChange={handleChangeMessage}
-        placeholder="Type a message"
+        placeholder="键入消息"
         startAdornment={
           <InputAdornment position="start">
             <EmojiPicker disabled={disabled} value={message} setValue={setMessage} />

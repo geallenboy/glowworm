@@ -35,7 +35,7 @@ export default function CheckoutPaymentMethods({ paymentOptions, cardOptions, fo
 
   return (
     <Card sx={{ my: 3 }}>
-      <CardHeader title="Payment options" />
+      <CardHeader title="付款选项" />
       <CardContent>
         <RadioGroup row {...getFieldProps('payment')}>
           <Grid container spacing={2}>

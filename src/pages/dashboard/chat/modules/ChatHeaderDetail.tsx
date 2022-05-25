@@ -69,7 +69,7 @@ function GroupAvatar({ participants }) {
         onClick={() => {}}
       >
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          {participants.length} persons
+          {participants.length} 人员
           <Icon icon={arrowIosForwardFill} />
         </Box>
       </Link>

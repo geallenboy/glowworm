@@ -1,6 +1,6 @@
 import { Container } from '@mui/material';
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 import HeaderBreadcrumbs from '@/components/HeaderBreadcrumbs';
 import Page from '@/components/Page';
@@ -18,10 +18,12 @@ export default function UserCreate() {
   const { themeStretch } = useSettings();
   const dispatch: any = useDispatch();
   const { pathname } = useLocation();
-  // const { name } = useParams();
+  const { name } = useParams();
   const { userList } = useSelector((state: any) => state.user);
   const isEdit = pathname.includes('edit');
-  const currentUser = userList.find((user: any) => user.name === _name);
+  const currentUser = userList.find(
+    (user: any) => user.name === (name === 'reece-chung' ? _name : name)
+  );
 
   useEffect(() => {
     dispatch(getUserList());

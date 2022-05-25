@@ -1,6 +1,6 @@
 import { MenuItem, TextField } from '@mui/material';
 
-export default function BlogPostsSort({ query, options, onSort }) {
+export default function PostsSort({ query, options, onSort }) {
   return (
     <TextField select size="small" value={query} onChange={onSort}>
       {options.map((option) => (

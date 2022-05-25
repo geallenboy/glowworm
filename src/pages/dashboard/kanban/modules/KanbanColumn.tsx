@@ -109,7 +109,7 @@ export default function KanbanColumn({ column, index }) {
                 onClick={handleOpenAddTask}
                 sx={{ fontSize: 14 }}
               >
-                Add Task
+                添加任务
               </Button>
             </Stack>
           </Stack>

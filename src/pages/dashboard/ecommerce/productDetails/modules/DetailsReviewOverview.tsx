@@ -58,7 +58,7 @@ export default function DetailsReviewOverview({ product, onOpen }) {
     <Grid container>
       <GridStyle item xs={12} md={4}>
         <Typography variant="subtitle1" gutterBottom>
-          Average rating
+          评价等级
         </Typography>
         <Typography variant="h2" gutterBottom sx={{ color: 'error.main' }}>
           {totalRating}/5
@@ -66,7 +66,7 @@ export default function DetailsReviewOverview({ product, onOpen }) {
         <RatingStyle readOnly value={totalRating} precision={0.1} />
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
           ({fShortenNumber(totalReview)}
-          &nbsp;reviews)
+          &nbsp;评价)
         </Typography>
       </GridStyle>
 
@@ -89,7 +89,7 @@ export default function DetailsReviewOverview({ product, onOpen }) {
             variant="outlined"
             startIcon={<Icon icon={edit2Fill} />}
           >
-            Write your review
+            写你的评论
           </Button>
         </ScrollLink>
       </GridStyle>

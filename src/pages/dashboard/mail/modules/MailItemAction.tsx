@@ -34,22 +34,22 @@ export default function MailItemAction({
 }) {
   const MAIL_ACTIONS = [
     {
-      name: 'Archive',
+      name: '档案文件',
       icon: archiveFill,
       action: handleArchive
     },
     {
-      name: 'Delete',
+      name: '删除',
       icon: trash2Fill,
       action: handleDelete
     },
     {
-      name: 'Mark Email Read',
+      name: '电子邮件标记为已读',
       icon: roundMarkEmailRead,
       action: handleMarkRead
     },
     {
-      name: 'Hidden Email',
+      name: '隐藏电子邮件',
       icon: eyeOffFill,
       action: handleHidden
     }

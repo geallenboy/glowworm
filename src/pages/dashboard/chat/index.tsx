@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 
 import HeaderBreadcrumbs from '@/components/HeaderBreadcrumbs';
 import Page from '@/components/Page';
+import { title_admin } from '@/config';
 import useSettings from '@/hooks/useSettings';
 import { getContacts, getConversations } from '@/redux/slices/chat';
 import { useDispatch } from '@/redux/store';
@@ -20,11 +21,11 @@ export default function Chat() {
   }, [dispatch]);
 
   return (
-    <Page title="Chat | Minimal-UI">
+    <Page title={`聊天 ${title_admin}`}>
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <HeaderBreadcrumbs
-          heading="Chat"
-          links={[{ name: 'Dashboard', href: PATH_DASHBOARD.root }, { name: 'Chat' }]}
+          heading="聊天"
+          links={[{ name: 'APP', href: PATH_DASHBOARD.root }, { name: '聊天' }]}
         />
         <Card sx={{ height: '72vh', display: 'flex' }}>
           <ChatSidebar />

@@ -130,7 +130,7 @@ export default function EcommerceShop() {
 
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <HeaderBreadcrumbs
-          heading="Shop"
+          heading="购物"
           links={[
             { name: '管理', href: PATH_DASHBOARD.root },
             {

@@ -57,9 +57,9 @@ export default function NewPostPreview({ formik, openPreview, onClosePreview }) 
     <DialogAnimate fullScreen open={openPreview} onClose={onClosePreview}>
       <DialogActions sx={{ py: 2, px: 3 }}>
         <Typography variant="subtitle1" sx={{ flexGrow: 1 }}>
-          Preview Post
+          预览
         </Typography>
-        <Button onClick={onClosePreview}>Cancel</Button>
+        <Button onClick={onClosePreview}>取消</Button>
         <LoadingButton
           type="submit"
           variant="contained"
@@ -67,7 +67,7 @@ export default function NewPostPreview({ formik, openPreview, onClosePreview }) 
           loading={isSubmitting}
           onClick={handleSubmit}
         >
-          Post
+          确定
         </LoadingButton>
       </DialogActions>
 
@@ -84,7 +84,7 @@ export default function NewPostPreview({ formik, openPreview, onClosePreview }) 
           </Container>
         </Scrollbar>
       ) : (
-        <EmptyContent title="Empty content" />
+        <EmptyContent title="内容为空" />
       )}
     </DialogAnimate>
   );

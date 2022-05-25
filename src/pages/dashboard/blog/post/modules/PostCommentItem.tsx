@@ -61,7 +61,7 @@ export default function PostCommentItem({ name, avatarUrl, message, tagUser, pos
 
         {!hasReply && (
           <Button size="small" onClick={handleOpenReply} sx={{ position: 'absolute', right: 0 }}>
-            Reply
+            回复
           </Button>
         )}
       </ListItem>
@@ -77,7 +77,7 @@ export default function PostCommentItem({ name, avatarUrl, message, tagUser, pos
           <TextField
             fullWidth
             size="small"
-            placeholder="Write comment"
+            placeholder="写评论"
             sx={{
               '& fieldset': {
                 borderWidth: `1px !important`,

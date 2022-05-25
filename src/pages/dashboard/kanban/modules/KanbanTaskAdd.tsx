@@ -129,7 +129,7 @@ export default function KanbanTaskAdd({ onAddTask, onCloseAddTask }) {
           <OutlinedInput
             multiline
             size="small"
-            placeholder="Task name"
+            placeholder="任务名称"
             value={name}
             onChange={(event) => setName(event.target.value)}
             onKeyUp={handleKeyUpAddTask}
@@ -140,7 +140,7 @@ export default function KanbanTaskAdd({ onAddTask, onCloseAddTask }) {
           />
 
           <Stack direction="row" justifyContent="space-between">
-            <Tooltip title="Mark task complete">
+            <Tooltip title="标记任务完成">
               <Checkbox
                 disableRipple
                 checked={completed}
@@ -151,7 +151,7 @@ export default function KanbanTaskAdd({ onAddTask, onCloseAddTask }) {
             </Tooltip>
 
             <Stack direction="row" spacing={1.5} alignItems="center">
-              <Tooltip title="Assign this task">
+              <Tooltip title="分配此任务">
                 <MIconButton size="small">
                   <Icon icon={peopleFill} width={20} height={20} />
                 </MIconButton>
@@ -166,7 +166,7 @@ export default function KanbanTaskAdd({ onAddTask, onCloseAddTask }) {
                   onOpenPicker={onOpenPicker}
                 />
               ) : (
-                <Tooltip title="Add due date">
+                <Tooltip title="添加到期日">
                   <MIconButton size="small" onClick={onOpenPicker}>
                     <Icon icon={calendarFill} width={20} height={20} />
                   </MIconButton>

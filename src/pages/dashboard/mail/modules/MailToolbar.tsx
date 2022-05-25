@@ -73,7 +73,7 @@ export default function MailToolbar({
           indeterminate={selectedSomeMails}
           onChange={handleSelectChange}
         />
-        <Tooltip title="Refresh">
+        <Tooltip title="刷新">
           <IconButton>
             <Icon icon={refreshFill} width={20} height={20} />
           </IconButton>
@@ -83,7 +83,7 @@ export default function MailToolbar({
             <Icon icon={collapseFill} width={20} height={20} />
           </IconButton>
         </Tooltip>
-        <Tooltip title="More">
+        <Tooltip title="更多">
           <IconButton>
             <Icon icon={moreVerticalFill} width={20} height={20} />
           </IconButton>
@@ -94,7 +94,7 @@ export default function MailToolbar({
 
       <FormControl size="small">
         <SearchStyle
-          placeholder="Search mail…"
+          placeholder="搜索邮件…"
           startAdornment={
             <InputAdornment position="start">
               <Box component={Icon} icon={searchFill} sx={{ color: 'text.disabled' }} />

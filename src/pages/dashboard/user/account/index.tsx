@@ -72,7 +72,7 @@ export default function Account() {
     <Page title={`账户设置 ${title_admin}`}>
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <HeaderBreadcrumbs
-          heading="Account"
+          heading="账户设置"
           links={[
             { name: '管理', href: PATH_DASHBOARD.root },
             { name: '用户', href: PATH_DASHBOARD.user.root },

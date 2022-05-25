@@ -28,7 +28,7 @@ export default function ChatContactSearch({ query, onChange, onFocus, onClickAwa
             value={query}
             onFocus={onFocus}
             onChange={onChange}
-            placeholder="Search contacts..."
+            placeholder="搜索联系人..."
             startAdornment={
               <InputAdornment position="start">
                 <Box component={Icon} icon={searchFill} sx={{ color: 'text.disabled' }} />

@@ -76,7 +76,7 @@ export default function ChatAccount() {
             </Typography>
           </Box>
 
-          <Tooltip title="Log out">
+          <Tooltip title="注销">
             <IconButton>
               <Icon icon={roundPowerSettingsNew} width={24} height={24} />
             </IconButton>

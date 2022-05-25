@@ -84,7 +84,7 @@ export default function KanbanTaskDetails({ card, isOpen, onClose, onDeleteTask 
       >
         <Stack p={2.5} direction="row" alignItems="center">
           <MHidden width="smUp">
-            <Tooltip title="Back">
+            <Tooltip title="返回">
               <MIconButton onClick={onClose} sx={{ mr: 1 }}>
                 <Icon icon={arrowIosBackFill} width={20} height={20} />
               </MIconButton>
@@ -98,30 +98,30 @@ export default function KanbanTaskDetails({ card, isOpen, onClose, onDeleteTask 
             startIcon={!taskCompleted && <Icon icon={checkmarkFill} width={16} height={16} />}
             onClick={handleToggleCompleted}
           >
-            {taskCompleted ? 'Complete' : 'Mark complete'}
+            {taskCompleted ? '完成' : '标记完成'}
           </Button>
 
           <Stack direction="row" spacing={1} justifyContent="flex-end" flexGrow={1}>
-            <Tooltip title="Like this">
+            <Tooltip title="像这样">
               <MIconButton size="small">
                 <Icon icon={roundThumbUp} width={20} height={20} />
               </MIconButton>
             </Tooltip>
 
-            <Tooltip title="Attachment">
+            <Tooltip title="附件">
               <MIconButton size="small" onClick={handleAttach}>
                 <Icon icon={attach2Fill} width={20} height={20} />
               </MIconButton>
             </Tooltip>
             <input ref={fileInputRef} type="file" style={{ display: 'none' }} />
 
-            <Tooltip title="Delete task">
+            <Tooltip title="删除任务">
               <MIconButton onClick={onDeleteTask} size="small">
                 <Icon icon={trash2Outline} width={20} height={20} />
               </MIconButton>
             </Tooltip>
 
-            <Tooltip title="More actions">
+            <Tooltip title="更多操作">
               <MIconButton size="small">
                 <Icon icon={moreHorizontalFill} width={20} height={20} />
               </MIconButton>
@@ -137,7 +137,7 @@ export default function KanbanTaskDetails({ card, isOpen, onClose, onDeleteTask 
               fullWidth
               multiline
               size="small"
-              placeholder="Task name"
+              placeholder="任务名称"
               value={name}
               sx={{
                 typography: 'h6',
@@ -145,7 +145,7 @@ export default function KanbanTaskDetails({ card, isOpen, onClose, onDeleteTask 
               }}
             />
             <Stack direction="row">
-              <LabelStyle sx={{ mt: 1.5 }}>Assignee</LabelStyle>
+              <LabelStyle sx={{ mt: 1.5 }}>受让人</LabelStyle>
               <Stack direction="row" flexWrap="wrap" alignItems="center">
                 {assignee.map((user) => (
                   <Avatar
@@ -155,7 +155,7 @@ export default function KanbanTaskDetails({ card, isOpen, onClose, onDeleteTask 
                     sx={{ m: 0.5, width: 36, height: 36 }}
                   />
                 ))}
-                <Tooltip title="Add assignee">
+                <Tooltip title="添加受让人">
                   <MIconButton
                     sx={{ p: 1, ml: 0.5, border: (theme) => `dashed 1px ${theme.palette.divider}` }}
                   >
@@ -166,7 +166,7 @@ export default function KanbanTaskDetails({ card, isOpen, onClose, onDeleteTask 
             </Stack>
 
             <Stack direction="row" alignItems="center">
-              <LabelStyle> Due date</LabelStyle>
+              <LabelStyle>到期日</LabelStyle>
               <>
                 {startTime && endTime ? (
                   <DisplayTime
@@ -178,7 +178,7 @@ export default function KanbanTaskDetails({ card, isOpen, onClose, onDeleteTask 
                     sx={{ typography: 'body2' }}
                   />
                 ) : (
-                  <Tooltip title="Add assignee">
+                  <Tooltip title="添加受让人">
                     <MIconButton
                       onClick={onOpenPicker}
                       sx={{
@@ -204,7 +204,7 @@ export default function KanbanTaskDetails({ card, isOpen, onClose, onDeleteTask 
             </Stack>
 
             <Stack direction="row" alignItems="center">
-              <LabelStyle>Prioritize</LabelStyle>
+              <LabelStyle>按重要性排列</LabelStyle>
               <TextField
                 fullWidth
                 select
@@ -239,7 +239,7 @@ export default function KanbanTaskDetails({ card, isOpen, onClose, onDeleteTask 
             </Stack>
 
             <Stack direction="row">
-              <LabelStyle sx={{ mt: 2 }}>Description</LabelStyle>
+              <LabelStyle sx={{ mt: 2 }}>描述</LabelStyle>
               <OutlinedInput
                 fullWidth
                 multiline
@@ -252,7 +252,7 @@ export default function KanbanTaskDetails({ card, isOpen, onClose, onDeleteTask 
             </Stack>
 
             <Stack direction="row">
-              <LabelStyle sx={{ mt: 2 }}>Attachments</LabelStyle>
+              <LabelStyle sx={{ mt: 2 }}>附件</LabelStyle>
               <Stack direction="row" flexWrap="wrap">
                 <KanbanTaskAttachments attachments={attachments} />
               </Stack>

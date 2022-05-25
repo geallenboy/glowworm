@@ -20,6 +20,7 @@ import HeaderBreadcrumbs from '@/components/HeaderBreadcrumbs';
 import Label from '@/components/Label';
 import Page from '@/components/Page';
 import Scrollbar from '@/components/Scrollbar';
+import { title_admin } from '@/config';
 import useSettings from '@/hooks/useSettings';
 import { PATH_DASHBOARD } from '@/routes/paths';
 import { fCurrency } from '@/utils/formatNumber';
@@ -32,17 +33,17 @@ const INVOICE = {
   discount: 10,
   status: 'paid',
   invoiceFrom: {
-    name: 'Kathlyn Hauck',
-    address: 'DieSachbearbeiter Choriner Straße 49 10435 Berlin',
-    company: 'Durgan Group',
-    email: 'Dion.collins23@gmail.com',
+    name: '张三',
+    address: '中国江苏南京',
+    company: '中国',
+    email: '88888@gmail.com',
     phone: '227-940-9869'
   },
   invoiceTo: {
-    name: 'Lesly Reichel',
-    address: 'Keas 69 Str. 15234, Chalandri Athens, Greece',
-    company: 'Stracke LLC',
-    email: 'kurt_durgan46@hotmail.com',
+    name: '李四',
+    address: '中国江苏南京',
+    company: '中国',
+    email: '88888888hotmail.com',
     phone: '261-433-6689'
   },
   items: [...Array(3)].map((_, index) => ({
@@ -68,17 +69,17 @@ export default function EcommerceInvoice() {
   const total = subTotal - INVOICE.discount + INVOICE.taxes;
 
   return (
-    <Page title="Ecommerce: Invoice | Minimal-UI">
+    <Page title={`发票详细 ${title_admin}`}>
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <HeaderBreadcrumbs
-          heading="Invoice Details"
+          heading="发票详细"
           links={[
-            { name: 'Dashboard', href: PATH_DASHBOARD.root },
+            { name: '管理', href: PATH_DASHBOARD.root },
             {
-              name: 'E-Commerce',
+              name: '电子商务',
               href: PATH_DASHBOARD.eCommerce.root
             },
-            { name: 'Invoice' }
+            { name: '发票' }
           ]}
         />
 
@@ -90,7 +91,7 @@ export default function EcommerceInvoice() {
               <Box
                 component="img"
                 alt="logo"
-                src="/static/brand/logo_full.svg"
+                src="/static/icons/ic_chrome.svg"
                 sx={{ height: 48 }}
               />
             </Grid>
@@ -100,7 +101,7 @@ export default function EcommerceInvoice() {
                 <Label color="success" sx={{ textTransform: 'uppercase', mb: 1 }}>
                   {INVOICE.status}
                 </Label>
-                <Typography variant="h6">INV-{INVOICE.id}</Typography>
+                <Typography variant="h6">{INVOICE.id}</Typography>
               </Box>
             </Grid>
 
@@ -213,7 +214,7 @@ export default function EcommerceInvoice() {
 
           <Grid container>
             <Grid item xs={12} md={9} sx={{ py: 3 }}>
-              <Typography variant="subtitle2">NOTES</Typography>
+              <Typography variant="subtitle2">备注</Typography>
               <Typography variant="body2">
                 我们感谢您的业务。如果您需要我们添加增值税或额外注释，请让我们知道
               </Typography>

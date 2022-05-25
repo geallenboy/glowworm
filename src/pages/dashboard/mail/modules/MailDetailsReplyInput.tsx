@@ -24,7 +24,7 @@ export default function MailDetailsReplyInput() {
         minRows={2}
         maxRows={8}
         value={message}
-        placeholder="Type a message"
+        placeholder="键入消息"
         onChange={handleChangeMessage}
         sx={{ '& fieldset': { border: 'none !important' } }}
       />
@@ -46,7 +46,7 @@ export default function MailDetailsReplyInput() {
           <Icon icon={attach2Fill} width={24} height={24} />
         </IconButton>
 
-        <Button variant="contained">Send</Button>
+        <Button variant="contained">发送</Button>
       </Box>
 
       <input type="file" ref={fileInputRef} style={{ display: 'none' }} />

@@ -5,6 +5,7 @@ import { useLocation, useParams } from 'react-router-dom';
 
 import HeaderBreadcrumbs from '@/components/HeaderBreadcrumbs';
 import Page from '@/components/Page';
+import { title_admin } from '@/config';
 import useSettings from '@/hooks/useSettings';
 import { getProducts } from '@/redux/slices/product';
 import { useDispatch, useSelector } from '@/redux/store';
@@ -26,17 +27,17 @@ export default function ProductCreate() {
   }, [dispatch]);
 
   return (
-    <Page title="Ecommerce: Create a new product | Minimal-UI">
+    <Page title={`创建商品 ${title_admin}`}>
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <HeaderBreadcrumbs
-          heading={!isEdit ? 'Create a new product' : 'Edit product'}
+          heading={!isEdit ? '创建商品' : '编辑商品'}
           links={[
-            { name: 'Dashboard', href: PATH_DASHBOARD.root },
+            { name: '管理', href: PATH_DASHBOARD.root },
             {
-              name: 'E-Commerce',
+              name: '电子商务',
               href: PATH_DASHBOARD.eCommerce.root
             },
-            { name: !isEdit ? 'New product' : name }
+            { name: !isEdit ? '新建商品' : name }
           ]}
         />
 

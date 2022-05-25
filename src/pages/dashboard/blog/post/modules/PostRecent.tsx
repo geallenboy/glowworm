@@ -118,7 +118,7 @@ export default function PostRecent({ posts }) {
   return (
     <>
       <Typography variant="h4" sx={{ mt: 10, mb: 5 }}>
-        Recent posts
+        最近发布的帖子
       </Typography>
 
       <Grid container spacing={3}>

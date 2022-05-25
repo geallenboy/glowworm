@@ -75,13 +75,13 @@ export default function MailDetailsToolbar({ mail, ...other }) {
           <Typography variant="caption" sx={{ color: 'text.secondary' }}>
             {fDateTimeSuffix(mail.createdAt)}
           </Typography>
-          <Tooltip title="Reply">
+          <Tooltip title="回复">
             <IconButton>
               <Icon icon={roundReply} width={20} height={20} />
             </IconButton>
           </Tooltip>
         </MHidden>
-        <Tooltip title="More options">
+        <Tooltip title="更多选项">
           <IconButton>
             <Icon icon={moreVerticalFill} width={20} height={20} />
           </IconButton>

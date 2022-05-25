@@ -84,7 +84,7 @@ export default function PostsSearch({ sx }) {
         renderInput={(params) => (
           <TextField
             {...params}
-            placeholder="Search post..."
+            placeholder="搜索文章..."
             InputProps={{
               ...params.InputProps,
               startAdornment: (

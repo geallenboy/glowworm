@@ -5,6 +5,7 @@ import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 
 import HeaderBreadcrumbs from '@/components/HeaderBreadcrumbs';
 import Page from '@/components/Page';
+import { title_admin } from '@/config';
 import { getBoard, persistCard, persistColumn } from '@/redux/slices/kanban';
 import { useDispatch, useSelector } from '@/redux/store';
 import { PATH_DASHBOARD } from '@/routes/paths';
@@ -31,21 +32,17 @@ export default function Kanban() {
   }, [dispatch]);
 
   const onDragEnd = (result) => {
-    // Reorder card
     const { destination, source, draggableId, type } = result;
-
     if (!destination) return;
-
     if (destination.droppableId === source.droppableId && destination.index === source.index)
       return;
-
     if (type === 'column') {
       const newColumnOrder = Array.from(board.columnOrder);
       newColumnOrder.splice(source.index, 1);
       newColumnOrder.splice(destination.index, 0, draggableId);
 
       dispatch(persistColumn(newColumnOrder));
-      enqueueSnackbar('Update success', { variant: 'success' });
+      enqueueSnackbar('更新成功', { variant: 'success' });
       return;
     }
 
@@ -101,16 +98,16 @@ export default function Kanban() {
   };
 
   return (
-    <Page title="Kanban | Minimal-UI" sx={{ height: '100%' }}>
+    <Page title={`看版 ${title_admin}`} sx={{ height: '100%' }}>
       <Container maxWidth={false} sx={{ height: '100%' }}>
         <HeaderBreadcrumbs
-          heading="Kanban"
+          heading="看版"
           links={[
             {
-              name: 'Dashboard',
+              name: 'APP',
               href: PATH_DASHBOARD.root
             },
-            { name: 'Kanban' }
+            { name: '看版' }
           ]}
         />
         <DragDropContext onDragEnd={onDragEnd}>

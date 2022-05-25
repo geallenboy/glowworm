@@ -64,10 +64,10 @@ export default function NewForm({ isEdit, currentProduct }) {
   const { enqueueSnackbar } = useSnackbar();
 
   const NewProductSchema = Yup.object().shape({
-    name: Yup.string().required('Name is required'),
-    description: Yup.string().required('Description is required'),
-    images: Yup.array().min(1, 'Images is required'),
-    price: Yup.number().required('Price is required')
+    name: Yup.string().required('商品名称不能为空'),
+    description: Yup.string().required('描述不能为空'),
+    images: Yup.array().min(1, '图片不能为空'),
+    price: Yup.number().required('价格不能为空')
   });
 
   const formik = useFormik({
@@ -92,7 +92,7 @@ export default function NewForm({ isEdit, currentProduct }) {
         await fakeRequest(500);
         resetForm();
         setSubmitting(false);
-        enqueueSnackbar(!isEdit ? 'Create success' : 'Update success', { variant: 'success' });
+        enqueueSnackbar(!isEdit ? '创建成功' : '修改成功', { variant: 'success' });
         navigate(PATH_DASHBOARD.eCommerce.list);
       } catch (error) {
         console.error(error);
@@ -137,14 +137,14 @@ export default function NewForm({ isEdit, currentProduct }) {
               <Stack spacing={3}>
                 <TextField
                   fullWidth
-                  label="Product Name"
+                  label="商品名称"
                   {...getFieldProps('name')}
                   error={Boolean(touched.name && errors.name)}
                   helperText={touched.name && errors.name}
                 />
 
                 <div>
-                  <LabelStyle>Description</LabelStyle>
+                  <LabelStyle>描述</LabelStyle>
                   <QuillEditor
                     simple
                     id="product-description"
@@ -160,7 +160,7 @@ export default function NewForm({ isEdit, currentProduct }) {
                 </div>
 
                 <div>
-                  <LabelStyle>Add Images</LabelStyle>
+                  <LabelStyle>添加图片</LabelStyle>
                   <UploadMultiFile
                     showPreview
                     maxSize={3145728}
@@ -186,13 +186,13 @@ export default function NewForm({ isEdit, currentProduct }) {
               <Card sx={{ p: 3 }}>
                 <FormControlLabel
                   control={<Switch {...getFieldProps('inStock')} checked={values.inStock} />}
-                  label="In stock"
+                  label="库存中"
                   sx={{ mb: 2 }}
                 />
 
                 <Stack spacing={3}>
-                  <TextField fullWidth label="Product Code" {...getFieldProps('code')} />
-                  <TextField fullWidth label="Product SKU" {...getFieldProps('sku')} />
+                  <TextField fullWidth label="商品码" {...getFieldProps('code')} />
+                  <TextField fullWidth label="商品SKU" {...getFieldProps('sku')} />
 
                   <div>
                     <LabelStyle>Gender</LabelStyle>
@@ -211,9 +211,9 @@ export default function NewForm({ isEdit, currentProduct }) {
                   </div>
 
                   <FormControl fullWidth>
-                    <InputLabel>Category</InputLabel>
+                    <InputLabel>类别</InputLabel>
                     <Select
-                      label="Category"
+                      label="类别"
                       native
                       {...getFieldProps('category')}
                       value={values.category}
@@ -257,7 +257,7 @@ export default function NewForm({ isEdit, currentProduct }) {
                   <TextField
                     fullWidth
                     placeholder="0.00"
-                    label="Regular Price"
+                    label="正常价格"
                     {...getFieldProps('price')}
                     InputProps={{
                       startAdornment: <InputAdornment position="start">$</InputAdornment>,
@@ -270,7 +270,7 @@ export default function NewForm({ isEdit, currentProduct }) {
                   <TextField
                     fullWidth
                     placeholder="0.00"
-                    label="Sale Price"
+                    label="销售价格"
                     {...getFieldProps('priceSale')}
                     InputProps={{
                       startAdornment: <InputAdornment position="start">$</InputAdornment>,
@@ -281,7 +281,7 @@ export default function NewForm({ isEdit, currentProduct }) {
 
                 <FormControlLabel
                   control={<Switch {...getFieldProps('taxes')} checked={values.taxes} />}
-                  label="Price includes taxes"
+                  label="价格含税"
                   sx={{ mt: 2 }}
                 />
               </Card>
@@ -293,7 +293,7 @@ export default function NewForm({ isEdit, currentProduct }) {
                 size="large"
                 loading={isSubmitting}
               >
-                {!isEdit ? 'Create Product' : 'Save Changes'}
+                {!isEdit ? '创建商品' : '保存商品'}
               </LoadingButton>
             </Stack>
           </Grid>

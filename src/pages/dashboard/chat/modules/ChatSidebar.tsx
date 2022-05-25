@@ -45,7 +45,6 @@ export default function ChatSidebar() {
     return setOpenSidebar(true);
   }, [isMobile]);
 
-  // eslint-disable-next-line consistent-return
   useEffect(() => {
     if (!openSidebar) {
       return setSearchFocused(false);

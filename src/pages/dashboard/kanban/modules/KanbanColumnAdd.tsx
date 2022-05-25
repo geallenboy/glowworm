@@ -38,7 +38,7 @@ export default function KanbanColumnAdd() {
     try {
       if (name) {
         dispatch(createColumn({ name }));
-        enqueueSnackbar('Create section success', { variant: 'success' });
+        enqueueSnackbar('创建成功', { variant: 'success' });
         setName('');
       }
       handleClose();
@@ -64,7 +64,7 @@ export default function KanbanColumnAdd() {
           startIcon={<Icon icon={plusFill} width={20} height={20} />}
           onClick={handleOpen}
         >
-          Add section
+          添加节点
         </Button>
       )}
 

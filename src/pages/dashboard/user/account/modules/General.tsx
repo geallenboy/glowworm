@@ -115,7 +115,7 @@ export default function AccountGeneral() {
               <FormControlLabel
                 control={<Switch {...getFieldProps('isPublic')} color="primary" />}
                 labelPlacement="start"
-                label="Public Profile"
+                label="公共文件"
                 sx={{ mt: 5 }}
               />
             </Card>

@@ -118,7 +118,7 @@ export default function PostHero({ post, ...other }) {
 
         <SpeedDial
           direction={isMobile ? 'up' : 'left'}
-          ariaLabel="Share post"
+          ariaLabel="分享文章"
           icon={<Icon icon={shareFill} />}
           sx={{ '& .MuiSpeedDial-fab': { width: 48, height: 48 } }}
         >

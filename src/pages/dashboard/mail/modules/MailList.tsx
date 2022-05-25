@@ -85,7 +85,7 @@ export default function MailList({ onOpenSidebar }) {
         </Scrollbar>
       ) : (
         <EmptyContent
-          title="There is no conversation"
+          title="没有对话"
           img="/static/illustrations/illustration_empty_mail.svg"
           sx={{ flexGrow: 1, height: 'auto' }}
         />

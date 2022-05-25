@@ -251,7 +251,7 @@ export default [
     method: 'get',
     response: (params: any) => {
       const { title } = params.query;
-      const post = posts.find((_post) => paramCase(_post.title) === title);
+      const post = posts.find((_post) => _post.title === '活动最佳30条小贴士');
 
       if (!post) {
         return [404, { message: 'Post not found' }];

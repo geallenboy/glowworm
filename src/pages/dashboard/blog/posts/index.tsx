@@ -8,6 +8,7 @@ import { Link as RouterLink } from 'react-router-dom';
 
 import HeaderBreadcrumbs from '@/components/HeaderBreadcrumbs';
 import Page from '@/components/Page';
+import { title_admin } from '@/config';
 import useSettings from '@/hooks/useSettings';
 import { getMorePosts, getPostsInitial } from '@/redux/slices/blog';
 import { useDispatch, useSelector } from '@/redux/store';
@@ -16,9 +17,9 @@ import { PATH_DASHBOARD } from '@/routes/paths';
 import { PostCard, PostsSearch, PostsSort } from './modules';
 
 const SORT_OPTIONS = [
-  { value: 'latest', label: 'Latest' },
-  { value: 'popular', label: 'Popular' },
-  { value: 'oldest', label: 'Oldest' }
+  { value: 'latest', label: '最近' },
+  { value: 'popular', label: '受欢迎' },
+  { value: 'oldest', label: '旧的' }
 ];
 
 const applySort = (posts, sortBy) => {
@@ -65,14 +66,14 @@ export default function BlogPosts() {
   };
 
   return (
-    <Page title="Blog: Posts | Minimal-UI">
+    <Page title={`博客-文章 ${title_admin}`}>
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <HeaderBreadcrumbs
-          heading="Blog"
+          heading="博客"
           links={[
-            { name: 'Dashboard', href: PATH_DASHBOARD.root },
-            { name: 'Blog', href: PATH_DASHBOARD.blog.root },
-            { name: 'Posts' }
+            { name: '管理', href: PATH_DASHBOARD.root },
+            { name: '博客', href: PATH_DASHBOARD.blog.root },
+            { name: '文章' }
           ]}
           action={
             <Button
@@ -81,7 +82,7 @@ export default function BlogPosts() {
               to={PATH_DASHBOARD.blog.newPost}
               startIcon={<Icon icon={plusFill} />}
             >
-              New Post
+              新建文章
             </Button>
           }
         />

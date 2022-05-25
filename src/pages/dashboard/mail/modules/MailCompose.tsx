@@ -98,7 +98,7 @@ export default function MailCompose({ isOpenCompose, onCloseCompose }) {
             alignItems: 'center'
           }}
         >
-          <Typography variant="h6">New Message</Typography>
+          <Typography variant="h6">新建消息</Typography>
           <Box sx={{ flexGrow: 1 }} />
 
           <IconButton onClick={fullScreen ? handleExitFullScreen : handleEnterFullScreen}>
@@ -131,7 +131,7 @@ export default function MailCompose({ isOpenCompose, onCloseCompose }) {
         <Divider />
 
         <Box sx={{ py: 2, px: 3, display: 'flex', alignItems: 'center' }}>
-          <Button variant="contained">Send</Button>
+          <Button variant="contained">发送</Button>
 
           <IconButton size="small" sx={{ ml: 2, mr: 1 }}>
             <Icon icon={roundAddPhotoAlternate} width={24} height={24} />

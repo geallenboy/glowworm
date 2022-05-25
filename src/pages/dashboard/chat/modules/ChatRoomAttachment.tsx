@@ -83,7 +83,7 @@ export default function ChatRoomAttachment({ conversation, isCollapse, onCollaps
           />
         }
       >
-        attachment ({totalAttachment})
+        附件 ({totalAttachment})
       </CollapseButtonStyle>
 
       {!isCollapse && <Divider />}

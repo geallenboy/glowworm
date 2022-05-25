@@ -16,25 +16,25 @@ export default function KanbanTaskCommentInput() {
           fullWidth
           multiline
           row={2}
-          placeholder="Type a message"
+          placeholder="键入消息"
           sx={{ '& fieldset': { display: 'none' } }}
         />
 
         <Stack direction="row" justifyContent="space-between" alignItems="center">
           <Stack direction="row" spacing={0.5}>
-            <Tooltip title="Add photo">
+            <Tooltip title="添加照片">
               <MIconButton size="small">
                 <Icon icon={roundAddPhotoAlternate} width={20} height={20} />
               </MIconButton>
             </Tooltip>
-            <Tooltip title="Attachment">
+            <Tooltip title="附件">
               <MIconButton size="small">
                 <Icon icon={attach2Fill} width={20} height={20} />
               </MIconButton>
             </Tooltip>
           </Stack>
 
-          <Button variant="contained">Comment</Button>
+          <Button variant="contained">评论</Button>
         </Stack>
       </Paper>
     </Stack>

@@ -17,9 +17,9 @@ export default function PostCommentForm() {
   const { enqueueSnackbar } = useSnackbar();
 
   const CommentSchema = Yup.object().shape({
-    comment: Yup.string().required('Comment is required'),
-    name: Yup.string().required('Name is required'),
-    email: Yup.string().email('Email must be a valid email address').required('Email is required')
+    comment: Yup.string().required('评论不能为空'),
+    name: Yup.string().required('姓名不能为空'),
+    email: Yup.string().email('邮箱地址格式不正确').required('邮箱不能为空')
   });
 
   const formik = useFormik({
@@ -34,7 +34,7 @@ export default function PostCommentForm() {
         await fakeRequest(500);
         resetForm();
         setSubmitting(false);
-        enqueueSnackbar('Post success', { variant: 'success' });
+        enqueueSnackbar('成', { variant: 'success' });
       } catch (error) {
         console.error(error);
         setSubmitting(false);
@@ -48,7 +48,7 @@ export default function PostCommentForm() {
   return (
     <RootStyles>
       <Typography variant="subtitle1" sx={{ mb: 3 }}>
-        Add Comment
+        添加评论
       </Typography>
 
       <FormikProvider value={formik}>
@@ -59,7 +59,7 @@ export default function PostCommentForm() {
               multiline
               minRows={3}
               maxRows={5}
-              label="Comment *"
+              label="评论内容 *"
               {...getFieldProps('comment')}
               error={Boolean(touched.comment && errors.comment)}
               helperText={touched.comment && errors.comment}
@@ -67,7 +67,7 @@ export default function PostCommentForm() {
 
             <TextField
               fullWidth
-              label="Name *"
+              label="姓名 *"
               {...getFieldProps('name')}
               error={Boolean(touched.name && errors.name)}
               helperText={touched.name && errors.name}
@@ -75,14 +75,14 @@ export default function PostCommentForm() {
 
             <TextField
               fullWidth
-              label="Email *"
+              label="邮箱 *"
               {...getFieldProps('email')}
               error={Boolean(touched.email && errors.email)}
               helperText={touched.email && errors.email}
             />
 
             <LoadingButton type="submit" variant="contained" loading={isSubmitting}>
-              Post comment
+              发表评论
             </LoadingButton>
           </Stack>
         </Form>
