@@ -23,7 +23,7 @@ const TOTAL_DOWNLOAD = 678;
 const data = [8, 9, 31, 8, 16, 37, 8, 33, 46, 31];
 
 export default function AppTotalDownloads() {
-  const theme = useTheme();
+  const theme: any = useTheme();
 
   const config = {
     color: theme.palette.chart.red[0],

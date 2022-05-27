@@ -28,17 +28,17 @@ import { PATH_DASHBOARD } from '@/routes/paths';
 
 import { CalendarForm, CalendarStyle, CalendarToolbar } from './modules';
 
-const selectedEventSelector = (state) => {
+const selectedEventSelector = (state: any) => {
   const { events, selectedEventId } = state.calendar;
   if (selectedEventId) {
-    return events.find((_event) => _event.id === selectedEventId);
+    return events.find((_event: any) => _event.id === selectedEventId);
   }
   return null;
 };
 
 export default function Calendar() {
   const { themeStretch } = useSettings();
-  const dispatch = useDispatch();
+  const dispatch: any = useDispatch();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const calendarRef = useRef(null);
@@ -46,14 +46,14 @@ export default function Calendar() {
   const [date, setDate] = useState(new Date());
   const [view, setView] = useState(isMobile ? 'listWeek' : 'dayGridMonth');
   const selectedEvent = useSelector(selectedEventSelector);
-  const { events, isOpenModal, selectedRange } = useSelector((state) => state.calendar);
+  const { events, isOpenModal, selectedRange } = useSelector((state: any) => state.calendar);
 
   useEffect(() => {
     dispatch(getEvents());
   }, [dispatch]);
 
   useEffect(() => {
-    const calendarEl = calendarRef.current;
+    const calendarEl: any = calendarRef.current;
     if (calendarEl) {
       const calendarApi = calendarEl.getApi();
       const newView = isMobile ? 'listWeek' : 'dayGridMonth';
@@ -63,7 +63,7 @@ export default function Calendar() {
   }, [isMobile]);
 
   const handleClickToday = () => {
-    const calendarEl = calendarRef.current;
+    const calendarEl: any = calendarRef.current;
     if (calendarEl) {
       const calendarApi = calendarEl.getApi();
       calendarApi.today();
@@ -71,8 +71,8 @@ export default function Calendar() {
     }
   };
 
-  const handleChangeView = (newView) => {
-    const calendarEl = calendarRef.current;
+  const handleChangeView = (newView: any) => {
+    const calendarEl: any = calendarRef.current;
     if (calendarEl) {
       const calendarApi = calendarEl.getApi();
       calendarApi.changeView(newView);
@@ -81,7 +81,7 @@ export default function Calendar() {
   };
 
   const handleClickDatePrev = () => {
-    const calendarEl = calendarRef.current;
+    const calendarEl: any = calendarRef.current;
     if (calendarEl) {
       const calendarApi = calendarEl.getApi();
       calendarApi.prev();
@@ -90,7 +90,7 @@ export default function Calendar() {
   };
 
   const handleClickDateNext = () => {
-    const calendarEl = calendarRef.current;
+    const calendarEl: any = calendarRef.current;
     if (calendarEl) {
       const calendarApi = calendarEl.getApi();
       calendarApi.next();
@@ -98,8 +98,8 @@ export default function Calendar() {
     }
   };
 
-  const handleSelectRange = (arg) => {
-    const calendarEl = calendarRef.current;
+  const handleSelectRange = (arg: any) => {
+    const calendarEl: any = calendarRef.current;
     if (calendarEl) {
       const calendarApi = calendarEl.getApi();
       calendarApi.unselect();
@@ -107,11 +107,11 @@ export default function Calendar() {
     dispatch(selectRange(arg.start, arg.end));
   };
 
-  const handleSelectEvent = (arg) => {
+  const handleSelectEvent = (arg: any) => {
     dispatch(selectEvent(arg.event.id));
   };
 
-  const handleResizeEvent = async ({ event }) => {
+  const handleResizeEvent = async ({ event }: any) => {
     try {
       dispatch(
         updateEvent(event.id, {
@@ -126,7 +126,7 @@ export default function Calendar() {
     }
   };
 
-  const handleDropEvent = async ({ event }) => {
+  const handleDropEvent = async ({ event }: any) => {
     try {
       dispatch(
         updateEvent(event.id, {

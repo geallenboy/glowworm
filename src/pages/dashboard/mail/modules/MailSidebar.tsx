@@ -34,7 +34,7 @@ export default function MailSidebar({ isOpenSidebar, onOpenCompose, onCloseSideb
           startIcon={<Icon icon={plusFill} />}
           onClick={handleOpenCompose}
         >
-          构成
+          新建
         </Button>
       </Box>
 

@@ -30,7 +30,7 @@ export default function ChatAccount() {
   const [open, setOpen] = useState(null);
   const [status, setStatus] = useState('online');
 
-  const handleOpen = (event) => {
+  const handleOpen = (event: any) => {
     setOpen(event.currentTarget);
   };
 
@@ -38,7 +38,7 @@ export default function ChatAccount() {
     setOpen(null);
   };
 
-  const handleChangeStatus = (event) => {
+  const handleChangeStatus = (event: any) => {
     setStatus(event.target.value);
   };
 

@@ -12,13 +12,13 @@ import { PATH_AUTH } from '@/routes/paths';
 import AuthFirebaseSocials from '../AuthFirebaseSocial';
 import { LoginForm } from './modules';
 
-const RootStyle = styled(Page)(({ theme }: any) => ({
+const RootStyle = styled(Page)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     display: 'flex'
   }
 }));
 
-const SectionStyle = styled(Card)(({ theme }: any) => ({
+const SectionStyle = styled(Card)(({ theme }) => ({
   width: '100%',
   maxWidth: 464,
   display: 'flex',
@@ -27,7 +27,7 @@ const SectionStyle = styled(Card)(({ theme }: any) => ({
   margin: theme.spacing(2, 0, 2, 2)
 }));
 
-const ContentStyle = styled('div')(({ theme }: any) => ({
+const ContentStyle = styled('div')(({ theme }) => ({
   maxWidth: 480,
   margin: 'auto',
   display: 'flex',

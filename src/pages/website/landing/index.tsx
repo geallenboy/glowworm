@@ -3,15 +3,7 @@ import { styled } from '@mui/material/styles';
 import Page from '@/components/Page';
 import { title_main } from '@/config';
 
-import {
-  Advertisement,
-  CleanInterfaces,
-  DarkMode,
-  Hero,
-  HugePackElements,
-  Minimal,
-  ThemeColor
-} from './modules';
+import { Advertisement, DarkMode, Hero, HugePackElements, Minimal, ThemeColor } from './modules';
 
 const RootStyle = styled(Page)({
   height: '100%'
@@ -32,7 +24,6 @@ export default function LandingPage() {
         <HugePackElements />
         <DarkMode />
         <ThemeColor />
-        <CleanInterfaces />
         <Advertisement />
       </ContentStyle>
     </RootStyle>

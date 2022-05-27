@@ -26,7 +26,7 @@ export default function RegisterForm() {
     password: Yup.string().required('密码是必须的')
   });
 
-  const formik = useFormik({
+  const formik: any = useFormik({
     initialValues: {
       firstName: '',
       lastName: '',
@@ -48,10 +48,10 @@ export default function RegisterForm() {
         if (isMountedRef.current) {
           setSubmitting(false);
         }
-      } catch (error) {
+      } catch (error: any) {
         console.error(error);
         if (isMountedRef.current) {
-          setErrors({ afterSubmit: error.message });
+          setErrors({ afterSubmit: error.message } as any);
           setSubmitting(false);
         }
       }

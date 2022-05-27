@@ -260,7 +260,7 @@ export default function NewForm({ isEdit, currentProduct }) {
                     label="正常价格"
                     {...getFieldProps('price')}
                     InputProps={{
-                      startAdornment: <InputAdornment position="start">$</InputAdornment>,
+                      startAdornment: <InputAdornment position="start"></InputAdornment>,
                       type: 'number'
                     }}
                     error={Boolean(touched.price && errors.price)}
@@ -273,7 +273,7 @@ export default function NewForm({ isEdit, currentProduct }) {
                     label="销售价格"
                     {...getFieldProps('priceSale')}
                     InputProps={{
-                      startAdornment: <InputAdornment position="start">$</InputAdornment>,
+                      startAdornment: <InputAdornment position="start"></InputAdornment>,
                       type: 'number'
                     }}
                   />

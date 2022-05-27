@@ -2,7 +2,7 @@ import plusFill from '@iconify/icons-eva/plus-fill';
 import { Icon } from '@iconify/react';
 import { Box, Button, Container, Grid, Skeleton, Stack } from '@mui/material';
 import { orderBy } from 'lodash';
-import { useCallback, useEffect, useState } from 'react';
+import { SetStateAction, useCallback, useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { Link as RouterLink } from 'react-router-dom';
 
@@ -22,7 +22,7 @@ const SORT_OPTIONS = [
   { value: 'oldest', label: '旧的' }
 ];
 
-const applySort = (posts, sortBy) => {
+const applySort = (posts: any, sortBy: string): any => {
   if (sortBy === 'latest') {
     return orderBy(posts, ['createdAt'], ['desc']);
   }
@@ -51,17 +51,17 @@ const SkeletonLoad = (
 
 export default function BlogPosts() {
   const { themeStretch } = useSettings();
-  const dispatch = useDispatch();
+  const dispatch: any = useDispatch();
   const [filters, setFilters] = useState('latest');
-  const { posts, hasMore, index, step } = useSelector((state) => state.blog);
-  const sortedPosts = applySort(posts, filters);
+  const { posts, hasMore, index, step } = useSelector((state: any) => state.blog);
+  const sortedPosts: any[] = applySort(posts, filters);
   const onScroll = useCallback(() => dispatch(getMorePosts()), [dispatch]);
 
   useEffect(() => {
     dispatch(getPostsInitial(index, step));
   }, [dispatch, index, step]);
 
-  const handleChangeSort = (event) => {
+  const handleChangeSort = (event: { target: { value: SetStateAction<string> } }) => {
     setFilters(event.target.value);
   };
 
@@ -100,7 +100,7 @@ export default function BlogPosts() {
           style={{ overflow: 'inherit' }}
         >
           <Grid container spacing={3}>
-            {sortedPosts.map((post, index) => (
+            {sortedPosts.map((post: any, index: number) => (
               <PostCard key={post.id} post={post} index={index} />
             ))}
           </Grid>

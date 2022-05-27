@@ -141,7 +141,7 @@ export default function NewPostForm() {
                     <QuillEditor
                       id="post-content"
                       value={values.content}
-                      onChange={(val) => setFieldValue('content', val)}
+                      onChange={(val: any) => setFieldValue('content', val)}
                       error={Boolean(touched.content && errors.content)}
                     />
                     {touched.content && errors.content && (
@@ -199,12 +199,7 @@ export default function NewPostForm() {
                     options={TAGS_OPTION.map((option) => option)}
                     renderTags={(value, getTagProps) =>
                       value.map((option, index) => (
-                        <Chip
-                          key={option}
-                          size="small"
-                          label={option}
-                          {...getTagProps({ index })}
-                        />
+                        <Chip key={index} size="small" label={option} {...getTagProps({ index })} />
                       ))
                     }
                     renderInput={(params) => <TextField {...params} label="标签" />}
@@ -230,13 +225,8 @@ export default function NewPostForm() {
                     }}
                     options={TAGS_OPTION.map((option) => option)}
                     renderTags={(value, getTagProps) =>
-                      value.map((option, index) => (
-                        <Chip
-                          key={option}
-                          size="small"
-                          label={option}
-                          {...getTagProps({ index })}
-                        />
+                      value.map((option: any, index) => (
+                        <Chip key={index} size="small" label={option} {...getTagProps({ index })} />
                       ))
                     }
                     renderInput={(params) => <TextField {...params} label="关键字" />}

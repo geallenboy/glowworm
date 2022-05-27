@@ -24,7 +24,7 @@ const RootStyle = styled(Page)(({ theme }) => ({
   paddingBottom: theme.spacing(15)
 }));
 
-const ContainerStyle = styled(Paper)(({ theme }) => ({
+const ContainerStyle = styled(Paper)(({ theme }: any) => ({
   padding: theme.spacing(5),
   borderRadius: theme.shape.borderRadiusSm,
   border: `solid 1px ${theme.palette.divider}`,
@@ -38,11 +38,11 @@ export default function FoundationGrid() {
   const [spacing, setSpacing] = useState(2);
   const [column, setColumn] = useState(3);
 
-  const handleChangeSpacing = (event) => {
+  const handleChangeSpacing = (event: { target: { value: any } }) => {
     setSpacing(Number(event.target.value));
   };
 
-  const handleChangeColumn = (event) => {
+  const handleChangeColumn = (event: { target: { value: any } }) => {
     setColumn(Number(event.target.value));
   };
 
@@ -78,7 +78,7 @@ export default function FoundationGrid() {
                     <Paper
                       sx={{
                         height: 80,
-                        boxShadow: (theme) => theme.customShadows.z8
+                        boxShadow: (theme: any) => theme.customShadows.z8
                       }}
                     />
                   </Grid>
@@ -117,7 +117,7 @@ export default function FoundationGrid() {
                       sx={{
                         py: 3,
                         textAlign: 'center',
-                        boxShadow: (theme) => theme.customShadows.z8
+                        boxShadow: (theme: any) => theme.customShadows.z8
                       }}
                     >
                       xs = {column}

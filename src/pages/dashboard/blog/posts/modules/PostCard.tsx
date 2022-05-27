@@ -17,7 +17,7 @@ const CardMediaStyle = styled('div')({
   paddingTop: 'calc(100% * 3 / 4)'
 });
 
-const TitleStyle = styled(RouterLink)(({ theme }) => ({
+const TitleStyle = styled(RouterLink)(({ theme }: any) => ({
   ...theme.typography.subtitle2,
   height: 44,
   color: 'inherit',
@@ -56,7 +56,7 @@ const CoverImgStyle = styled('img')({
   position: 'absolute'
 });
 
-export default function PostCard({ post, index }) {
+export default function PostCard({ post, index }: any) {
   const { cover, title, view, comment, share, author, createdAt } = post;
   const linkTo = `${PATH_DASHBOARD.blog.root}/post/${paramCase(title)}`;
   const latestPostLarge = index === 0;

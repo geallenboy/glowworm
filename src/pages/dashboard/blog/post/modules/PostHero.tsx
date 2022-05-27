@@ -49,7 +49,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   }
 }));
 
-const TitleStyle = styled(Typography)(({ theme }) => ({
+const TitleStyle = styled(Typography)(({ theme }: any) => ({
   top: 0,
   zIndex: 10,
   width: '100%',
@@ -90,7 +90,7 @@ const CoverImgStyle = styled('img')({
   position: 'absolute'
 });
 
-export default function PostHero({ post, ...other }) {
+export default function PostHero({ post, ...other }: any) {
   const { cover, title, author, createdAt } = post;
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -99,9 +99,7 @@ export default function PostHero({ post, ...other }) {
     <RootStyle {...other}>
       <CoverImgStyle alt="post cover" src={cover} />
 
-      <TitleStyle variant="h2" component="h1">
-        {title}
-      </TitleStyle>
+      <TitleStyle>{title}</TitleStyle>
 
       <FooterStyle>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>

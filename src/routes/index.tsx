@@ -31,13 +31,10 @@ const Loadable = (Component: any) => (props: any) => {
     </Suspense>
   );
 };
-
-// Authentication
 const Login = Loadable(lazy(() => import('@/pages/authentication/login')));
 const Register = Loadable(lazy(() => import('@/pages/authentication/register')));
 const ResetPassword = Loadable(lazy(() => import('@/pages/authentication/resetPassword')));
 const VerifyCode = Loadable(lazy(() => import('@/pages/authentication/verifyCode')));
-// Dashboard
 const App = Loadable(lazy(() => import('@/pages/dashboard/app')));
 const Analytics = Loadable(lazy(() => import('@/pages/dashboard/greneral/analytics')));
 const Ecommerce = Loadable(lazy(() => import('@/pages/dashboard/greneral/ecommerce')));
@@ -67,7 +64,6 @@ const Chat = Loadable(lazy(() => import('@/pages/dashboard/Chat')));
 const Mail = Loadable(lazy(() => import('@/pages/dashboard/Mail')));
 const Calendar = Loadable(lazy(() => import('@/pages/dashboard/Calendar')));
 const Kanban = Loadable(lazy(() => import('@/pages/dashboard/Kanban')));
-// Main
 const LandingPage = Loadable(lazy(() => import('@/pages/website/landing')));
 const About = Loadable(lazy(() => import('@/pages/website/about')));
 const Contact = Loadable(lazy(() => import('@/pages/website/contact')));
@@ -75,8 +71,6 @@ const Faqs = Loadable(lazy(() => import('@/pages/website/faqs')));
 const Maintenance = Loadable(lazy(() => import('@/pages/website/Maintenance')));
 const Page500 = Loadable(lazy(() => import('@/pages/website/Page500')));
 const NotFound = Loadable(lazy(() => import('@/pages/website/Page404')));
-
-// Components
 const ComponentsOverview = Loadable(lazy(() => import('@/pages/website/componentsOverview')));
 const Color = Loadable(lazy(() => import('@/pages/components/foundations/FoundationColors')));
 const Typography = Loadable(
@@ -115,10 +109,7 @@ const Timeline = Loadable(lazy(() => import('@/pages/components/material-ui/Time
 const Tooltip = Loadable(lazy(() => import('@/pages/components/material-ui/Tooltip')));
 const TransferList = Loadable(lazy(() => import('@/pages/components/material-ui/transfer-list')));
 const TreeView = Loadable(lazy(() => import('@/pages/components/material-ui/TreeView')));
-
-//图表
 const Charts = Loadable(lazy(() => import('@/pages/components/extra/Charts')));
-
 const Editor = Loadable(lazy(() => import('@/pages/components/extra/Editor')));
 const CopyToClipboard = Loadable(lazy(() => import('@/pages/components/extra/CopyToClipboard')));
 const Upload = Loadable(lazy(() => import('@/pages/components/extra/Upload')));

@@ -21,9 +21,9 @@ const DialogStyle = styled(DialogAnimate)(({ theme }) => ({
   }
 }));
 
-export default function CheckoutOrderComplete({ ...other }) {
+export default function CheckoutOrderComplete({ ...other }: any) {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch: any = useDispatch();
 
   const handleResetStep = () => {
     dispatch(resetCart());

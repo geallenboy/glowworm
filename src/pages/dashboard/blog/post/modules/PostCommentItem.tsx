@@ -13,7 +13,14 @@ import { useState } from 'react';
 
 import { fDate } from '@/utils/formatTime';
 
-export default function PostCommentItem({ name, avatarUrl, message, tagUser, postedAt, hasReply }) {
+export default function PostCommentItem({
+  name,
+  avatarUrl,
+  message,
+  tagUser,
+  postedAt,
+  hasReply
+}: any) {
   const [openReply, setOpenReply] = useState(false);
 
   const handleOpenReply = () => {
@@ -81,7 +88,7 @@ export default function PostCommentItem({ name, avatarUrl, message, tagUser, pos
             sx={{
               '& fieldset': {
                 borderWidth: `1px !important`,
-                borderColor: (theme) => `${theme.palette.grey[500_32]} !important`
+                borderColor: (theme: any) => `${theme.palette.grey[500_32]} !important`
               }
             }}
           />

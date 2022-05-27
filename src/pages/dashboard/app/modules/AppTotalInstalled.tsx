@@ -23,7 +23,7 @@ const TOTAL_INSTALLED = 4876;
 const data = [5, 18, 12, 51, 68, 11, 39, 37, 27, 20];
 
 export default function AppTotalInstalled() {
-  const theme = useTheme();
+  const theme: any = useTheme();
 
   const config = {
     color: theme.palette.chart.blue[0],

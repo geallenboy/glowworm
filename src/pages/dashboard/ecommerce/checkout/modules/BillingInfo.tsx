@@ -4,8 +4,8 @@ import { Button, Card, CardContent, CardHeader, Typography } from '@mui/material
 
 import { useSelector } from '@/redux/store';
 
-export default function BillingInfo({ onBackStep }) {
-  const { checkout } = useSelector((state) => state.product);
+export default function BillingInfo({ onBackStep }: any) {
+  const { checkout } = useSelector((state: any) => state.product);
   const { billing } = checkout;
 
   return (

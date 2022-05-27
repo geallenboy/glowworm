@@ -40,7 +40,7 @@ export default function ResetPassword() {
 
               <ResetPasswordForm
                 onSent={() => setSent(true)}
-                onGetEmail={(value) => setEmail(value)}
+                onGetEmail={(value: string) => setEmail(value)}
               />
 
               <Button

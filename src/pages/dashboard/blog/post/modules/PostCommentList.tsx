@@ -2,12 +2,12 @@ import { Box, List } from '@mui/material';
 
 import PostCommentItem from './PostCommentItem';
 
-export default function PostCommentList({ post }) {
+export default function PostCommentList({ post }: any) {
   const { comments } = post;
 
   return (
     <List disablePadding>
-      {comments.map((comment) => {
+      {comments.map((comment: any) => {
         const { id, replyComment, users } = comment;
         const hasReply = replyComment.length > 0;
 
@@ -20,8 +20,8 @@ export default function PostCommentList({ post }) {
               message={comment.message}
             />
             {hasReply &&
-              replyComment.map((reply) => {
-                const user = users.find((user) => user.id === reply.userId);
+              replyComment.map((reply: any) => {
+                const user = users.find((user: any) => user.id === reply.userId);
                 return (
                   <PostCommentItem
                     key={reply.id}

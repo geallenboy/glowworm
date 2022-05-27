@@ -10,7 +10,7 @@ export default function Scroll() {
   const [count, setCount] = useState(0);
   const [selectVariant, setSelectVariant] = useState('slideInUp');
 
-  const handleChangeVariant = (event) => {
+  const handleChangeVariant = (event: any) => {
     setCount(count + 1);
     setSelectVariant(event.target.value);
   };

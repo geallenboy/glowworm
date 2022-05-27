@@ -20,7 +20,7 @@ const CoverImgStyle = styled('img')({
   position: 'absolute'
 });
 
-function PostItem({ post }) {
+function PostItem({ post }: any) {
   const { cover, title, view, comment, share, author, createdAt } = post;
   const linkTo = `${PATH_DASHBOARD.blog.root}/post/${paramCase(title)}`;
 
@@ -114,7 +114,7 @@ function PostItem({ post }) {
   );
 }
 
-export default function PostRecent({ posts }) {
+export default function PostRecent({ posts }: any) {
   return (
     <>
       <Typography variant="h4" sx={{ mt: 10, mb: 5 }}>
@@ -122,7 +122,7 @@ export default function PostRecent({ posts }) {
       </Typography>
 
       <Grid container spacing={3}>
-        {posts.map((post) => (
+        {posts.map((post: any) => (
           <PostItem key={post.id} post={post} />
         ))}
       </Grid>

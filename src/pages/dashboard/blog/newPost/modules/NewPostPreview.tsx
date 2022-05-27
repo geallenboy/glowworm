@@ -24,7 +24,7 @@ const HeroStyle = styled('div')(({ theme }) => ({
   }
 }));
 
-function PreviewHero({ title, cover }) {
+function PreviewHero({ title, cover }: any) {
   return (
     <HeroStyle sx={{ backgroundImage: `url(${cover})` }}>
       <Container
@@ -46,7 +46,7 @@ function PreviewHero({ title, cover }) {
   );
 }
 
-export default function NewPostPreview({ formik, openPreview, onClosePreview }) {
+export default function NewPostPreview({ formik, openPreview, onClosePreview }: any) {
   const { values, handleSubmit, isSubmitting, isValid } = formik;
   const { title, description, content } = values;
   const cover = isString(values.cover) ? values.cover : values.cover?.preview;

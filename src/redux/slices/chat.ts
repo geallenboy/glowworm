@@ -101,7 +101,7 @@ export function getContacts() {
     dispatch(slice.actions.startLoading());
     try {
       const response = await axios.get('/api/chat/contacts');
-      dispatch(slice.actions.getContactsSuccess(response.data.data.contacts));
+      dispatch(slice.actions.getContactsSuccess(response.data.contacts));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
@@ -113,7 +113,7 @@ export function getConversations() {
     dispatch(slice.actions.startLoading());
     try {
       const response = await axios.get('/api/chat/conversations');
-      dispatch(slice.actions.getConversationsSuccess(response.data.data.conversations));
+      dispatch(slice.actions.getConversationsSuccess(response.data.conversations));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
@@ -127,7 +127,7 @@ export function getConversation(conversationKey: any) {
       const response = await axios.get('/api/chat/conversation', {
         params: { conversationKey }
       });
-      dispatch(slice.actions.getConversationSuccess(response.data.data.conversation));
+      dispatch(slice.actions.getConversationSuccess(response.data.conversation));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
@@ -155,7 +155,7 @@ export function getParticipants(conversationKey: any) {
       const response = await axios.get('/api/chat/participants', {
         params: { conversationKey }
       });
-      dispatch(slice.actions.getParticipantsSuccess(response.data.data.participants));
+      dispatch(slice.actions.getParticipantsSuccess(response.data.participants));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }

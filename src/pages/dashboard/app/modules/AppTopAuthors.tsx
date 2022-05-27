@@ -26,7 +26,7 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
   backgroundColor: alpha(theme.palette.primary.main, 0.08)
 }));
 
-function AuthorItem({ author, index }) {
+function AuthorItem({ author, index }: any) {
   return (
     <Stack direction="row" alignItems="center" spacing={2}>
       <Avatar alt={author.name} src={author.avatar} />

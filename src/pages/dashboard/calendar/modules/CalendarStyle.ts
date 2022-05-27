@@ -1,6 +1,6 @@
 import { alpha, styled } from '@mui/material/styles';
 
-const CalendarStyle = styled('div')(({ theme }) => ({
+const CalendarStyle = styled('div')(({ theme }: any) => ({
   width: 'calc(100% + 2px)',
   marginLeft: -1,
   marginBottom: -1,

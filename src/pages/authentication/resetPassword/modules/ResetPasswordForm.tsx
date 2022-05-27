@@ -14,7 +14,7 @@ export default function ResetPasswordForm({ onSent, onGetEmail }: any) {
     email: Yup.string().email('必须是有效的电子邮件').required('电子邮件是必须的')
   });
 
-  const formik = useFormik({
+  const formik: any = useFormik({
     initialValues: {
       email: 'demo@163.com'
     },

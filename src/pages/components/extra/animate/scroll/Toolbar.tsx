@@ -4,7 +4,7 @@ import { Paper } from '@mui/material';
 
 import { MIconButton } from '@/components/@material-extend';
 
-export default function Toolbar({ onRefresh, sx, ...other }) {
+export default function Toolbar({ onRefresh, sx, ...other }: any) {
   return (
     <Paper
       sx={{

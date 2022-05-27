@@ -1,10 +1,11 @@
 {
   "name": "glowworm",
   "version": "1.0.0",
+  "description": "前端项目",
   "scripts": {
     "serve": "npm run dev",
     "start": "vite",
-    "build": "cross-env NODE_ENV=production vite build",
+    "build": "vite build",
     "preview": "npm run build && vite preview",
     "preview:dist": "vite preview",
     "lint:eslint": "eslint \"{src}/**/*.{ts,tsx}\" --fix",
@@ -43,6 +44,7 @@
     "@types/react-copy-to-clipboard": "^5.0.2",
     "autosuggest-highlight": "^3.2.1",
     "axios": "^0.21.1",
+    "axios-mock-adapter": "^1.20.0",
     "crypto-js": "^4.1.1",
     "emoji-mart": "^3.0.1",
     "formik": "^2.2.9",

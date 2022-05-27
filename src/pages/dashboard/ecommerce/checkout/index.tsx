@@ -35,7 +35,7 @@ const QontoConnector = withStyles((theme) => ({
   }
 }))(StepConnector);
 
-function QontoStepIcon({ active, completed }) {
+function QontoStepIcon({ active, completed }: any) {
   return (
     <Box
       sx={{
@@ -71,9 +71,9 @@ function QontoStepIcon({ active, completed }) {
 
 export default function EcommerceCheckout() {
   const { themeStretch } = useSettings();
-  const dispatch = useDispatch();
+  const dispatch: any = useDispatch();
   const isMountedRef = useIsMountedRef();
-  const { checkout } = useSelector((state) => state.product);
+  const { checkout } = useSelector((state: any) => state.product);
   const { cart, billing, activeStep } = checkout;
   const isComplete = activeStep === STEPS.length;
 

@@ -55,7 +55,7 @@ const CARDS_OPTIONS = [
 
 export default function CheckoutPayment() {
   const dispatch = useDispatch();
-  const { checkout } = useSelector((state) => state.product);
+  const { checkout } = useSelector((state: any) => state.product);
   const { total, discount, subtotal, shipping } = checkout;
 
   const handleNextStep = () => {
@@ -66,11 +66,11 @@ export default function CheckoutPayment() {
     dispatch(onBackStep());
   };
 
-  const handleGotoStep = (step) => {
+  const handleGotoStep = (step: any) => {
     dispatch(onGotoStep(step));
   };
 
-  const handleApplyShipping = (value) => {
+  const handleApplyShipping = (value: any) => {
     dispatch(applyShipping(value));
   };
 
@@ -87,10 +87,10 @@ export default function CheckoutPayment() {
     onSubmit: async (values, { setErrors, setSubmitting }) => {
       try {
         handleNextStep();
-      } catch (error) {
+      } catch (error: any) {
         console.error(error);
         setSubmitting(false);
-        setErrors(error.message);
+        setErrors(error.message as any);
       }
     }
   });

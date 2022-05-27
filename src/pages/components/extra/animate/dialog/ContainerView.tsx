@@ -11,7 +11,7 @@ import { DialogAnimate } from '@/components/animate';
 
 import getVariant from '../getVariant';
 
-export default function ContainerView({ isOpen, onOpen, onClose, selectVariant, ...other }) {
+export default function ContainerView({ isOpen, onOpen, onClose, selectVariant, ...other }: any) {
   return (
     <Paper
       sx={{

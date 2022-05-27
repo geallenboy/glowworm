@@ -17,7 +17,12 @@ import * as Yup from 'yup';
 import { DialogAnimate } from '@/components/animate';
 import countries from '@/utils/mock-data/countries';
 
-export default function CheckoutNewAddressForm({ open, onClose, onNextStep, onCreateBilling }) {
+export default function CheckoutNewAddressForm({
+  open,
+  onClose,
+  onNextStep,
+  onCreateBilling
+}: any) {
   const NewAddressSchema = Yup.object().shape({
     receiver: Yup.string().required('名称不能为空'),
     phone: Yup.string().required('手机号码不能为空'),

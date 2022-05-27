@@ -19,7 +19,7 @@ import ChatMessageInput from './ChatMessageInput';
 import ChatMessageList from './ChatMessageList';
 import ChatRoom from './ChatRoom';
 
-const conversationSelector = (state) => {
+const conversationSelector = (state: any) => {
   const { conversations, activeConversationId } = state.chat;
   const conversation = conversations.byId[activeConversationId];
   if (conversation) {
@@ -34,18 +34,18 @@ const conversationSelector = (state) => {
 };
 
 export default function ChatWindow() {
-  const dispatch = useDispatch();
+  const dispatch: any = useDispatch();
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const { conversationKey } = useParams();
   const { contacts, recipients, participants, activeConversationId } = useSelector(
-    (state) => state.chat
+    (state: any) => state.chat
   );
   const conversation = useSelector((state) => conversationSelector(state));
   const mode = conversationKey ? 'DETAIL' : 'COMPOSE';
 
   const displayParticipants = participants.filter(
-    (item) => item.id !== '8864c717-587d-472a-929a-8e5f298024da-0'
+    (item: any) => item.id !== '8864c717-587d-472a-929a-8e5f298024da-0'
   );
 
   useEffect(() => {
@@ -71,11 +71,11 @@ export default function ChatWindow() {
     }
   }, [dispatch, activeConversationId]);
 
-  const handleAddRecipient = (recipient) => {
+  const handleAddRecipient = (recipient: any) => {
     dispatch(addRecipients(recipient));
   };
 
-  const handleSendMessage = async (value) => {
+  const handleSendMessage = async (value: any) => {
     try {
       dispatch(onSendMessage(value));
     } catch (error) {

@@ -6,10 +6,10 @@ import Scrollbar from '@/components/Scrollbar';
 
 import ChatMessageItem from './ChatMessageItem';
 
-export default function ChatMessageList({ conversation }) {
-  const scrollRef = useRef();
+export default function ChatMessageList({ conversation }: any) {
+  const scrollRef: any = useRef();
   const [openLightbox, setOpenLightbox] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<any>(null);
 
   useEffect(() => {
     const scrollMessagesToBottom = () => {
@@ -21,10 +21,10 @@ export default function ChatMessageList({ conversation }) {
   }, [conversation.messages]);
 
   const images = conversation.messages
-    .filter((messages) => messages.contentType === 'image')
-    .map((messages) => messages.body);
+    .filter((messages: any) => messages.contentType === 'image')
+    .map((messages: any) => messages.body);
 
-  const handleOpenLightbox = (url) => {
+  const handleOpenLightbox = (url: string) => {
     const selectedImage = findIndex(images, (index) => index === url);
     setOpenLightbox(true);
     setSelectedImage(selectedImage);
@@ -32,7 +32,7 @@ export default function ChatMessageList({ conversation }) {
 
   return (
     <Scrollbar scrollableNodeProps={{ ref: scrollRef }} sx={{ p: 3, flexGrow: 1 }}>
-      {conversation.messages.map((message) => (
+      {conversation.messages.map((message: any) => (
         <ChatMessageItem
           key={message.id}
           message={message}

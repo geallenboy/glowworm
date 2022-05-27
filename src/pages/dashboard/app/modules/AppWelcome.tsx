@@ -4,7 +4,7 @@ import { Link as RouterLink } from 'react-router-dom';
 
 import { SeoIllustration } from '@/assets/svg';
 
-const RootStyle = styled(Card)(({ theme }) => ({
+const RootStyle = styled(Card)(({ theme }: any) => ({
   boxShadow: 'none',
   textAlign: 'center',
   backgroundColor: theme.palette.primary.lighter,

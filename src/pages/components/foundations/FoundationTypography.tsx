@@ -51,7 +51,7 @@ const RowContentStyle = styled('div')({
   maxWidth: 720
 });
 
-function remToPx(value) {
+function remToPx(value: string) {
   return Math.round(parseFloat(value) * 16);
 }
 
@@ -59,15 +59,15 @@ function useWidth() {
   const theme = useTheme();
   const keys = [...theme.breakpoints.keys].reverse();
   return (
-    keys.reduce((output, key) => {
+    keys.reduce((output: any, key: any) => {
       const matches = useMediaQuery(theme.breakpoints.up(key));
       return !output && matches ? key : output;
     }, null) || 'xs'
   );
 }
 
-function GetFontInfo({ name }) {
-  const theme = useTheme();
+function GetFontInfo({ name }: any) {
+  const theme: any = useTheme();
   const breakpoints = useWidth();
   const key = theme.breakpoints.up(breakpoints === 'xl' ? 'lg' : breakpoints);
 
@@ -113,7 +113,7 @@ export default function FoundationTypography() {
             </Typography>
           </Grid>
           <Grid item xs={12} md={9}>
-            {TYPOGRAPHYS.map((font) => (
+            {TYPOGRAPHYS.map((font: any) => (
               <Block key={font.variant} sx={style}>
                 <RowContentStyle>
                   <Typography variant={font.variant} gutterBottom>

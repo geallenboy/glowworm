@@ -21,7 +21,7 @@ const IconStyle = styled(Icon)(({ theme }) => ({
   color: theme.palette.text.secondary
 }));
 
-export default function ChatRoomPopup({ participant, isOpen, onClose, ...other }) {
+export default function ChatRoomPopup({ participant, isOpen, onClose, ...other }: any) {
   const { name, avatar, position, address, phone, email } = participant;
 
   return (

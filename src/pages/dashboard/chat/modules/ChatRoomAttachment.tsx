@@ -25,7 +25,7 @@ const FileItemStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(0, 2.5)
 }));
 
-const FileThumbStyle = styled('div')(({ theme }) => ({
+const FileThumbStyle = styled('div')(({ theme }: any) => ({
   width: 40,
   height: 40,
   flexShrink: 0,
@@ -38,7 +38,7 @@ const FileThumbStyle = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.grey[500_16]
 }));
 
-const CollapseButtonStyle = styled(Button)(({ theme }) => ({
+const CollapseButtonStyle = styled(Button)(({ theme }: any) => ({
   ...theme.typography.overline,
   height: 40,
   flexShrink: 0,
@@ -48,7 +48,7 @@ const CollapseButtonStyle = styled(Button)(({ theme }) => ({
   color: theme.palette.text.disabled
 }));
 
-function AttachmentItem({ file, fileUrl }) {
+function AttachmentItem({ file, fileUrl }: any) {
   return (
     <FileItemStyle key={fileUrl}>
       <FileThumbStyle>{getFileThumb(fileUrl)}</FileThumbStyle>
@@ -64,9 +64,14 @@ function AttachmentItem({ file, fileUrl }) {
   );
 }
 
-export default function ChatRoomAttachment({ conversation, isCollapse, onCollapse, ...other }) {
+export default function ChatRoomAttachment({
+  conversation,
+  isCollapse,
+  onCollapse,
+  ...other
+}: any) {
   const totalAttachment = uniq(
-    flatten(conversation.messages.map((item) => item.attachments))
+    flatten(conversation.messages.map((item: any) => item.attachments))
   ).length;
 
   return (
@@ -90,9 +95,9 @@ export default function ChatRoomAttachment({ conversation, isCollapse, onCollaps
 
       <Scrollbar>
         <Collapse in={isCollapse}>
-          {conversation.messages.map((file) => (
+          {conversation.messages.map((file: any) => (
             <div key={file.id}>
-              {file.attachments.map((fileUrl) => (
+              {file.attachments.map((fileUrl: any) => (
                 <AttachmentItem key={fileUrl} file={file} fileUrl={fileUrl} />
               ))}
             </div>

@@ -9,7 +9,7 @@ import {
 
 import SearchNotFound from '@/components/SearchNotFound';
 
-export default function ChatSearchResults({ query, results, onSelectContact }) {
+export default function ChatSearchResults({ query, results, onSelectContact }: any) {
   const isFound = results.length > 0;
 
   return (
@@ -19,7 +19,7 @@ export default function ChatSearchResults({ query, results, onSelectContact }) {
       </Typography>
 
       <List disablePadding>
-        {results.map((result) => (
+        {results.map((result: any) => (
           <ListItemButton
             key={result.id}
             onClick={() => onSelectContact(result)}

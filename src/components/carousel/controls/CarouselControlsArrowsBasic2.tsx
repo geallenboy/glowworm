@@ -7,6 +7,7 @@ import { Box } from '@mui/material';
 import { styled, useTheme } from '@mui/material/styles';
 
 import { MIconButton } from '@/components/@material-extend';
+import { BoxProps1 } from '@/config/interface';
 
 const SIZE = 40;
 
@@ -15,7 +16,7 @@ const ICON_SIZE = {
   height: 20
 };
 
-const RootStyle = styled(Box)(({ theme }: any) => ({
+const RootStyle = styled(Box)(({ theme }) => ({
   top: 0,
   bottom: 0,
   zIndex: 9,
@@ -28,7 +29,7 @@ const RootStyle = styled(Box)(({ theme }: any) => ({
   justifyContent: 'space-between'
 }));
 
-const ArrowStyle = styled(MIconButton)(({ theme }: any) => ({
+const ArrowStyle = styled(MIconButton)(({ theme }) => ({
   width: SIZE,
   height: SIZE,
   opacity: 0.48,
@@ -38,7 +39,7 @@ const ArrowStyle = styled(MIconButton)(({ theme }: any) => ({
   justifyContent: 'center',
   color: theme.palette.common.white,
   background: theme.palette.grey[900],
-  borderRadius: theme.shape.borderRadiusSm,
+  borderRadius: theme.shape.borderRadius,
   transition: theme.transitions.create('opacity'),
   '&:hover': {
     opacity: 1,
@@ -51,8 +52,8 @@ export default function CarouselControlsArrowsBasic2({
   onNext,
   onPrevious,
   ...other
-}: any) {
-  const theme: any = useTheme();
+}: BoxProps1) {
+  const theme = useTheme();
   const isRTL = theme.direction === 'rtl';
 
   return (

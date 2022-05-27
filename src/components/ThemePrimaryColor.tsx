@@ -5,7 +5,7 @@ import useSettings from '@/hooks/useSettings';
 import componentsOverride from '@/theme/overrides';
 
 export default function ThemePrimaryColor({ children }: any) {
-  const defaultTheme = useTheme();
+  const defaultTheme: any = useTheme();
   const { setColor } = useSettings();
   const themeOptions = useMemo(
     () => ({
@@ -21,7 +21,7 @@ export default function ThemePrimaryColor({ children }: any) {
     }),
     [setColor, defaultTheme]
   );
-  const theme = createTheme(themeOptions);
+  const theme: any = createTheme(themeOptions);
   theme.components = componentsOverride(theme);
 
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;

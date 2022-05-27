@@ -6,7 +6,7 @@ import { styled, useTheme } from '@mui/material/styles';
 
 import { fNumber, fPercent } from '@/utils/formatNumber';
 
-const RootStyle = styled(Card)(({ theme }) => ({
+const RootStyle = styled(Card)(({ theme }: any) => ({
   display: 'flex',
   position: 'relative',
   alignItems: 'center',
@@ -26,8 +26,8 @@ const IconStyle = styled(Icon)(({ theme }) => ({
 const TOTAL = 55566;
 
 export default function AppWidgets2() {
-  const theme = useTheme();
-  const config = {
+  const theme: any = useTheme();
+  const config: any = {
     height: 86,
     width: 86,
     autoFit: false,

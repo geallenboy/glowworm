@@ -29,7 +29,7 @@ const CollapseButtonStyle = styled(Button)(({ theme }) => ({
   color: theme.palette.text.disabled
 }));
 
-function Participant({ participant, isOpen, onClosePopup, onShowPopup }) {
+function Participant({ participant, isOpen, onClosePopup, onShowPopup }: any) {
   const { name, avatar, status, position } = participant;
 
   return (
@@ -60,7 +60,7 @@ export default function ChatRoomGroupParticipant({
   isCollapse,
   onCollapse,
   ...other
-}) {
+}: any) {
   return (
     <Box {...other}>
       <CollapseButtonStyle
@@ -83,7 +83,7 @@ export default function ChatRoomGroupParticipant({
         <Scrollbar>
           <Collapse in={isCollapse}>
             <List disablePadding>
-              {participants.map((participant) => (
+              {participants.map((participant: any) => (
                 <Participant
                   key={participant.id}
                   participant={participant}

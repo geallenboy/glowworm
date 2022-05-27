@@ -13,7 +13,7 @@ import { ChatSidebar, ChatWindow } from './modules';
 
 export default function Chat() {
   const { themeStretch } = useSettings();
-  const dispatch = useDispatch();
+  const dispatch: any = useDispatch();
 
   useEffect(() => {
     dispatch(getConversations());

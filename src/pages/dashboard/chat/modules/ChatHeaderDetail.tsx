@@ -19,7 +19,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(0, 3)
 }));
 
-function OneAvatar({ participants }) {
+function OneAvatar({ participants }: any) {
   const participant = [...participants][0];
 
   if (participant === undefined) {
@@ -47,7 +47,7 @@ function OneAvatar({ participants }) {
   );
 }
 
-function GroupAvatar({ participants }) {
+function GroupAvatar({ participants }: any) {
   return (
     <div>
       <AvatarGroup
@@ -57,7 +57,7 @@ function GroupAvatar({ participants }) {
           '& .MuiAvatar-root': { width: 32, height: 32 }
         }}
       >
-        {participants.map((participant) => (
+        {participants.map((participant: any) => (
           <Avatar key={participant.id} alt={participant.name} src={participant.avatar} />
         ))}
       </AvatarGroup>
@@ -77,7 +77,7 @@ function GroupAvatar({ participants }) {
   );
 }
 
-export default function ChatHeaderDetail({ participants, ...other }) {
+export default function ChatHeaderDetail({ participants, ...other }: any) {
   const isGroup = participants.length > 1;
 
   return (

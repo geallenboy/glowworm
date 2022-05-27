@@ -31,7 +31,7 @@ const COLOR_OPTIONS = [
   '#7A0C2E' // theme.palette.error.darker
 ];
 
-const getInitialValues = (event, range) => {
+const getInitialValues = (event: any, range: any) => {
   const _event = {
     title: '',
     description: '',
@@ -48,9 +48,9 @@ const getInitialValues = (event, range) => {
   return _event;
 };
 
-export default function CalendarForm({ event, range, onCancel }) {
+export default function CalendarForm({ event, range, onCancel }: any) {
   const { enqueueSnackbar } = useSnackbar();
-  const dispatch = useDispatch();
+  const dispatch: any = useDispatch();
   const isCreating = !event;
 
   const EventSchema = Yup.object().shape({

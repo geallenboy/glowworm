@@ -12,7 +12,7 @@ import { DialogAnimate } from '@/components/animate';
 
 import PDF from './PDF';
 
-export default function Toolbar({ invoice }) {
+export default function Toolbar({ invoice }: any) {
   const [openPDF, setOpenPDF] = useState(false);
 
   const handleOpenPreview = () => {

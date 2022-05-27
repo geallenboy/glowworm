@@ -38,7 +38,7 @@ export default function CalendarToolbar({
   onToday,
   onChangeView,
   ...other
-}) {
+}: any) {
   return (
     <RootStyle {...other}>
       <MHidden width="smDown">

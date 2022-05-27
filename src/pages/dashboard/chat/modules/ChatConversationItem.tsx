@@ -21,12 +21,12 @@ const AvatarWrapperStyle = styled('div')({
   '& .MuiAvatar-root': { width: '100%', height: '100%' }
 });
 
-const getDetails = (conversation, currentUserId) => {
+const getDetails = (conversation: any, currentUserId: any) => {
   const otherParticipants = conversation.participants.filter(
-    (participant) => participant.id !== currentUserId
+    (participant: any) => participant.id !== currentUserId
   );
   const displayNames = otherParticipants
-    .reduce((names, participant) => [...names, participant.name], [])
+    .reduce((names: any, participant: any) => [...names, participant.name], [])
     .join(', ');
   let displayText = '';
   const lastMessage = conversation.messages[conversation.messages.length - 1];
@@ -44,14 +44,14 @@ export default function ChatConversationItem({
   onSelectConversation,
   isOpenSidebar,
   ...other
-}) {
+}: any) {
   const details = getDetails(conversation, '8864c717-587d-472a-929a-8e5f298024da-0');
 
-  const displayLastActivity = last(conversation.messages).createdAt;
+  const displayLastActivity = last<any>(conversation.messages).createdAt;
   const isGroup = details.otherParticipants.length > 1;
   const isUnread = conversation.unreadCount > 0;
   const isOnlineGroup =
-    isGroup && details.otherParticipants.map((item) => item.status).includes('online');
+    isGroup && details.otherParticipants.map((item: any) => item.status).includes('online');
 
   return (
     <RootStyle
@@ -86,7 +86,7 @@ export default function ChatConversationItem({
             })
           }}
         >
-          {details.otherParticipants.slice(0, 2).map((participant) => (
+          {details.otherParticipants.slice(0, 2).map((participant: any) => (
             <AvatarWrapperStyle className="avatarWrapper" key={participant.id}>
               <Avatar alt={participant.name} src={participant.avatar} />
               {!isGroup && (

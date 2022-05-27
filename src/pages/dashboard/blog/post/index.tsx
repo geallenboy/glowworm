@@ -27,11 +27,11 @@ const SkeletonLoad = (
   </>
 );
 
-export default function BlogPost() {
+export default function Post() {
   const { themeStretch } = useSettings();
-  const dispatch = useDispatch();
+  const dispatch: any = useDispatch();
   const { title } = useParams();
-  const { post, error, recentPosts } = useSelector((state) => state.blog);
+  const { post, error, recentPosts } = useSelector((state: any) => state.blog);
 
   useEffect(() => {
     dispatch(getPost(title));

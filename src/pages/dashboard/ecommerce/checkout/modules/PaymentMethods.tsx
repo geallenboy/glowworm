@@ -30,7 +30,7 @@ const OptionStyle = styled('div')(({ theme }: any) => ({
   border: `solid 1px ${theme.palette.grey[500_32]}`
 }));
 
-export default function CheckoutPaymentMethods({ paymentOptions, cardOptions, formik }) {
+export default function CheckoutPaymentMethods({ paymentOptions, cardOptions, formik }: any) {
   const { errors, touched, values, getFieldProps } = formik;
 
   return (
@@ -39,7 +39,7 @@ export default function CheckoutPaymentMethods({ paymentOptions, cardOptions, fo
       <CardContent>
         <RadioGroup row {...getFieldProps('payment')}>
           <Grid container spacing={2}>
-            {paymentOptions.map((method) => {
+            {paymentOptions.map((method: any) => {
               const { value, title, icons, description } = method;
               const hasChildren = value === 'credit_card';
 
@@ -48,7 +48,7 @@ export default function CheckoutPaymentMethods({ paymentOptions, cardOptions, fo
                   <OptionStyle
                     sx={{
                       ...(values.payment === value && {
-                        boxShadow: (theme) => theme.customShadows.z8
+                        boxShadow: (theme: any) => theme.customShadows.z8
                       }),
                       ...(hasChildren && { flexWrap: 'wrap' })
                     }}
@@ -68,7 +68,7 @@ export default function CheckoutPaymentMethods({ paymentOptions, cardOptions, fo
                     />
                     <MHidden width="smDown">
                       <Box sx={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
-                        {icons.map((icon, index) => (
+                        {icons.map((icon: any, index: number) => (
                           <Box
                             key={icon}
                             component="img"
@@ -91,7 +91,7 @@ export default function CheckoutPaymentMethods({ paymentOptions, cardOptions, fo
                           {...getFieldProps('card')}
                           SelectProps={{ native: true }}
                         >
-                          {cardOptions.map((option) => (
+                          {cardOptions.map((option: any) => (
                             <option key={option.value} value={option.value}>
                               {option.label}
                             </option>

@@ -10,17 +10,17 @@ export default function ChatConversationList({
   isOpenSidebar,
   activeConversationId,
   ...other
-}) {
+}: any) {
   const navigate = useNavigate();
 
-  const handleSelectConversation = (conversationId) => {
+  const handleSelectConversation = (conversationId: any) => {
     let conversationKey = '';
     const conversation = conversations.byId[conversationId];
     if (conversation.type === 'GROUP') {
       conversationKey = conversation.id;
     } else {
       const otherParticipant = conversation.participants.find(
-        (participant) => participant.id !== '8864c717-587d-472a-929a-8e5f298024da-0'
+        (participant: any) => participant.id !== '8864c717-587d-472a-929a-8e5f298024da-0'
       );
       conversationKey = otherParticipant.username;
     }
@@ -29,7 +29,7 @@ export default function ChatConversationList({
 
   return (
     <List disablePadding {...other}>
-      {conversations.allIds.map((conversationId) => (
+      {conversations.allIds.map((conversationId: any) => (
         <ChatConversationItem
           key={conversationId}
           isOpenSidebar={isOpenSidebar}

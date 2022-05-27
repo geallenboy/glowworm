@@ -14,7 +14,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(2, 3)
 }));
 
-const AutocompleteStyle = styled('div')(({ theme }) => ({
+const AutocompleteStyle = styled('div')(({ theme }: any) => ({
   '& .MuiAutocomplete-root': {
     minWidth: 280,
     marginLeft: theme.spacing(2),
@@ -34,14 +34,14 @@ const AutocompleteStyle = styled('div')(({ theme }) => ({
   }
 }));
 
-export default function ChatHeaderCompose({ contacts, recipients, onAddRecipient, ...other }) {
+export default function ChatHeaderCompose({ contacts, recipients, onAddRecipient, ...other }: any) {
   const [query, setQuery] = useState('');
 
-  const handleChangeQuery = (event) => {
+  const handleChangeQuery = (event: any) => {
     setQuery(event.target.value);
   };
 
-  const handleAddRecipient = (e, recipient) => {
+  const handleAddRecipient = (e: any, recipient: any) => {
     setQuery('');
     if (onAddRecipient) {
       onAddRecipient(recipient);
@@ -60,7 +60,7 @@ export default function ChatHeaderCompose({ contacts, recipients, onAddRecipient
           size="small"
           disablePortal
           popupIcon={null}
-          clearText={null}
+          clearText={'Clear'}
           noOptionsText={<SearchNotFound searchQuery={query} />}
           onChange={handleAddRecipient}
           onInputChange={handleChangeQuery}
@@ -121,11 +121,11 @@ export default function ChatHeaderCompose({ contacts, recipients, onAddRecipient
             );
           }}
           renderTags={(recipients, getTagProps) =>
-            recipients.map((recipient, index) => {
-              const { id, name, avatar } = recipient;
+            recipients.map((recipient: any, index: number) => {
+              const { name, avatar } = recipient;
               return (
                 <Chip
-                  key={id}
+                  key={index + name}
                   size="small"
                   label={name}
                   color="info"
@@ -136,7 +136,7 @@ export default function ChatHeaderCompose({ contacts, recipients, onAddRecipient
             })
           }
           renderInput={(params) => (
-            <TextField {...params} placeholder={recipients.length === 0 ? 'Recipients' : ''} />
+            <TextField {...params} placeholder={recipients.length === 0 ? '收件人' : ''} />
           )}
         />
       </AutocompleteStyle>

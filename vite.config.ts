@@ -19,6 +19,10 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
           find: '@',
           replacement: path.resolve(__dirname, 'src')
         }
+        // {
+        //   find: '@react-pdf/renderer',
+        //   replacement: '@react-pdf/renderer/lib/react-pdf.es.js'
+        // }
       ]
     },
     server: {
@@ -34,17 +38,17 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
         targets: ['ie >= 11']
       }),
       react(),
-      viteMockServe({
-        ignore: /^_/,
-        mockPath: 'mock',
-        localEnabled: !isBuild,
-        prodEnabled: isBuild,
-        logger: true,
-        injectCode: `
-          import { setupProdMockServer } from '../mock/_createProductionServer';
-          setupProdMockServer();
-          `
-      }),
+      // viteMockServe({
+      //   ignore: /^_/,
+      //   mockPath: 'mock',
+      //   localEnabled: !isBuild,
+      //   prodEnabled: isBuild,
+      //   logger: true,
+      //   injectCode: `
+      //     import { setupProdMockServer } from '../mock/_createProductionServer';
+      //     setupProdMockServer();
+      //     `
+      // }),
       svgrPlugin({
         svgrOptions: {
           icon: true
@@ -52,12 +56,15 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       })
     ],
     build: {
+      target: 'modules',
+      minify: 'terser', // 混淆器，terser构建后文件体积更小
+      brotliSize:false,
       terserOptions: {
         compress: {
-          keep_infinity: true,
-          drop_console: !!VITE_DROP_CONSOLE
-        }
-      }
+          drop_console: true,
+          drop_debugger: true,
+        },
+      },
     }
   };
 };

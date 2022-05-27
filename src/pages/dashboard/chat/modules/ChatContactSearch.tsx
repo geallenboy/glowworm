@@ -7,7 +7,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   marginTop: theme.spacing(2)
 }));
 
-const SearchStyle = styled(OutlinedInput)(({ theme }) => ({
+const SearchStyle = styled(OutlinedInput)(({ theme }: any) => ({
   transition: theme.transitions.create('box-shadow', {
     easing: theme.transitions.easing.easeInOut,
     duration: theme.transitions.duration.shorter
@@ -19,7 +19,13 @@ const SearchStyle = styled(OutlinedInput)(({ theme }) => ({
   }
 }));
 
-export default function ChatContactSearch({ query, onChange, onFocus, onClickAway, ...other }) {
+export default function ChatContactSearch({
+  query,
+  onChange,
+  onFocus,
+  onClickAway,
+  ...other
+}: any) {
   return (
     <ClickAwayListener onClickAway={onClickAway}>
       <RootStyle {...other}>

@@ -18,19 +18,19 @@ const RootStyle = styled('div')(({ theme }) => ({
   paddingLeft: theme.spacing(2)
 }));
 
-export default function ChatMessageInput({ disabled, conversationId, onSend, ...other }) {
-  const fileInputRef = useRef(null);
+export default function ChatMessageInput({ disabled, conversationId, onSend, ...other }: any) {
+  const fileInputRef: any = useRef(null);
   const [message, setMessage] = useState('');
 
   const handleAttach = () => {
     fileInputRef.current.click();
   };
 
-  const handleChangeMessage = (event) => {
+  const handleChangeMessage = (event: any) => {
     setMessage(event.target.value);
   };
 
-  const handleKeyUp = (event) => {
+  const handleKeyUp = (event: any) => {
     if (event.key === 'Enter') {
       handleSend();
     }

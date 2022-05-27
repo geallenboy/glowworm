@@ -12,7 +12,7 @@ import SearchNotFound from '@/components/SearchNotFound';
 import { PATH_DASHBOARD } from '@/routes/paths';
 import axios from '@/utils/axios';
 
-const RootStyle = styled('div')(({ theme }) => ({
+const RootStyle = styled('div')(({ theme }: any) => ({
   '& .MuiAutocomplete-root': {
     width: 200,
     transition: theme.transitions.create('width', {
@@ -39,12 +39,12 @@ const RootStyle = styled('div')(({ theme }) => ({
   }
 }));
 
-export default function PostsSearch({ sx }) {
+export default function PostsSearch({ sx }: any) {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-  const linkTo = (title) => `${PATH_DASHBOARD.blog.root}/post/${paramCase(title)}`;
+  const linkTo = (title: string) => `${PATH_DASHBOARD.blog.root}/post/${paramCase(title)}`;
 
-  const handleChangeSearch = async (event) => {
+  const handleChangeSearch = async (event: any) => {
     try {
       const { value } = event.target;
       setSearchQuery(value);
@@ -79,7 +79,7 @@ export default function PostsSearch({ sx }) {
         popupIcon={null}
         options={searchResults}
         onInputChange={handleChangeSearch}
-        getOptionLabel={(post) => post.title}
+        getOptionLabel={(post: any) => post.title}
         noOptionsText={<SearchNotFound searchQuery={searchQuery} />}
         renderInput={(params) => (
           <TextField

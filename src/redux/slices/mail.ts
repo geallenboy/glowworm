@@ -55,7 +55,7 @@ export function getLabels() {
     dispatch(slice.actions.startLoading());
     try {
       const response = await axios.get('/api/mail/labels');
-      dispatch(slice.actions.getLabelsSuccess(response.data.data.labels));
+      dispatch(slice.actions.getLabelsSuccess(response.data.labels));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
@@ -67,7 +67,7 @@ export function getMails(params: any) {
     dispatch(slice.actions.startLoading());
     try {
       const response = await axios.get('/api/mail/mails', { params });
-      dispatch(slice.actions.getMailsSuccess(response.data.data.mails));
+      dispatch(slice.actions.getMailsSuccess(response.data.mails));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
@@ -81,7 +81,7 @@ export function getMail(mailId: any) {
       const response = await axios.get('/api/mail/mail', {
         params: { mailId }
       });
-      dispatch(slice.actions.getMailSuccess(response.data.data.mail));
+      dispatch(slice.actions.getMailSuccess(response.data.mail));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }

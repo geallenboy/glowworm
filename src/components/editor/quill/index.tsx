@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
 
-const RootStyle = styled('div')(({ theme }) => ({
+const RootStyle = styled('div')(({ theme }: any) => ({
   borderRadius: theme.shape.borderRadius,
   border: `solid 1px ${theme.palette.grey[500_32]}`,
   '& .ql-container.ql-snow': {
@@ -23,7 +23,15 @@ const RootStyle = styled('div')(({ theme }) => ({
   }
 }));
 
-export default function QuillEditor({ id, error, value, onChange, simple = false, sx, ...other }) {
+export default function QuillEditor({
+  id,
+  error,
+  value,
+  onChange,
+  simple = false,
+  sx,
+  ...other
+}: any) {
   console.log(id, error, value, onChange, other, simple);
   return (
     <RootStyle

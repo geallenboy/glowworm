@@ -5,7 +5,6 @@ import { varFadeInUp } from './variants';
 
 interface DialogAnimateType extends DialogProps {
   animate?: any;
-  open?: boolean;
   onClose?: any;
 }
 

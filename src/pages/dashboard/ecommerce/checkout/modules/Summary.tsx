@@ -25,7 +25,7 @@ export default function Summary({
   enableEdit = false,
   enableDiscount = false
 }: any) {
-  const displayShipping = shipping !== null ? 'Free' : '-';
+  const displayShipping = shipping !== null ? '免费' : '-';
 
   return (
     <Card sx={{ mb: 3 }}>
@@ -73,7 +73,7 @@ export default function Summary({
           <Divider />
 
           <Stack direction="row" justifyContent="space-between">
-            <Typography variant="subtitle1">Total</Typography>
+            <Typography variant="subtitle1">总计</Typography>
             <Box sx={{ textAlign: 'right' }}>
               <Typography variant="subtitle1" sx={{ color: 'error.main' }}>
                 {fCurrency(total)}

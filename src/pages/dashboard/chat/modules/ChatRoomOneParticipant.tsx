@@ -7,7 +7,7 @@ import { Icon } from '@iconify/react';
 import { Avatar, Box, Button, Collapse, Divider, Stack, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-const CollapseButtonStyle = styled(Button)(({ theme }) => ({
+const CollapseButtonStyle = styled(Button)(({ theme }: any) => ({
   ...theme.typography.overline,
   height: 40,
   borderRadius: 0,
@@ -16,7 +16,7 @@ const CollapseButtonStyle = styled(Button)(({ theme }) => ({
   color: theme.palette.text.disabled
 }));
 
-const RowIconStyle = styled(Icon)(({ theme }) => ({
+const RowIconStyle = styled(Icon)(({ theme }: any) => ({
   width: 16,
   height: 16,
   marginTop: 4,
@@ -30,7 +30,12 @@ const RowTextStyle = styled(Typography)(({ theme }) => ({
   ...theme.typography.body2
 }));
 
-export default function ChatRoomOneParticipant({ participants, isCollapse, onCollapse, ...other }) {
+export default function ChatRoomOneParticipant({
+  participants,
+  isCollapse,
+  onCollapse,
+  ...other
+}: any) {
   const participant = [...participants][0];
 
   if (participant === undefined) {

@@ -7,7 +7,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   marginBottom: theme.spacing(3)
 }));
 
-const ContentStyle = styled('div')(({ theme }) => ({
+const ContentStyle = styled('div')(({ theme }: any) => ({
   maxWidth: 320,
   padding: theme.spacing(1.5),
   marginTop: theme.spacing(0.5),
@@ -30,9 +30,9 @@ const MessageImgStyle = styled('img')(({ theme }) => ({
   borderRadius: theme.shape.borderRadius
 }));
 
-export default function ChatMessageItem({ message, conversation, onOpenLightbox, ...other }) {
+export default function ChatMessageItem({ message, conversation, onOpenLightbox, ...other }: any) {
   const sender = conversation.participants.find(
-    (participant) => participant.id === message.senderId
+    (participant: any) => participant.id === message.senderId
   );
   const senderDetails =
     message.senderId === '8864c717-587d-472a-929a-8e5f298024da-0'

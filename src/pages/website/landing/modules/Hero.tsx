@@ -101,8 +101,8 @@ export default function Hero() {
             >
               <motion.img variants={varFadeInRight} src="/static/home/ic_material.svg" />
               <motion.img variants={varFadeInRight} src="/static/home/ic_react.svg" />
-              <motion.img variants={varFadeInRight} src="/static/home/ic_js.svg" />
               <motion.img variants={varFadeInRight} src="/static/home/ic_ts.svg" />
+              <motion.img variants={varFadeInRight} src="/static/home/ic_vite.svg" />
             </Stack>
           </ContentStyle>
         </Container>

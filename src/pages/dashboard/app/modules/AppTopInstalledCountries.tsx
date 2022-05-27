@@ -36,7 +36,7 @@ const ItemIconStyle = styled(Icon)(({ theme }) => ({
   color: theme.palette.text.disabled
 }));
 
-function CountryItem({ country }) {
+function CountryItem({ country }: any) {
   return (
     <Stack direction="row" alignItems="center" spacing={2}>
       <ItemBlockStyle sx={{ minWidth: 120 }}>

@@ -19,7 +19,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   transition: theme.transitions.create('width')
 }));
 
-const ToggleButtonStyle = styled('div')(({ theme }) => ({
+const ToggleButtonStyle = styled('div')(({ theme }: any) => ({
   borderRight: 0,
   display: 'flex',
   overflow: 'hidden',
@@ -37,7 +37,7 @@ const ToggleButtonStyle = styled('div')(({ theme }) => ({
   borderBottomLeftRadius: theme.shape.borderRadius
 }));
 
-export default function ChatRoom({ conversation, participants, ...other }) {
+export default function ChatRoom({ conversation, participants, ...other }: any) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
   const [openSidebar, setOpenSidebar] = useState(true);
@@ -79,7 +79,7 @@ export default function ChatRoom({ conversation, participants, ...other }) {
           selectUserId={selectUser}
           participants={participants}
           isCollapse={showParticipants}
-          onShowPopupUserInfo={(participantId) => setSelectUser(participantId)}
+          onShowPopupUserInfo={(participantId: any) => setSelectUser(participantId)}
           onCollapse={() => setShowParticipants((prev) => !prev)}
         />
       ) : (

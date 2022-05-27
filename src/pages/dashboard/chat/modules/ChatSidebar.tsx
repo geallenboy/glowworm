@@ -36,7 +36,7 @@ export default function ChatSidebar() {
   const [searchResults, setSearchResults] = useState([]);
   const [isSearchFocused, setSearchFocused] = useState(false);
   const displayResults = searchQuery && isSearchFocused;
-  const { conversations, activeConversationId } = useSelector((state) => state.chat);
+  const { conversations, activeConversationId } = useSelector((state: any) => state.chat);
 
   useEffect(() => {
     if (isMobile) {
@@ -56,7 +56,7 @@ export default function ChatSidebar() {
     setSearchQuery('');
   };
 
-  const handleChangeSearch = async (event) => {
+  const handleChangeSearch = async (event: any) => {
     try {
       const { value } = event.target;
       setSearchQuery(value);
@@ -77,13 +77,13 @@ export default function ChatSidebar() {
     setSearchFocused(true);
   };
 
-  const handleSearchSelect = (username) => {
+  const handleSearchSelect = (username: string) => {
     setSearchFocused(false);
     setSearchQuery('');
     navigate(`${PATH_DASHBOARD.chat.root}/${username}`);
   };
 
-  const handleSelectContact = (result) => {
+  const handleSelectContact = (result: any) => {
     if (handleSearchSelect) {
       handleSearchSelect(result.username);
     }

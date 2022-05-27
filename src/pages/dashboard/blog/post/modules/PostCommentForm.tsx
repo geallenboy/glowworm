@@ -7,7 +7,7 @@ import * as Yup from 'yup';
 
 import fakeRequest from '@/utils/fakeRequest';
 
-const RootStyles = styled('div')(({ theme }) => ({
+const RootStyles = styled('div')(({ theme }: any) => ({
   padding: theme.spacing(3),
   borderRadius: theme.shape.borderRadiusMd,
   backgroundColor: theme.palette.background.neutral
@@ -22,7 +22,7 @@ export default function PostCommentForm() {
     email: Yup.string().email('邮箱地址格式不正确').required('邮箱不能为空')
   });
 
-  const formik = useFormik({
+  const formik: any = useFormik({
     initialValues: {
       comment: '',
       name: '',
@@ -35,10 +35,10 @@ export default function PostCommentForm() {
         resetForm();
         setSubmitting(false);
         enqueueSnackbar('成', { variant: 'success' });
-      } catch (error) {
+      } catch (error: any) {
         console.error(error);
         setSubmitting(false);
-        setErrors({ afterSubmit: error.code });
+        setErrors({ afterSubmit: error.code } as any);
       }
     }
   });

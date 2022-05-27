@@ -13,9 +13,7 @@ const store = configureStore({
 });
 
 const persistor = persistStore(store);
-
 const useSelector = useReduxSelector;
-
 const useDispatch = () => useReduxDispatch();
 
 export { persistor, store, useDispatch, useSelector };
