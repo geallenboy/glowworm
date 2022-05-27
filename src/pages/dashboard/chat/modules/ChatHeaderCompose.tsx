@@ -125,7 +125,7 @@ export default function ChatHeaderCompose({ contacts, recipients, onAddRecipient
               const { name, avatar } = recipient;
               return (
                 <Chip
-                  key={index + name}
+                  key={`${index}-${name}`}
                   size="small"
                   label={name}
                   color="info"
