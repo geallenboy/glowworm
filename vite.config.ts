@@ -38,17 +38,17 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
         targets: ['ie >= 11']
       }),
       react(),
-      // viteMockServe({
-      //   ignore: /^_/,
-      //   mockPath: 'mock',
-      //   localEnabled: !isBuild,
-      //   prodEnabled: isBuild,
-      //   logger: true,
-      //   injectCode: `
-      //     import { setupProdMockServer } from '../mock/_createProductionServer';
-      //     setupProdMockServer();
-      //     `
-      // }),
+      viteMockServe({
+        ignore: /^_/,
+        mockPath: 'mock',
+        localEnabled: !isBuild,
+        prodEnabled: isBuild,
+        logger: true,
+        injectCode: `
+          import { setupProdMockServer } from '../mock/_createProductionServer';
+          setupProdMockServer();
+          `
+      }),
       svgrPlugin({
         svgrOptions: {
           icon: true
@@ -58,13 +58,13 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     build: {
       target: 'modules',
       minify: 'terser', // 混淆器，terser构建后文件体积更小
-      brotliSize:false,
+      brotliSize: false,
       terserOptions: {
         compress: {
           drop_console: true,
-          drop_debugger: true,
-        },
-      },
+          drop_debugger: true
+        }
+      }
     }
   };
 };
