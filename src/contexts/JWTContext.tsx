@@ -56,7 +56,7 @@ const AuthContext = createContext({
 });
 
 function AuthProvider({ children }: any) {
-  const [state, dispatch] = useReducer(reducer, initialState) as any;
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
     const initialize = async () => {
