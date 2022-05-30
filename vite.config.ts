@@ -38,17 +38,17 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
         targets: ['ie >= 11']
       }),
       react(),
-      viteMockServe({
-        ignore: /^_/,
-        mockPath: 'mock',
-        localEnabled: !isBuild,
-        prodEnabled: isBuild,
-        logger: true,
-        injectCode: `
-          import { setupProdMockServer } from '../mock/_createProductionServer';
-          setupProdMockServer();
-          `
-      }),
+      // viteMockServe({
+      //   ignore: /^_/,
+      //   mockPath: 'mock',
+      //   localEnabled: !isBuild,
+      //   prodEnabled: isBuild,
+      //   logger: true,
+      //   injectCode: `
+      //     import { setupProdMockServer } from '../mock/_createProductionServer';
+      //     setupProdMockServer();
+      //     `
+      // }),
       svgrPlugin({
         svgrOptions: {
           icon: true
