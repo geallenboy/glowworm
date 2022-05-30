@@ -1,10 +1,6 @@
-import {
-  DateRangePicker,
-  DesktopDateRangePicker,
-  MobileDateRangePicker,
-  StaticDateRangePicker
-} from '@mui/lab';
+import { DateRangePicker, DesktopDateRangePicker, StaticDateRangePicker } from '@mui/lab';
 import { Box, Stack, TextField, Typography } from '@mui/material';
+import { MobileDateRangePicker } from '@mui/x-date-pickers-pro';
 import { useState } from 'react';
 
 import { Block } from '../../Block';

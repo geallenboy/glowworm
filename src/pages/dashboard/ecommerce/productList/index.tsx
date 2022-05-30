@@ -25,6 +25,7 @@ import Label from '@/components/Label';
 import Page from '@/components/Page';
 import Scrollbar from '@/components/Scrollbar';
 import SearchNotFound from '@/components/SearchNotFound';
+import { title_admin } from '@/config';
 import useSettings from '@/hooks/useSettings';
 import { deleteProduct, getProducts } from '@/redux/slices/product';
 import { useDispatch, useSelector } from '@/redux/store';
@@ -35,10 +36,10 @@ import { fDate } from '@/utils/formatTime';
 import { ListHead, ListToolbar, MoreMenu } from './modules';
 
 const TABLE_HEAD = [
-  { id: 'name', label: 'Product', alignRight: false },
-  { id: 'createdAt', label: 'Create at', alignRight: false },
-  { id: 'inventoryType', label: 'Status', alignRight: false },
-  { id: 'price', label: 'Price', alignRight: true },
+  { id: 'name', label: '商品', alignRight: false },
+  { id: 'createdAt', label: '创建时间', alignRight: false },
+  { id: 'inventoryType', label: '状态', alignRight: false },
+  { id: 'price', label: '价格', alignRight: true },
   { id: '' }
 ];
 
@@ -157,17 +158,17 @@ export default function ProductList() {
   const isProductNotFound = filteredProducts.length === 0;
 
   return (
-    <Page title="Ecommerce: Product List | Minimal-UI">
+    <Page title={`商品列表 ${title_admin}`}>
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <HeaderBreadcrumbs
-          heading="Product List"
+          heading="商品列表"
           links={[
-            { name: 'Dashboard', href: PATH_DASHBOARD.root },
+            { name: '管理', href: PATH_DASHBOARD.root },
             {
-              name: 'E-Commerce',
+              name: '电子商务',
               href: PATH_DASHBOARD.eCommerce.root
             },
-            { name: 'Product List' }
+            { name: '商品列表' }
           ]}
           action={
             <Button
@@ -176,7 +177,7 @@ export default function ProductList() {
               to={PATH_DASHBOARD.eCommerce.newProduct}
               startIcon={<Icon icon={plusFill} />}
             >
-              New Product
+              新建商品
             </Button>
           }
         />

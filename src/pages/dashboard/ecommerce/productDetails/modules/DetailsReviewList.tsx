@@ -75,7 +75,7 @@ function ReviewItem({ review }) {
               sx={{ my: 1, display: 'flex', alignItems: 'center', color: 'primary.main' }}
             >
               <Icon icon={roundVerified} width={16} height={16} />
-              &nbsp;Verified purchase
+              &nbsp;已验证的购买
             </Typography>
           )}
 
@@ -84,7 +84,7 @@ function ReviewItem({ review }) {
           <Stack mt={1} direction="row" alignItems="center" flexWrap="wrap">
             {!isHelpful && (
               <Typography variant="body2" sx={{ mr: 1 }}>
-                Was this review helpful to you?
+                这篇评论对你有帮助吗?
               </Typography>
             )}
 

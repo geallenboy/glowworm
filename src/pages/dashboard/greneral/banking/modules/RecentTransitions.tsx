@@ -27,7 +27,6 @@ import {
   Typography
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { sentenceCase } from 'change-case';
 import { format } from 'date-fns';
 import { useRef, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
@@ -40,35 +39,35 @@ import { fCurrency } from '@/utils/formatNumber';
 const RECENT_TRANSITIONS = [
   {
     id: '1b0fc8a1-cd68-41f6-899e-d0e0676c90bb',
-    name: 'Dr. Alize Donnelly',
+    name: '姓名1',
     avatar: '/static/mock-images/avatars/avatar_8.jpg',
     type: 'Income',
-    message: 'Receive money from',
-    category: 'Annette Black',
+    message: '接收资金',
+    category: '类别1',
     date: 1627556358365,
-    status: 'in_progress',
+    status: '进行中',
     amount: 811.45
   },
   {
     id: 'b7846c12-662c-465a-8e81-8a35df7531ef',
-    name: 'Santino Gottlieb',
+    name: '姓名2',
     avatar: '/static/mock-images/avatars/avatar_2.jpg',
     type: 'Expenses',
-    message: 'Payment for',
-    category: 'Courtney Henry',
+    message: '支付',
+    category: '类别2',
     date: 1627556329038,
-    status: 'completed',
+    status: '已完成',
     amount: 436.03
   },
   {
     id: '336c73d5-3d0e-42e2-9218-ff671dfa28ee',
-    name: 'Camilla Gusikowski',
+    name: '姓名3',
     avatar: '/static/mock-images/avatars/avatar_3.jpg',
     type: 'Receive',
-    message: 'Payment for',
-    category: 'Theresa Webb',
+    message: '支付',
+    category: '类别3',
     date: 1627556339677,
-    status: 'failed',
+    status: '失败',
     amount: 82.26
   },
   {
@@ -76,10 +75,10 @@ const RECENT_TRANSITIONS = [
     name: null,
     avatar: null,
     type: 'Expenses',
-    message: 'Payment for',
-    category: 'Beauty & Health',
+    message: '支付',
+    category: '类别4',
     date: 1627547330510,
-    status: 'completed',
+    status: '已完成',
     amount: 480.73
   },
   {
@@ -87,10 +86,10 @@ const RECENT_TRANSITIONS = [
     name: null,
     avatar: null,
     type: 'Expenses',
-    message: 'Payment for',
-    category: 'Books',
+    message: '支付',
+    category: '类别5',
     date: 1627556347676,
-    status: 'in_progress',
+    status: '进行中',
     amount: 11.45
   }
 ];
@@ -111,10 +110,10 @@ function AvatarIcon({ icon }) {
 }
 
 function renderAvatar(transitions) {
-  if (transitions.category === 'Books') {
+  if (transitions.category === '类别4') {
     return <AvatarIcon icon={bookFill} />;
   }
-  if (transitions.category === 'Beauty & Health') {
+  if (transitions.category === '类别5') {
     return <AvatarIcon icon={heartFill} />;
   }
   return transitions.avatar ? (
@@ -271,12 +270,12 @@ export default function RecentTransitions() {
                       <Label
                         variant={isLight ? 'ghost' : 'filled'}
                         color={
-                          (row.status === 'completed' && 'success') ||
-                          (row.status === 'in_progress' && 'warning') ||
+                          (row.status === '已完成' && 'success') ||
+                          (row.status === '进行中' && 'warning') ||
                           'error'
                         }
                       >
-                        {sentenceCase(row.status)}
+                        {row.status}
                       </Label>
                     </TableCell>
 

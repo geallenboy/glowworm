@@ -204,7 +204,7 @@ export default function QuickTransfer() {
   return (
     <>
       <RootStyle>
-        <CardHeader title="Quick Transfer" />
+        <CardHeader title="快速转移" />
         <Box sx={{ p: 3 }}>
           <Stack direction="row" alignItems="center" justifyContent="space-between">
             <Typography variant="overline" sx={{ color: 'text.secondary' }}>

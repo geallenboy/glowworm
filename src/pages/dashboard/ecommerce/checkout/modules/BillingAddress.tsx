@@ -75,7 +75,7 @@ function AddressItem({ address, onNextStep, onCreateBilling }: any) {
 export default function BillingAddress() {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
-  const { checkout } = useSelector((state) => state.product);
+  const { checkout } = useSelector((state: any) => state.product);
   const { total, discount, subtotal } = checkout;
 
   const handleClickOpen = () => {
@@ -94,7 +94,7 @@ export default function BillingAddress() {
     dispatch(onBackStep());
   };
 
-  const handleCreateBilling = (value) => {
+  const handleCreateBilling = (value: any) => {
     dispatch(createBilling(value));
   };
 

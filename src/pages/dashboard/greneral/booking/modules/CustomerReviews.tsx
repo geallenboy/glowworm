@@ -17,7 +17,7 @@ const MOCK_REVIEWS = [...Array(5)].map((_, index) => ({
   avatar: mockData.image.avatar(index),
   rating: mockData.number.rating(index),
   postedAt: mockData.time(index),
-  tags: ['Great Sevice', 'Recommended', 'Best Price']
+  tags: ['非常好的服务', '推荐', '性价比高']
 }));
 
 function ReviewItem({ item }: any) {
@@ -84,7 +84,7 @@ export default function BookingCustomerReviews() {
   return (
     <Card>
       <CardHeader
-        title="Customer Reviews"
+        title="客户评论"
         subheader={`${MOCK_REVIEWS.length} Reviews`}
         action={
           <CarouselControlsArrowsBasic1

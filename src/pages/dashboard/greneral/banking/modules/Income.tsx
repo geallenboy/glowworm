@@ -1,13 +1,14 @@
+import { TinyAreaChart } from '@garron/react-chart';
 import diagonalArrowLeftDownFill from '@iconify/icons-eva/diagonal-arrow-left-down-fill';
 import trendingDownFill from '@iconify/icons-eva/trending-down-fill';
 import trendingUpFill from '@iconify/icons-eva/trending-up-fill';
 import { Icon } from '@iconify/react';
 import { Card, Stack, Typography } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles';
 
 import { fCurrency, fPercent } from '@/utils/formatNumber';
 
-const RootStyle = styled(Card)(({ theme }) => ({
+const RootStyle = styled(Card)(({ theme }: any) => ({
   width: '100%',
   boxShadow: 'none',
   position: 'relative',
@@ -15,7 +16,7 @@ const RootStyle = styled(Card)(({ theme }) => ({
   backgroundColor: theme.palette.primary.lighter
 }));
 
-const IconWrapperStyle = styled('div')(({ theme }) => ({
+const IconWrapperStyle = styled('div')(({ theme }: any) => ({
   width: 48,
   height: 48,
   display: 'flex',
@@ -31,9 +32,22 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
 
 const TOTAL = 18765;
 const PERCENT = 2.6;
-// const CHART_DATA = [{ data: [111, 136, 76, 108, 74, 54, 57, 84] }];
+const data = [111, 136, 76, 108, 74, 54, 57, 84];
 
 export default function Income() {
+  const theme = useTheme();
+  const config = {
+    height: 120,
+    autoFit: false,
+    data,
+    smooth: true,
+    line: {
+      color: theme.palette.primary.dark
+    },
+    areaStyle: {
+      fill: theme.palette.primary.dark
+    }
+  };
   return (
     <RootStyle>
       <IconWrapperStyle>
@@ -54,6 +68,7 @@ export default function Income() {
           </Typography>
         </Stack>
       </Stack>
+      <TinyAreaChart {...config} />
     </RootStyle>
   );
 }

@@ -23,7 +23,7 @@ export default function Ecommerce() {
   const { themeStretch } = useSettings();
   const { user } = useAuth();
   return (
-    <Page title={`ECommerce ${title_admin}`}>
+    <Page title={`电子商务 ${title_admin}`}>
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={8}>

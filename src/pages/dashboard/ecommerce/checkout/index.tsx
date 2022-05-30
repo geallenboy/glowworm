@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 
 import HeaderBreadcrumbs from '@/components/HeaderBreadcrumbs';
 import Page from '@/components/Page';
+import { title_admin } from '@/config';
 import useIsMountedRef from '@/hooks/useIsMountedRef';
 import useSettings from '@/hooks/useSettings';
 import { createBilling, getCart } from '@/redux/slices/product';
@@ -14,7 +15,7 @@ import { PATH_DASHBOARD } from '@/routes/paths';
 
 import { BillingAddress, Cart, OrderComplete, Payment } from './modules';
 
-const STEPS = ['Cart', 'Billing & address', 'Payment'];
+const STEPS = ['购物车', '帐单和地址', '支付'];
 
 const QontoConnector = withStyles((theme) => ({
   alternativeLabel: {
@@ -34,7 +35,7 @@ const QontoConnector = withStyles((theme) => ({
   }
 }))(StepConnector);
 
-function QontoStepIcon({ active, completed }) {
+function QontoStepIcon({ active, completed }: any) {
   return (
     <Box
       sx={{
@@ -70,9 +71,9 @@ function QontoStepIcon({ active, completed }) {
 
 export default function EcommerceCheckout() {
   const { themeStretch } = useSettings();
-  const dispatch = useDispatch();
+  const dispatch: any = useDispatch();
   const isMountedRef = useIsMountedRef();
-  const { checkout } = useSelector((state) => state.product);
+  const { checkout } = useSelector((state: any) => state.product);
   const { cart, billing, activeStep } = checkout;
   const isComplete = activeStep === STEPS.length;
 
@@ -89,10 +90,10 @@ export default function EcommerceCheckout() {
   }, [dispatch, activeStep]);
 
   return (
-    <Page title="Ecommerce: Checkout | Minimal-UI">
+    <Page title={`商品结算 ${title_admin}`}>
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <HeaderBreadcrumbs
-          heading="Checkout"
+          heading="结账"
           links={[
             { name: '管理', href: PATH_DASHBOARD.root },
             {

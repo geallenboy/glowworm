@@ -11,13 +11,7 @@ import { Card, CardContent, CardHeader, Typography } from '@mui/material';
 import { fDateTime } from '@/utils/formatTime';
 import mockData from '@/utils/mock-data';
 
-const TITLES = [
-  '1983, orders, $4220',
-  '12 Invoices have been paid',
-  'Order #37745 from September',
-  'New order placed #XF-2356',
-  'New order placed #XF-2346'
-];
+const TITLES = ['订单1', '订单2', '订单3', '订单4', '订单5'];
 
 const MOCK_TIMELINES = [...Array(5)].map((_, index) => ({
   id: mockData.id(index),
@@ -26,7 +20,7 @@ const MOCK_TIMELINES = [...Array(5)].map((_, index) => ({
   time: mockData.time(index)
 }));
 
-function OrderItem({ item, isLast }) {
+function OrderItem({ item, isLast }: any) {
   const { type, title, time } = item;
   return (
     <TimelineItem>

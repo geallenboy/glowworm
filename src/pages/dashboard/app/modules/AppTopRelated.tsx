@@ -23,7 +23,7 @@ const MOCK_APPLICATIONS = ['Chrome', 'Drive', 'Dropbox', 'Evernote', 'Github'].m
   })
 );
 
-function ApplicationItem({ app }) {
+function ApplicationItem({ app }: any) {
   const theme = useTheme();
   const { shortcut, system, price, rating, review, name } = app;
 

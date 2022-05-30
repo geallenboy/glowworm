@@ -2,17 +2,17 @@ import { Box, FormControlLabel, Paper, Radio, RadioGroup, Typography } from '@mu
 
 import Scrollbar from '@/components/Scrollbar';
 
-export default function ControlPanel({ variantTypes, selectVariant, onChangeVariant, sx }) {
+export default function ControlPanel({ variantTypes, selectVariant, onChangeVariant, sx }: any) {
   return (
     <Paper variant="outlined" sx={{ height: 480, ...sx }}>
       <Scrollbar>
         <RadioGroup value={selectVariant} onChange={onChangeVariant} sx={{ px: 1, py: 1 }}>
-          {variantTypes.map((variant) => (
+          {variantTypes.map((variant: any) => (
             <Box key={variant.type} sx={{ my: 1.5 }}>
               <Typography variant="overline" sx={{ px: 1, mb: 1, display: 'block' }}>
                 {variant.type}
               </Typography>
-              {variant.values.map((value) => (
+              {variant.values.map((value: any) => (
                 <FormControlLabel
                   key={value}
                   value={value}

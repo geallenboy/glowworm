@@ -53,7 +53,7 @@ export default function DetailsReviewForm({ onClose, ...other }) {
   return (
     <RootStyle {...other}>
       <Typography variant="subtitle1" gutterBottom>
-        Add Review
+        添加评论
       </Typography>
 
       <FormikProvider value={formik}>
@@ -64,7 +64,7 @@ export default function DetailsReviewForm({ onClose, ...other }) {
               alignItems={{ sm: 'center' }}
               spacing={1.5}
             >
-              <Typography variant="body2">Your review about this product:</Typography>
+              <Typography variant="body2">您对该产品的评论:</Typography>
               <Rating
                 {...getFieldProps('rating')}
                 onChange={(event) => setFieldValue('rating', Number(event.target.value))}
@@ -79,7 +79,7 @@ export default function DetailsReviewForm({ onClose, ...other }) {
               multiline
               minRows={3}
               maxRows={5}
-              label="Review *"
+              label="评论 *"
               {...getFieldProps('review')}
               error={Boolean(touched.review && errors.review)}
               helperText={touched.review && errors.review}
@@ -87,7 +87,7 @@ export default function DetailsReviewForm({ onClose, ...other }) {
 
             <TextField
               fullWidth
-              label="Name *"
+              label="姓名 *"
               {...getFieldProps('name')}
               error={Boolean(touched.name && errors.name)}
               helperText={touched.name && errors.name}
@@ -95,7 +95,7 @@ export default function DetailsReviewForm({ onClose, ...other }) {
 
             <TextField
               fullWidth
-              label="Email *"
+              label="邮箱 *"
               {...getFieldProps('email')}
               error={Boolean(touched.email && errors.email)}
               helperText={touched.email && errors.email}
@@ -109,10 +109,10 @@ export default function DetailsReviewForm({ onClose, ...other }) {
                 onClick={onCancel}
                 sx={{ mr: 1.5 }}
               >
-                Cancel
+                取消
               </Button>
               <LoadingButton type="submit" variant="contained" loading={isSubmitting}>
-                Post review
+                发表评论
               </LoadingButton>
             </Stack>
           </Stack>

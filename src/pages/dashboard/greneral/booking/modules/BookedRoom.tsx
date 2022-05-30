@@ -3,7 +3,7 @@ import { Box, Card, CardHeader, LinearProgress, Stack, Typography } from '@mui/m
 import { fShortenNumber } from '@/utils/formatNumber';
 import mockData from '@/utils/mock-data';
 
-const LABEL = ['Pending', 'Cancel', 'Done'];
+const LABEL = ['待定', '取消', '完成'];
 
 const MOCK_SALES = [...Array(3)].map((_, index) => ({
   status: LABEL[index],
@@ -22,8 +22,8 @@ export default function BookedRoom() {
             key={progress.status}
             value={progress.value}
             color={
-              (progress.status === 'Pending' && 'warning') ||
-              (progress.status === 'Cancel' && 'error') ||
+              (progress.status === '待定' && 'warning') ||
+              (progress.status === '取消' && 'error') ||
               'success'
             }
             sx={{ height: 8, bgcolor: 'grey.50016' }}
@@ -41,8 +41,8 @@ export default function BookedRoom() {
                   height: 12,
                   borderRadius: 0.5,
                   bgcolor: 'success.main',
-                  ...(progress.status === 'Pending' && { bgcolor: 'warning.main' }),
-                  ...(progress.status === 'Cancel' && { bgcolor: 'error.main' })
+                  ...(progress.status === '待定' && { bgcolor: 'warning.main' }),
+                  ...(progress.status === '取消' && { bgcolor: 'error.main' })
                 }}
               />
               <Typography variant="subtitle2" sx={{ color: 'text.secondary' }}>

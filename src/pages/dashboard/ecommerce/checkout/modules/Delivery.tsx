@@ -13,7 +13,7 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-const OptionStyle = styled('div')(({ theme }) => ({
+const OptionStyle = styled('div')(({ theme }: any) => ({
   display: 'flex',
   alignItems: 'center',
   padding: theme.spacing(0, 2.5),
@@ -23,7 +23,7 @@ const OptionStyle = styled('div')(({ theme }) => ({
   border: `solid 1px ${theme.palette.grey[500_32]}`
 }));
 
-export default function Delivery({ formik, deliveryOptions, onApplyShipping, ...other }) {
+export default function Delivery({ formik, deliveryOptions, onApplyShipping, ...other }: any) {
   const { values, setFieldValue } = formik;
 
   return (
@@ -40,14 +40,14 @@ export default function Delivery({ formik, deliveryOptions, onApplyShipping, ...
           }}
         >
           <Grid container spacing={2}>
-            {deliveryOptions.map((delivery) => {
+            {deliveryOptions.map((delivery: any) => {
               const { value, title, description } = delivery;
               return (
                 <Grid key={value} item xs={12} md={6}>
                   <OptionStyle
                     sx={{
                       ...(values.delivery === value && {
-                        boxShadow: (theme) => theme.customShadows.z8
+                        boxShadow: (theme: any) => theme.customShadows.z8
                       })
                     }}
                   >

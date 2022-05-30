@@ -48,13 +48,13 @@ export default function ListToolbar({ numSelected, filterName, onFilterName }) {
     >
       {numSelected > 0 ? (
         <Typography component="div" variant="subtitle1">
-          {numSelected} selected
+          {numSelected} 选择
         </Typography>
       ) : (
         <SearchStyle
           value={filterName}
           onChange={onFilterName}
-          placeholder="Search product..."
+          placeholder="搜索商品..."
           startAdornment={
             <InputAdornment position="start">
               <Box component={Icon} icon={searchFill} sx={{ color: 'text.disabled' }} />
@@ -64,13 +64,13 @@ export default function ListToolbar({ numSelected, filterName, onFilterName }) {
       )}
 
       {numSelected > 0 ? (
-        <Tooltip title="Delete">
+        <Tooltip title="删除">
           <IconButton>
             <Icon icon={trash2Fill} />
           </IconButton>
         </Tooltip>
       ) : (
-        <Tooltip title="Filter list">
+        <Tooltip title="过滤器列表">
           <IconButton>
             <Icon icon={roundFilterList} />
           </IconButton>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 
 import useAuth from '@/hooks/useAuth';
-import Login from '@/pages/authentication/Login';
+import Login from '@/pages/authentication/login';
 
 export default function AuthGuard({ children }: any) {
   const { isAuthenticated } = useAuth();

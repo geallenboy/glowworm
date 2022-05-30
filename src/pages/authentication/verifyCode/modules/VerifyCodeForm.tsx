@@ -8,7 +8,7 @@ import * as Yup from 'yup';
 import { PATH_DASHBOARD } from '@/routes/paths';
 import fakeRequest from '@/utils/fakeRequest';
 
-function maxLength(object) {
+function maxLength(object: any) {
   if (object.target.value.length > object.target.maxLength) {
     return (object.target.value = object.target.value.slice(0, object.target.maxLength));
   }
@@ -27,7 +27,7 @@ export default function VerifyCodeForm() {
     code6: Yup.number().required('验证码是必须的')
   });
 
-  const formik = useFormik({
+  const formik: any = useFormik({
     initialValues: {
       code1: '',
       code2: '',

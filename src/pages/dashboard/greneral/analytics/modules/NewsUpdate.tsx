@@ -15,9 +15,17 @@ const MOCK_NEWS = [...Array(5)].map((_, index) => ({
   postedAt: mockData.time(index)
 }));
 
-function NewsItem({ news }) {
-  const { image, title, description, postedAt } = news;
+type NewsItemType = {
+  id: string;
+  description: string;
+  image: string;
+  postedAt: Date;
+  title: string;
+};
 
+function NewsItem({ news }: { news: NewsItemType }) {
+  const { image, title, description, postedAt } = news;
+  console.log(postedAt, 99);
   return (
     <Stack direction="row" alignItems="center" spacing={2}>
       <Box
@@ -29,7 +37,7 @@ function NewsItem({ news }) {
       <Box sx={{ minWidth: 240 }}>
         <Link component={RouterLink} to="#" color="inherit">
           <Typography variant="subtitle2" noWrap>
-            {title}
+            {title}1
           </Typography>
         </Link>
         <Typography variant="body2" sx={{ color: 'text.secondary' }} noWrap>

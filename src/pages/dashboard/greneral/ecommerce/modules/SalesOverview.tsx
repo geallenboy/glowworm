@@ -10,7 +10,7 @@ const MOCK_SALES = [...Array(3)].map((_, index) => ({
   value: mockData.number.percent(index)
 }));
 
-function ProgressItem({ progress }) {
+function ProgressItem({ progress }: any) {
   return (
     <Stack spacing={1}>
       <Stack direction="row" alignItems="center">

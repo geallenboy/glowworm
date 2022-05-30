@@ -21,12 +21,12 @@ import ProductList from './ProductList';
 import Summary from './Summary';
 
 export default function CheckoutCart() {
-  const dispatch = useDispatch();
-  const { checkout } = useSelector((state) => state.product);
+  const dispatch: any = useDispatch();
+  const { checkout } = useSelector((state: any) => state.product);
   const { cart, total, discount, subtotal } = checkout;
   const isEmptyCart = cart.length === 0;
 
-  const handleDeleteCart = (productId) => {
+  const handleDeleteCart = (productId: any) => {
     dispatch(deleteCart(productId));
   };
 
@@ -34,15 +34,15 @@ export default function CheckoutCart() {
     dispatch(onNextStep());
   };
 
-  const handleApplyDiscount = (value) => {
+  const handleApplyDiscount = (value: any) => {
     dispatch(applyDiscount(value));
   };
 
-  const handleIncreaseQuantity = (productId) => {
+  const handleIncreaseQuantity = (productId: any) => {
     dispatch(increaseQuantity(productId));
   };
 
-  const handleDecreaseQuantity = (productId) => {
+  const handleDecreaseQuantity = (productId: any) => {
     dispatch(decreaseQuantity(productId));
   };
 
@@ -53,15 +53,15 @@ export default function CheckoutCart() {
       try {
         setSubmitting(true);
         handleNextStep();
-      } catch (error) {
+      } catch (error: any) {
         console.error(error);
-        setErrors(error.message);
+        setErrors(error.message as any);
       }
     }
   });
 
   const { values, handleSubmit } = formik;
-  const totalItems = sum(values.products.map((item) => item.quantity));
+  const totalItems = sum(values.products.map((item: any) => item.quantity));
 
   return (
     <FormikProvider value={formik}>
@@ -124,7 +124,7 @@ export default function CheckoutCart() {
               variant="contained"
               disabled={values.products.length === 0}
             >
-              退房
+              结算
             </Button>
           </Grid>
         </Grid>

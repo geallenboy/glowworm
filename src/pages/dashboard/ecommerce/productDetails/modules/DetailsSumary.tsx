@@ -211,7 +211,7 @@ export default function DetailsSumary() {
             <Rating value={totalRating} precision={0.1} readOnly />
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
               ({fShortenNumber(totalReview)}
-              reviews)
+              评论)
             </Typography>
           </Stack>
 
@@ -227,7 +227,7 @@ export default function DetailsSumary() {
           <Stack spacing={3} sx={{ my: 3 }}>
             <Stack direction="row" alignItems="center" justifyContent="space-between">
               <Typography variant="subtitle1" sx={{ mt: 0.5 }}>
-                Color
+                颜色
               </Typography>
               <ColorSinglePicker
                 {...getFieldProps('color')}
@@ -243,7 +243,7 @@ export default function DetailsSumary() {
 
             <Stack direction="row" justifyContent="space-between">
               <Typography variant="subtitle1" sx={{ mt: 0.5 }}>
-                Size
+                尺寸
               </Typography>
               <TextField
                 select
@@ -259,7 +259,7 @@ export default function DetailsSumary() {
                 }}
                 helperText={
                   <Link href="#" underline="always" color="text.primary">
-                    Size Chart
+                    尺码表
                   </Link>
                 }
               >
@@ -273,7 +273,7 @@ export default function DetailsSumary() {
 
             <Stack direction="row" justifyContent="space-between">
               <Typography variant="subtitle1" sx={{ mt: 0.5 }}>
-                Quantity
+                数量
               </Typography>
               <div>
                 <Incrementer name="quantity" available={available} />
@@ -286,7 +286,7 @@ export default function DetailsSumary() {
                     color: 'text.secondary'
                   }}
                 >
-                  Available: {available}
+                  剩余: {available}
                 </Typography>
 
                 <FormHelperText error>{touched.quantity && errors.quantity}</FormHelperText>
@@ -307,10 +307,10 @@ export default function DetailsSumary() {
               onClick={handleAddCart}
               sx={{ whiteSpace: 'nowrap' }}
             >
-              Add to Cart
+              添加购物车
             </Button>
             <Button fullWidth size="large" type="submit" variant="contained">
-              Buy Now
+              立即购买
             </Button>
           </Stack>
 

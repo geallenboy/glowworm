@@ -11,7 +11,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(8, 2)
 }));
 
-export default function EmptyContent({ title, description, img, ...other }) {
+export default function EmptyContent({ title, description, img, ...other }: any) {
   return (
     <RootStyle {...other}>
       <Box

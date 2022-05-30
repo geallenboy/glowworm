@@ -21,7 +21,7 @@ const HeaderStyle = styled('header')(({ theme }) => ({
   }
 }));
 
-export default function AuthLayout({ children }: HTMLElement) {
+export default function AuthLayout({ children }: any) {
   return (
     <HeaderStyle>
       <RouterLink to="/">

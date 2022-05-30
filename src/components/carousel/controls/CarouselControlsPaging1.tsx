@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-const RootStyle = styled('ul')(({ theme }: any) => ({
+const RootStyle = styled('ul')(({ theme }) => ({
   display: 'flex',
   listStyle: 'none',
   alignItems: 'center',

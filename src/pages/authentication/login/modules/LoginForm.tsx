@@ -34,7 +34,7 @@ export default function LoginForm() {
     password: Yup.string().required('必须输入密码')
   });
 
-  const formik = useFormik({
+  const formik: any = useFormik({
     initialValues: {
       email: '',
       password: '',
@@ -55,12 +55,12 @@ export default function LoginForm() {
         if (isMountedRef.current) {
           setSubmitting(false);
         }
-      } catch (error) {
+      } catch (error: any) {
         console.error(error);
         resetForm();
         if (isMountedRef.current) {
           setSubmitting(false);
-          setErrors({ afterSubmit: error.message });
+          setErrors({ afterSubmit: error.message } as any);
         }
       }
     }

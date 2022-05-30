@@ -62,9 +62,9 @@ const styles = StyleSheet.create({
   tableCell_3: { width: '15%' }
 });
 
-export default function PDF({ invoice }) {
+export default function PDF({ invoice }: any) {
   const { id, items, taxes, status, discount, invoiceTo, invoiceFrom } = invoice;
-  const subTotal = sum(items.map((item) => item.price * item.qty));
+  const subTotal = sum(items.map((item: any) => item.price * item.qty));
   const total = subTotal - discount + taxes;
 
   return (
@@ -74,7 +74,7 @@ export default function PDF({ invoice }) {
           <Image source="/static/brand/logo_full.jpg" style={{ height: 32 }} />
           <View style={{ alignItems: 'right', flexDirection: 'column' }}>
             <Text style={styles.h3}>{status}</Text>
-            <Text>INV-{id}</Text>
+            <Text>{id}</Text>
           </View>
         </View>
 
@@ -117,7 +117,7 @@ export default function PDF({ invoice }) {
           </View>
 
           <View style={styles.tableBody}>
-            {items.map((item, index) => (
+            {items.map((item: any, index: number) => (
               <View style={styles.tableRow} key={item.id}>
                 <View style={styles.tableCell_1}>
                   <Text>{index + 1}</Text>

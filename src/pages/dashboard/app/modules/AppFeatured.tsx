@@ -18,7 +18,7 @@ const MOCK_APPS = [...Array(3)].map((_, index) => ({
 }));
 
 const CarouselImgStyle = styled('img')(({ theme }) => ({
-  height: 200,
+  height: 280,
   width: '100%',
   objectFit: 'cover',
   [theme.breakpoints.up('xl')]: {
@@ -26,7 +26,7 @@ const CarouselImgStyle = styled('img')(({ theme }) => ({
   }
 }));
 
-function CarouselItem({ item, isActive }) {
+function CarouselItem({ item, isActive }: any) {
   const { image, title, description } = item;
 
   return (
@@ -84,7 +84,7 @@ function CarouselItem({ item, isActive }) {
 
 export default function AppFeatured() {
   const theme = useTheme();
-  const carouselRef = useRef();
+  const carouselRef = useRef<any>();
   const [currentIndex, setCurrentIndex] = useState(
     theme.direction === 'rtl' ? MOCK_APPS.length - 1 : 0
   );
@@ -96,7 +96,7 @@ export default function AppFeatured() {
     slidesToShow: 1,
     slidesToScroll: 1,
     rtl: Boolean(theme.direction === 'rtl'),
-    beforeChange: (current, next) => setCurrentIndex(next),
+    beforeChange: (current: any, next: any) => setCurrentIndex(next),
     ...CarouselControlsPaging1({
       color: 'primary.main',
       sx: {

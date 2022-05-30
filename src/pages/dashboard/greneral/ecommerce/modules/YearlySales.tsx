@@ -1,4 +1,4 @@
-import { LineChart } from '@garron/react-chart';
+import { AreaChart } from '@garron/react-chart';
 import { Box, Card, CardHeader, TextField } from '@mui/material';
 import { useState } from 'react';
 const CHART_DATA = [
@@ -41,17 +41,18 @@ export default function YearlySales() {
     xField: 'year',
     yField: 'value',
     seriesField: 'name',
+    smooth: true,
     xAxis: {
       type: 'time'
     },
     yAxis: {
       label: {
         // 数值格式化为千分位
-        formatter: (v) => `${v}`.replace(/\d{1,3}(?=(\d{3})+$)/g, (s) => `${s},`)
+        formatter: (v: string) => `${v}`.replace(/\d{1,3}(?=(\d{3})+$)/g, (s) => `${s},`)
       }
     }
   };
-  const handleChangeSeriesData = (event) => {
+  const handleChangeSeriesData = (event: any) => {
     setSeriesData(Number(event.target.value));
   };
 
@@ -85,7 +86,7 @@ export default function YearlySales() {
 
       {CHART_DATA.map((item) => (
         <Box key={item.year} sx={{ mt: 3, mx: 3 }} dir="ltr">
-          {item.year === seriesData && <LineChart {...config} />}
+          {item.year === seriesData && <AreaChart {...config} />}
         </Box>
       ))}
     </Card>

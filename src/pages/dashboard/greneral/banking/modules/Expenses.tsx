@@ -1,9 +1,10 @@
+import { TinyAreaChart } from '@garron/react-chart';
 import diagonalArrowRightUpFill from '@iconify/icons-eva/diagonal-arrow-right-up-fill';
 import trendingDownFill from '@iconify/icons-eva/trending-down-fill';
 import trendingUpFill from '@iconify/icons-eva/trending-up-fill';
 import { Icon } from '@iconify/react';
 import { Card, Stack, Typography } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles';
 
 import { fCurrency, fPercent } from '@/utils/formatNumber';
 
@@ -31,8 +32,22 @@ const IconWrapperStyle = styled('div')(({ theme }: any) => ({
 
 const TOTAL = 8938;
 const PERCENT = -0.5;
+const data = [76, 20, 84, 135, 56, 134, 122, 49];
 
 export default function Expenses() {
+  const theme = useTheme();
+  const config = {
+    height: 120,
+    autoFit: false,
+    data,
+    smooth: true,
+    line: {
+      color: theme.palette.primary.lighter
+    },
+    areaStyle: {
+      fill: theme.palette.primary.lighter
+    }
+  };
   return (
     <RootStyle>
       <IconWrapperStyle>
@@ -53,6 +68,7 @@ export default function Expenses() {
           </Typography>
         </Stack>
       </Stack>
+      <TinyAreaChart {...config} />
     </RootStyle>
   );
 }

@@ -19,9 +19,7 @@ export default function DetailsReview({ product }) {
   return (
     <>
       <DetailsReviewOverview product={product} onOpen={handleOpenReviewBox} />
-
       <Divider />
-
       <Collapse in={reviewBox}>
         <DetailsReviewForm onClose={handleCloseReviewBox} id="move_add_review" />
         <Divider />

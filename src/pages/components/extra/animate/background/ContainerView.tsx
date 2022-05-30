@@ -3,16 +3,15 @@ import { motion } from 'framer-motion';
 
 import getVariant from '../getVariant';
 
-export default function ContainerView({ selectVariant, ...other }) {
+export default function ContainerView({ selectVariant, ...other }: any) {
   const isKenburns = selectVariant.includes('kenburns');
-
   return (
     <Paper
       sx={{
         height: 480,
         width: '100%',
         overflow: 'hidden',
-        boxShadow: (theme) => theme.customShadows.z8
+        boxShadow: (theme: any) => theme.customShadows.z8
       }}
       {...other}
     >

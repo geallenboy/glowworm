@@ -25,7 +25,7 @@ const RowStyle = styled('div')(({ theme }) => ({
   margin: theme.spacing(1.5, -1.5, 0)
 }));
 
-function ColorCard({ hexColor, variation, onCopy }) {
+function ColorCard({ hexColor, variation, onCopy }: any) {
   const theme = useTheme();
 
   return (
@@ -82,11 +82,11 @@ function ColorCard({ hexColor, variation, onCopy }) {
 }
 
 export default function FoundationColors() {
-  const theme = useTheme();
+  const theme: any = useTheme();
   const { enqueueSnackbar } = useSnackbar();
   const [, setState] = useState(null);
 
-  const onCopy = (color) => {
+  const onCopy = (color: any) => {
     setState(color);
     if (color) {
       enqueueSnackbar(`Copied ${color}`, { variant: 'success' });

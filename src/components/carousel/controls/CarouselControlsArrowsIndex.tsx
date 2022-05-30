@@ -7,13 +7,14 @@ import { alpha, Box, Typography } from '@mui/material';
 import { styled, useTheme } from '@mui/material/styles';
 
 import { MIconButton } from '@/components/@material-extend';
+import { BoxProps1 } from '@/config/interface';
 
 const ICON_SIZE = {
   width: 20,
   height: 20
 };
 
-const RootStyle = styled(Box)(({ theme }: any) => ({
+const RootStyle = styled(Box)(({ theme }) => ({
   zIndex: 9,
   display: 'flex',
   alignItems: 'center',
@@ -25,7 +26,7 @@ const RootStyle = styled(Box)(({ theme }: any) => ({
   backgroundColor: alpha(theme.palette.grey[900], 0.48)
 }));
 
-const ArrowStyle = styled(MIconButton)(({ theme }: any) => ({
+const ArrowStyle = styled(MIconButton)(({ theme }) => ({
   padding: 6,
   opacity: 0.48,
   color: theme.palette.common.white,
@@ -34,13 +35,13 @@ const ArrowStyle = styled(MIconButton)(({ theme }: any) => ({
 
 export default function CarouselControlsArrowsIndex({
   arrowLine,
-  index,
-  total,
+  index = 0,
+  total = 0,
   onNext,
   onPrevious,
   ...other
-}: any) {
-  const theme: any = useTheme();
+}: BoxProps1) {
+  const theme = useTheme();
   const isRTL = theme.direction === 'rtl';
 
   return (

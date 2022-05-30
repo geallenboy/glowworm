@@ -16,7 +16,7 @@ const CARDS = [
     description: '易于定制和扩展每个组件, 节省你的时间和金钱.'
   },
   {
-    icon: '/static/brand/logo_single.svg',
+    icon: '/static/logo.svg',
     title: '品牌',
     description: '颜色、字体的一致性设计. 使品牌识别变得容易.'
   }

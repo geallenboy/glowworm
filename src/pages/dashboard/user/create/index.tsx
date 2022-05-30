@@ -12,6 +12,8 @@ import { PATH_DASHBOARD } from '@/routes/paths';
 
 import NewForm from './modules/NewForm';
 
+const _name = '不知火舞';
+
 export default function UserCreate() {
   const { themeStretch } = useSettings();
   const dispatch: any = useDispatch();
@@ -19,7 +21,9 @@ export default function UserCreate() {
   const { name } = useParams();
   const { userList } = useSelector((state: any) => state.user);
   const isEdit = pathname.includes('edit');
-  const currentUser = userList.find((user: any) => user.name === name);
+  const currentUser = userList.find(
+    (user: any) => user.name === (name === 'reece-chung' ? _name : name)
+  );
 
   useEffect(() => {
     dispatch(getUserList());
@@ -33,7 +37,7 @@ export default function UserCreate() {
           links={[
             { name: '管理', href: PATH_DASHBOARD.root },
             { name: '用户', href: PATH_DASHBOARD.user.root },
-            { name: !isEdit ? '新用户' : name }
+            { name: !isEdit ? '新用户' : _name }
           ]}
         />
 

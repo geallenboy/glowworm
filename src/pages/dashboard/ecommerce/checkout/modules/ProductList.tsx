@@ -20,7 +20,7 @@ import { MIconButton } from '@/components/@material-extend';
 import { fCurrency } from '@/utils/formatNumber';
 import getColorName from '@/utils/getColorName';
 
-const IncrementerStyle = styled('div')(({ theme }) => ({
+const IncrementerStyle = styled('div')(({ theme }: any) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
@@ -30,7 +30,7 @@ const IncrementerStyle = styled('div')(({ theme }) => ({
   border: `solid 1px ${theme.palette.grey[500_32]}`
 }));
 
-const ThumbImgStyle = styled('img')(({ theme }) => ({
+const ThumbImgStyle = styled('img')(({ theme }: any) => ({
   width: 64,
   height: 64,
   objectFit: 'cover',
@@ -38,7 +38,7 @@ const ThumbImgStyle = styled('img')(({ theme }) => ({
   borderRadius: theme.shape.borderRadiusSm
 }));
 
-function Incrementer({ available, quantity, onIncrease, onDecrease }) {
+function Incrementer({ available, quantity, onIncrease, onDecrease }: any) {
   return (
     <Box sx={{ width: 96, textAlign: 'right' }}>
       <IncrementerStyle>
@@ -62,7 +62,12 @@ function Incrementer({ available, quantity, onIncrease, onDecrease }) {
   );
 }
 
-export default function ProductList({ formik, onDelete, onIncreaseQuantity, onDecreaseQuantity }) {
+export default function ProductList({
+  formik,
+  onDelete,
+  onIncreaseQuantity,
+  onDecreaseQuantity
+}: any) {
   const { products } = formik.values;
 
   return (
@@ -79,7 +84,7 @@ export default function ProductList({ formik, onDelete, onIncreaseQuantity, onDe
         </TableHead>
 
         <TableBody>
-          {products.map((product) => {
+          {products.map((product: any) => {
             const { id, name, size, price, color, cover, quantity, available } = product;
             return (
               <TableRow key={id}>

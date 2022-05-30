@@ -12,9 +12,8 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { capitalCase } from 'change-case';
-import { motion } from 'framer-motion';
 
-import { MotionInView, varFadeInDown, varFadeInUp } from '@/components/animate';
+import { MotionInView, varFadeInUp } from '@/components/animate';
 import useSettings from '@/hooks/useSettings';
 
 const RootStyle = styled('div')(({ theme }) => ({
@@ -134,44 +133,11 @@ export default function LandingThemeColor() {
         </RadioGroup>
 
         <Box sx={{ position: 'relative' }}>
-          <Box component="img" src="/static/home/theme-color/grid.png" />
+          <Box component="img" src="/static/home/grid.png" />
 
           <Box sx={{ position: 'absolute', top: 0 }}>
             <MotionInView variants={varFadeInUp}>
-              <img alt="screen" src={`/static/home/theme-color/screen-${themeColor}.png`} />
-            </MotionInView>
-          </Box>
-
-          <Box sx={{ position: 'absolute', top: 0 }}>
-            <MotionInView variants={varFadeInDown}>
-              <motion.div
-                animate={{ y: [0, -20, 0] }}
-                transition={{ duration: 8, repeat: Infinity }}
-              >
-                <img alt="sidebar" src={`/static/home/theme-color/block1-${themeColor}.png`} />
-              </motion.div>
-            </MotionInView>
-          </Box>
-
-          <Box sx={{ position: 'absolute', top: 0 }}>
-            <MotionInView variants={varFadeInDown}>
-              <motion.div
-                animate={{ y: [-10, 10, -10] }}
-                transition={{ duration: 8, repeat: Infinity }}
-              >
-                <img alt="sidebar" src={`/static/home/theme-color/block2-${themeColor}.png`} />
-              </motion.div>
-            </MotionInView>
-          </Box>
-
-          <Box sx={{ position: 'absolute', top: 0 }}>
-            <MotionInView variants={varFadeInDown}>
-              <motion.div
-                animate={{ y: [-25, 5, -25] }}
-                transition={{ duration: 10, repeat: Infinity }}
-              >
-                <img alt="sidebar" src={`/static/home/theme-color/sidebar-${themeColor}.png`} />
-              </motion.div>
+              <img alt="screen" src={`/static/home/hero.png`} />
             </MotionInView>
           </Box>
         </Box>

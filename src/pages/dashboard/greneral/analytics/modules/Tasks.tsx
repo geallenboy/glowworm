@@ -21,13 +21,7 @@ import { useRef, useState } from 'react';
 
 import { MIconButton } from '@/components/@material-extend';
 
-const TASKS = [
-  'Create FireStone Logo',
-  'Add SCSS and JS files if required',
-  'Stakeholder Meeting',
-  'Scoping & Estimations',
-  'Sprint Showcase'
-];
+const TASKS = ['任务1', '任务2', '任务3', '任务4', '任务5', '任务6'];
 
 function MoreMenuButton() {
   const anchorRef = useRef(null);
@@ -87,7 +81,7 @@ function MoreMenuButton() {
   );
 }
 
-function TaskItem({ task, checked, formik, ...other }) {
+function TaskItem({ task, checked, formik, ...other }: any) {
   const { getFieldProps } = formik;
 
   return (

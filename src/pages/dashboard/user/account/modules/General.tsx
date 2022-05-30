@@ -47,7 +47,7 @@ export default function AccountGeneral() {
     },
 
     validationSchema: UpdateUserSchema,
-    onSubmit: async (values, { setErrors, setSubmitting }) => {
+    onSubmit: async (values, { setErrors, setSubmitting }: any) => {
       try {
         await updateProfile({ ...values });
         enqueueSnackbar('更新成功', { variant: 'success' });
@@ -115,7 +115,7 @@ export default function AccountGeneral() {
               <FormControlLabel
                 control={<Switch {...getFieldProps('isPublic')} color="primary" />}
                 labelPlacement="start"
-                label="Public Profile"
+                label="公共文件"
                 sx={{ mt: 5 }}
               />
             </Card>

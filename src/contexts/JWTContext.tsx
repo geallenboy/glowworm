@@ -1,8 +1,7 @@
 import { createContext, useEffect, useReducer } from 'react';
 
 import axios from '@/utils/axios';
-
-import { setSession } from '../utils/jwt';
+import { setSession } from '@/utils/jwt';
 
 const initialState: any = {
   isAuthenticated: false,
@@ -66,7 +65,7 @@ function AuthProvider({ children }: any) {
         if (accessToken) {
           setSession(accessToken);
           const response = await axios.get('/api/account/my-account');
-          const { user } = response.data.data;
+          const { user } = response.data;
 
           dispatch({
             type: 'INITIALIZE',
@@ -104,8 +103,7 @@ function AuthProvider({ children }: any) {
       email,
       password
     });
-    console.log(response, 22, response.data.data);
-    const { accessToken, user } = response.data.data;
+    const { accessToken, user } = response.data;
     console.log(accessToken, user, 333);
     setSession(accessToken);
 

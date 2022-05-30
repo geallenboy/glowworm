@@ -1,3 +1,4 @@
+import { RingProgressChart } from '@garron/react-chart';
 import { Card, Divider, Stack, Typography, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
@@ -9,7 +10,20 @@ const TOTAL_CHECK_OUT = 18472;
 export default function CheckInWidgets() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
+  const config1 = {
+    height: 106,
+    width: 106,
+    autoFit: false,
+    percent: 0.7,
+    color: [theme.palette.primary.main, theme.palette.grey[500_16]]
+  };
+  const config2 = {
+    height: 106,
+    width: 106,
+    autoFit: false,
+    percent: 0.7,
+    color: [theme.palette.chart.yellow[0], theme.palette.grey[500_16]]
+  };
   return (
     <Card>
       <Stack
@@ -23,6 +37,7 @@ export default function CheckInWidgets() {
           spacing={3}
           sx={{ width: 1, py: 5 }}
         >
+          <RingProgressChart {...config1} />
           <div>
             <Typography variant="h4" sx={{ mb: 0.5 }}>
               {fNumber(TOTAL_CHECK_IN)}
@@ -40,6 +55,7 @@ export default function CheckInWidgets() {
           spacing={3}
           sx={{ width: 1, py: 5 }}
         >
+          <RingProgressChart {...config2} />
           <div>
             <Typography variant="h4" sx={{ mb: 0.5 }}>
               {fNumber(TOTAL_CHECK_OUT)}
