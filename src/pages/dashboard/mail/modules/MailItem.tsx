@@ -5,18 +5,18 @@ import roundLabelImportant from '@iconify/icons-ic/round-label-important';
 import { Icon } from '@iconify/react';
 import { Box, Checkbox, Link, Stack, Tooltip, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { Link as RouterLink, useParams } from 'react-router-dom';
 
+// import { useParams } from 'react-router-dom';
 import { MAvatar, MHidden } from '@/components/@material-extend';
 import Label from '@/components/Label';
 import { useSelector } from '@/redux/store';
-import { PATH_DASHBOARD } from '@/routes/paths';
+// import { PATH_DASHBOARD } from '@/routes/paths';
 import createAvatar from '@/utils/createAvatar';
 import { fDate } from '@/utils/formatTime';
 
 import MailItemAction from './MailItemAction';
 
-const RootStyle = styled('div')(({ theme }) => ({
+const RootStyle = styled('div')(({ theme }: any) => ({
   position: 'relative',
   padding: theme.spacing(0, 2),
   color: theme.palette.text.secondary,
@@ -34,32 +34,32 @@ const RootStyle = styled('div')(({ theme }) => ({
   }
 }));
 
-const WrapStyle = styled(Link)(({ theme }) => ({
+const WrapStyle = styled(Link)(({ theme }: any) => ({
   minWidth: 0,
   display: 'flex',
   padding: theme.spacing(2, 0),
   transition: theme.transitions.create('padding')
 }));
 
-const linkTo = (params, mailId) => {
-  const { systemLabel, customLabel } = params;
-  const baseUrl = PATH_DASHBOARD.mail.root;
+// const linkTo = (params:any, mailId:any) => {
+//   const { systemLabel, customLabel } = params;
+//   const baseUrl = PATH_DASHBOARD.mail.root;
 
-  if (systemLabel) {
-    return `${baseUrl}/${systemLabel}/${mailId}`;
-  }
-  if (customLabel) {
-    return `${baseUrl}/label/${customLabel}/${mailId}`;
-  }
-  return baseUrl;
-};
+//   if (systemLabel) {
+//     return `${baseUrl}/${systemLabel}/${mailId}`;
+//   }
+//   if (customLabel) {
+//     return `${baseUrl}/label/${customLabel}/${mailId}`;
+//   }
+//   return baseUrl;
+// };
 
-export default function MailItem({ mail, isDense, isSelected, onSelect, onDeselect, ...other }) {
-  const params = useParams();
-  const { labels } = useSelector((state) => state.mail);
+export default function MailItem({ mail, isSelected, onSelect, onDeselect, ...other }: any) {
+  // const params = useParams();
+  const { labels } = useSelector((state: any) => state.mail);
   const isAttached = mail.files.length > 0;
 
-  const handleChangeCheckbox = (event) => (event.target.checked ? onSelect() : onDeselect());
+  const handleChangeCheckbox = (event: any) => (event.target.checked ? onSelect() : onDeselect());
 
   return (
     <RootStyle
@@ -95,11 +95,11 @@ export default function MailItem({ mail, isDense, isSelected, onSelect, onDesele
       </MHidden>
 
       <WrapStyle
-        color="inherit"
-        underline="none"
-        component={RouterLink}
-        to={linkTo(params, mail.id)}
-        sx={{ display: 'flex', ...(isDense && { py: 1 }) }}
+      // color="inherit"
+      // underline="none"
+      // component={RouterLink}
+      // to={linkTo(params, mail.id)}
+      // sx={{ display: 'flex', ...(isDense && { py: 1 }) }}
       >
         <MAvatar
           alt={mail.from.name}
@@ -153,8 +153,8 @@ export default function MailItem({ mail, isDense, isSelected, onSelect, onDesele
 
           <MHidden width="mdDown">
             <Box sx={{ display: 'flex' }}>
-              {mail.labelIds.map((labelId) => {
-                const label = labels.find((_label) => _label.id === labelId);
+              {mail.labelIds.map((labelId: any) => {
+                const label = labels.find((_label: any) => _label.id === labelId);
                 if (!label) return null;
                 return (
                   <Label
@@ -163,7 +163,7 @@ export default function MailItem({ mail, isDense, isSelected, onSelect, onDesele
                       mx: 0.5,
                       textTransform: 'capitalize',
                       bgcolor: label.color,
-                      color: (theme) => theme.palette.getContrastText(label.color)
+                      color: (theme: any) => theme.palette.getContrastText(label.color)
                     }}
                   >
                     {label.name}

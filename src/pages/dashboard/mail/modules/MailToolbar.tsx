@@ -20,7 +20,7 @@ import { styled } from '@mui/material/styles';
 
 import { MHidden } from '@/components/@material-extend';
 
-const RootStyle = styled('div')(({ theme }) => ({
+const RootStyle = styled('div')(({ theme }: any) => ({
   height: 84,
   flexShrink: 0,
   display: 'flex',
@@ -53,8 +53,9 @@ export default function MailToolbar({
   onSelectAll,
   onDeselectAll,
   ...other
-}) {
-  const handleSelectChange = (event) => (event.target.checked ? onSelectAll() : onDeselectAll());
+}: any) {
+  const handleSelectChange = (event: any) =>
+    event.target.checked ? onSelectAll() : onDeselectAll();
 
   const selectedAllMails = selectedMails === mails && mails > 0;
   const selectedSomeMails = selectedMails > 0 && selectedMails < mails;

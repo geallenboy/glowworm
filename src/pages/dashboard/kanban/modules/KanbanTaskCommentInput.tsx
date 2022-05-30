@@ -15,7 +15,7 @@ export default function KanbanTaskCommentInput() {
         <OutlinedInput
           fullWidth
           multiline
-          row={2}
+          // row={2}
           placeholder="键入消息"
           sx={{ '& fieldset': { display: 'none' } }}
         />

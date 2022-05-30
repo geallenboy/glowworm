@@ -1,6 +1,6 @@
 import { Box, Divider } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import EmptyContent from '@/components/EmptyContent';
@@ -18,10 +18,10 @@ const RootStyle = styled('div')({
   flexDirection: 'column'
 });
 
-export default function MailList({ onOpenSidebar }) {
+export default function MailList({ onOpenSidebar }: any) {
   const params = useParams();
   const dispatch: any = useDispatch();
-  const { mails } = useSelector((state) => state.mail);
+  const { mails } = useSelector((state: any) => state.mail);
   const [selectedMails, setSelectedMails] = useState([]);
   const [dense, setDense] = useState(false);
   const isEmpty = mails.allIds.length < 1;
@@ -31,7 +31,7 @@ export default function MailList({ onOpenSidebar }) {
   }, [dispatch, params]);
 
   const handleSelectAllMails = () => {
-    setSelectedMails(mails.allIds.map((mailId) => mailId));
+    setSelectedMails(mails.allIds.map((mailId: any) => mailId));
   };
 
   const handleToggleDense = () => {
@@ -42,8 +42,8 @@ export default function MailList({ onOpenSidebar }) {
     setSelectedMails([]);
   };
 
-  const handleSelectOneMail = (mailId) => {
-    setSelectedMails((prevSelectedMails) => {
+  const handleSelectOneMail = (mailId: any) => {
+    setSelectedMails((prevSelectedMails: any) => {
       if (!prevSelectedMails.includes(mailId)) {
         return [...prevSelectedMails, mailId];
       }
@@ -51,7 +51,7 @@ export default function MailList({ onOpenSidebar }) {
     });
   };
 
-  const handleDeselectOneMail = (mailId) => {
+  const handleDeselectOneMail = (mailId: any) => {
     setSelectedMails((prevSelectedMails) => prevSelectedMails.filter((id) => id !== mailId));
   };
 
@@ -71,7 +71,7 @@ export default function MailList({ onOpenSidebar }) {
       {!isEmpty ? (
         <Scrollbar>
           <Box sx={{ minWidth: { md: 800 } }}>
-            {mails.allIds.map((mailId) => (
+            {mails.allIds.map((mailId: never) => (
               <MailItem
                 key={mailId}
                 isDense={dense}

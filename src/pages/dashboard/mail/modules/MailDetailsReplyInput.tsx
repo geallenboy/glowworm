@@ -5,10 +5,10 @@ import { Box, Button, IconButton, TextField } from '@mui/material';
 import { useRef, useState } from 'react';
 
 export default function MailDetailsReplyInput() {
-  const fileInputRef = useRef(null);
+  const fileInputRef: any = useRef(null);
   const [message, setMessage] = useState('');
 
-  const handleChangeMessage = (event) => {
+  const handleChangeMessage = (event: any) => {
     setMessage(event.target.value);
   };
 

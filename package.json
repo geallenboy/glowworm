@@ -6,7 +6,7 @@
     "start": "craco start",
     "build": "craco build",
     "eject": "react-scripts eject",
-    "lint:eslint": "eslint \"{src}/**/*.{ts,tsx}\" --fix",
+    "lint:eslint": "eslint \"src/**/*.{ts,tsx}\" --fix",
     "lint:lint-staged": "lint-staged",
     "lint:prettier": "prettier --write  \"src/**/*.{ts,tsx}\"",
     "prepare": "husky install"

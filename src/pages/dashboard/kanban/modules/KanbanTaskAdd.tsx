@@ -28,7 +28,7 @@ const defaultTask = {
   assignee: []
 };
 
-export function useDatePicker({ date }) {
+export function useDatePicker({ date }: any) {
   const [dueDate, setDueDate] = useState([date[0], date[1]]);
   const [openPicker, setOpenPicker] = useState(false);
 
@@ -38,7 +38,7 @@ export function useDatePicker({ date }) {
   const isSameDays = isSameDay(new Date(startTime), new Date(endTime));
   const isSameMonths = isSameMonth(new Date(startTime), new Date(endTime));
 
-  const handleChangeDueDate = (newValue) => {
+  const handleChangeDueDate = (newValue: any) => {
     setDueDate(newValue);
   };
 
@@ -63,7 +63,14 @@ export function useDatePicker({ date }) {
   };
 }
 
-export function DisplayTime({ startTime, endTime, isSameDays, isSameMonths, onOpenPicker, sx }) {
+export function DisplayTime({
+  startTime,
+  endTime,
+  isSameDays,
+  isSameMonths,
+  onOpenPicker,
+  sx
+}: any) {
   const style = {
     typography: 'caption',
     cursor: 'pointer',
@@ -86,7 +93,7 @@ export function DisplayTime({ startTime, endTime, isSameDays, isSameMonths, onOp
   );
 }
 
-export default function KanbanTaskAdd({ onAddTask, onCloseAddTask }) {
+export default function KanbanTaskAdd({ onAddTask, onCloseAddTask }: any) {
   const [name, setName] = useState('');
   const [completed, setCompleted] = useState(false);
   const {
@@ -103,7 +110,7 @@ export default function KanbanTaskAdd({ onAddTask, onCloseAddTask }) {
     date: [null, null]
   });
 
-  const handleKeyUpAddTask = (event) => {
+  const handleKeyUpAddTask = (event: any) => {
     if (event.key === 'Enter') {
       if (trim(name) !== '') {
         onAddTask({ ...defaultTask, id: uuidv4(), name, due: dueDate, completed });
@@ -118,7 +125,7 @@ export default function KanbanTaskAdd({ onAddTask, onCloseAddTask }) {
     onCloseAddTask();
   };
 
-  const handleChangeCompleted = (event) => {
+  const handleChangeCompleted = (event: any) => {
     setCompleted(event.target.checked);
   };
 

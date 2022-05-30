@@ -5,15 +5,15 @@ import { useState } from 'react';
 import LightboxModal from '@/components/LightboxModal';
 import { fToNow } from '@/utils/formatTime';
 
-export default function KanbanTaskCommentList({ comments }) {
+export default function KanbanTaskCommentList({ comments }: any) {
   const [openLightbox, setOpenLightbox] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<any>(null);
 
   const imagesLightbox = comments
-    .filter((comment) => comment.messageType === 'image')
-    .map((item) => item.message);
+    .filter((comment: any) => comment.messageType === 'image')
+    .map((item: any) => item.message);
 
-  const handleOpenLightbox = (url) => {
+  const handleOpenLightbox = (url: string) => {
     const selectedImage = findIndex(imagesLightbox, (index) => index === url);
     setOpenLightbox(true);
     setSelectedImage(selectedImage);
@@ -22,7 +22,7 @@ export default function KanbanTaskCommentList({ comments }) {
   return (
     <>
       <Stack spacing={3} sx={{ py: 3, px: 2.5, bgcolor: 'background.neutral' }}>
-        {comments.map((comment) => (
+        {comments.map((comment: any) => (
           <Stack key={comment.id} direction="row" spacing={2}>
             <Avatar src={comment.avatar} sx={{ width: 32, height: 32 }} />
             <div>

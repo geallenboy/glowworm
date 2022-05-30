@@ -46,7 +46,7 @@ export default function LoginForm() {
         await login(values.email, values.password);
         enqueueSnackbar('登录成功', {
           variant: 'success',
-          action: (key) => (
+          action: (key: any) => (
             <MIconButton size="small" onClick={() => closeSnackbar(key)}>
               <Icon icon={closeFill} />
             </MIconButton>

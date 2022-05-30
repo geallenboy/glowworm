@@ -1,6 +1,6 @@
 import { Container, Grid, Skeleton, Stack } from '@mui/material';
 import { useSnackbar } from 'notistack';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 
 import HeaderBreadcrumbs from '@/components/HeaderBreadcrumbs';
@@ -23,15 +23,15 @@ const SkeletonLoad = (
 );
 
 export default function Kanban() {
-  const dispatch = useDispatch();
+  const dispatch: any = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
-  const { board } = useSelector((state) => state.kanban);
+  const { board } = useSelector((state: any) => state.kanban);
 
   useEffect(() => {
     dispatch(getBoard());
   }, [dispatch]);
 
-  const onDragEnd = (result) => {
+  const onDragEnd = (result: any) => {
     const { destination, source, draggableId, type } = result;
     if (!destination) return;
     if (destination.droppableId === source.droppableId && destination.index === source.index)
@@ -121,7 +121,7 @@ export default function Kanban() {
                 spacing={3}
                 sx={{ height: 'calc(100% - 32px)', overflowY: 'hidden' }}
               >
-                {board?.columnOrder?.map((columnId, index) => {
+                {board?.columnOrder?.map((columnId: any, index: number) => {
                   const column = board.columns[columnId];
                   return <KanbanColumn index={index} key={columnId} column={column} />;
                 })}

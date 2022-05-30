@@ -33,7 +33,7 @@ import KanbanTaskCommentList from './KanbanTaskCommentList';
 
 const PRIORITIZES = ['low', 'medium', 'hight'];
 
-const LabelStyle = styled(Typography)(({ theme }) => ({
+const LabelStyle = styled(Typography)(({ theme }: any) => ({
   ...theme.typography.body2,
   width: 140,
   fontSize: 13,
@@ -41,8 +41,8 @@ const LabelStyle = styled(Typography)(({ theme }) => ({
   color: theme.palette.text.secondary
 }));
 
-export default function KanbanTaskDetails({ card, isOpen, onClose, onDeleteTask }) {
-  const fileInputRef = useRef(null);
+export default function KanbanTaskDetails({ card, isOpen, onClose, onDeleteTask }: any) {
+  const fileInputRef: any = useRef(null);
   const [taskCompleted, setTaskCompleted] = useState(card.completed);
   const [prioritize, setPrioritize] = useState('low');
 
@@ -67,10 +67,10 @@ export default function KanbanTaskDetails({ card, isOpen, onClose, onDeleteTask 
   };
 
   const handleToggleCompleted = () => {
-    setTaskCompleted((prev) => !prev);
+    setTaskCompleted((prev: any) => !prev);
   };
 
-  const handleChangePrioritize = (event) => {
+  const handleChangePrioritize = (event: any) => {
     setPrioritize(event.target.value);
   };
 
@@ -147,7 +147,7 @@ export default function KanbanTaskDetails({ card, isOpen, onClose, onDeleteTask 
             <Stack direction="row">
               <LabelStyle sx={{ mt: 1.5 }}>受让人</LabelStyle>
               <Stack direction="row" flexWrap="wrap" alignItems="center">
-                {assignee.map((user) => (
+                {assignee.map((user: any) => (
                   <Avatar
                     key={user.id}
                     alt={user.name}

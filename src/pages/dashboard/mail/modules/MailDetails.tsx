@@ -18,7 +18,7 @@ const RootStyle = styled('div')({
   flexDirection: 'column'
 });
 
-const MarkdownWrapperStyle = styled('div')(({ theme }) => ({
+const MarkdownWrapperStyle = styled('div')(({ theme }: any) => ({
   '& > p': {
     ...theme.typography.body1,
     marginBottom: theme.spacing(2)
@@ -27,8 +27,9 @@ const MarkdownWrapperStyle = styled('div')(({ theme }) => ({
 
 export default function MailDetails() {
   const { mailId } = useParams();
-  const dispatch = useDispatch();
-  const mail = useSelector((state) => state.mail.mails.byId[mailId]);
+  const _maid: any = mailId;
+  const dispatch: any = useDispatch();
+  const mail = useSelector((state: any) => state.mail.mails.byId[_maid]);
   const isAttached = mail && mail.files.length > 0;
 
   useEffect(() => {

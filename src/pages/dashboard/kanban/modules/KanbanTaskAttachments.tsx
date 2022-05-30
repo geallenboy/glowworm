@@ -11,7 +11,7 @@ import { MIconButton } from '@/components/@material-extend';
 import { varFadeInRight } from '@/components/animate';
 import LightboxModal from '@/components/LightboxModal';
 
-const DropZoneStyle = styled('div')(({ theme }) => ({
+const DropZoneStyle = styled('div')(({ theme }: any) => ({
   width: 64,
   height: 64,
   fontSize: 24,
@@ -28,7 +28,7 @@ const DropZoneStyle = styled('div')(({ theme }) => ({
 function UploadFile() {
   const [files, setFiles] = useState([]);
 
-  const handleRemove = (file) => {
+  const handleRemove = (file: any) => {
     const filteredItems = files.filter((_file) => _file !== file);
     setFiles(filteredItems);
   };
@@ -36,7 +36,7 @@ function UploadFile() {
   const handleDrop = useCallback(
     (acceptedFiles) => {
       setFiles(
-        acceptedFiles.map((file) =>
+        acceptedFiles.map((file: any) =>
           Object.assign(file, {
             preview: URL.createObjectURL(file)
           })
@@ -110,13 +110,13 @@ function UploadFile() {
   );
 }
 
-export default function KanbanTaskAttachments({ attachments }) {
+export default function KanbanTaskAttachments({ attachments }: any) {
   const [openLightbox, setOpenLightbox] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<any>(null);
 
   const imagesLightbox = attachments;
 
-  const handleOpenLightbox = (url) => {
+  const handleOpenLightbox = (url: string) => {
     const selectedImage = findIndex(imagesLightbox, (index) => index === url);
     setOpenLightbox(true);
     setSelectedImage(selectedImage);
@@ -128,7 +128,7 @@ export default function KanbanTaskAttachments({ attachments }) {
 
   return (
     <>
-      {attachments.map((attachment) => (
+      {attachments.map((attachment: any) => (
         <Box
           component="img"
           key={attachment}

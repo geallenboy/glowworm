@@ -11,7 +11,7 @@ import { PATH_DASHBOARD } from '@/routes/paths';
 import createAvatar from '@/utils/createAvatar';
 import { fDateTimeSuffix } from '@/utils/formatTime';
 
-const RootStyle = styled('div')(({ theme }) => ({
+const RootStyle = styled('div')(({ theme }: any) => ({
   height: 84,
   flexShrink: 0,
   display: 'flex',
@@ -20,7 +20,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   justifyContent: 'space-between'
 }));
 
-export default function MailDetailsToolbar({ mail, ...other }) {
+export default function MailDetailsToolbar({ mail, ...other }: any) {
   const navigate = useNavigate();
   const { systemLabel, customLabel } = useParams();
   const baseUrl = PATH_DASHBOARD.mail.root;
@@ -61,7 +61,7 @@ export default function MailDetailsToolbar({ mail, ...other }) {
           </Link>
           <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block' }}>
             To:&nbsp;
-            {mail.to.map((person) => (
+            {mail.to.map((person: any) => (
               <Link color="inherit" key={person.email}>
                 {person.email}
               </Link>

@@ -13,10 +13,10 @@ import KanbanColumnToolBar from './KanbanColumnToolBar';
 import KanbanAddTask from './KanbanTaskAdd';
 import KanbanTaskCard from './KanbanTaskCard';
 
-export default function KanbanColumn({ column, index }) {
-  const dispatch = useDispatch();
+export default function KanbanColumn({ column, index }: any) {
+  const dispatch: any = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
-  const { board } = useSelector((state) => state.kanban);
+  const { board } = useSelector((state: any) => state.kanban);
   const [open, setOpen] = useState(false);
 
   const { name, cardIds, id } = column;
@@ -29,12 +29,12 @@ export default function KanbanColumn({ column, index }) {
     setOpen(false);
   };
 
-  const handleDeleteTask = (cardId) => {
+  const handleDeleteTask = (cardId: any) => {
     dispatch(deleteTask({ cardId, columnId: id }));
     enqueueSnackbar('Delete success', { variant: 'success' });
   };
 
-  const handleUpdateColumn = async (newName) => {
+  const handleUpdateColumn = async (newName: any) => {
     try {
       if (newName !== name) {
         dispatch(updateColumn(id, { ...column, name: newName }));
@@ -54,7 +54,7 @@ export default function KanbanColumn({ column, index }) {
     }
   };
 
-  const handleAddTask = (task) => {
+  const handleAddTask = (task: any) => {
     dispatch(addTask({ card: task, columnId: id }));
     enqueueSnackbar('Add success', { variant: 'success' });
     handleCloseAddTask();
@@ -80,7 +80,7 @@ export default function KanbanColumn({ column, index }) {
             <Droppable droppableId={id} type="task">
               {(provided) => (
                 <Stack ref={provided.innerRef} {...provided.droppableProps} spacing={2} width={280}>
-                  {cardIds.map((cardId, index) => {
+                  {cardIds.map((cardId: any, index: number) => {
                     const card = board?.cards[cardId];
                     return (
                       <KanbanTaskCard

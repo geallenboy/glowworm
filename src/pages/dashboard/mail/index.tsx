@@ -1,5 +1,5 @@
 import { Card, Container } from '@mui/material';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import HeaderBreadcrumbs from '@/components/HeaderBreadcrumbs';
@@ -14,7 +14,7 @@ import { MailCompose, MailDetails, MailList, MailSidebar } from './modules';
 
 export default function Mail() {
   const { themeStretch } = useSettings();
-  const dispatch = useDispatch();
+  const dispatch: any = useDispatch();
   const { mailId } = useParams();
   const [openSidebar, setOpenSidebar] = useState(false);
   const [openCompose, setOpenCompose] = useState(false);

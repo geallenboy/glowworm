@@ -1,7 +1,7 @@
 import plusFill from '@iconify/icons-eva/plus-fill';
 import { Icon } from '@iconify/react';
 import { Box, Button, Divider, Drawer, List } from '@mui/material';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { MHidden } from '@/components/@material-extend';
@@ -10,9 +10,9 @@ import { useSelector } from '@/redux/store';
 
 import MailSidebarItem from './MailSidebarItem';
 
-export default function MailSidebar({ isOpenSidebar, onOpenCompose, onCloseSidebar }) {
+export default function MailSidebar({ isOpenSidebar, onOpenCompose, onCloseSidebar }: any) {
   const { pathname } = useLocation();
-  const { labels } = useSelector((state) => state.mail);
+  const { labels } = useSelector((state: any) => state.mail);
 
   useEffect(() => {
     if (isOpenSidebar) {
@@ -41,7 +41,7 @@ export default function MailSidebar({ isOpenSidebar, onOpenCompose, onCloseSideb
       <Divider />
 
       <List disablePadding>
-        {labels.map((label) => (
+        {labels.map((label: any) => (
           <MailSidebarItem key={label.id} label={label} />
         ))}
       </List>

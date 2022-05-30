@@ -8,9 +8,9 @@ import { useEffect, useRef, useState } from 'react';
 import { MIconButton } from '@/components/@material-extend';
 import MenuPopover from '@/components/MenuPopover';
 
-export default function KanbanColumnToolBar({ columnName, onDelete, onUpdate }) {
-  const anchorRef = useRef(null);
-  const renameRef = useRef(null);
+export default function KanbanColumnToolBar({ columnName, onDelete, onUpdate }: any) {
+  const anchorRef: any = useRef(null);
+  const renameRef: any = useRef(null);
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(columnName);
 
@@ -34,11 +34,11 @@ export default function KanbanColumnToolBar({ columnName, onDelete, onUpdate }) 
     handleClose();
   };
 
-  const handleChangeColumnName = (event) => {
+  const handleChangeColumnName = (event: any) => {
     setValue(event.target.value);
   };
 
-  const handleUpdateColumn = (event) => {
+  const handleUpdateColumn = (event: any) => {
     if (event.key === 'Enter') {
       renameRef.current.blur();
       onUpdate(event.target.value);

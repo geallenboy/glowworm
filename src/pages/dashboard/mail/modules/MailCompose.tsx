@@ -20,7 +20,7 @@ import { useState } from 'react';
 
 import { QuillEditor } from '@/components/editor';
 
-const RootStyle = styled('div')(({ theme }) => ({
+const RootStyle = styled('div')(({ theme }: any) => ({
   right: 0,
   bottom: 0,
   zIndex: 1999,
@@ -41,13 +41,13 @@ const InputStyle = styled(Input)(({ theme }) => ({
   borderBottom: `solid 1px ${theme.palette.divider}`
 }));
 
-export default function MailCompose({ isOpenCompose, onCloseCompose }) {
+export default function MailCompose({ isOpenCompose, onCloseCompose }: any) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [fullScreen, setFullScreen] = useState(false);
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState<string>('');
 
-  const handleChangeMessage = (value) => {
+  const handleChangeMessage = (value: string) => {
     setMessage(value);
   };
 

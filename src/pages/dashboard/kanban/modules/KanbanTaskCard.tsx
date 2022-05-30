@@ -7,7 +7,7 @@ import { Draggable } from 'react-beautiful-dnd';
 
 import KanbanTaskDetails from './KanbanTaskDetails';
 
-export default function KanbanTaskCard({ card, onDeleteTask, index }) {
+export default function KanbanTaskCard({ card, onDeleteTask, index }: any) {
   const { name, attachments } = card;
   const [openDetails, setOpenDetails] = useState(false);
   const [completed, setCompleted] = useState(card.completed);
@@ -20,7 +20,7 @@ export default function KanbanTaskCard({ card, onDeleteTask, index }) {
     setOpenDetails(false);
   };
 
-  const handleChangeComplete = (event) => {
+  const handleChangeComplete = (event: any) => {
     setCompleted(event.target.checked);
   };
 
@@ -33,9 +33,9 @@ export default function KanbanTaskCard({ card, onDeleteTask, index }) {
               px: 2,
               width: 1,
               position: 'relative',
-              boxShadow: (theme) => theme.customShadows.z1,
+              boxShadow: (theme: any) => theme.customShadows.z1,
               '&:hover': {
-                boxShadow: (theme) => theme.customShadows.z16
+                boxShadow: (theme: any) => theme.customShadows.z16
               },
               ...(attachments.length > 0 && {
                 pt: 2

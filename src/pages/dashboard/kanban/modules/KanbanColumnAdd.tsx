@@ -8,8 +8,8 @@ import { createColumn } from '@/redux/slices/kanban';
 import { useDispatch } from '@/redux/store';
 
 export default function KanbanColumnAdd() {
-  const nameRef = useRef(null);
-  const dispatch = useDispatch();
+  const nameRef: any = useRef(null);
+  const dispatch: any = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
   const [name, setName] = useState('');
   const [open, setOpen] = useState(false);
@@ -30,7 +30,7 @@ export default function KanbanColumnAdd() {
     setOpen(false);
   };
 
-  const handleChangeName = (event) => {
+  const handleChangeName = (event: any) => {
     setName(event.target.value);
   };
 
@@ -47,7 +47,7 @@ export default function KanbanColumnAdd() {
     }
   };
 
-  const handleKeyUp = (event) => {
+  const handleKeyUp = (event: any) => {
     if (event.key === 'Enter') {
       handleCreateColumn();
     }

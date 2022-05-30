@@ -5,7 +5,7 @@ import roundReceipt from '@iconify/icons-ic/round-receipt';
 import roundVpnKey from '@iconify/icons-ic/round-vpn-key';
 import { Icon } from '@iconify/react';
 import { Box, Container, Stack, Tab, Tabs } from '@mui/material';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import HeaderBreadcrumbs from '@/components/HeaderBreadcrumbs';
 import Page from '@/components/Page';

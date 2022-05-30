@@ -6,13 +6,13 @@ import { alpha, styled } from '@mui/material/styles';
 import Scrollbar from '@/components/Scrollbar';
 import { getFileName, getFileThumb, getFileType } from '@/utils/getFileFormat';
 
-const RootStyle = styled('div')(({ theme }) => ({
+const RootStyle = styled('div')(({ theme }: any) => ({
   padding: theme.spacing(2),
   borderTop: `solid 1px ${theme.palette.divider}`,
   backgroundColor: theme.palette.background.neutral
 }));
 
-const ThumbStyle = styled('div')(({ theme }) => ({
+const ThumbStyle = styled('div')(({ theme }: any) => ({
   width: 48,
   height: 48,
   display: 'flex',
@@ -28,7 +28,7 @@ const ThumbStyle = styled('div')(({ theme }) => ({
   '& img': { width: '100%', height: '100%' }
 }));
 
-const DownloadStyle = styled('div')(({ theme }) => ({
+const DownloadStyle = styled('div')(({ theme }: any) => ({
   opacity: 0,
   width: '100%',
   height: '100%',
@@ -49,7 +49,7 @@ const DownloadStyle = styled('div')(({ theme }) => ({
   }
 }));
 
-function FileItem({ fileUrl }) {
+function FileItem({ fileUrl }: any) {
   return (
     <Box key={fileUrl}>
       <ThumbStyle>
@@ -77,12 +77,12 @@ function FileItem({ fileUrl }) {
   );
 }
 
-export default function MailDetailsAttachments({ mail, ...other }) {
+export default function MailDetailsAttachments({ mail, ...other }: any) {
   return (
     <RootStyle {...other}>
       <Scrollbar>
         <Stack direction="row" spacing={1.5}>
-          {mail.files.map((file) => (
+          {mail.files.map((file: any) => (
             <FileItem key={file} fileUrl={file} />
           ))}
         </Stack>

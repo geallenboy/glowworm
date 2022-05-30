@@ -5,8 +5,9 @@ import roundMarkEmailRead from '@iconify/icons-ic/round-mark-email-read';
 import { Icon } from '@iconify/react';
 import { IconButton, Tooltip } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import React from 'react';
 
-const RootStyle = styled('div')(({ theme }) => ({
+const RootStyle = styled('div')(({ theme }: any) => ({
   height: 40,
   zIndex: 99,
   opacity: 0,
@@ -31,8 +32,8 @@ export default function MailItemAction({
   handleMarkRead,
   handleHidden,
   ...other
-}) {
-  const MAIL_ACTIONS = [
+}: any) {
+  const MAIL_ACTIONS: any = [
     {
       name: '档案文件',
       icon: archiveFill,
@@ -57,7 +58,7 @@ export default function MailItemAction({
 
   return (
     <RootStyle {...other}>
-      {MAIL_ACTIONS.map((action) => (
+      {MAIL_ACTIONS.map((action: any) => (
         <Tooltip key={action.name} title={action.name}>
           <IconButton
             size="small"
