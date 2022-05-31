@@ -1,9 +1,0 @@
-export { default as BalanceStatistics } from './BalanceStatistics';
-export { default as Contacts } from './Contacts';
-export { default as CurrentBalance } from './CurrentBalance';
-export { default as Expenses } from './Expenses';
-export { default as ExpensesCategories } from './ExpensesCategories';
-export { default as Income } from './Income';
-export { default as InviteFriends } from './InviteFriends';
-export { default as QuickTransfer } from './QuickTransfer';
-export { default as RecentTransitions } from './RecentTransitions';

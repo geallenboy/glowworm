@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/2425.6c081b8a.chunk.js","mappings":"uKAAe,SAASA,IACtB,OAAO","sources":["pages/components/extra/MultiLanguage.tsx"],"sourcesContent":["export default function MultiLanguage() {\n  return <div>MultiLanguage</div>;\n}\n"],"names":["MultiLanguage"],"sourceRoot":""}

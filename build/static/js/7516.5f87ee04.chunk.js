@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkglowworm=self.webpackChunkglowworm||[]).push([[7516],{47516:function(n,r,u){u.r(r),u.d(r,{default:function(){return t}});var e=u(58847);function t(){return(0,e.jsx)("div",{children:"Charts"})}}}]);
-//# sourceMappingURL=7516.5f87ee04.chunk.js.map

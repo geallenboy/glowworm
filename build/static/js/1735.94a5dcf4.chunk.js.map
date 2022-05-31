@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/1735.94a5dcf4.chunk.js","mappings":"uKAAe,SAASA,IACtB,OAAO","sources":["pages/components/extra/MegaMenu.tsx"],"sourcesContent":["export default function MegaMenu() {\n  return <div>MegaMenu</div>;\n}\n"],"names":["MegaMenu"],"sourceRoot":""}

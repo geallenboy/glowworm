@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/7516.5f87ee04.chunk.js","mappings":"uKAAe,SAASA,IACtB,OAAO","sources":["pages/components/extra/Charts.tsx"],"sourcesContent":["export default function Charts() {\n  return <div>Charts</div>;\n}\n"],"names":["Charts"],"sourceRoot":""}
