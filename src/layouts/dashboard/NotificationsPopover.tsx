@@ -6,9 +6,7 @@ import { useRef, useState } from 'react';
 import bellFill from '@iconify/icons-eva/bell-fill';
 import clockFill from '@iconify/icons-eva/clock-fill';
 import doneAllFill from '@iconify/icons-eva/done-all-fill';
-// next
 import NextLink from 'next/link';
-// material
 import {
   Box,
   List,
@@ -29,19 +27,19 @@ import MenuPopover from 'src/components/MenuPopover';
 import { MIconButton } from 'src/components/@material-extend';
 
 const TITLES = [
-  'Your order is placed',
-  'Sylvan King',
-  'You have new message',
-  'You have new mail',
-  'Delivery processing',
+  'title1',
+  'title2',
+  'title3',
+  'title4',
+  'title5',
 ];
 
 const DESCRIPTIONS = [
-  'waiting for shipping',
-  'answered to your comment on the Minimal',
-  '5 unread messages',
-  'sent from Guido Padberg',
-  'Your order is being shipped',
+  'descriptions1',
+  'descriptions2',
+  'descriptions3',
+  'descriptions4',
+  'descriptions4',
 ];
 
 const TYPES = [

@@ -25,16 +25,16 @@ export default function PageThree() {
 
   return (
     <DashboardLayout>
-      <Page title='Page Three | Minimal-UI'>
+      <Page title='页面3'>
         <Container maxWidth={themeStretch ? false : 'xl'}>
           <Typography variant='h3' component='h1' sx={{ mb: 5 }}>
-            Demo editor for next js
+            编辑
           </Typography>
 
           <Grid container spacing={3} sx={{ mb: 5 }}>
             <Grid item xs={12} md={8}>
               <Card>
-                <CardHeader title='Quill Editor' />
+                <CardHeader title='编辑器' />
                 <CardContent>
                   <QuillEditor
                     id='simple-editor'
@@ -54,7 +54,7 @@ export default function PageThree() {
                     bgcolor: 'background.neutral',
                   }}
                 >
-                  <CardHeader title='Preview Plain Text' />
+                  <CardHeader title='预览纯文本' />
                   <Box
                     sx={{ p: 3 }}
                     dangerouslySetInnerHTML={{ __html: quillContent }}
@@ -67,7 +67,7 @@ export default function PageThree() {
                     bgcolor: 'background.neutral',
                   }}
                 >
-                  <CardHeader title='Preview Html' />
+                  <CardHeader title='预览Html' />
                   <Typography sx={{ p: 3 }}>{quillContent}</Typography>
                 </Card>
               </Stack>
@@ -77,7 +77,7 @@ export default function PageThree() {
           <Grid container spacing={3}>
             <Grid item xs={12} md={8}>
               <Card>
-                <CardHeader title='Draft Editor' />
+                <CardHeader title='草稿编辑器' />
                 <CardContent>
                   <DraftEditor
                     editorState={draftContent}
@@ -95,7 +95,7 @@ export default function PageThree() {
                     bgcolor: 'background.neutral',
                   }}
                 >
-                  <CardHeader title='Preview Plain Text' />
+                  <CardHeader title='预览纯文本' />
                   <Typography sx={{ p: 3 }}>
                     {draftContent.getCurrentContent().getPlainText('\u0001')}
                   </Typography>
@@ -108,7 +108,7 @@ export default function PageThree() {
                     bgcolor: 'background.neutral',
                   }}
                 >
-                  <CardHeader title='Preview Html' />
+                  <CardHeader title='预览Html' />
                   <Typography sx={{ p: 3 }}>
                     {draftToHtml(
                       convertToRaw(draftContent.getCurrentContent())

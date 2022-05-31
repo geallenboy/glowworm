@@ -17,39 +17,36 @@ const ICONS = {
 
 const sidebarConfig = [
   {
-    subheader: "general",
+    subheader: "全部",
     items: [
       {
-        title: "One",
+        title: "页面1",
         path: PATH_DASHBOARD.general.pageOne,
         icon: ICONS.dashboard,
       },
       {
-        title: "Two",
+        title: "页面2",
         path: PATH_DASHBOARD.general.pageTwo,
         icon: ICONS.ecommerce,
       },
       {
-        title: "Three",
+        title: "页面3",
         path: PATH_DASHBOARD.general.pageThree,
         icon: ICONS.analytics,
       },
     ],
   },
-
-  // MANAGEMENT
-  // ----------------------------------------------------------------------
   {
-    subheader: "management",
+    subheader: "管理",
     items: [
       {
-        title: "user",
+        title: "用户",
         path: PATH_DASHBOARD.app.root,
         icon: ICONS.user,
         children: [
-          { title: "Four", path: PATH_DASHBOARD.app.pageFour },
-          { title: "Five", path: PATH_DASHBOARD.app.pageFive },
-          { title: "Six", path: PATH_DASHBOARD.app.pageSix },
+          { title: "页面4", path: PATH_DASHBOARD.app.pageFour },
+          { title: "页面5", path: PATH_DASHBOARD.app.pageFive },
+          { title: "页面6", path: PATH_DASHBOARD.app.pageSix },
         ],
       },
     ],

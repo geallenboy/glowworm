@@ -30,11 +30,11 @@ const SimpleBarStyle = styled(SimpleBarReact)(({ theme }:any) => ({
 }));
 
 export default function Scrollbar({ children, sx, ...other }: any) {
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  );
+  // const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+  //   navigator.userAgent
+  // );
 
-  if (isMobile) {
+  if (false) {
     return (
       <Box sx={{ overflowX: 'auto', ...sx }} {...other}>
         {children}

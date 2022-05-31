@@ -93,7 +93,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }:any) 
     if (isOpenSidebar) {
       onCloseSidebar();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
   }, [pathname]);
 
   const renderContent = (
@@ -154,7 +154,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }:any) 
               />
               <Box sx={{ ml: 2 }}>
                 <Typography variant='subtitle2' sx={{ color: 'text.primary' }}>
-                  displayName
+                  显示姓名
                 </Typography>
                 <Typography variant='body2' sx={{ color: 'text.secondary' }}>
                   role
@@ -208,7 +208,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }:any) 
               ...(collapseHover && {
                 borderRight: 0,
                 backdropFilter: 'blur(6px)',
-                WebkitBackdropFilter: 'blur(6px)', // Fix on Mobile
+                WebkitBackdropFilter: 'blur(6px)',
                 boxShadow: (theme:any) => theme.customShadows.z20,
                 bgcolor: (theme:any) =>
                   alpha(theme.palette.background.default, 0.88),

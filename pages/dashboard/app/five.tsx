@@ -9,31 +9,16 @@ export default function PageFive() {
 
   return (
     <DashboardLayout>
-      <Page title='Page Five | Minimal-UI'>
+      <Page title='页面5'>
         <Container maxWidth={themeStretch ? false : 'xl'}>
           <Typography variant='h3' component='h1' paragraph>
-            Page Five
+          页面5
           </Typography>
           <Typography gutterBottom>
-            Curabitur turpis. Vestibulum facilisis, purus nec pulvinar iaculis,
-            ligula mi congue nunc, vitae euismod ligula urna in dolor. Nam quam
-            nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Phasellus
-            blandit leo ut odio. Vestibulum ante ipsum primis in faucibus orci
-            luctus et ultrices posuere cubilia Curae; Fusce id purus. Aliquam
-            lorem ante, dapibus in, viverra quis, feugiat a, tellus. In
-            consectetuer turpis ut velit. Aenean posuere, tortor sed cursus
-            feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor
-            sagittis lacus. Vestibulum suscipit nulla quis orci. Nam commodo
-            suscipit quam. Sed a libero.
+          二色幽紫蝶开发发现的东方题材多人对战竞技游戏《东方妖精武踏会》上线Steam页面,游戏发售时间待定,感兴趣的玩家可以点击此处进入商店页面。 游戏介绍: 多人共斗或多人对战的竞技游戏!你将扮演贪玩又个性十足的妖精,在强...
           </Typography>
           <Typography>
-            Praesent ac sem eget est egestas volutpat. Phasellus viverra nulla
-            ut metus varius laoreet. Curabitur ullamcorper ultricies nisi. Ut
-            non enim eleifend felis pretium feugiat. Donec mi odio, faucibus at,
-            scelerisque quis, convallis in, nisi. Fusce vel dui. Quisque libero
-            metus, condimentum nec, tempor a, commodo mollis, magna. In enim
-            justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Cras
-            dapibus.
+          分红设置,用于股东分红或合伙人分红,开启后相应等级的所有会员平均分摊设置的分红金额或比例。 自定义商品展示详情。 注:配送模板选择在线卡密, 请保存商品信息后在商品列表中上传卡...
           </Typography>
         </Container>
       </Page>

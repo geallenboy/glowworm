@@ -8,31 +8,16 @@ export default function PageOne() {
 
   return (
     <DashboardLayout>
-      <Page title='Page One | Minimal-UI'>
+      <Page title='页面1'>
         <Container maxWidth={themeStretch ? false : 'xl'}>
           <Typography variant='h3' component='h1' paragraph>
-            Page One
+            页面1
           </Typography>
           <Typography gutterBottom>
-            Curabitur turpis. Vestibulum facilisis, purus nec pulvinar iaculis,
-            ligula mi congue nunc, vitae euismod ligula urna in dolor. Nam quam
-            nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Phasellus
-            blandit leo ut odio. Vestibulum ante ipsum primis in faucibus orci
-            luctus et ultrices posuere cubilia Curae; Fusce id purus. Aliquam
-            lorem ante, dapibus in, viverra quis, feugiat a, tellus. In
-            consectetuer turpis ut velit. Aenean posuere, tortor sed cursus
-            feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor
-            sagittis lacus. Vestibulum suscipit nulla quis orci. Nam commodo
-            suscipit quam. Sed a libero.
+          如果是线上交流的方式，也可以和公司用电话会议的方式深度谈一谈。”有业绩说明会页面一片空白公司称当天没有投资者来提问政策层面来看，监管部门在积极推动上市公司和投资者的沟通交流...
           </Typography>
           <Typography>
-            Praesent ac sem eget est egestas volutpat. Phasellus viverra nulla
-            ut metus varius laoreet. Curabitur ullamcorper ultricies nisi. Ut
-            non enim eleifend felis pretium feugiat. Donec mi odio, faucibus at,
-            scelerisque quis, convallis in, nisi. Fusce vel dui. Quisque libero
-            metus, condimentum nec, tempor a, commodo mollis, magna. In enim
-            justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Cras
-            dapibus.
+          据数据显示,卖家使用A+内容后,可以提升25%的转化率,那么A+页面有哪些优势呢? 1、塑造品牌形象 A+页面可以推展内容,给产品添加品牌故事,强化卖家在亚马逊市场上的品牌形象,取得客户的信..
           </Typography>
         </Container>
       </Page>

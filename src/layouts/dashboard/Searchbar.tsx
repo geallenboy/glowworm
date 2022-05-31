@@ -25,7 +25,7 @@ const SearchbarStyle = styled('div')(({ theme }:any) => ({
   alignItems: 'center',
   height: APPBAR_MOBILE,
   backdropFilter: 'blur(6px)',
-  WebkitBackdropFilter: 'blur(6px)', // Fix on Mobile
+  WebkitBackdropFilter: 'blur(6px)', 
   padding: theme.spacing(0, 3),
   boxShadow: theme.customShadows.z8,
   backgroundColor: `${alpha(theme.palette.background.default, 0.72)}`,
@@ -61,7 +61,7 @@ export default function Searchbar() {
               autoFocus
               fullWidth
               disableUnderline
-              placeholder='Search…'
+              placeholder='搜索…'
               startAdornment={
                 <InputAdornment position='start'>
                   <Box
@@ -74,7 +74,7 @@ export default function Searchbar() {
               sx={{ mr: 1, fontWeight: 'fontWeightBold' }}
             />
             <Button variant='contained' onClick={handleClose}>
-              Search
+              查询
             </Button>
           </SearchbarStyle>
         </Slide>

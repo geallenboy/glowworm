@@ -10,11 +10,11 @@ const ICON_SIZE = {
 
 const menuConfig:any = [
   {
-    title: 'Home',
+    title: '首页',
     path: '/',
     icon: <Icon icon={homeFill} {...ICON_SIZE} />
   },
-  { title: 'Dashboard', path: PATH_DASHBOARD.root, icon: <Icon icon={fileFill} {...ICON_SIZE} /> }
+  { title: '管理页', path: PATH_DASHBOARD.root, icon: <Icon icon={fileFill} {...ICON_SIZE} /> }
 ];
 
 export default menuConfig;
