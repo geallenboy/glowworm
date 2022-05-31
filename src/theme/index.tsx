@@ -1,9 +1,7 @@
 import { CssBaseline } from '@mui/material';
 import { createTheme, StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
 import { useMemo } from 'react';
-
-import useSettings from '@/hooks/useSettings';
-
+import useSettings from 'src/hooks/useSettings';
 import breakpoints from './breakpoints';
 import GlobalStyles from './globalStyles';
 import componentsOverride from './overrides';

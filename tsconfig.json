@@ -9,15 +9,24 @@
     "noImplicitAny": true,
     "esModuleInterop": true,
     "isolatedModules": true,
-    "resolveJsonModule":true,
+    "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
-
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true
   },
   "include": [
     "pages/**/*",
-    "src/**/*",
+    "src/**/*"
   ],
   "exclude": [
     "node_modules",
