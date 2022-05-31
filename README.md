@@ -1,37 +1,3 @@
-## glowworm
-
-基于 vite2 react17 redux materialUI 开发前端基础项目框架
-
-## 快速开始
-
-### 获取项目
-
-#### 使用 Git
-
-```sh
-
-git clone git@github.com:geallenboy/glowworm.git
-
-```
-
-### 安装依赖
-
-```sh
-pnpm install
-
-```
-
-### 启动项目
-
-```sh
-npm run start
-```
-
-### 项目打包
-
-```sh
-npm run build
-```
 
 ## 技术栈
 
@@ -52,9 +18,7 @@ npm run build
 
 - iconify: [iconify](https://icon-sets.iconify.design/)
 
-##
-
-Git 贡献提交规范
+## 提交规范
 
 - feat 增加新功能
 - fix 修复问题/BUG
@@ -69,3 +33,8 @@ Git 贡献提交规范
 - ci 持续集成
 - types 类型定义文件更改
 - wip 开发中
+
+
+## 项目预览
+
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: black;">在线预览：<a href="https://glowworm.gejialun.vip/" style="text-decoration: none; color: #1e6bb8; word-wrap: break-word; font-weight: bold; border-bottom: 1px solid #1e6bb8;">传送门</a></p>
