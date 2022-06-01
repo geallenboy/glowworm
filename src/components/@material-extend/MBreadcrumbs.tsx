@@ -41,7 +41,7 @@ function LinkItem({ link }:any) {
 
 
 export default function MBreadcrumbs({ links, activeLast = false, ...other }:any) {
-  const currentLink = last(links).name ;
+  const currentLink = last<any>(links).name ;
 
   const listDefault = links.map((link:any) => (
     <LinkItem key={link.name} link={link} />

@@ -157,7 +157,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }:any) 
                   显示姓名
                 </Typography>
                 <Typography variant='body2' sx={{ color: 'text.secondary' }}>
-                  role
+                  garron
                 </Typography>
               </Box>
             </AccountStyle>

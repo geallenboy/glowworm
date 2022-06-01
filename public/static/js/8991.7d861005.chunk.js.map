@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/8991.7d861005.chunk.js","mappings":"uKAAe,SAASA,IACtB,OAAO","sources":["pages/components/extra/Carousel.tsx"],"sourcesContent":["export default function Carousel() {\n  return <div>Carousel</div>;\n}\n"],"names":["Carousel"],"sourceRoot":""}

@@ -19,3 +19,5 @@ export const PATH_DASHBOARD = {
     pageSix: path(ROOTS_DASHBOARD, "/app/six"),
   },
 };
+
+export const PATH_GITHUB = 'https://github.com/geallenboy/glowworm.git';

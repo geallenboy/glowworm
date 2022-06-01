@@ -7,10 +7,13 @@ import Logo from './Logo';
 
 
 const RootStyle = styled('div')(({ theme }: any) => ({
+  width: '100%',
   height: '100%',
+  position: 'fixed',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  zIndex: 9998,
   backgroundColor: theme.palette?.background?.default
 }));
 

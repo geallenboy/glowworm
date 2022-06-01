@@ -1,15 +1,21 @@
+
+import dynamic from 'next/dynamic';
+import { toolbarFull, toolbarSimple } from './DraftEditorToolbar';
 import DraftEditorStyle from './DraftEditorStyle';
 
-export default function DraftEditor({ simple = false, error, sx, ...other }: any) {
-  console.log(simple, 'simple', other);
+const Editor = dynamic(
+  () => import('react-draft-wysiwyg').then((mod:any) => mod.Editor),
+  { ssr: false }
+);
+
+export default function DraftEditor({ simple, sx, ...other }:any) {
   return (
-    <DraftEditorStyle
-      sx={{
-        ...(error && {
-          border: (theme) => `solid 1px ${theme.palette.error.main}`
-        }),
-        ...sx
-      }}
-    ></DraftEditorStyle>
+    <DraftEditorStyle sx={sx}>
+      <Editor
+        toolbar={simple ? toolbarSimple : toolbarFull}
+        placeholder='Write something awesome...'
+        {...other}
+      />
+    </DraftEditorStyle>
   );
 }

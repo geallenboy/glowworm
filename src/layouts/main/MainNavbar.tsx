@@ -68,7 +68,7 @@ export default function MainNavbar() {
             <Logo />
           </NextLink>
           <Label color='info' sx={{ ml: 1 }}>
-            Next Js 2.5.0
+            Next
           </Label>
           <Box sx={{ flexGrow: 1 }} />
 
@@ -80,13 +80,7 @@ export default function MainNavbar() {
             />
           </MHidden>
 
-          <Button
-            variant='contained'
-            target='_blank'
-            href='https://material-ui.com/store/items/minimal-dashboard/'
-          >
-            Purchase Now
-          </Button>
+          
 
           <MHidden width='mdUp'>
             <MenuMobile

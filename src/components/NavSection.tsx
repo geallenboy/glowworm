@@ -16,7 +16,7 @@ import {
   ListItemButton,
 } from '@mui/material';
 
-const ListSubheaderStyle:any = styled((props) => (
+const ListSubheaderStyle:any = styled((props:any) => (
   <ListSubheader disableSticky disableGutters {...props} />
 ))(({ theme }) => ({
   ...theme.typography.overline,
@@ -26,7 +26,7 @@ const ListSubheaderStyle:any = styled((props) => (
   color: theme.palette.text.primary,
 }));
 
-const ListItemStyle = styled((props) => (
+const ListItemStyle = styled((props:any) => (
   <ListItemButton disableGutters {...props} />
 ))(({ theme }) => ({
   ...theme.typography.body2,
@@ -60,7 +60,7 @@ const ListItemIconStyle = styled(ListItemIcon)({
 
 
 
-const Item = forwardRef(({ children, ...other }:any, ref) => {
+const Item = forwardRef(({ children, ...other }:any, ref:any) => {
   return <ListItemStyle {...other}>{children}</ListItemStyle>;
 });
 

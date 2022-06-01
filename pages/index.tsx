@@ -2,6 +2,7 @@
 import MainLayout from 'src/layouts/main';
 import { styled } from '@mui/material/styles';
 import Page from 'src/components/Page';
+import { Advertisement, DarkMode, Hero, HugePackElements, Minimal, ThemeColor } from 'src/components/landing';
 
 const RootStyle = styled(Page)({
   height: '100%',
@@ -19,9 +20,13 @@ export default function IndexPage() {
       <RootStyle
         title='next project | 萤火虫'
       >
-        {/* <LandingHero /> */}
+        <Hero />
         <ContentStyle>
-          app
+        <Minimal />
+        <HugePackElements />
+        <DarkMode />
+        <ThemeColor />
+        <Advertisement />
         </ContentStyle>
       </RootStyle>
     </MainLayout>

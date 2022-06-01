@@ -110,7 +110,7 @@ export const toolbarSimple = {
   }
 };
 
-function uploadImageCallBack(file) {
+function uploadImageCallBack(file:any) {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://api.imgur.com/3/image');

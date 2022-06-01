@@ -26,25 +26,25 @@ const SOCIALS = [
 
 const LINKS = [
   {
-    headline: 'Minimal',
+    headline: 'glowworm',
     children: [
-      { name: 'About us', href: '#' },
-      { name: 'Contact us', href: '#' },
-      { name: 'FAQs', href: '#' },
+      { name: '关于我们', href: '#' },
+      { name: '联系我们', href: '#' },
+      { name: '常见问题', href: '#' },
     ],
   },
   {
-    headline: 'Legal',
+    headline: '合法的',
     children: [
-      { name: 'Terms and Condition', href: '#' },
-      { name: 'Privacy Policy', href: '#' },
+      { name: '条款和条件', href: '#' },
+      { name: '隐私政策', href: '#' },
     ],
   },
   {
-    headline: 'Contact',
+    headline: '联系',
     children: [
-      { name: 'support@minimals.cc', href: '#' },
-      { name: 'Los Angeles, 359  Hidden Valley Road', href: '#' },
+      { name: '151****8817@163.com', href: '#' },
+      { name: '地球村188号', href: '#' },
     ],
   },
 ];

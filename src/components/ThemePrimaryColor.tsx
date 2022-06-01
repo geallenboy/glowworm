@@ -5,7 +5,7 @@ import componentsOverride from 'src/theme/overrides';
 
 export default function ThemePrimaryColor({ children }: any) {
   const defaultTheme: any = useTheme();
-  const { setColor } = useSettings() as any;
+  const { setColor } = useSettings();
   const themeOptions = useMemo(
     () => ({
       ...defaultTheme,

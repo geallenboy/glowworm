@@ -1,7 +1,8 @@
+import { forwardRef } from "react";
 import { Box } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
-export default function Logo({ sx }: any) {
+const Logo = forwardRef(({ sx }: any) =>{
   const theme = useTheme();
   const PRIMARY_MAIN = theme.palette.primary.main;
   return (
@@ -15,4 +16,5 @@ export default function Logo({ sx }: any) {
       </svg>
     </Box>
   );
-}
+})
+export default Logo;
