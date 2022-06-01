@@ -1,4 +1,6 @@
-
+<p align="center">
+  基于 webpack typescript react redux material-UI 实现前端项目开发
+</p>
 
 ## 技术栈
 
@@ -35,6 +37,10 @@
 - types 类型定义文件更改
 - wip 开发中
 
-## 项目预览
+### 项目预览
 
 <p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: black;">在线预览：<a href="https://glowworm.gejialun.vip/" style="text-decoration: none; color: #1e6bb8; word-wrap: break-word; font-weight: bold; border-bottom: 1px solid #1e6bb8;">传送门</a></p>
+
+### 联系方式
+
+wx:GarronGe
