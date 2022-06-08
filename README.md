@@ -8,15 +8,15 @@
 
 ## glowworm-webpack
 
-webpack5构建版本 [github项目分支地址](https://github.com/geallenboy/glowworm/tree/glowworm-webpack)
+webpack5构建项目 [github项目分支地址](https://github.com/geallenboy/glowworm/tree/glowworm-webpack)
 
 ## glowworm-vite
 
-vite2构建版本 [github项目分支地址](https://github.com/geallenboy/glowworm/tree/glowworm-vite)
+vite2构建项目 [github项目分支地址](https://github.com/geallenboy/glowworm/tree/glowworm-vite)
 
 ## glowworm-next
 
-next构建版本 [github项目分支地址](https://github.com/geallenboy/glowworm/tree/glowworm-next)
+next构建项目 [github项目分支地址](https://github.com/geallenboy/glowworm/tree/glowworm-next)
 
 ## 快速开始
 
@@ -26,7 +26,7 @@ next构建版本 [github项目分支地址](https://github.com/geallenboy/glowwo
 
 ```sh
 
-git clone -b glowworm-webpack git@github.com:geallenboy/glowworm-webpack.git
+git clone -b glowworm-webpack git@github.com:geallenboy/glowworm.git
 
 ```
 
@@ -34,7 +34,7 @@ git clone -b glowworm-webpack git@github.com:geallenboy/glowworm-webpack.git
 
 ```sh
 
-git clone -b glowworm-vite git@github.com:geallenboy/glowworm-vite.git
+git clone -b glowworm-vite git@github.com:geallenboy/glowworm.git
 
 ```
 
@@ -42,7 +42,7 @@ git clone -b glowworm-vite git@github.com:geallenboy/glowworm-vite.git
 
 ```sh
 
-git clone -b glowworm-vite git@github.com:geallenboy/glowworm-next.git
+git clone -b glowworm-vite git@github.com:geallenboy/glowworm.git
 
 ```
 
